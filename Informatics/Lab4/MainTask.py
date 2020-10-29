@@ -15,3 +15,4 @@ for i in range(5):
         text = pattern.sub(matches[counter - 1], text, counter)
         counter -= 1
     print('\n' + text + '\n')
+file.close()
