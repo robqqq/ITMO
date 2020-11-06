@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="603.0" y="666.0">Thinker</node>
+    <node x="510.0" y="974.0">MainStory</node>
+    <node x="579.4011079979621" y="-5.305973000509418">Nameable</node>
+    <node x="61.75000000000006" y="571.0">Eater</node>
+    <node x="0.0" y="974.0">Food</node>
+    <node x="547.0" y="176.5">Human</node>
+    <node x="294.00000000000006" y="136.0">Storage</node>
+    <node x="0.0" y="285.5">Eatable</node>
+    <node x="827.0" y="149.5">Package</node>
+    <node x="253.0" y="974.0">Location</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Eater" target="Human">
+      <point x="75.25" y="-179.0" />
+      <point x="287.50000000000006" y="546.0" />
+      <point x="612.0" y="546.0" />
+      <point x="-65.0" y="152.0" />
+    </edge>
+    <edge source="Eater" target="Eatable">
+      <point x="-75.25" y="-179.0" />
+      <point x="0.0" y="43.0" />
+    </edge>
+    <edge source="Thinker" target="Human">
+      <point x="0.0" y="-84.0" />
+      <point x="65.0" y="152.0" />
+    </edge>
+    <edge source="Storage" target="Nameable">
+      <point x="0.0" y="-192.5" />
+      <point x="410.50000000000006" y="111.0" />
+      <point x="612.3333333333334" y="111.0" />
+      <point x="-64.66666666666669" y="43.0" />
+    </edge>
+    <edge source="Human" target="Nameable">
+      <point x="0.0" y="-152.0" />
+      <point x="0.0" y="43.0" />
+    </edge>
+    <edge source="Package" target="Nameable">
+      <point x="-5.6843418860808015E-14" y="-179.0" />
+      <point x="931.0" y="111.0" />
+      <point x="741.6666666666667" y="111.0" />
+      <point x="64.66666666666669" y="43.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5303030303030304" x="61.49546002590955" y="94.4571428571428" />
+  <SelectedNodes>
+    <node>Nameable</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
