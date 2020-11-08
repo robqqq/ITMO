@@ -1,4 +1,4 @@
-public class Thinker extends Human {
+public final class Thinker extends Human {
 
     public Thinker(String name) {
         super(name);

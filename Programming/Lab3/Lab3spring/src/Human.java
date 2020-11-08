@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public abstract class Human implements Nameable {
+public abstract class Human {
      private Location location = Location.NONFOODROOM;
      private String name;
 
@@ -19,11 +19,6 @@ public abstract class Human implements Nameable {
 
      public String getName(){
           return name;
-     }
-
-     @Override
-     public void setName(String name) {
-          this.name = name;
      }
 
      @Override

@@ -1,4 +1,4 @@
-public class MainStory {
+public final class MainStory {
     public static void main(String[] args){
         Eater ponchik = new Eater("Ponchik",false);
         Storage[] storageList = new Storage[3];

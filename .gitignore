@@ -7,6 +7,8 @@ Informatics/Lab3/Weather.py
 .~lock*
 /**/.~lock*
 /OPD/bcomp-ng.jar
-/Programming/Lab3/out/*
-/Programming/Lab3/.idea/*
-/Programming/Lab3/Lab3.iml
+/Programming/Lab3/Lab3/out/*
+/Programming/Lab3/Lab3/Lab3.iml
+/Programming/Lab3/Lab3spring/out/*
+/Programming/Lab3/Lab3spring/Lab3spring.iml
+/Programming/Lab3/Lab3spring/lib/*

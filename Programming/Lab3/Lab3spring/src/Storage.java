@@ -1,15 +1,15 @@
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Storage implements Nameable{
+public final class Storage{
     private String name;
     private int amountPacks;
-    Package[] packList;
+    IPackage[] packs;
 
     public Storage(String name, int amountPacks) {
         this.name = name;
         this.amountPacks = amountPacks;
-        this.packList = new Package[amountPacks];
+        this.packs = new IPackage[amountPacks];
 
     }
 
@@ -21,12 +21,12 @@ public class Storage implements Nameable{
         this.name = name;
     }
 
-    public Package getPack(int number) {
-        return packList[number];
+    public IPackage getPack(int numberOfPack) {
+        return packs[numberOfPack];
     }
 
-    public void addPack(Package pack, int number) {
-        packList[number] = pack;
+    public void addPack(Package pack, int numberOfPack) {
+        packs[numberOfPack] = pack;
     }
 
     public int getAmountPacks() {
@@ -34,7 +34,7 @@ public class Storage implements Nameable{
     }
 
     public void outOfStorage(int numberOfPack) {
-        packList[numberOfPack] = null;
+        packs[numberOfPack] = null;
     }
 
     @Override
@@ -44,13 +44,13 @@ public class Storage implements Nameable{
         Storage storage = (Storage) o;
         return amountPacks == storage.amountPacks &&
                 Objects.equals(name, storage.name) &&
-                Arrays.equals(packList, storage.packList);
+                Arrays.equals(packs, storage.packs);
     }
 
     @Override
     public int hashCode() {
         int result = Objects.hash(name, amountPacks);
-        result = 31 * result + Arrays.hashCode(packList);
+        result = 31 * result + Arrays.hashCode(packs);
         return result;
     }
 

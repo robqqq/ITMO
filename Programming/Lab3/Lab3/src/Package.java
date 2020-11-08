@@ -1,31 +1,31 @@
 import java.util.Objects;
 
-public class Package implements Nameable{
+public final class Package implements IPackage{
     private String name;
     private int weight;
-    private Food food;
+    private IFood food;
 
     public Package(String name) {
         this.name = name;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @Override
     public int getWeight() {
         return weight;
     }
 
-    public Food getFood() {
+    @Override
+    public IFood getFood() {
         return food;
     }
 
-    public void setFood(Food food, int weight) {
+    @Override
+    public void setFood(IFood food, int weight) {
         this.food = food;
         this.weight = weight;
     }

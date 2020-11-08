@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Eater extends Human implements Eatable {
+public final class Eater extends Human {
     private boolean eatingDiscipline;
     private int receivedCalories = 0;
 
@@ -18,7 +18,7 @@ public class Eater extends Human implements Eatable {
         return this.eatingDiscipline;
     }
 
-    public void eat(Package pack) {
+    public void eat(IPackage pack) {
         if (getLocation() == Location.FOODROOM) {
             receivedCalories += pack.getWeight() * pack.getFood().getCalories();
             System.out.println(getName() + " eats food from " + pack.getName());

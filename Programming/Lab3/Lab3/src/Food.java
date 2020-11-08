@@ -1,12 +1,13 @@
 import java.util.Objects;
 
-public class Food {
+public final class Food implements IFood{
     private int calories;
 
     Food(int calories) {
         this.calories = calories;
     }
 
+    @Override
     public int getCalories() {
         return calories;
     }
