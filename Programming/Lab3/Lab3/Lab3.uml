@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="321.0" y="449.0">Thinker</node>
+    <node x="510.0" y="757.0">MainStory</node>
+    <node x="0.0" y="866.0">Food</node>
+    <node x="0.0" y="354.0">Eater</node>
+    <node x="175.25" y="0.0">Human</node>
+    <node x="25.5" y="757.0">IFood</node>
+    <node x="644.0" y="0.0">IPackage</node>
+    <node x="902.0" y="0.0">Storage</node>
+    <node x="644.0" y="190.0">Package</node>
+    <node x="253.0" y="757.0">Location</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Eater" target="Human">
+      <point x="0.0" y="-179.0" />
+      <point x="150.5" y="329.0" />
+      <point x="240.25" y="329.0" />
+      <point x="-65.0" y="152.0" />
+    </edge>
+    <edge source="Package" target="IPackage">
+      <point x="0.0" y="-165.5" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="Thinker" target="Human">
+      <point x="0.0" y="-84.0" />
+      <point x="460.0" y="329.0" />
+      <point x="370.25" y="329.0" />
+      <point x="65.0" y="152.0" />
+    </edge>
+    <edge source="Food" target="IFood">
+      <point x="0.0" y="-98.0" />
+      <point x="0.0" y="29.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="290.5" y="318.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
