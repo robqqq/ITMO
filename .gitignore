@@ -1,6 +1,7 @@
-/**/[А-я]*
-/**/~*
+[А-я]*
+~*
 /OPD/bcomp-ng.jar
 Informatics/Labs/Lab5backup.docm
-/**/.idea
+.idea
 *.iml
+*.class
