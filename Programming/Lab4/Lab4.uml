@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="282.0" y="1503.0">App</node>
+    <node x="650.909090909091" y="1271.0">SpaceSuit.Parachute</node>
+    <node x="551.159090909091" y="558.5">SpaceSuit</node>
+    <node x="778.159090909091" y="613.0">FoodPackage</node>
+    <node x="752.659090909091" y="0.0">Item</node>
+    <node x="234.909090909091" y="45.0">Containing</node>
+    <node x="31.40909090909099" y="1226.0">Neznaika</node>
+    <node x="514.0" y="1503.0">InventoryException</node>
+    <node x="244.0" y="1607.0">App.Narrator</node>
+    <node x="1097.0961333688272" y="906.1054172767208">Status</node>
+    <node x="219.0" y="305.0">Human</node>
+    <node x="0.0" y="1503.0">AppConfig</node>
+    <node x="363.409090909091" y="1138.0">Ponchik</node>
+    <node x="0.0" y="547.0">Storage</node>
+    <node x="1061.159090909091" y="669.5">SpaceBoot</node>
+    <node x="752.0" y="1503.0">LocationException</node>
+    <node x="866.0961333688272" y="906.1054172767208">Location</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="FoodPackage" target="Item">
+      <point x="0.0" y="-83.5" />
+      <point x="909.659090909091" y="285.0" />
+      <point x="860.159090909091" y="285.0" />
+      <point x="21.5" y="127.5" />
+    </edge>
+    <edge source="SpaceBoot" target="Item">
+      <point x="0.0" y="-27.0" />
+      <point x="1160.659090909091" y="275.0" />
+      <point x="903.159090909091" y="275.0" />
+      <point x="64.5" y="127.5" />
+    </edge>
+    <edge source="Neznaika" target="Human">
+      <point x="0.0" y="-72.0" />
+      <point x="187.409090909091" y="1113.0" />
+      <point x="273.5" y="1113.0" />
+      <point x="-54.5" y="391.5" />
+    </edge>
+    <edge source="SpaceSuit.Parachute" target="SpaceSuit">
+      <point x="-30.0" y="-27.0" />
+      <point x="680.909090909091" y="1113.0" />
+      <point x="654.159090909091" y="1113.0" />
+      <point x="0.0" y="138.0" />
+    </edge>
+    <edge source="Human" target="Containing">
+      <point x="0.0" y="-391.5" />
+      <point x="328.0" y="285.0" />
+      <point x="334.409090909091" y="285.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="SpaceSuit" target="Containing">
+      <point x="-51.5" y="-138.0" />
+      <point x="602.659090909091" y="285.0" />
+      <point x="400.7424242424243" y="285.0" />
+      <point x="66.33333333333331" y="82.5" />
+    </edge>
+    <edge source="App.Narrator" target="App">
+      <point x="0.0" y="-82.5" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="SpaceSuit.Parachute" target="Item">
+      <point x="30.0" y="-27.0" />
+      <point x="740.909090909091" y="1113.0" />
+      <point x="767.659090909091" y="1113.0" />
+      <point x="767.659090909091" y="285.0" />
+      <point x="817.159090909091" y="285.0" />
+      <point x="-21.5" y="127.5" />
+    </edge>
+    <edge source="SpaceSuit" target="Item">
+      <point x="51.5" y="-138.0" />
+      <point x="705.659090909091" y="275.0" />
+      <point x="774.159090909091" y="275.0" />
+      <point x="-64.5" y="127.5" />
+    </edge>
+    <edge source="Storage" target="Containing">
+      <point x="0.0" y="-149.5" />
+      <point x="99.5" y="285.0" />
+      <point x="268.0757575757577" y="285.0" />
+      <point x="-66.33333333333331" y="82.5" />
+    </edge>
+    <edge source="Ponchik" target="Human">
+      <point x="0.0" y="-160.0" />
+      <point x="481.409090909091" y="1113.0" />
+      <point x="382.5" y="1113.0" />
+      <point x="54.5" y="391.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.26462585034013597" x="593.4533944558013" y="767.9048843187663" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

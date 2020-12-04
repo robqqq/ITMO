@@ -2,9 +2,11 @@ public enum Status {
     UNKNOWN("unknown"),
     TIRED("tired"),
     SLEEPING("sleeping"),
-    FULLOFENERGY("full of energy"),
+    FULL_OF_ENERGY("full of energy"),
     SCARED("scared"),
-    CALM("calm");
+    CALM("calm"),
+    NOT_PLEASED("not pleased"),
+    PLEASED("pleased");
 
     private String name;
 

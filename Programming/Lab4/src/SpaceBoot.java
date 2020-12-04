@@ -1,6 +1,6 @@
-public class SpaceBoot extends Item {
+public class SpaceBoot extends Item{
 
-    public SpaceBoot(Human owner){
-        super("space boot", owner);
+    SpaceBoot(String name, Location location){
+        super(name, location);
     }
 }
