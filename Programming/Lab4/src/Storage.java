@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class Storage implements Containing{
     private final String name;
-    private ArrayList<Item> itemList;
+    private List<Item> itemList;
     private Location location;
 
     public Storage(String name, Location location){

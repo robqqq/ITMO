@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Human implements Containing {
@@ -7,9 +8,9 @@ public abstract class Human implements Containing {
     private Status status;
     private final String name;
     private String lastEvents;
-    private ArrayList<Item> itemList;
+    private List<Item> itemList;
 
-    public Human(String name, Location location) {
+    protected Human(String name, Location location) {
         this.name = name;
         this.location = location;
         this.status = Status.UNKNOWN;

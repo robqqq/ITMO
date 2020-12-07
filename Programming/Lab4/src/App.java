@@ -7,7 +7,27 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
         double foodStock = Neznaika.get().calculateFoodStock(10, 48, Ponchik.get());
         Neznaika.get().makeSureAboutSafe(foodStock, Ponchik.get());
         Neznaika.get().sleep();
-        Narrator.newChapter("Ponchik's adventures");
+
+        class Chapter{
+            String name;
+            int number;
+
+            Chapter(int number, String name){
+                this.number = number;
+                this.name = name;
+            }
+
+            void newChapter() {
+                System.out.println();
+                System.out.println("    Chapter " + number);
+                System.out.println("    " + name);
+                System.out.println();
+                number += 1;
+            }
+        }
+
+        Chapter chapter = new Chapter(24, "Ponchik's adventures");
+        chapter.newChapter();
         Narrator.changeMainPerson(Ponchik.get());
         SpaceBoot spaceBoot = ctx.getBean("spaceBoot", SpaceBoot.class);
         SpaceSuit spacesuit = ctx.getBean(SpaceSuit.class);
@@ -73,7 +93,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
     }
 
     static class Narrator{
-        private static int nextChapter = 24;
         private static Human mainPerson = Neznaika.get();
 
         static void changeMainPerson(Human human){
@@ -91,14 +110,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
         static void print(String s){
             System.out.print(s);
             mainPerson.writeToLastEvents(s);
-        }
-
-        static void newChapter(String name) {
-            System.out.println();
-            System.out.println("    Chapter " + nextChapter);
-            System.out.println("    " + name);
-            System.out.println();
-            nextChapter += 1;
         }
     }
 }

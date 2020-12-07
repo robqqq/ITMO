@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class SpaceSuit extends Item implements Containing{
-    ArrayList<Item> itemList;
+    List<Item> itemList;
 
     public SpaceSuit(Location location, boolean hasParachute) {
         super("spacesuit", location);

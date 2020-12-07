@@ -6,7 +6,7 @@ public abstract class Item {
     private Location location;
     private Containing container;
 
-    public Item(String name, Location location){
+    protected Item(String name, Location location){
         this.name = name;
         this.location = location;
     }
