@@ -1,0 +1,59 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+
+\begin{document}
+
+\begin{flushright}
+  Бавыкин Роман Р3110
+\end{flushright}
+
+\begin{center}
+  Домашнее задание 6\\
+  СЛОЖЕНИЕ ЧИСЕЛ С ПЛАВАЮЩЕЙ ЗАПЯТОЙ\\
+  Вариант 10
+\end{center}
+$A=30,84;\ B=11,45.$
+
+\begin{enumerate}
+  {\item
+    Формат Ф1 (число разрядов мантиссы m=12).\\
+    $A=(30,84)_{10}=(1E,D7)_{16}=(0,1ED7)_{16}\cdot16^2$\\
+    \begin{tabular}{|c@{~\setlength{\arrayrulewidth}{2pt}\vline~}c|c|c|c|c|c|c@{~\setlength{\arrayrulewidth}{2pt}\vline~}c|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      0 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1\\
+      \hline
+    \end{tabular}
+    \\\\
+    $B=(11,45)_{10}=(B,733)_{16}=(0,B733)_{16}\cdot16^1$\\
+    \begin{tabular}{|c@{~\setlength{\arrayrulewidth}{2pt}\vline~}c|c|c|c|c|c|c@{~\setlength{\arrayrulewidth}{2pt}\vline~}c|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 1\\
+      \hline
+    \end{tabular}
+    \\\\
+    \begin{tabular}{l r r r r r r r r}
+      1) & $X_A=$ & \_1 & 0 & 0 & 0 & 0 & 1 & 0 \\
+       & $X_B=$ & 1 & 0 & 0 & 0 & 0 & 0 & 1 \\
+      \hline
+       & $(X_A-X_B)_{\mbox{доп.}}= $ & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+    \end{tabular}\\
+    $(X_A-X_B)=1;X_C=X_A=2$
+    \begin{enumerate}
+      {\item
+        Оба операнда положительные $(A>0, B>0)$:\\
+        \begin{tabular}{l r r r r r r r r r r r r r}
+          2,3) & $M_A=$ & . 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 1 \\
+           & $M_B=$ & . 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 \\
+          \hline
+           & $M_C=$ & . 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+        \end{tabular}\\
+      }
+    \end{enumerate}
+    }
+\end{enumerate}
+
+\end{document}
