@@ -30,3 +30,7 @@ hs_err_pid*
 *.aux
 *.fls
 *.gz
+*.nav
+*.out
+*.snm
+*.toc
