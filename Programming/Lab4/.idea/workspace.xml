@@ -56,7 +56,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Projects/IntelliJ IDEA/tests" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -69,17 +69,6 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="Lab4" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,6 +102,7 @@
       <workItem from="1607084908246" duration="313000" />
       <workItem from="1607317778925" duration="5559000" />
       <workItem from="1607518458236" duration="94000" />
+      <workItem from="1608188354264" duration="65000" />
     </task>
     <servers />
   </component>
@@ -173,10 +163,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738/1366.0.720.450@0.0.1366.738" timestamp="1607076723752" />
-    <state x="463" y="95" key="FileChooserDialogImpl" timestamp="1607326088464">
+    <state x="463" y="95" key="FileChooserDialogImpl" timestamp="1608188419382">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="95" key="FileChooserDialogImpl/0.0.1366.738/1366.0.720.450@0.0.1366.738" timestamp="1607326088464" />
+    <state x="463" y="95" key="FileChooserDialogImpl/0.0.1366.738/1366.0.720.450@0.0.1366.738" timestamp="1608188419382" />
     <state width="1323" height="139" key="GridCell.Tab.0.bottom" timestamp="1607326101794">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
