@@ -1,0 +1,385 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{commath}
+\usepackage{amsfonts}
+\pgfkeys{/pgf/trig format=rad}
+\usetikzlibrary{arrows}
+\def\letus{%
+	\mathord{\setbox0=\hbox{$\exists$}%
+		\hbox{\kern 0.125\wd0%
+			\vbox to 1.15\ht0{%
+				\hrule width 0.75\wd0%
+				\vfill%
+				\hrule width 0.75\wd0}%
+			\vrule height 1.15\ht0%
+			\kern 0.125\wd0}%
+	}%
+}
+
+\begin{document}
+\input{title}
+\section{Пределы}
+
+Дана последовательность $a_n$ и функция $f(x)$. Исследуйте поведение предложенных величин:
+
+\subsection{Предел последовательности}
+
+$a_n=\sqrt[3]{n^2}\left(\sqrt[3]{\left(3n^2-1\right)^2}-\sqrt[3]{\left(3n^2+1\right)^2}\right)$
+
+\subsubsection{Вычислите предел последовательности при $n\rightarrow\infty$, исследуйте её на монотонность и ограниченность}
+
+$\lim\limits_{n\rightarrow\infty}a_n=
+	\lim\limits_{n\rightarrow\infty}\left(\sqrt[3]{n^2}\left(\sqrt[3]{\left(3n^2-1\right)^2}
+	-\sqrt[3]{\left(3n^2+1\right)^2}\right)\right)=
+	\lim\limits_{n\rightarrow\infty}\left(\sqrt[3]{\left(3n^2-1\right)^2n^2}
+	-\sqrt[3]{\left(3n^2+1\right)^2n^2}\right)$\\
+$\letus\ a=\left(3n^2-1\right)^2n^2,\ b=\left(3n^2+1\right)^2n^2$\\
+$\lim\limits_{n\rightarrow\infty}a_n=
+	\lim\limits_{n\rightarrow\infty}\left(\sqrt[3]{a}-\sqrt[3]{b}\right)=
+	\lim\limits_{n\rightarrow\infty}\left(\sqrt[3]{a}-\sqrt[3]{b}\right)\cdot
+	\frac{\sqrt[3]{a^2}+\sqrt[3]{b^2}+\sqrt[3]{ab}}{\sqrt[3]{a^2}+\sqrt[3]{b^2}+\sqrt[3]{ab}}
+	=\lim\limits_{n\rightarrow\infty}\frac{a-b}{\sqrt[3]{a^2}+\sqrt[3]{b^2}+\sqrt[3]{ab}}=$\\
+$=\lim\limits_{n\rightarrow\infty}\frac{-12n^4}{\sqrt[3]{81n^{12}-108n^{10}+54n^8-12n^6+n^4}
+	+\sqrt[3]{81n^{12}-18n^8+n^4}+\sqrt[3]{81n^{12}+108n^{10}+54n^8+12n^6+n^4}}=$\\
+$=\lim\limits_{n\rightarrow\infty}\frac{-12}{\sqrt[3]{81-108n^{-2}+54n^{-4}-12n^{-6}+n^{-8}}
+	+\sqrt[3]{81-18n^{-4}+n^{-8}}+\sqrt[3]{81+108n^{-2}+54n^{-4}+12n^{-6}+n^{-8}}}=
+	\frac{-12}{3\sqrt[3]{81}}=\frac{-4}{3\sqrt[3]{3}}$\\\\
+Последовательность монотонно возрастает.\\
+Последовательность ограничена сверху $y = \frac{-4}{3\sqrt[3]{3}}$, и ограничена снизу: $y = \sqrt[3]{4} - \sqrt[3]{16}$
+
+
+\subsubsection{Постройте график общего члена последовательности в
+	 зависимости от номера n.}
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel={$n$},
+		ylabel={$a_n$},  
+		%axis lines=middle,
+		ymax = -0.922,
+		ymin = -0.934,
+		xmax=11,
+		xmin=0,
+		domain = -1:10,
+		%xtick=\empty,
+		%ytick=\empty,
+		scale=2]
+		\addplot[dashed, black!40] coordinates{(-2,-0.9254816991341798) (11, -0.9254816991341798)};
+		\addplot[dashed, black!40] coordinates{(-2,-0.9234816991341798) (11, -0.9234816991341798)};
+		\addplot[dashed, black!40] coordinates{(-2,-0.9245816991341798) (11, -0.9245816991341798)};
+		\addplot[dashed, black!40] coordinates{(-2,-0.9243816991341798) (11, -0.9243816991341798)};
+		\addplot[dashed, black!40] coordinates{(-2,-0.9244916991341798) (11, -0.9244916991341798)};
+		\addplot[dashed, black!40] coordinates{(-2,-0.9244716991341798) (11, -0.9244716991341798)};
+		\addplot[only marks, blue,samples=20] table {
+			x y
+			1 -0.932441047821547
+			2 -0.9249585447894372
+			3 -0.9245756863557775
+			4 -0.9245114264290103
+			5 -0.9244938742205362
+			6 -0.9244875703969653
+			7 -0.9244848682469794
+			8 -0.9244835567960762
+			9 -0.9244828588587696
+			10 -0.9244824600277284
+		};
+	\end{axis}
+\end{tikzpicture}
+\subsubsection{Проиллюстрируйте сходимость (расходимость), ограниченность и монотонность последовательности.}
+$\varepsilon_1=0,001,\ N_1=2$;\\
+$\varepsilon_1=0,0001,\ N_2=3$;\\
+$\varepsilon_1=0,00001,\ N_3=6$.\\
+\newpage
+\subsection{Предел функции}
+
+$f(x)=\left(\frac{5-3x}{1-2x}\right)^{0,3x-3}$
+
+\subsubsection{Вычислите предел функции при $x\rightarrow\infty$ , исследуйте её на монотонность и ограниченность.}
+
+$\lim\limits_{x\rightarrow+\infty}f(x)=
+\lim\limits_{x\rightarrow+\infty}
+	\left(\frac{5-3x}{1-2x}\right)^{0,3x-3}=
+\lim\limits_{x\rightarrow+\infty}\left(
+	\left(\frac{5-3x}{1-2x}\right)^{0,3x}\left(
+	\frac{1-2x}{5-3x}\right)^3\right)=
+\lim\limits_{x\rightarrow+\infty}
+	\left(\frac{5-3x}{1-2x}\right)^{0,3x}\cdot
+	\lim\limits_{x\rightarrow+\infty}
+	\left(\frac{1-2x}{5-3x}\right)^3=
++\infty\cdot\lim\limits_{x\rightarrow+\infty}
+	\left(\frac{\frac1x-2}{\frac5x-3}\right)^3=
++\infty\cdot\frac8{27}=+\infty$\\\\
+$\lim\limits_{x\rightarrow-\infty}f(x)=
+\lim\limits_{x\rightarrow-\infty}
+	\left(\frac{5-3x}{1-2x}\right)^{0,3x-3}=
+\lim\limits_{x\rightarrow-\infty}\left(
+	\left(\frac{5-3x}{1-2x}\right)^{0,3x}\left(
+	\frac{1-2x}{5-3x}\right)^3\right)=
+\lim\limits_{x\rightarrow-\infty}
+	\left(\frac{5-3x}{1-2x}\right)^{0,3x}\cdot
+	\lim\limits_{x\rightarrow-\infty}
+	\left(\frac{1-2x}{5-3x}\right)^3=
+0\cdot\lim\limits_{x\rightarrow-\infty}
+	\left(\frac{\frac1x-2}{\frac5x-3}\right)^3=
+0\cdot\frac8{27}=0$\\
+Функция возрастает, при $x\in(-\infty;-4,0279)\bigcup[6,1694;+\infty)$\\
+Функция убывает, при $x\in[-4,0279;0.5)\bigcup[\frac{5}{3};6,1694]$\\
+Данная функция ограничена снизу $y=0$
+
+\subsubsection{Постройте график функции в зависимости от x.}
+
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel={$x$},
+		ylabel={$y$},  
+		%axis lines=middle,
+		ymax = 10,
+		ymin = -2,
+		xmax=10,
+		xmin=-10,
+		domain = -10:10,
+		restrict y to domain=-5:20,
+		%xtick=\empty,
+		%ytick=\empty,
+		scale=2]
+		\addplot[dashed, black!40] coordinates {(0, 0) (10, 0)};
+		\addplot[dashed, black!40] coordinates {(0.5, -2) (0.5, 10)};
+		\addplot[very thick, blue,samples=200]{((5-3*x)/(1-2*x))^(0.3*x-3)};
+	\end{axis}
+\end{tikzpicture}
+
+\newpage
+\section{Дифференциал}
+Дана задача. Проведите исследование:
+
+Длина телеграфного провода $s=2b\left(1+\frac{2f^2}{3b^2}\right)$, где $2b$ – расстояние между точками подвеса, а $f$ – наибольший прогиб. На сколько увеличится прогиб $f$ , когда провод от нагревания увеличится на $ds$?
+
+\subsection{Составьте математическую модель задачи: введите обозначения, выпишите данные, составьте уравнение (систему уравнений), содержащее неизвестное.}
+
+$ds$ - на сколько увеличился провод;\\
+$df$ - на сколько увеличится прогиб;\\
+$s'=\frac{ds}{df};\ df=\frac{ds}{s'}=\frac{ds}{\left(2b
+	\left(1+\frac{2f^2}{3b^2}\right)\right)'}$
+\subsection{Решите задачу аналитически.}
+
+$df=\frac{ds}{\left(2b\left(1+\frac{2f^2}{3b^2}\right)\right)}'=
+\frac{ds}{2b\left(\frac{2f^2}{3b^2}\right)'}=
+\frac{ds}{\frac{8f}{3b}}=\frac{3b}{8f}ds$
+
+\subsection{Сделайте графическую иллюстрацию к решению задачи. Сверьтесь с аналитическим решением.}
+
+В зависимости от значения b, график функции будет переноситься выше или ниже относительно оси $Oy$ и растягиваться, относительно оси $Oy$. Сделаем иллюстрацию для фиксированного значения $b=1$.
+
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel={$f$},
+		ylabel={$s$},  
+		%axis lines=middle,
+		ymax = 10,
+		ymin = 0,
+		xmax=10,
+		xmin=-10,
+		domain = -10:10,
+		restrict y to domain=-5:20,
+		%xtick=\empty,
+		%ytick=\empty,
+		scale=2]
+		
+		\addplot[dashed, black!40] coordinates {(1,0) (1,3.5)};
+		\addplot[dashed, black!40] coordinates {(2,0) (2,7.5)};
+		\addplot[dashed, black!40] coordinates {(-10,3.3) (1,3.3)};
+		\addplot[dashed, black!40] coordinates {(-10,7.3) (2,7.3)};
+		\addplot[very thick, blue,samples=200]{2*(1+(2*x^2)/(3))};
+		
+		\node at (axis cs:1.6,0.25) {$df$};
+	    \node at (axis cs:-9.5,5.3) {$ds$};
+	\end{axis}
+
+\end{tikzpicture}
+
+\subsection{Запишите ответ.}
+
+\section{Наибольшее и наименьшее значение функции}
+Дана задача. Проведите исследование:
+
+От канала шириной 2 м под прямым углом отходит канал шириной 4 м. Стенки каналов прямолинейны. Найдите наибольшую длину бревна $l$, которое можно сплавлять по этим каналам из одного в другой.
+
+\subsection{Составьте математическую модель задачи: введите обозначения, выпишите данные, составьте уравнение (систему уравнений), содержащее неизвестное.}
+
+$l=x+y=\frac2{\sin\alpha}+\frac4{\cos\alpha};$
+
+\subsection{Решите задачу аналитически.}
+$l'=2(-\frac{\cos\alpha}{\sin^2\alpha}+2\frac{\sin\alpha}{\cos^2\alpha})\ 
+l`=0;\ 2\sin^3\alpha-\cos^3\alpha=0;\ 
+\tan^3\alpha=\frac{1}{2};\ \tan\alpha=\frac{1}{\sqrt[3]{2}};\\
+\cos^2\alpha=\frac{1}{1+\tan^2\alpha}=
+\frac{1}{1+\frac{1}{\sqrt[3]{2}}};\ 
+\sin^2\alpha=1-\cos^2\alpha=
+\frac{\sqrt[3]{4}+\frac{1}{\sqrt[3]{4}}}
+	{1+\sqrt[3]{4}+\frac{1}{\sqrt[3]{4}}};\\
+l=2\sqrt{\mathstrut{\frac{1+\sqrt[3]{4}+\frac{1}{\sqrt[3]{4}}}
+	{\sqrt[3]{4}+\frac{1}{\sqrt[3]{4}}}}}+
+	4\sqrt{\mathstrut{1+\frac{1}{\sqrt[3]{2}}}}$
+
+\subsection{Сделайте графическую иллюстрацию к решению задачи. Сверьтесь с аналитическим решением.}
+
+\begin{tikzpicture}
+	\draw (0,8) -- (0,0) -- (8,0);
+	\draw (2,8) -- (2,4) -- (8,4);
+	\draw (0,6) -- (6,0);
+	\node at (0.3,5.3) {$\alpha$};
+	\node at (1,8) {2м};
+	\node at (8,2) {4м};
+	\node at (1,5.5) {$x$};
+	\node at (4,2.5) {$y$};
+\end{tikzpicture}
+
+\subsection{Запишите ответ.}
+
+$l=2\sqrt{\mathstrut{\frac{1+\sqrt[3]{4}+\frac{1}{\sqrt[3]{4}}}
+	{\sqrt[3]{4}+\frac{1}{\sqrt[3]{4}}}}}+
+	4\sqrt{\mathstrut{1+\frac{1}{\sqrt[3]{2}}}}$
+
+
+\section{Исследование функции}
+Даны функции $f(x)$ и $g(x)$. Проведите поочерёдно их полные исследования:
+
+$f(x)=\frac{2x^3-5x^2+14x-6}{4x^2};$
+
+$g(x)=\frac{1}{2}e^{\sqrt{2}\cos x}$
+
+\subsection{$f(x)$}
+
+\subsubsection{Найдите область определения функции.}
+
+$D=\mathbb{R}\backslash\{0\}$
+
+\subsubsection{Проверьте, является ли функция чётной (нечётной), а также периодической, и укажите, как эти свойства влияют на вид графика функции.}
+
+$f(-x)=\frac{2(-x)^3-5(-x)^2+14(-x)-6}{4(-x)^2}=
+\frac{-2x^3-5x^2-14x-6}{4x^2};\\
+f(-x)\neq f(x);\ f(-x)\neq -f(x)\Rightarrow$ функция не является ни чётной, ни нечётной.\\
+Функция не является периодичной.
+
+\subsubsection{Исследуйте функцию на нулевые значения и найдите промежутки ее знакопостоянства.}
+
+$f(x)=0,\ x = \frac12\\
+f(x)>0,\ \mbox{при}\ x\in(\frac12;+\infty);\\
+f(x)<0,\ \mbox{при}\ x\in(-\infty;\frac12)\backslash\{0\}$
+
+
+\subsubsection{Исследуйте функцию с помощью первой производной: найдите интервалы монотонности и экстремумы функции.}
+
+$f'(x)=\frac12-\frac7{2x^2}+\frac{3}{x^3};$\\
+$f'(x)=0;\ \frac12-\frac7{2x^2}+\frac{3}{x^3}=0;\\
+x_{min}=\{-2; 3\};\ x_{max}=-1.$\\
+Функция убывает, при x
+	$\in(-\infty;-2]\bigcup[-1;3]\backslash\{0\}$;\\
+функция возрастает, при $\in[-2;-1]\bigcup[3;+\infty)$
+
+\subsubsection{Исследуйте функцию с помощью второй производной: найдите интервалы выпуклости (вогнутости) и точки перегиба функции.}
+
+$f''(x)=\frac7{x^3}-\frac9{x^4};$\\
+Точка перегиба - $x=\frac97,$\\
+функция выпукла, $x\in(-\infty;\frac97)\backslash\{0\},$\\
+функция вогнута, $x\in(\frac97;+\infty)$
+
+\subsubsection{Проверьте наличие вертикальных, горизонтальных и наклонных асимптот графика функции.}
+
+$x=0$ - точка разрыва второго рода, является вертикальной асимптотой;\\
+уравнение наклонной асимптоты: $y=\frac12x-\frac54$
+
+\subsubsection{Найдите точки пересечения графика с координатными осями и (при необходимости) найдите значения функции в некоторых дополнительных точках.}
+
+График пересекает ось $Ox$ в точке $x=\frac12$
+
+\subsubsection{Постройте график. Отметьте на нём все результаты исследования.}
+
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel={$x$},
+		ylabel={$y$},  
+		%axis lines=middle,
+		ymax = 10,
+		ymin = -10,
+		xmax=10,
+		xmin=-10,
+		domain = -10:10,
+		restrict y to domain=-15:15,
+		%xtick=\empty,
+		%ytick=\empty,
+		scale=2]
+		\addplot[dashed, black!40]{0.5*x-1.25};
+		\addplot[very thick, blue,samples=200]{(2*x^3-5*x^2+14*x-6)/(4*x^2)};
+	\end{axis}
+\end{tikzpicture}
+
+\subsection{$g(x)$}
+
+\subsubsection{Найдите область определения функции.}
+
+$D=\mathbb{R}$
+
+\subsubsection{Проверьте, является ли функция чётной (нечётной), а также периодической, и укажите, как эти свойства влияют на вид графика функции.}
+
+Функция является чётной:\\
+$g(-x)=\frac12e^{\sqrt2\cos(-x)}=\frac12e^{\sqrt2\cos x}=g(x);$\\
+Функция является периодической, период $2\pi$:\\
+$g(x+2\pi)=\frac12e^{\sqrt2\cos(x+2\pi)}=
+\frac12e^{\sqrt2\cos x}=g(x).$
+
+\subsubsection{Исследуйте функцию на нулевые значения и найдите промежутки ее знакопостоянства.}
+
+Функция не имеет нулевых значений, функция возрастает, при $x\in\mathbb{R}$.
+
+\subsubsection{Исследуйте функцию с помощью первой производной: найдите интервалы монотонности и экстремумы функции.}
+
+$g'(x)=-\frac{\sqrt2}{2}\sin x\cdot e^{\sqrt2\cos x},$\\
+$x_{max}=2\pi n,\ x_{min}=(2n+1)\pi,\ n\in\mathbb{Z},$\\
+функция возрастает, при $(2n+1)\pi\leq x\leq2\pi n,\ 
+	n\in\mathbb{Z},$\\
+функция убывает, при $2\pi n\leq x\leq(2n+1)\pi,\ n\in\mathbb{Z}.$
+
+\subsubsection{Исследуйте функцию с помощью второй производной: найдите интервалы выпуклости (вогнутости) и точки перегиба функции.}
+
+$g''(x)\frac{\sqrt2}{2}e^{\sqrt2\cos x}
+	\left(\sin^2x-\cos x\right),$\\
+точки перегиба: $x=\pm\arccos\frac{-1+\sqrt5}2+2\pi n,\ 
+	n\in\mathbb{Z},$\\
+функция выпукла, при $x\in(-\arccos\frac{-1+\sqrt5}2+2\pi n;
+	+\arccos\frac{-1+\sqrt5}2+2\pi n),\ n\in\mathbb{Z},$\\
+функция вогнута, при $x\in(+\arccos\frac{-1+\sqrt5}2+2\pi n;
+-\arccos\frac{-1+\sqrt5}2+2\pi (n+1)),\ n\in\mathbb{Z}.$
+\subsubsection{Проверьте наличие вертикальных, горизонтальных и наклонных асимптот графика функции.}
+
+У данной функции асимптоты отсутствуют.
+
+\subsubsection{Найдите точки пересечения графика с координатными осями и (при необходимости) найдите значения функции в некоторых дополнительных точках.}
+
+График пересекает ось $Oy$, при $y=\frac12e^{\sqrt2}$
+
+\subsubsection{Постройте график. Отметьте на нём все результаты исследования.}
+
+\begin{tikzpicture}
+	\begin{axis}[
+		xlabel={$x$},
+		ylabel={$y$},  
+		%axis lines=middle,
+		ymax = 10,
+		ymin = -1,
+		xmax=3*pi,
+		xmin=-3*pi,
+		domain = -3*pi:3*pi,
+		%restrict y to domain=-1:3,
+		%xtick=\empty,
+		%ytick=\empty,
+		scale=2]
+		\addplot[very thick, blue,samples=200]{0.5*e^(sqrt(2)*cos(x))};
+	\end{axis}
+\end{tikzpicture}
+
+\end{document}
