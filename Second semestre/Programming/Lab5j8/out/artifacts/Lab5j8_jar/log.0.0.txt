@@ -1,0 +1,16 @@
+февр. 16, 2021 2:29:06 AM commands.CommandManager start
+INFO: start program
+февр. 16, 2021 2:29:06 AM io.TreeSetReaderFromXML readPersons
+INFO: read 4 objects from file
+февр. 16, 2021 2:29:44 AM commands.AddCommand execute
+WARNING: java.time.format.DateTimeParseException: Text 'daad' could not be parsed at index 0
+java.time.format.DateTimeParseException: Text 'daad' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2051)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1953)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:429)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:414)
+	at commands.AddCommand.execute(AddCommand.java:70)
+	at commands.CommandManager.readCommands(CommandManager.java:88)
+	at commands.CommandManager.start(CommandManager.java:66)
+	at main.Main.main(Main.java:11)
+
