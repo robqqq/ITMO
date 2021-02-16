@@ -2,7 +2,7 @@ package commands;
 
 import main.EyeColor;
 import main.HairColor;
-import main.PersonManager;
+import main.ObjectManager;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Locale;
@@ -13,15 +13,15 @@ import static log.Log.logger;
  * Класс команды, которая добавляет новый элемент в коллекцию
  */
 public class AddCommand implements Command {
-    private PersonManager personManager;
-    private CommandManager commandManager;
+    private ObjectManager personManager;
+    private CommandManagerInterface commandManager;
 
     /**
      * Конструктор
      * @param personManager
      * @param commandManager
      */
-    AddCommand(PersonManager personManager, CommandManager commandManager){
+    AddCommand(ObjectManager personManager, CommandManagerInterface commandManager){
         this.personManager = personManager;
         this.commandManager = commandManager;
     }

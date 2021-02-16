@@ -1,18 +1,18 @@
 package commands;
 
-import main.PersonManager;
+import main.ObjectManager;
 
 /**
  * Класс команды, которая выводит элементы, значение поля name которых содержит заданную подстроку
  */
 public class FilterContainsNameCommand implements Command{
-    private PersonManager personManager;
+    private ObjectManager personManager;
 
     /**
      * Конструктор
      * @param personManager
      */
-    FilterContainsNameCommand(PersonManager personManager){
+    FilterContainsNameCommand(ObjectManager personManager){
         this.personManager = personManager;
     }
 

@@ -1,18 +1,18 @@
 package commands;
 
-import main.PersonManager;
+import main.ObjectManager;
 
 /**
  * Класс команды, которая сохраняет коллекцию в файл
  */
 public class SaveCommand implements Command{
-    private PersonManager personManager;
+    private ObjectManager personManager;
 
     /**
      * Конструктор
      * @param personManager
      */
-    SaveCommand(PersonManager personManager){
+    SaveCommand(ObjectManager personManager){
         this.personManager = personManager;
     }
 

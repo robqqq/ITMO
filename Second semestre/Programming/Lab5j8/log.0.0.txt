@@ -6,3 +6,26 @@ INFO: read 4 objects from file
 INFO: start program
 фев 16, 2021 2:28:59 AM io.TreeSetReaderFromXML readPersons
 INFO: read 4 objects from file
+фев 16, 2021 10:32:08 AM commands.CommandManager start
+INFO: start program
+фев 16, 2021 10:32:58 AM io.TreeSetReaderFromXML <init>
+WARNING: java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.io.FileInputStream.<init>(FileInputStream.java:130)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at io.TreeSetReaderFromXML.<init>(TreeSetReaderFromXML.java:33)
+	at io.FileManager.<init>(FileManager.java:20)
+	at main.Main.main(Main.java:8)
+
+фев 16, 2021 10:33:49 AM commands.CommandManager start
+INFO: start program
+фев 16, 2021 10:33:49 AM io.TreeSetReaderFromXML readPersons
+INFO: read 4 objects from file
+фев 16, 2021 10:46:26 AM commands.CommandManager start
+INFO: start program
+фев 16, 2021 10:46:27 AM io.TreeSetReaderFromXML readPersons
+INFO: read 4 objects from file
+фев 16, 2021 10:56:56 AM commands.CommandManager start
+INFO: start program
+фев 16, 2021 10:56:56 AM io.TreeSetReaderFromXML readPersons
+INFO: read 4 objects from file

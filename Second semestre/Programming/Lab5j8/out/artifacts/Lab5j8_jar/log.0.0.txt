@@ -14,3 +14,12 @@ java.time.format.DateTimeParseException: Text 'daad' could not be parsed at inde
 	at commands.CommandManager.start(CommandManager.java:66)
 	at main.Main.main(Main.java:11)
 
+фев 16, 2021 11:01:42 AM io.TreeSetReaderFromXML <init>
+WARNING: java.lang.NullPointerException
+java.lang.NullPointerException
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at io.TreeSetReaderFromXML.<init>(TreeSetReaderFromXML.java:33)
+	at io.FileManager.<init>(FileManager.java:20)
+	at main.Main.main(Main.java:8)
+

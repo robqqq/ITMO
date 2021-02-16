@@ -1,28 +1,27 @@
 package main;
 
-import commands.CommandManager;
+import commands.CommandManagerInterface;
 import exceptions.InvalidArgumentException;
-import io.FileManager;
+import io.FileManagerInterface;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.logging.Level;
-
 import static log.Log.logger;
 
 /**
  * Класс, который управляет коллекцией людей
  */
-public class PersonManager {
+public class PersonManager implements ObjectManager{
     private TreeSet<Person> personsTreeSet;
     private LocalDate initDate;
-    FileManager fileManager;
+    FileManagerInterface fileManager;
 
     /**
      * Конструктор
      * @param fileManager
      */
-    public PersonManager(FileManager fileManager) {
+    public PersonManager(FileManagerInterface fileManager) {
         personsTreeSet = new TreeSet<>();
         initDate = LocalDate.now();
         this.fileManager = fileManager;
@@ -57,7 +56,7 @@ public class PersonManager {
      * @param id
      * @return
      */
-    public boolean removePerson(int id){
+    public boolean removeElement(int id){
         for (Person person: personsTreeSet) {
             if (person.getId() == id){
                 personsTreeSet.remove(person);
@@ -91,9 +90,10 @@ public class PersonManager {
 
     /**
      * Метод, который выводит в стандартный поток вывода информацию о человеке
-     * @param person
+     * @param object
      */
-    public void printPerson(Person person){
+    public void printElement(Object object){
+        Person person = (Person) object;
         System.out.printf("Person: id=%d, name=%s, coordinates: coordinates.x=%f, coordinates.y=%d, " +
                         "creationDate=%s, height=%d, birthday=%s, eyeColor=%s, hairColor=%s, location: location.x=%f, " +
                         "location.y=%d, location.name=%s\n", person.getId(), person.getName(), person.getCoordinates().getX(),
@@ -106,9 +106,9 @@ public class PersonManager {
     /**
      * Метод, который выводит в стандартный поток вывода информацию о каждом человеке в коллекции
      */
-    public void printPersonsTreeSet(){
+    public void printCollection(){
         for (Person person: personsTreeSet) {
-            printPerson(person);
+            printElement(person);
         }
     }
 
@@ -171,7 +171,7 @@ public class PersonManager {
      * @param birthday
      * @param commandManager
      */
-    public void addPerson(String name, long height, LocalDateTime birthday, CommandManager commandManager){
+    public void addPerson(String name, long height, LocalDateTime birthday, CommandManagerInterface commandManager){
         Person person;
         try {
             person = new Person(name, height, birthday);
@@ -274,7 +274,7 @@ public class PersonManager {
      * @param commandManager
      * @return
      */
-    public boolean updatePerson(int id, String name, long height, LocalDateTime birthday, CommandManager commandManager){
+    public boolean updatePerson(int id, String name, long height, LocalDateTime birthday, CommandManagerInterface commandManager){
         LocalDateTime creationDate;
         Person person;
         for (Person oldPerson: personsTreeSet) {
@@ -385,7 +385,7 @@ public class PersonManager {
      * @param height
      * @param birthday
      */
-    public void addPersonIfMax(String name, long height, LocalDateTime birthday, CommandManager commandManager){
+    public void addPersonIfMax(String name, long height, LocalDateTime birthday, CommandManagerInterface commandManager){
         Person newPerson;
         boolean max = true;
         try {
@@ -495,7 +495,7 @@ public class PersonManager {
      * @param height
      * @param birthday
      */
-    public void addPersonIfMin(String name, long height, LocalDateTime birthday, CommandManager commandManager){
+    public void addPersonIfMin(String name, long height, LocalDateTime birthday, CommandManagerInterface commandManager){
         Person newPerson;
         boolean min = true;
         try {

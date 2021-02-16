@@ -2,7 +2,7 @@ package commands;
 
 import main.EyeColor;
 import main.HairColor;
-import main.PersonManager;
+import main.ObjectManager;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.logging.Level;
@@ -12,7 +12,7 @@ import static log.Log.logger;
  * Класс команды, которая обновляет значение элемента коллекции, id которого равен заданному
  */
 public class UpdateCommand implements Command{
-    private PersonManager personManager;
+    private ObjectManager personManager;
     private CommandManager commandManager;
 
     /**
@@ -20,7 +20,7 @@ public class UpdateCommand implements Command{
      * @param personManager
      * @param commandManager
      */
-    UpdateCommand(PersonManager personManager, CommandManager commandManager){
+    UpdateCommand(ObjectManager personManager, CommandManager commandManager){
         this.personManager = personManager;
         this.commandManager = commandManager;
     }

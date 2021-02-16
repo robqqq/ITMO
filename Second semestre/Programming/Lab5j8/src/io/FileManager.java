@@ -7,7 +7,7 @@ import java.util.TreeSet;
 /**
  * Класс, который управляет чтением коллекции из файла и записью коллекцией в файл
  */
-public class FileManager {
+public class FileManager implements FileManagerInterface{
     private TreeSetReaderFromXML reader;
     private TreeSetWriterToXML writer;
     String fileName;

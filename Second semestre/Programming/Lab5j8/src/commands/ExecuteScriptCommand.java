@@ -9,13 +9,13 @@ import java.io.InputStreamReader;
  * Класс команды, которая считывает и исполняет скрипт из указанного файла
  */
 public class ExecuteScriptCommand implements Command {
-    private CommandManager commandManager;
+    private CommandManagerInterface commandManager;
 
     /**
      * Конструктор
      * @param commandManager
      */
-    ExecuteScriptCommand(CommandManager commandManager){
+    ExecuteScriptCommand(CommandManagerInterface commandManager){
         this.commandManager = commandManager;
     }
 

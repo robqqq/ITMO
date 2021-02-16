@@ -39,6 +39,10 @@ public class TreeSetReaderFromXML {
             System.err.println(e.toString());
             logger.log(Level.WARNING, e.toString(), e);
             System.exit(1);
+        } catch (NullPointerException e){
+            logger.log(Level.WARNING, e.toString(), e);
+            System.err.println("Environmental variable Lab5 does not exist");
+            System.exit(1);
         }
     }
 

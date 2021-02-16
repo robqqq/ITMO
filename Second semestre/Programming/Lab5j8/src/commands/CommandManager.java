@@ -3,7 +3,7 @@ package commands;
 import exceptions.InvalidArgumentException;
 import main.EyeColor;
 import main.HairColor;
-import main.PersonManager;
+import main.ObjectManager;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,8 +14,8 @@ import static log.Log.logger;
 /**
  * Класс, который производит чтение с консоли и отправляет запросы командам
  */
-public class CommandManager {
-    private PersonManager personManager;
+public class CommandManager implements CommandManagerInterface{
+    private ObjectManager personManager;
     private Map<String, Command> commandMap;
     private String[] in;
     private String command;
@@ -28,7 +28,7 @@ public class CommandManager {
      * Конструктор
      * @param personManager
      */
-    public CommandManager(PersonManager personManager){
+    public CommandManager(ObjectManager personManager){
         this.personManager = personManager;
         usedScripts = new HashSet<>();
         reader = new BufferedReader(new InputStreamReader(System.in));
@@ -71,7 +71,7 @@ public class CommandManager {
      * @param reader
      * @param startSymbol
      */
-    void readCommands(BufferedReader reader, String startSymbol){
+    public void readCommands(BufferedReader reader, String startSymbol){
         try{
             while (true) {
                 System.out.print(startSymbol);
@@ -107,7 +107,7 @@ public class CommandManager {
      * Метод, который добавляет скрипт в историю использованных скриптов
      * @param scriptName
      */
-    void usedScriptAdd(String scriptName){
+    public void usedScriptAdd(String scriptName){
         usedScripts.add(scriptName);
     }
 
@@ -116,7 +116,7 @@ public class CommandManager {
      * @param scriptName
      * @return
      */
-    boolean scriptIsUsed(String scriptName){
+    public boolean scriptIsUsed(String scriptName){
         return usedScripts.contains(scriptName);
     }
 

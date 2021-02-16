@@ -1,18 +1,18 @@
 package commands;
 
-import main.PersonManager;
+import main.ObjectManager;
 
 /**
  * Класс команды, которая выводит в стандартный поток вывода все элементы коллекции в строковом представлении
  */
 public class ShowCommand implements Command{
-    private PersonManager personManager;
+    private ObjectManager personManager;
 
     /**
      * Конструктор
      * @param personManager
      */
-    ShowCommand(PersonManager personManager){
+    ShowCommand(ObjectManager personManager){
         this.personManager = personManager;
     }
 
@@ -22,6 +22,6 @@ public class ShowCommand implements Command{
      */
     @Override
     public void execute(String[] args) {
-        personManager.printPersonsTreeSet();
+        personManager.printCollection();
     }
 }

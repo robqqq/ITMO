@@ -1,18 +1,18 @@
 package commands;
 
-import main.PersonManager;
+import main.ObjectManager;
 
 /**
  * Класс команды, которая выводит значения поля eyeColor всех элементов в порядке убывания
  */
 public class PrintFieldDescendingEyeColorCommand implements Command{
-    private PersonManager personManager;
+    private ObjectManager personManager;
 
     /**
      * Конструктор
      * @param personManager
      */
-    PrintFieldDescendingEyeColorCommand(PersonManager personManager){
+    PrintFieldDescendingEyeColorCommand(ObjectManager personManager){
         this.personManager = personManager;
     }
 

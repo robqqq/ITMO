@@ -2,7 +2,7 @@ package commands;
 
 import main.EyeColor;
 import main.HairColor;
-import main.PersonManager;
+import main.ObjectManager;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Locale;
@@ -14,15 +14,15 @@ import static log.Log.logger;
  * элемента этой коллекции
  */
 public class AddIfMinCommand implements Command{
-    private PersonManager personManager;
-    private CommandManager commandManager;
+    private ObjectManager personManager;
+    private CommandManagerInterface commandManager;
 
     /**
      * Конструктор
      * @param personManager
      * @param commandManager
      */
-    AddIfMinCommand(PersonManager personManager, CommandManager commandManager){
+    AddIfMinCommand(ObjectManager personManager, CommandManagerInterface commandManager){
         this.personManager = personManager;
         this.commandManager = commandManager;
     }

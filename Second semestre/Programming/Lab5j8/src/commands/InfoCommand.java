@@ -1,18 +1,18 @@
 package commands;
 
-import main.PersonManager;
+import main.ObjectManager;
 
 /**
  * Класс команды, которая выводит в стандартный поток вывода информацию о коллекции
  */
 public class InfoCommand implements Command{
-    private PersonManager personManager;
+    private ObjectManager personManager;
 
     /**
      * Конструктор
      * @param personManager
      */
-    InfoCommand(PersonManager personManager){
+    InfoCommand(ObjectManager personManager){
         this.personManager = personManager;
     }
 

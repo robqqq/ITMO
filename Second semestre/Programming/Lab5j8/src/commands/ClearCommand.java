@@ -1,18 +1,18 @@
 package commands;
 
-import main.PersonManager;
+import main.ObjectManager;
 
 /**
  * Класс команды, которая очищает коллекцию
  */
 public class ClearCommand implements Command{
-    private PersonManager personManager;
+    private ObjectManager personManager;
 
     /**
      * Конструктор
      * @param personManager
      */
-    ClearCommand(PersonManager personManager){
+    ClearCommand(ObjectManager personManager){
         this.personManager = personManager;
     }
 

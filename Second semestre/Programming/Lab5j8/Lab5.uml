@@ -1,125 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>commands.AddCommand</OriginalElement>
+  <OriginalElement>commands.ClearCommand</OriginalElement>
   <nodes>
-    <node x="1331.0" y="961.0">io.TreeSetReaderFromXML</node>
-    <node x="1616.0" y="961.0">main.Location</node>
-    <node x="1839.0" y="805.0">commands.RemoveByIdCommand</node>
-    <node x="1046.0" y="961.0">exceptions.InvalidArgumentException</node>
-    <node x="3102.0" y="794.0">commands.AddIfMaxCommand</node>
-    <node x="1858.0" y="961.0">main.Coordinates</node>
-    <node x="1062.0" y="1065.0">exceptions.NotUniqueIdException</node>
-    <node x="1219.0" y="805.0">commands.SaveCommand</node>
-    <node x="3480.0" y="805.0">commands.MaxByEyeColorCommand</node>
-    <node x="2432.0" y="805.0">commands.ShowCommand</node>
-    <node x="560.0" y="961.0">main.HairColor</node>
-    <node x="2123.0" y="805.0">commands.ExecuteScriptCommand</node>
-    <node x="4028.0" y="794.0">commands.AddIfMinCommand</node>
-    <node x="2324.5" y="630.0">commands.Command</node>
-    <node x="2863.0" y="805.0">commands.InfoCommand</node>
-    <node x="365.0" y="828.0">commands.ExitCommand</node>
-    <node x="897.0" y="805.0">commands.FilterContainsNameCommand</node>
-    <node x="338.0" y="961.0">main.EyeColor</node>
-    <node x="669.0" y="0.0">main.Person</node>
-    <node x="4404.0" y="805.0">commands.ClearCommand</node>
-    <node x="2096.0" y="961.0">main.Main</node>
-    <node x="2679.0" y="828.0">commands.HelpCommand</node>
-    <node x="1462.0" y="805.0">commands.PrintFieldDescendingEyeColorCommand</node>
-    <node x="2291.0" y="961.0">log.Log</node>
-    <node x="3780.0" y="805.0">commands.HistoryCommand</node>
-    <node x="1291.0" y="0.0">commands.CommandManager</node>
-    <node x="0.0" y="961.0">io.TreeSetWriterToXML</node>
-    <node x="786.0" y="961.0">io.FileManager</node>
-    <node x="549.0" y="794.0">commands.AddCommand</node>
-    <node x="0.0" y="794.0">commands.UpdateCommand</node>
-    <node x="0.0" y="0.0">main.PersonManager</node>
+    <node x="1356.0" y="1528.0">main.Location</node>
+    <node x="1071.0" y="1528.0">io.TreeSetReaderFromXML</node>
+    <node x="0.0" y="1372.0">commands.RemoveByIdCommand</node>
+    <node x="786.0" y="1528.0">exceptions.InvalidArgumentException</node>
+    <node x="1528.0" y="1361.0">commands.AddIfMaxCommand</node>
+    <node x="1598.0" y="1528.0">main.Coordinates</node>
+    <node x="802.0" y="1632.0">exceptions.NotUniqueIdException</node>
+    <node x="983.0" y="1372.0">commands.MaxByEyeColorCommand</node>
+    <node x="2317.0" y="1372.0">commands.SaveCommand</node>
+    <node x="0.0" y="0.0">main.ObjectManager</node>
+    <node x="669.0" y="0.0">commands.CommandManagerInterface</node>
+    <node x="1627.5" y="0.0">io.FileManagerInterface</node>
+    <node x="3378.0" y="1372.0">commands.ShowCommand</node>
+    <node x="560.0" y="1528.0">main.HairColor</node>
+    <node x="3625.0" y="1372.0">commands.ExecuteScriptCommand</node>
+    <node x="3981.0" y="1361.0">commands.AddIfMinCommand</node>
+    <node x="2453.25" y="1197.0">commands.Command</node>
+    <node x="3139.0" y="1372.0">commands.InfoCommand</node>
+    <node x="2560.0" y="1395.0">commands.ExitCommand</node>
+    <node x="284.0" y="1372.0">commands.FilterContainsNameCommand</node>
+    <node x="338.0" y="1528.0">main.EyeColor</node>
+    <node x="1002.0" y="0.0">main.Person</node>
+    <node x="1283.0" y="1372.0">commands.ClearCommand</node>
+    <node x="1836.0" y="1528.0">main.Main</node>
+    <node x="4403.0" y="1395.0">commands.HelpCommand</node>
+    <node x="606.0" y="1372.0">commands.PrintFieldDescendingEyeColorCommand</node>
+    <node x="2031.0" y="1528.0">log.Log</node>
+    <node x="4587.0" y="1372.0">commands.HistoryCommand</node>
+    <node x="669.0" y="324.0">commands.CommandManager</node>
+    <node x="0.0" y="1528.0">io.TreeSetWriterToXML</node>
+    <node x="1624.0" y="126.0">io.FileManager</node>
+    <node x="2744.0" y="1361.0">commands.AddCommand</node>
+    <node x="1952.0" y="1361.0">commands.UpdateCommand</node>
+    <node x="0.0" y="567.0">main.PersonManager</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="commands.ShowCommand" target="commands.Command">
-      <point x="0.0" y="-50.0" />
-      <point x="2545.5" y="774.0" />
-      <point x="2411.625" y="774.0" />
-      <point x="5.125" y="27.0" />
+    <edge source="main.PersonManager" target="main.ObjectManager">
+      <point x="0.0" y="-292.5" />
+      <point x="0.0" y="258.5" />
     </edge>
     <edge source="commands.HistoryCommand" target="commands.Command">
       <point x="0.0" y="-50.0" />
-      <point x="3894.0" y="724.0" />
-      <point x="2462.875" y="724.0" />
-      <point x="56.375" y="27.0" />
+      <point x="4701.0" y="1271.0" />
+      <point x="2612.125" y="1271.0" />
+      <point x="76.875" y="27.0" />
     </edge>
-    <edge source="commands.AddIfMaxCommand" target="commands.Command">
-      <point x="0.0" y="-61.0" />
-      <point x="3281.0" y="744.0" />
-      <point x="2442.375" y="744.0" />
-      <point x="35.875" y="27.0" />
+    <edge source="io.FileManager" target="io.FileManagerInterface">
+      <point x="0.0" y="-83.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.CommandManagerInterface">
+      <point x="0.0" y="-237.0" />
+      <point x="0.0" y="137.0" />
     </edge>
     <edge source="commands.HelpCommand" target="commands.Command">
       <point x="0.0" y="-27.0" />
-      <point x="2761.0" y="764.0" />
-      <point x="2421.875" y="764.0" />
-      <point x="15.375" y="27.0" />
-    </edge>
-    <edge source="commands.ExecuteScriptCommand" target="commands.Command">
-      <point x="0.0" y="-50.0" />
-      <point x="2267.5" y="774.0" />
-      <point x="2401.375" y="774.0" />
-      <point x="-5.125" y="27.0" />
-    </edge>
-    <edge source="commands.AddCommand" target="commands.Command">
-      <point x="0.0" y="-61.0" />
-      <point x="713.0" y="724.0" />
-      <point x="2350.125" y="724.0" />
-      <point x="-56.375" y="27.0" />
-    </edge>
-    <edge source="commands.SaveCommand" target="commands.Command">
-      <point x="0.0" y="-50.0" />
-      <point x="1330.5" y="744.0" />
-      <point x="2370.625" y="744.0" />
-      <point x="-35.875" y="27.0" />
+      <point x="4485.0" y="1281.0" />
+      <point x="2601.875" y="1281.0" />
+      <point x="66.625" y="27.0" />
     </edge>
     <edge source="commands.FilterContainsNameCommand" target="commands.Command">
       <point x="0.0" y="-50.0" />
-      <point x="1048.0" y="734.0" />
-      <point x="2360.375" y="734.0" />
-      <point x="-46.125" y="27.0" />
-    </edge>
-    <edge source="commands.ExitCommand" target="commands.Command">
-      <point x="0.0" y="-27.0" />
-      <point x="447.0" y="714.0" />
-      <point x="2339.875" y="714.0" />
+      <point x="435.0" y="1281.0" />
+      <point x="2468.625" y="1281.0" />
       <point x="-66.625" y="27.0" />
-    </edge>
-    <edge source="commands.ClearCommand" target="commands.Command">
-      <point x="0.0" y="-50.0" />
-      <point x="4516.5" y="704.0" />
-      <point x="2483.375" y="704.0" />
-      <point x="76.875" y="27.0" />
-    </edge>
-    <edge source="commands.PrintFieldDescendingEyeColorCommand" target="commands.Command">
-      <point x="0.0" y="-50.0" />
-      <point x="1640.5" y="754.0" />
-      <point x="2380.875" y="754.0" />
-      <point x="-25.625" y="27.0" />
-    </edge>
-    <edge source="commands.AddIfMinCommand" target="commands.Command">
-      <point x="0.0" y="-61.0" />
-      <point x="4206.0" y="714.0" />
-      <point x="2473.125" y="714.0" />
-      <point x="66.625" y="27.0" />
     </edge>
     <edge source="commands.UpdateCommand" target="commands.Command">
       <point x="0.0" y="-61.0" />
-      <point x="172.5" y="704.0" />
-      <point x="2329.625" y="704.0" />
-      <point x="-76.875" y="27.0" />
+      <point x="2124.5" y="1331.0" />
+      <point x="2519.875" y="1331.0" />
+      <point x="-15.375" y="27.0" />
     </edge>
     <edge source="commands.MaxByEyeColorCommand" target="commands.Command">
       <point x="0.0" y="-50.0" />
-      <point x="3620.0" y="734.0" />
-      <point x="2452.625" y="734.0" />
+      <point x="1123.0" y="1301.0" />
+      <point x="2489.125" y="1301.0" />
+      <point x="-46.125" y="27.0" />
+    </edge>
+    <edge source="commands.RemoveByIdCommand" target="commands.Command">
+      <point x="-2.2737367544323206E-13" y="-50.0" />
+      <point x="131.99999999999955" y="1271.0" />
+      <point x="2458.375" y="1271.0" />
+      <point x="-76.875" y="27.0" />
+    </edge>
+    <edge source="commands.ShowCommand" target="commands.Command">
+      <point x="0.0" y="-50.0" />
+      <point x="3491.5" y="1311.0" />
+      <point x="2571.125" y="1311.0" />
+      <point x="35.875" y="27.0" />
+    </edge>
+    <edge source="commands.AddIfMaxCommand" target="commands.Command">
+      <point x="0.0" y="-61.0" />
+      <point x="1730.0" y="1321.0" />
+      <point x="2509.625" y="1321.0" />
+      <point x="-25.625" y="27.0" />
+    </edge>
+    <edge source="commands.ExecuteScriptCommand" target="commands.Command">
+      <point x="0.0" y="-50.0" />
+      <point x="3793.0" y="1301.0" />
+      <point x="2581.375" y="1301.0" />
       <point x="46.125" y="27.0" />
+    </edge>
+    <edge source="commands.AddCommand" target="commands.Command">
+      <point x="0.0" y="-61.0" />
+      <point x="2931.5" y="1331.0" />
+      <point x="2550.625" y="1331.0" />
+      <point x="15.375" y="27.0" />
+    </edge>
+    <edge source="commands.SaveCommand" target="commands.Command">
+      <point x="0.0" y="-50.0" />
+      <point x="2428.5" y="1341.0" />
+      <point x="2530.125" y="1341.0" />
+      <point x="-5.125" y="27.0" />
+    </edge>
+    <edge source="commands.ExitCommand" target="commands.Command">
+      <point x="0.0" y="-27.0" />
+      <point x="2642.0" y="1341.0" />
+      <point x="2540.375" y="1341.0" />
+      <point x="5.125" y="27.0" />
+    </edge>
+    <edge source="commands.PrintFieldDescendingEyeColorCommand" target="commands.Command">
+      <point x="0.0" y="-50.0" />
+      <point x="784.5" y="1291.0" />
+      <point x="2478.875" y="1291.0" />
+      <point x="-56.375" y="27.0" />
+    </edge>
+    <edge source="commands.ClearCommand" target="commands.Command">
+      <point x="0.0" y="-50.0" />
+      <point x="1395.5" y="1311.0" />
+      <point x="2499.375" y="1311.0" />
+      <point x="-35.875" y="27.0" />
+    </edge>
+    <edge source="commands.AddIfMinCommand" target="commands.Command">
+      <point x="0.0" y="-61.0" />
+      <point x="4182.0" y="1291.0" />
+      <point x="2591.625" y="1291.0" />
+      <point x="56.375" y="27.0" />
     </edge>
     <edge source="exceptions.NotUniqueIdException" target="exceptions.InvalidArgumentException">
       <point x="0.0" y="-27.0" />
@@ -127,21 +148,13 @@
     </edge>
     <edge source="commands.InfoCommand" target="commands.Command">
       <point x="0.0" y="-50.0" />
-      <point x="2972.5" y="754.0" />
-      <point x="2432.125" y="754.0" />
+      <point x="3248.5" y="1321.0" />
+      <point x="2560.875" y="1321.0" />
       <point x="25.625" y="27.0" />
     </edge>
-    <edge source="commands.RemoveByIdCommand" target="commands.Command">
-      <point x="0.0" y="-50.0" />
-      <point x="1971.0" y="764.0" />
-      <point x="2391.125" y="764.0" />
-      <point x="-15.375" y="27.0" />
-    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.2" x="540.1124981855137" y="460.6478214908493" />
-  <SelectedNodes>
-    <node>commands.ShowCommand</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Group" zoom="0.3588501291989664" x="1528.0" y="525.6759675967596" />
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>

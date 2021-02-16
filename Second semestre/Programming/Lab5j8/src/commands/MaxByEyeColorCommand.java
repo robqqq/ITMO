@@ -1,19 +1,19 @@
 package commands;
 
+import main.ObjectManager;
 import main.Person;
-import main.PersonManager;
 
 /**
  * Класс команды, которая выводит любой объект из коллекции, значение поля eyeColor которого является максимальным
  */
 public class MaxByEyeColorCommand implements Command{
-    PersonManager personManager;
+    ObjectManager personManager;
 
     /**
      * Конструктор
      * @param personManager
      */
-    public MaxByEyeColorCommand(PersonManager personManager){
+    public MaxByEyeColorCommand(ObjectManager personManager){
         this.personManager = personManager;
     }
 
@@ -25,7 +25,7 @@ public class MaxByEyeColorCommand implements Command{
     public void execute(String[] args) {
         Person max = personManager.getMax(personManager.getComparatorByEyeColor());
         if (max != null){
-            personManager.printPerson(max);
+            personManager.printElement(max);
         } else {
             System.out.println("Collection is empty");
         }

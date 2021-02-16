@@ -1,6 +1,6 @@
 package commands;
 
-import main.PersonManager;
+import main.ObjectManager;
 import java.util.logging.Level;
 import static log.Log.logger;
 
@@ -8,13 +8,13 @@ import static log.Log.logger;
  * Класс команды, которая удаляет элемент из коллекции по его id
  */
 public class RemoveByIdCommand implements Command{
-    private PersonManager personManager;
+    private ObjectManager personManager;
 
     /**
      * Конструктор
      * @param personManager
      */
-    RemoveByIdCommand(PersonManager personManager){
+    RemoveByIdCommand(ObjectManager personManager){
         this.personManager = personManager;
     }
 
@@ -27,7 +27,7 @@ public class RemoveByIdCommand implements Command{
         if (args.length == 1){
             try{
                 int id = Integer.parseInt(args[0]);
-                if (!personManager.removePerson(id)){
+                if (!personManager.removeElement(id)){
                     System.out.println("An element with this id does not exist");
                 }
             } catch (NumberFormatException e){
