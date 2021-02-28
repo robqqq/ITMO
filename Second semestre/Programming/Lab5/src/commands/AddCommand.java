@@ -14,8 +14,7 @@ public class AddCommand implements Command {
     AddCommand(ObjectManager personManager){
         this.personManager = personManager;
         arguments = "{element}";
-        description = "вывести в стандартный поток вывода информацию о коллекции " +
-                "(тип, дата инициализации, количество элементов и т.д.)";
+        description = "добавить новый элемент в коллекцию";
     }
 
     /**

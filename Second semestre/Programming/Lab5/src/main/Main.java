@@ -2,7 +2,7 @@ package main;
 
 import cleint.ClientManager;
 import commands.CommandManager;
-import io.FileManager;
+import fileManager.FileManager;
 
 public class Main {
     public static void main(String[] args){

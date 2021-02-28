@@ -1,4 +1,4 @@
-package io;
+package fileManager;
 
 import main.*;
 import org.w3c.dom.Document;
@@ -101,7 +101,7 @@ public class TreeSetWriterToXML {
         Element element = doc.createElement("location");
         element.appendChild(getElements("locationX", String.valueOf(location.getX())));
         element.appendChild(getElements("locationY", String.valueOf(location.getY())));
-        element.appendChild(getElements("locationName", location.getName()));
+        element.appendChild(getElements("locationName", location.getName() == null ? "null" : location.getName()));
         return element;
     }
 }

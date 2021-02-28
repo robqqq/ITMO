@@ -3,7 +3,7 @@ package main;
 import cleint.ClientManagerInterface;
 import exceptions.InvalidArgumentException;
 import exceptions.NoIdLeftException;
-import io.FileManagerInterface;
+import fileManager.FileManagerInterface;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -154,11 +154,12 @@ public class PersonManager implements ObjectManager{
     public void addPerson(ClientManagerInterface clientManager){
         PersonBuilderInterface personBuilder = new PersonBuilder();
         generateId(personBuilder);
-        inputFields(clientManager, personBuilder);
         try {
+            inputFields(clientManager, personBuilder);
             personsTreeSet.add(personBuilder.getPerson());
         } catch (InvalidArgumentException e){
-            System.out.println(e.getMessage());
+            System.out.println("Wrong field. Command add stopped");
+            return;
         }
     }
 
@@ -178,12 +179,12 @@ public class PersonManager implements ObjectManager{
                     System.out.println(e.getMessage());
                 }
                 personBuilder.setCreationDate(oldPerson.getCreationDate().toLocalDate());
-                inputFields(clientManager, personBuilder);
                 try {
+                    inputFields(clientManager, personBuilder);
                     personsTreeSet.add(personBuilder.getPerson());
                 } catch (InvalidArgumentException e) {
-                    System.out.println(e.getMessage());
-                    break;
+                    System.out.println("Wrong field. Command update stopped");
+                    return false;
                 }
                 personsTreeSet.remove(oldPerson);
                 return true;
@@ -201,12 +202,13 @@ public class PersonManager implements ObjectManager{
         PersonBuilderInterface personBuilder = new PersonBuilder();
         boolean max = true;
         generateId(personBuilder);
-        inputFields(clientManager, personBuilder);
         Person newPerson = null;
         try{
+            inputFields(clientManager, personBuilder);
             newPerson = personBuilder.getPerson();
         }catch (InvalidArgumentException e){
-            System.out.println(e.getMessage());
+            System.out.println("Wrong field. Command add_person_if_max stopped");
+            return;
         }
         for (Person person: personsTreeSet) {
             if (person.compareTo(newPerson) > 0) {
@@ -227,12 +229,13 @@ public class PersonManager implements ObjectManager{
         PersonBuilderInterface personBuilder = new PersonBuilder();
         boolean min = true;
         generateId(personBuilder);
-        inputFields(clientManager, personBuilder);
         Person newPerson = null;
         try{
+            inputFields(clientManager, personBuilder);
             newPerson = personBuilder.getPerson();
         }catch (InvalidArgumentException e){
-            System.out.println(e.getMessage());
+            System.out.println("Wrong field. Command add_person_if_min stopped");
+            return;
         }
         for (Person person: personsTreeSet) {
             if (person.compareTo(newPerson) < 0) {
@@ -267,17 +270,21 @@ public class PersonManager implements ObjectManager{
         return max;
     }
 
-    private void inputName(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputName(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try{
             personBuilder.setName(clientManager.askValue("Name"));
-        } catch (InvalidArgumentException e){
+        } catch (InvalidArgumentException e) {
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println(e.getMessage());
-            inputName(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputName(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputCoordinatesX(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputCoordinatesX(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try {
             personBuilder.setCoordinatesX(Double.parseDouble(clientManager.askValue("Coordinates.x")));
         } catch (InvalidArgumentException e){
@@ -287,11 +294,15 @@ public class PersonManager implements ObjectManager{
         } catch (NumberFormatException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println("Coordinates.x must be double");
-            inputCoordinatesX(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputCoordinatesX(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputCoordinatesY(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputCoordinatesY(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try {
             personBuilder.setCoordinatesY(Long.parseLong(clientManager.askValue("Coordinates.y")));
         } catch (InvalidArgumentException e){
@@ -301,11 +312,15 @@ public class PersonManager implements ObjectManager{
         } catch (NumberFormatException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println("Coordinates.y must be long");
-            inputCoordinatesY(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputCoordinatesY(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputHeight(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputHeight(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try{
             personBuilder.setHeight(Long.parseLong(clientManager.askValue("Height")));
         } catch (InvalidArgumentException e){
@@ -315,11 +330,15 @@ public class PersonManager implements ObjectManager{
         } catch (NumberFormatException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println("Height must be long");
-            inputHeight(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputHeight(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputBirthday(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputBirthday(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try{
             personBuilder.setBirthday(LocalDate.parse(clientManager.askValue("Birthday")).atStartOfDay());
         } catch (InvalidArgumentException e){
@@ -329,59 +348,84 @@ public class PersonManager implements ObjectManager{
         } catch (DateTimeParseException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println("Date must be in format yyyy-MM-dd");
-            inputBirthday(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputBirthday(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputEyeColor(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputEyeColor(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try{
             personBuilder.setEyeColor(EyeColor.valueOf(clientManager.askValue("EyeColor " +
                     "(BLACK, ORANGE, WHITE)").toUpperCase()));
         } catch (IllegalArgumentException | InvalidArgumentException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println("This eyeColor does not exist");
-            inputEyeColor(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputEyeColor(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputHairColor(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputHairColor(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try{
             personBuilder.setHairColor(HairColor.valueOf(clientManager.askValue("HairColor " +
                     "(GREEN, BLACK, BLUE, YELLOW, WHITE)").toUpperCase()));
         } catch (IllegalArgumentException | InvalidArgumentException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println("This hairColor does not exist");
-            inputHairColor(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputHairColor(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputLocationX(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputLocationX(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try {
             personBuilder.setLocationX(Float.parseFloat(clientManager.askValue("Location.x")));
         } catch (NumberFormatException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println("Location.x must be float");
-            inputLocationX(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputLocationX(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputLocationY(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputLocationY(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try {
             personBuilder.setLocationY(Long.parseLong(clientManager.askValue("Location.y")));
         } catch (NumberFormatException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println("Location.y must be long");
-            inputLocationY(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputLocationY(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
-    private void inputLocationName(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputLocationName(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         try {
-            personBuilder.setLocationName(clientManager.askValue("Location.name"));
+            String locationName = clientManager.askValue("Location.name");
+            personBuilder.setLocationName(locationName == "" ? null : locationName);
         } catch (InvalidArgumentException e){
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println(e.getMessage());
-            inputLocationName(clientManager, personBuilder);
+            if (!clientManager.isScript()) {
+                inputLocationName(clientManager, personBuilder);
+            } else {
+                throw new InvalidArgumentException(e.getMessage());
+            }
         }
     }
 
@@ -394,7 +438,7 @@ public class PersonManager implements ObjectManager{
         }
     }
 
-    private void inputFields(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder){
+    private void inputFields(ClientManagerInterface clientManager, PersonBuilderInterface personBuilder) throws InvalidArgumentException {
         inputName(clientManager, personBuilder);
         inputCoordinatesX(clientManager, personBuilder);
         inputCoordinatesY(clientManager, personBuilder);

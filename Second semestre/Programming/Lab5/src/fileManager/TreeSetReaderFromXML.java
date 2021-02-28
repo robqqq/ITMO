@@ -1,4 +1,4 @@
-package io;
+package fileManager;
 
 import  exceptions.InvalidArgumentException;
 import main.*;
@@ -109,8 +109,8 @@ public class TreeSetReaderFromXML {
                     Float.parseFloat(element.getElementsByTagName("locationX").item(0).getTextContent()));
             personBuilder.setLocationY(
                     Long.parseLong(locationElement.getElementsByTagName("locationY").item(0).getTextContent()));
-            personBuilder.setLocationName(
-                    locationElement.getElementsByTagName("locationName").item(0).getTextContent());
+            String locationName = locationElement.getElementsByTagName("locationName").item(0).getTextContent();
+            personBuilder.setLocationName(locationName == "null" ? null : locationName);
             return personBuilder.getPerson();
         }catch(DateTimeParseException | IllegalArgumentException e){
             logger.log(Level.WARNING, e.toString(), e);

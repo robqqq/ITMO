@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="337.0" y="973.5">commands.RemoveByIdCommand</node>
+    <node x="2333.75" y="180.0">cleint</node>
+    <node x="1024.2954545454545" y="45.0">log</node>
+    <node x="1908.0000000000002" y="973.5">commands.AddIfMaxCommand</node>
+    <node x="1165.7500000000002" y="473.5">main</node>
+    <node x="3235.0" y="984.5">commands.MaxByEyeColorCommand</node>
+    <node x="966.0000000000002" y="984.5">commands.SaveCommand</node>
+    <node x="3106.019732317332" y="0.0">commands.CommandManagerInterface</node>
+    <node x="3549.0" y="984.5">commands.ShowCommand</node>
+    <node x="4807.0" y="973.5">commands.ExecuteScriptCommand</node>
+    <node x="1280.0000000000002" y="973.5">commands.AddIfMinCommand</node>
+    <node x="2913.75" y="450.0">commands.Command</node>
+    <node x="652.0000000000002" y="984.5">commands.InfoCommand</node>
+    <node x="4492.0" y="995.5">commands.ExitCommand</node>
+    <node x="2913.0" y="973.5">commands.FilterContainsNameCommand</node>
+    <node x="1134.7954545454545" y="180.0">fileManager</node>
+    <node x="2222.0" y="984.5">commands.ClearCommand</node>
+    <node x="1229.1954545454546" y="45.0">exceptions</node>
+    <node x="3864.0" y="984.5">commands.HelpCommand</node>
+    <node x="0.0" y="1621.5">META-INF</node>
+    <node x="2536.0" y="984.5">commands.PrintFieldDescendingEyeColorCommand</node>
+    <node x="4178.0" y="984.5">commands.HistoryCommand</node>
+    <node x="1872.3543009442392" y="1300.5">commands.CommandManager</node>
+    <node x="1594.0000000000002" y="973.5">commands.AddCommand</node>
+    <node x="0.0" y="973.5">commands.UpdateCommand</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="commands.CommandManager" target="commands.ExecuteScriptCommand">
+      <point x="151.7391304347825" y="-138.0" />
+      <point x="2198.5934313790217" y="1270.5" />
+      <point x="4975.0" y="1270.5" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="cleint" target="main">
+      <point x="-34.28571428571422" y="15.0" />
+      <point x="2371.4642857142862" y="390.0" />
+      <point x="1287.9318181818185" y="390.0" />
+      <point x="58.181818181818244" y="-15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="main">
+      <point x="-91.0434782608695" y="-138.0" />
+      <point x="1955.8108226833697" y="1230.5" />
+      <point x="641.5000000000002" y="1230.5" />
+      <point x="641.5000000000002" y="803.5" />
+      <point x="1211.7500000000002" y="803.5" />
+      <point x="-18.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.AddIfMaxCommand">
+      <point x="-15.173913043478024" y="-138.0" />
+      <point x="2031.6803879007612" y="1160.5" />
+      <point x="2055.0" y="1160.5" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="main" target="log">
+      <point x="-58.181818181818244" y="-15.0" />
+      <point x="1171.568181818182" y="330.0" />
+      <point x="1084.2954545454545" y="330.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="main" target="cleint">
+      <point x="34.90909090909099" y="-15.0" />
+      <point x="1264.6590909090912" y="370.0" />
+      <point x="2357.75" y="370.0" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+    <edge source="cleint" target="commands.CommandManagerInterface">
+      <point x="0.0" y="-15.0" />
+      <point x="2405.75" y="140.0" />
+      <point x="3135.103065650665" y="140.0" />
+      <point x="-145.41666666666697" y="60.0" />
+    </edge>
+    <edge source="commands.ShowCommand" target="main">
+      <point x="-110.25" y="-72.5" />
+      <point x="3585.75" y="683.5" />
+      <point x="1287.7500000000002" y="683.5" />
+      <point x="58.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.AddIfMinCommand">
+      <point x="-45.521739130434526" y="-138.0" />
+      <point x="2001.3325618138047" y="1200.5" />
+      <point x="1427.0000000000002" y="1200.5" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="commands.HelpCommand" target="cleint">
+      <point x="110.25" y="-72.5" />
+      <point x="4121.25" y="603.5" />
+      <point x="3848.1286162459546" y="603.5" />
+      <point x="3848.1286162459546" y="370.0" />
+      <point x="2446.892857142858" y="370.0" />
+      <point x="41.14285714285734" y="15.0" />
+    </edge>
+    <edge source="commands.HistoryCommand" target="commands.Command">
+      <point x="-73.5" y="-72.5" />
+      <point x="4251.5" y="593.5" />
+      <point x="3169.065789473684" y="593.5" />
+      <point x="108.31578947368416" y="38.5" />
+    </edge>
+    <edge source="commands.InfoCommand" target="main">
+      <point x="-36.75" y="-72.5" />
+      <point x="762.2500000000002" y="813.5" />
+      <point x="1215.7500000000002" y="813.5" />
+      <point x="-14.0" y="15.0" />
+    </edge>
+    <edge source="commands.AddIfMaxCommand" target="cleint">
+      <point x="36.75" y="-83.5" />
+      <point x="2091.75" y="863.5" />
+      <point x="2276.6267329130833" y="863.5" />
+      <point x="2276.6267329130833" y="430.0" />
+      <point x="2398.892857142858" y="430.0" />
+      <point x="-6.857142857142662" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.CommandManagerInterface">
+      <point x="166.913043478261" y="-138.0" />
+      <point x="2213.7673444225" y="1280.5" />
+      <point x="5153.5" y="1280.5" />
+      <point x="5153.5" y="140.0" />
+      <point x="3425.936398983999" y="140.0" />
+      <point x="145.41666666666697" y="60.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.ShowCommand">
+      <point x="60.695652173913004" y="-138.0" />
+      <point x="2107.549953118152" y="1210.5" />
+      <point x="3696.0" y="1210.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="commands.HelpCommand" target="commands.Command">
+      <point x="-110.25" y="-72.5" />
+      <point x="3900.75" y="633.5" />
+      <point x="3122.644736842105" y="633.5" />
+      <point x="61.894736842104976" y="38.5" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.ClearCommand">
+      <point x="0.0" y="-138.0" />
+      <point x="2046.8543009442392" y="1170.5" />
+      <point x="2369.0" y="1170.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="commands.FilterContainsNameCommand" target="commands.Command">
+      <point x="37.75" y="-83.5" />
+      <point x="3101.75" y="953.5" />
+      <point x="3060.75" y="953.5" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="fileManager" target="log">
+      <point x="-46.0" y="-15.0" />
+      <point x="1180.7954545454545" y="160.0" />
+      <point x="1108.2954545454545" y="160.0" />
+      <point x="24.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.SaveCommand">
+      <point x="-60.695652173913004" y="-138.0" />
+      <point x="1986.1586487703262" y="1210.5" />
+      <point x="1113.0000000000002" y="1210.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="commands.SaveCommand" target="main">
+      <point x="-110.25" y="-72.5" />
+      <point x="1002.7500000000002" y="833.5" />
+      <point x="1223.7500000000002" y="833.5" />
+      <point x="-6.0" y="15.0" />
+    </edge>
+    <edge source="fileManager" target="fileManager">
+      <point x="-34.5" y="15.0" />
+      <point x="1192.2954545454545" y="250.0" />
+      <point x="1094.7954545454545" y="250.0" />
+      <point x="1094.7954545454545" y="185.0" />
+      <point x="-92.0" y="-10.0" />
+    </edge>
+    <edge source="commands.UpdateCommand" target="cleint">
+      <point x="-58.80000000000018" y="-83.5" />
+      <point x="88.19999999999982" y="953.5" />
+      <point x="75.36363767498824" y="953.5" />
+      <point x="75.36363767498824" y="340.0" />
+      <point x="2337.1785714285716" y="340.0" />
+      <point x="-68.57142857142844" y="15.0" />
+    </edge>
+    <edge source="commands.UpdateCommand" target="commands.Command">
+      <point x="117.60000000000002" y="-83.5" />
+      <point x="264.5999999999999" y="873.5" />
+      <point x="2921.4868421052633" y="873.5" />
+      <point x="-139.26315789473665" y="38.5" />
+    </edge>
+    <edge source="commands.FilterContainsNameCommand" target="cleint">
+      <point x="113.25" y="-83.5" />
+      <point x="3177.25" y="953.5" />
+      <point x="3345.422113269713" y="953.5" />
+      <point x="3345.422113269713" y="400.0" />
+      <point x="2426.3214285714284" y="400.0" />
+      <point x="20.57142857142844" y="15.0" />
+    </edge>
+    <edge source="commands.MaxByEyeColorCommand" target="commands.Command">
+      <point x="36.75" y="-72.5" />
+      <point x="3418.75" y="693.5" />
+      <point x="3076.2236842105267" y="693.5" />
+      <point x="15.473684210526244" y="38.5" />
+    </edge>
+    <edge source="commands.MaxByEyeColorCommand" target="cleint">
+      <point x="110.25" y="-72.5" />
+      <point x="3492.25" y="390.0" />
+      <point x="2433.1785714285716" y="390.0" />
+      <point x="27.42857142857156" y="15.0" />
+    </edge>
+    <edge source="commands.RemoveByIdCommand" target="commands.Command">
+      <point x="117.60000000000002" y="-83.5" />
+      <point x="601.5999999999999" y="883.5" />
+      <point x="2936.96052631579" y="883.5" />
+      <point x="-123.7894736842104" y="38.5" />
+    </edge>
+    <edge source="commands.ShowCommand" target="commands.Command">
+      <point x="36.75" y="-72.5" />
+      <point x="3732.75" y="663.5" />
+      <point x="3091.6973684210525" y="663.5" />
+      <point x="30.947368421052488" y="38.5" />
+    </edge>
+    <edge source="commands.ClearCommand" target="cleint">
+      <point x="36.75" y="-72.5" />
+      <point x="2405.75" y="863.5" />
+      <point x="2590.6267329130833" y="863.5" />
+      <point x="2590.6267329130833" y="430.0" />
+      <point x="2405.75" y="430.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.AddCommand">
+      <point x="-30.347826086956502" y="-138.0" />
+      <point x="2016.5064748572827" y="1190.5" />
+      <point x="1741.0000000000002" y="1190.5" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="cleint" target="exceptions">
+      <point x="-28.800000000000182" y="-15.0" />
+      <point x="2376.95" y="140.0" />
+      <point x="1387.5954545454547" y="140.0" />
+      <point x="70.39999999999998" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.MaxByEyeColorCommand">
+      <point x="45.52173913043498" y="-138.0" />
+      <point x="2092.376040074674" y="1200.5" />
+      <point x="3382.0" y="1200.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="commands.ExecuteScriptCommand" target="commands.CommandManagerInterface">
+      <point x="126.0" y="-83.5" />
+      <point x="5101.0" y="953.5" />
+      <point x="5028.0" y="953.5" />
+      <point x="5028.0" y="150.0" />
+      <point x="3367.769732317332" y="150.0" />
+      <point x="87.25" y="60.0" />
+    </edge>
+    <edge source="commands.ExecuteScriptCommand" target="commands.Command">
+      <point x="-126.0" y="-83.5" />
+      <point x="4849.0" y="573.5" />
+      <point x="3200.0131578947367" y="573.5" />
+      <point x="139.26315789473665" y="38.5" />
+    </edge>
+    <edge source="commands.PrintFieldDescendingEyeColorCommand" target="cleint">
+      <point x="44.625" y="-72.5" />
+      <point x="2759.125" y="863.5" />
+      <point x="2808.52784635242" y="863.5" />
+      <point x="2808.52784635242" y="420.0" />
+      <point x="2412.607142857143" y="420.0" />
+      <point x="6.857142857142662" y="15.0" />
+    </edge>
+    <edge source="commands.PrintFieldDescendingEyeColorCommand" target="main">
+      <point x="-133.875" y="-72.5" />
+      <point x="2580.625" y="753.5" />
+      <point x="1263.7500000000002" y="753.5" />
+      <point x="34.0" y="15.0" />
+    </edge>
+    <edge source="commands.SaveCommand" target="commands.Command">
+      <point x="110.25" y="-72.5" />
+      <point x="1223.2500000000002" y="903.5" />
+      <point x="2967.9078947368425" y="903.5" />
+      <point x="-92.84210526315792" y="38.5" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.UpdateCommand">
+      <point x="-166.913043478261" y="-138.0" />
+      <point x="1879.9412574659782" y="1280.5" />
+      <point x="147.0" y="1280.5" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="commands.ClearCommand" target="commands.Command">
+      <point x="110.25" y="-72.5" />
+      <point x="2479.25" y="943.5" />
+      <point x="3029.8026315789475" y="943.5" />
+      <point x="-30.947368421052488" y="38.5" />
+    </edge>
+    <edge source="commands.PrintFieldDescendingEyeColorCommand" target="commands.Command">
+      <point x="133.875" y="-72.5" />
+      <point x="2848.375" y="953.5" />
+      <point x="3045.276315789474" y="953.5" />
+      <point x="-15.473684210526244" y="38.5" />
+    </edge>
+    <edge source="commands.ExecuteScriptCommand" target="cleint">
+      <point x="-42.0" y="-83.5" />
+      <point x="4933.0" y="953.5" />
+      <point x="5006.0" y="953.5" />
+      <point x="5006.0" y="330.0" />
+      <point x="2474.3214285714284" y="330.0" />
+      <point x="68.57142857142844" y="15.0" />
+    </edge>
+    <edge source="commands.RemoveByIdCommand" target="log">
+      <point x="-117.59999999999991" y="-83.5" />
+      <point x="366.4000000000001" y="723.5" />
+      <point x="390.3000000000002" y="723.5" />
+      <point x="390.3000000000002" y="160.0" />
+      <point x="1060.2954545454545" y="160.0" />
+      <point x="-24.0" y="15.0" />
+    </edge>
+    <edge source="commands.InfoCommand" target="cleint">
+      <point x="-110.25" y="-72.5" />
+      <point x="688.7500000000002" y="360.0" />
+      <point x="2350.892857142858" y="360.0" />
+      <point x="-54.85714285714266" y="15.0" />
+    </edge>
+    <edge source="commands.ClearCommand" target="main">
+      <point x="-110.25" y="-72.5" />
+      <point x="2258.75" y="773.5" />
+      <point x="1255.7500000000002" y="773.5" />
+      <point x="26.0" y="15.0" />
+    </edge>
+    <edge source="main" target="exceptions">
+      <point x="11.63636363636374" y="-15.0" />
+      <point x="1241.386363636364" y="320.0" />
+      <point x="1329.2954545454545" y="320.0" />
+      <point x="1329.2954545454545" y="160.0" />
+      <point x="1317.1954545454546" y="160.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="commands.InfoCommand" target="commands.Command">
+      <point x="110.25" y="-72.5" />
+      <point x="909.2500000000002" y="893.5" />
+      <point x="2952.434210526316" y="893.5" />
+      <point x="-108.31578947368416" y="38.5" />
+    </edge>
+    <edge source="fileManager" target="main">
+      <point x="57.5" y="15.0" />
+      <point x="1284.2954545454545" y="300.0" />
+      <point x="1218.1136363636365" y="300.0" />
+      <point x="-11.63636363636374" y="-15.0" />
+    </edge>
+    <edge source="main" target="main">
+      <point x="-50.0" y="15.0" />
+      <point x="1179.7500000000002" y="553.5" />
+      <point x="1115.7500000000002" y="553.5" />
+      <point x="1115.7500000000002" y="477.25" />
+      <point x="-64.0" y="-11.25" />
+    </edge>
+    <edge source="commands.MaxByEyeColorCommand" target="main">
+      <point x="-110.25" y="-72.5" />
+      <point x="3271.75" y="713.5" />
+      <point x="1279.7500000000002" y="713.5" />
+      <point x="50.0" y="15.0" />
+    </edge>
+    <edge source="cleint" target="log">
+      <point x="-57.59999999999991" y="-15.0" />
+      <point x="2348.1500000000005" y="150.0" />
+      <point x="1132.2954545454545" y="150.0" />
+      <point x="48.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.InfoCommand">
+      <point x="-75.86956521739103" y="-138.0" />
+      <point x="1970.9847357268482" y="1220.5" />
+      <point x="799.0000000000002" y="1220.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="exceptions" target="exceptions">
+      <point x="-70.40000000000009" y="15.0" />
+      <point x="1246.7954545454545" y="95.0" />
+      <point x="1209.1954545454546" y="95.0" />
+      <point x="1209.1954545454546" y="60.0" />
+      <point x="-88.0" y="-0.0" />
+    </edge>
+    <edge source="commands.Command" target="cleint">
+      <point x="0.0" y="-38.5" />
+      <point x="3060.75" y="410.0" />
+      <point x="2419.4642857142862" y="410.0" />
+      <point x="13.71428571428578" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.RemoveByIdCommand">
+      <point x="-106.21739130434798" y="-138.0" />
+      <point x="1940.6369096398912" y="1240.5" />
+      <point x="484.0" y="1240.5" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="commands.ExitCommand" target="cleint">
+      <point x="73.5" y="-61.5" />
+      <point x="4712.5" y="350.0" />
+      <point x="2460.607142857143" y="350.0" />
+      <point x="54.85714285714266" y="15.0" />
+    </edge>
+    <edge source="commands.SaveCommand" target="cleint">
+      <point x="36.75" y="-72.5" />
+      <point x="1149.7500000000002" y="853.5" />
+      <point x="1489.1267329130833" y="853.5" />
+      <point x="1489.1267329130833" y="400.0" />
+      <point x="2378.3214285714284" y="400.0" />
+      <point x="-27.42857142857156" y="15.0" />
+    </edge>
+    <edge source="commands.UpdateCommand" target="main">
+      <point x="0.0" y="-83.5" />
+      <point x="147.0" y="733.5" />
+      <point x="1183.7500000000002" y="733.5" />
+      <point x="-46.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.HelpCommand">
+      <point x="91.0434782608695" y="-138.0" />
+      <point x="2137.8977792051087" y="1230.5" />
+      <point x="4011.0" y="1230.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="commands.FilterContainsNameCommand" target="main">
+      <point x="-113.25" y="-83.5" />
+      <point x="2950.75" y="733.5" />
+      <point x="1271.7500000000002" y="733.5" />
+      <point x="42.0" y="15.0" />
+    </edge>
+    <edge source="commands.ShowCommand" target="cleint">
+      <point x="110.25" y="-72.5" />
+      <point x="3806.25" y="653.5" />
+      <point x="3687.200044817383" y="653.5" />
+      <point x="3687.200044817383" y="380.0" />
+      <point x="2440.0357142857147" y="380.0" />
+      <point x="34.28571428571422" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.ExitCommand">
+      <point x="121.39130434782601" y="-138.0" />
+      <point x="2168.245605292065" y="1250.5" />
+      <point x="4639.0" y="1250.5" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="commands.RemoveByIdCommand" target="cleint">
+      <point x="-58.80000000000018" y="-83.5" />
+      <point x="425.1999999999998" y="723.5" />
+      <point x="404.39816148451155" y="723.5" />
+      <point x="404.39816148451155" y="350.0" />
+      <point x="2344.0357142857147" y="350.0" />
+      <point x="-61.71428571428578" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.FilterContainsNameCommand">
+      <point x="30.347826086956502" y="-138.0" />
+      <point x="2077.2021270311957" y="1190.5" />
+      <point x="3064.0" y="1190.5" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="main" target="fileManager">
+      <point x="-46.545454545454504" y="-15.0" />
+      <point x="1183.2045454545457" y="270.0" />
+      <point x="1215.2954545454545" y="270.0" />
+      <point x="-11.5" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="cleint">
+      <point x="136.5652173913045" y="-138.0" />
+      <point x="2183.4195183355437" y="1260.5" />
+      <point x="4796.5" y="1260.5" />
+      <point x="4796.5" y="340.0" />
+      <point x="2467.4642857142862" y="340.0" />
+      <point x="61.71428571428578" y="15.0" />
+    </edge>
+    <edge source="commands.HistoryCommand" target="cleint">
+      <point x="73.5" y="-72.5" />
+      <point x="4398.5" y="360.0" />
+      <point x="2453.75" y="360.0" />
+      <point x="48.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.Command">
+      <point x="75.86956521739148" y="-138.0" />
+      <point x="2122.7238661616307" y="1220.5" />
+      <point x="3853.5" y="1220.5" />
+      <point x="3853.5" y="643.5" />
+      <point x="3107.171052631579" y="643.5" />
+      <point x="46.42105263157873" y="38.5" />
+    </edge>
+    <edge source="commands.RemoveByIdCommand" target="main">
+      <point x="0.0" y="-83.5" />
+      <point x="484.0" y="783.5" />
+      <point x="1203.7500000000002" y="783.5" />
+      <point x="-26.0" y="15.0" />
+    </edge>
+    <edge source="commands.AddIfMaxCommand" target="commands.Command">
+      <point x="110.25" y="-83.5" />
+      <point x="2165.25" y="933.5" />
+      <point x="3014.3289473684217" y="933.5" />
+      <point x="-46.42105263157873" y="38.5" />
+    </edge>
+    <edge source="main" target="commands.CommandManager">
+      <point x="-30.0" y="15.0" />
+      <point x="1199.7500000000002" y="773.5" />
+      <point x="326.5" y="773.5" />
+      <point x="326.5" y="1250.5" />
+      <point x="1925.4629965964132" y="1250.5" />
+      <point x="-121.39130434782601" y="-138.0" />
+    </edge>
+    <edge source="commands.AddCommand" target="commands.Command">
+      <point x="110.25" y="-83.5" />
+      <point x="1851.2500000000002" y="923.5" />
+      <point x="2998.855263157895" y="923.5" />
+      <point x="-61.89473684210543" y="38.5" />
+    </edge>
+    <edge source="commands.UpdateCommand" target="log">
+      <point x="-117.59999999999991" y="-83.5" />
+      <point x="29.40000000000009" y="953.5" />
+      <point x="64.36363767498824" y="953.5" />
+      <point x="64.36363767498824" y="150.0" />
+      <point x="1036.2954545454545" y="150.0" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+    <edge source="commands.ExitCommand" target="commands.Command">
+      <point x="-73.5" y="-61.5" />
+      <point x="4565.5" y="583.5" />
+      <point x="3184.539473684211" y="583.5" />
+      <point x="123.7894736842104" y="38.5" />
+    </edge>
+    <edge source="commands.AddIfMinCommand" target="main">
+      <point x="-110.25" y="-83.5" />
+      <point x="1316.7500000000002" y="833.5" />
+      <point x="1231.7500000000002" y="833.5" />
+      <point x="2.0" y="15.0" />
+    </edge>
+    <edge source="commands.AddCommand" target="main">
+      <point x="-110.25" y="-83.5" />
+      <point x="1630.7500000000002" y="813.5" />
+      <point x="1239.7500000000002" y="813.5" />
+      <point x="10.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.PrintFieldDescendingEyeColorCommand">
+      <point x="15.173913043478478" y="-138.0" />
+      <point x="2062.0282139877177" y="1180.5" />
+      <point x="2714.5" y="1180.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="commands.AddIfMaxCommand" target="main">
+      <point x="-110.25" y="-83.5" />
+      <point x="1944.7500000000002" y="793.5" />
+      <point x="1247.7500000000002" y="793.5" />
+      <point x="18.0" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManagerInterface" target="cleint">
+      <point x="-29.08333333333303" y="60.0" />
+      <point x="3251.436398983999" y="160.0" />
+      <point x="2463.3500000000004" y="160.0" />
+      <point x="57.59999999999991" y="-15.0" />
+    </edge>
+    <edge source="commands.AddIfMinCommand" target="cleint">
+      <point x="36.75" y="-83.5" />
+      <point x="1463.7500000000002" y="863.5" />
+      <point x="1649.5553043416548" y="863.5" />
+      <point x="1649.5553043416548" y="410.0" />
+      <point x="2385.1785714285716" y="410.0" />
+      <point x="-20.57142857142844" y="15.0" />
+    </edge>
+    <edge source="commands.CommandManager" target="commands.HistoryCommand">
+      <point x="106.21739130434798" y="-138.0" />
+      <point x="2153.071692248587" y="1240.5" />
+      <point x="4325.0" y="1240.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="commands.AddIfMinCommand" target="commands.Command">
+      <point x="110.25" y="-83.5" />
+      <point x="1537.2500000000002" y="913.5" />
+      <point x="2983.3815789473683" y="913.5" />
+      <point x="-77.36842105263167" y="38.5" />
+    </edge>
+    <edge source="fileManager" target="exceptions">
+      <point x="46.0" y="-15.0" />
+      <point x="1272.7954545454545" y="160.0" />
+      <point x="1281.9954545454545" y="160.0" />
+      <point x="-35.19999999999999" y="15.0" />
+    </edge>
+    <edge source="commands.AddCommand" target="cleint">
+      <point x="36.75" y="-83.5" />
+      <point x="1777.7500000000002" y="863.5" />
+      <point x="1962.6267329130833" y="863.5" />
+      <point x="1962.6267329130833" y="420.0" />
+      <point x="2392.0357142857147" y="420.0" />
+      <point x="-13.71428571428578" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.20000000000000007" x="2326.9887640449406" y="809.4999999999998" />
+  <SelectedNodes>
+    <node>META-INF</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

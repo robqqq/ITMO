@@ -68,7 +68,9 @@ public class ClientManager implements ClientManagerInterface{
             if (!script) {
                 printStream.print(msg + ": ");
             }
-            value = reader.readLine().trim();
+            if (!script | reader.ready()) {
+                value = reader.readLine().trim();
+            }
         } catch (IOException e) {
             logger.log(Level.WARNING, e.toString(), e);
             System.out.println(e.getMessage());
@@ -78,5 +80,9 @@ public class ClientManager implements ClientManagerInterface{
 
     public void exit(){
         exit = true;
+    }
+
+    public boolean isScript(){
+        return script;
     }
 }

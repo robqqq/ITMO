@@ -1,11 +1,8 @@
-package io;
+package fileManager;
 
 import exceptions.InvalidArgumentException;
 import main.Person;
 import java.util.TreeSet;
-import java.util.logging.Level;
-
-import static log.Log.logger;
 
 /**
  * Класс, который управляет чтением коллекции из файла и записью коллекцией в файл
