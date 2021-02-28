@@ -1,0 +1,4 @@
+фев 28, 2021 2:12:56 PM cleint.ClientManager start
+INFO: start program
+фев 28, 2021 2:12:56 PM io.TreeSetReaderFromXML readPersons
+INFO: read 5 objects from file2.xml
