@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Lab5j8:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="850edd84-6c59-4192-9e4d-bf210d550f66" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Top-Level Package.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/collectionManager/CollectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/collectionManager/IdManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/collectionManager/PersonIdManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/CommandInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/NoEnvVarException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fileManager/FileManagerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fileManager/FileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fileManager/FileWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input/CommandReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input/ConsoleCommandReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input/ConsolePersonReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input/ObjectReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input/ScriptCommandReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input/ScriptPersonReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/CollectionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/CommandMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/EngExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/EngPersonCollectionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/ExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/Messenger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/MessengerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/RuCommandMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/CoordinatesBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/CoordinatesBuilderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/CoordinatesValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/CoordinatesValidatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/LocationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/LocationBuilderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/LocationValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/LocationValidatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/PersonValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/person/PersonValidatorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.0.0-LAPTOP-137SO14S.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.0.0-LAPTOP-137SO14S.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.0.0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.0.0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cleint/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/ConsoleInputManger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cleint/ClientManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/InputManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMaxCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMaxCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddIfMinCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddIfMinCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CommandManagerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandManagerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/FilterContainsNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/FilterContainsNameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/HistoryCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/HistoryCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/MaxByEyeColorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/MaxByEyeColorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/PrintFieldDescendingEyeColorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/PrintFieldDescendingEyeColorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ShowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/UpdateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/InvalidArgumentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/InvalidArgumentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/NoIdLeftException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/NoIdLeftException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/NotUniqueIdException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/NotUniqueIdException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileManager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileManager/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileManager/FileManagerInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileManager/TreeSetReaderFromXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileManager/XMLPersonReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileManager/TreeSetWriterToXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileManager/XMLPersonWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EyeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/EyeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/HairColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/HairColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ObjectManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/PersonBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/PersonBuilderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/PersonBuilderInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/PersonBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/PersonManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/collectionManager/PersonCollectionManager.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="XHTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1oXSLTbnKI608L0fMJ7VY6RLoyO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="XHTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OneDrive - ITMO UNIVERSITY\Документы\GitHub\ITMO\Second semestre\Programming\Lab5\out\artifacts\Lab5j8_jar" />
+      <recent name="D:\OneDrive - ITMO UNIVERSITY\Документы\GitHub\ITMO\Second semestre\Programming\Lab5j8\out\artifacts\Lab5j8_jar" />
+      <recent name="D:\OneDrive - ITMO UNIVERSITY\Документы\GitHub\ITMO\Second semestre\Programming\Lab5j8" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OneDrive - ITMO UNIVERSITY\Документы\GitHub\ITMO\Second semestre\Programming\Lab5j8\src\log" />
+      <recent name="D:\OneDrive - ITMO UNIVERSITY\Документы\GitHub\ITMO\Second semestre\Programming\Lab5j8" />
+      <recent name="D:\OneDrive - ITMO UNIVERSITY\Документы\GitHub\ITMO\Second semestre\Programming\Lab5j8\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <envs>
+        <env name="Lab5" value="file2.xml" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="Lab5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab5j8.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Lab5j8_jar/Lab5j8.jar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="Lab5" value="file2.xml" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JAR Application.Lab5j8.jar" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.Lab5j8.jar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="850edd84-6c59-4192-9e4d-bf210d550f66" name="Default Changelist" comment="" />
+      <created>1613431387811</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613431387811</updated>
+      <workItem from="1613431389899" duration="402000" />
+      <workItem from="1613432670396" duration="149000" />
+      <workItem from="1613434066658" duration="1542000" />
+      <workItem from="1613459270369" duration="3646000" />
+      <workItem from="1613463198188" duration="138000" />
+      <workItem from="1613463657066" duration="10688000" />
+      <workItem from="1613551241966" duration="5548000" />
+      <workItem from="1613718042605" duration="5464000" />
+      <workItem from="1614003816637" duration="371000" />
+      <workItem from="1614267360829" duration="678000" />
+      <workItem from="1614323221039" duration="6794000" />
+      <workItem from="1614342606231" duration="28000" />
+      <workItem from="1614342748784" duration="4188000" />
+      <workItem from="1614351161285" duration="325000" />
+      <workItem from="1614449337726" duration="4536000" />
+      <workItem from="1614455034255" duration="789000" />
+      <workItem from="1614455851816" duration="10900000" />
+      <workItem from="1614503146086" duration="3888000" />
+      <workItem from="1614508200521" duration="2584000" />
+      <workItem from="1614511599067" duration="46000" />
+      <workItem from="1614511709852" duration="4891000" />
+      <workItem from="1614540839826" duration="362000" />
+      <workItem from="1614550654829" duration="262000" />
+      <workItem from="1614631585997" duration="222000" />
+      <workItem from="1614668460608" duration="171000" />
+      <workItem from="1614675461219" duration="7598000" />
+      <workItem from="1614698282398" duration="7062000" />
+      <workItem from="1614714320624" duration="4506000" />
+      <workItem from="1614889113862" duration="2882000" />
+      <workItem from="1614964956304" duration="457000" />
+      <workItem from="1615124955921" duration="1011000" />
+      <workItem from="1615378616368" duration="2430000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl.java</url>
+          <line>508</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl.java</url>
+          <line>453</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl.java</url>
+          <line>462</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl.java</url>
+          <line>466</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl.java</url>
+          <line>470</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl.java</url>
+          <line>500</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLDocumentFragmentScannerImpl.java</url>
+          <line>444</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLEntityScanner.java</url>
+          <line>977</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$USER_HOME$/.jdks/liberica-1.8.0_282/src.zip!/com/sun/org/apache/xerces/internal/impl/XMLEntityScanner.java</url>
+          <line>987</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint log-message="true" log-stack="true" type="java-exception">
+          <dependency leave-enabled="true" master-id="0" />
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

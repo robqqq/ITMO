@@ -1,35 +1,23 @@
 package commands;
 
-import cleint.ClientManagerInterface;
-import main.ObjectManager;
+import collectionManager.CollectionManager;
+import input.InputManager;
 
 /**
  * Класс команды, которая сохраняет коллекцию в файл
  */
 public class SaveCommand implements Command{
-    private ObjectManager personManager;
-    private final String description;
+    private CollectionManager collectionManager;
 
-    /**
-     * Конструктор
-     * @param personManager
-     */
-    SaveCommand(ObjectManager personManager){
-        this.personManager = personManager;
-        description = "сохранить коллекцию в файл";
+    public SaveCommand(CollectionManager collectionManager){
+        this.collectionManager = collectionManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        personManager.writeToFile();
-    }
-
-    @Override
-    public String getHelp() {
-        return String.format(": %s", description);
+    public void execute() {
+        collectionManager.savePersons();
     }
 }

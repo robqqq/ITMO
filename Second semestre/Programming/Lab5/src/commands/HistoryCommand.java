@@ -1,6 +1,6 @@
 package commands;
 
-import cleint.ClientManagerInterface;
+import output.OutputManager;
 
 import java.util.Stack;
 
@@ -9,30 +9,24 @@ import java.util.Stack;
  */
 public class HistoryCommand implements Command{
     private Stack<String> history;
-    private final String description;
+    private OutputManager outputManager;
 
     /**
      * Конструктор
      * @param history
      */
-    HistoryCommand(Stack<String> history){
+    HistoryCommand(Stack<String> history, OutputManager outputManager){
         this.history = history;
-        description = "вывести последние 9 команд (без их аргументов)";
+        this.outputManager = outputManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
+    public void execute() {
         for (int i = history.size() - 1; i >= 0; i--) {
-            System.out.println(history.get(i));
+            outputManager.printMsg(history.get(i) + "\n");
         }
-    }
-
-    @Override
-    public String getHelp() {
-        return String.format(": %s", description);
     }
 }

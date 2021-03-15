@@ -1,49 +1,80 @@
 package commands;
 
-import cleint.ClientManagerInterface;
+import application.Application;
+import collectionManager.CollectionManager;
+import exceptions.NoArgException;
+import exceptions.NoSuchCommandException;
+import exceptions.ScriptException;
+import exceptions.ScriptRecursionException;
+import input.ConsoleInputManager;
+import input.InputManager;
+import input.ScriptInputManager;
+import messages.Messenger;
+import output.OutputManager;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import javax.naming.directory.SchemaViolationException;
+import java.io.*;
+import java.util.NoSuchElementException;
 
 /**
  * Класс команды, которая считывает и исполняет скрипт из указанного файла
  */
-public class ExecuteScriptCommand implements Command {
-    private CommandManagerInterface commandManager;
-    private final String arguments;
-    private final String description;
+public class ExecuteScriptCommand implements Command, RequiringArg<String> {
+    private OutputManager outputManager;
+    private CollectionManager collectionManager;
+    private Application app;
+    private Messenger messenger;
+    private String arg;
 
-    ExecuteScriptCommand(CommandManagerInterface commandManager){
-        this.commandManager = commandManager;
-        arguments = "file_name";
-        description = "считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, " +
-                "в котором их вводит пользователь в интерактивном режиме";
+    public ExecuteScriptCommand(Messenger messenger, OutputManager outputManager, CollectionManager collectionManager,
+                                Application app){
+        this.messenger = messenger;
+        this.outputManager = outputManager;
+        this.collectionManager = collectionManager;
+        this.app = app;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        if (args.length == 1){
-            if (commandManager.scriptIsUsed(args[0])){
-                System.out.println("Script execution stopped: script calls the recursion");
-            } else {
-                commandManager.usedScriptAdd(args[0]);
+    public void execute() {
+        try{
+            InputManager inputManager = new ScriptInputManager(
+                    new BufferedReader(new InputStreamReader(new FileInputStream(arg))), messenger, outputManager);
+            CommandManager commandManager = new CommandManagerImpl(collectionManager, app, messenger, outputManager, inputManager);
+            if (commandManager.scriptIsUsed(arg)){
+                commandManager.clearUsedScripts();
+                throw new ScriptRecursionException(messenger.getExceptionMsg("scriptRecursion"));
+            }
+            commandManager.usedScriptAdd(arg);
+            while (inputManager.ready()){
                 try {
-                    clientManager.readScript(new FileInputStream(args[0]));
-                } catch (FileNotFoundException e) {
-                    System.out.printf("File %s does not exist\n", args[0]);
+                    String inputString = inputManager.readCommand();
+                    String[] input = inputString.split("\\s+", 2);
+                    if (input.length < 2)
+                        commandManager.executeCommand(input[0], "");
+                    else
+                        commandManager.executeCommand(input[0], input[1]);
+                } catch (NoSuchCommandException | ScriptException e) {
+                    outputManager.printErrorMsg(messenger.getExceptionMsg("script") + "\n");
+                    return;
                 }
             }
-        } else {
-            System.out.println("Invalid arguments: you must specify one argument");
+            commandManager.usedScriptRemove(arg);
+        } catch (IOException e){
+            outputManager.printErrorMsg(messenger.getExceptionMsg("noFile") + "\n");
         }
     }
 
     @Override
-    public String getHelp() {
-        return String.format("%s : %s", arguments, description);
+    public void setArg(String arg) {
+        this.arg = arg;
+    }
+
+    @Override
+    public void acceptInvoker(CommandInvoker commandInvoker) throws NoArgException {
+        commandInvoker.setStringArg(this);
+        commandInvoker.invokeCommand(this);
     }
 }

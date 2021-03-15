@@ -1,33 +1,25 @@
 package commands;
 
-import cleint.ClientManagerInterface;
-import main.ObjectManager;
+import collectionManager.CollectionManager;
+import input.InputManager;
 
 /**
  * Класс команды, которая добавляет новый элемент в коллекцию
  */
 public class AddCommand implements Command {
-    private ObjectManager personManager;
-    private final String arguments;
-    private final String description;
+    private CollectionManager collectionManager;
+    private InputManager inputManager;
 
-    AddCommand(ObjectManager personManager){
-        this.personManager = personManager;
-        arguments = "{element}";
-        description = "добавить новый элемент в коллекцию";
+    AddCommand(CollectionManager collectionManager, InputManager inputManager){
+        this.collectionManager = collectionManager;
+        this.inputManager = inputManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        personManager.addPerson(clientManager);
-    }
-
-    @Override
-    public String getHelp() {
-        return String.format("%s : %s", arguments, description);
+    public void execute() {
+        collectionManager.addElement(inputManager.readPerson());
     }
 }

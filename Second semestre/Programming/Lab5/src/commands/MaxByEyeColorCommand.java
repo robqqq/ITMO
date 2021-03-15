@@ -1,41 +1,32 @@
 package commands;
 
-import cleint.ClientManagerInterface;
-import main.ObjectManager;
-import main.Person;
+import collectionManager.CollectionManager;
+import messages.Messenger;
+import output.OutputManager;
+
+import java.util.Comparator;
 
 /**
  * Класс команды, которая выводит любой объект из коллекции, значение поля eyeColor которого является максимальным
  */
 public class MaxByEyeColorCommand implements Command{
-    ObjectManager personManager;
-    private final String description;
+    CollectionManager collectionManager;
+    Messenger messenger;
+    OutputManager outputManager;
 
-    /**
-     * Конструктор
-     * @param personManager
-     */
-    public MaxByEyeColorCommand(ObjectManager personManager){
-        this.personManager = personManager;
-        description = "вывести любой объект из коллекции, значение поля eyeColor которого является максимальным";
+    public MaxByEyeColorCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
+        this.collectionManager = collectionManager;
+        this.messenger = messenger;
+        this.outputManager = outputManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        Person max = personManager.getMax(personManager.getComparatorByEyeColor());
-        if (max != null){
-            personManager.printElement(max);
-        } else {
-            System.out.println("Collection is empty");
-        }
-    }
-
-    @Override
-    public String getHelp() {
-        return String.format(": %s", description);
+    public void execute() {
+        outputManager.printMsg(messenger.getPersonString(collectionManager.getPersonStream()
+                .max(Comparator.comparingInt(o -> o.getEyeColor().getHex()))
+                .get()) + "\n");
     }
 }

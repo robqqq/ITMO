@@ -1,35 +1,29 @@
 package commands;
 
-import cleint.ClientManagerInterface;
-import main.ObjectManager;
+import collectionManager.CollectionManager;
+import messages.Messenger;
+import output.OutputManager;
 
 /**
  * Класс команды, которая выводит в стандартный поток вывода все элементы коллекции в строковом представлении
  */
 public class ShowCommand implements Command{
-    private ObjectManager personManager;
-    private final String description;
+    private CollectionManager collectionManager;
+    private Messenger messenger;
+    private OutputManager outputManager;
 
-    /**
-     * Конструктор
-     * @param personManager
-     */
-    ShowCommand(ObjectManager personManager){
-        this.personManager = personManager;
-        description = "вывести в стандартный поток вывода все элементы коллекции в строковом представлении";
+    ShowCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
+        this.collectionManager = collectionManager;
+        this.messenger = messenger;
+        this.outputManager = outputManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        personManager.printCollection();
-    }
-
-    @Override
-    public String getHelp() {
-        return String.format(": %s", description);
+    public void execute() {
+        collectionManager.getPersonStream()
+                .forEachOrdered(person -> outputManager.printMsg(messenger.getPersonString(person) + "\n"));
     }
 }

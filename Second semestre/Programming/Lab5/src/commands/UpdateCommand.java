@@ -1,46 +1,58 @@
 package commands;
 
-import cleint.ClientManagerInterface;
-import main.ObjectManager;
+import collectionManager.CollectionManager;
+import collectionManager.PersonIdManager;
+import exceptions.InvalidArgumentTypeException;
+import exceptions.NoArgException;
+import input.InputManager;
+import messages.Messenger;
+import output.OutputManager;
+import person.Person;
+
 import java.util.logging.Level;
 import static log.Log.logger;
 
 /**
  * Класс команды, которая обновляет значение элемента коллекции, id которого равен заданному
  */
-public class UpdateCommand implements Command{
-    private ObjectManager personManager;
-    private final String arguments;
-    private final String description;
+public class UpdateCommand implements Command, RequiringArg<Integer>{
+    private CollectionManager collectionManager;
+    private Messenger messenger;
+    private InputManager inputManager;
+    private OutputManager outputManager;
+    private int arg;
 
-    UpdateCommand(ObjectManager personManager){
-        this.personManager = personManager;
-        arguments = "id {element}";
-        description = "обновить значение элемента коллекции, id которого равен заданному";
+    public UpdateCommand(CollectionManager collectionManager, Messenger messenger, InputManager inputManager, OutputManager outputManager){
+        this.collectionManager = collectionManager;
+        this.messenger = messenger;
+        this.inputManager = inputManager;
+        this.outputManager = outputManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        if (args.length == 1){
-            try{
-                if (!personManager.updatePerson(Integer.parseInt(args[0]), clientManager)){
-                    System.out.println("This id is not exist");
-                }
-            } catch (NumberFormatException e){
-                logger.log(Level.WARNING, e.getMessage(), e);
-                System.out.println("Invalid arguments: the argument must be an integer");
-            }
+    public void execute() {
+        if (!PersonIdManager.getInstance().idIsFree(arg)){
+            PersonIdManager.getInstance().removeId(arg);
+            Person oldPerson = collectionManager.getPersonStream().filter(person -> person.getId() == arg).findAny().get();
+            Person person = inputManager.readPerson(oldPerson.getId(), oldPerson.getCreationDate());
+            collectionManager.removeElement(arg);
+            collectionManager.addElement(person);
         } else {
-            System.out.println("Invalid arguments: you must specify one argument");
+            outputManager.printErrorMsg(messenger.getExceptionMsg("noSuchId") + "\n");
         }
     }
 
     @Override
-    public String getHelp() {
-        return String.format("%s : %s", arguments, description);
+    public void setArg(Integer arg) {
+        this.arg = arg;
+    }
+
+    @Override
+    public void acceptInvoker(CommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException {
+        commandInvoker.setIntegerArg(this);
+        commandInvoker.invokeCommand(this);
     }
 }

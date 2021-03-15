@@ -1,2 +1,0 @@
-февр. 28, 2021 2:11:20 PM cleint.ClientManager start
-INFO: start program

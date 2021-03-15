@@ -1,28 +1,22 @@
 package commands;
 
-import cleint.ClientManagerInterface;
+import application.Application;
 
 /**
  * Класс команды, которая завершает программу
  */
 public class ExitCommand implements Command{
-    private final String description;
+    private Application app;
 
-    ExitCommand(){
-        description = "завершить программу (без сохранения в файл)";
+    public ExitCommand(Application app){
+        this.app = app;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        clientManager.exit();
-    }
-
-    @Override
-    public String getHelp() {
-        return String.format(": %s", description);
+    public void execute() {
+        app.exit();
     }
 }

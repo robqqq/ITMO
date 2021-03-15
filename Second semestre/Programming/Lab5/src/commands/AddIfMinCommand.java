@@ -1,35 +1,29 @@
 package commands;
 
-import cleint.ClientManagerInterface;
-import main.ObjectManager;
+import collectionManager.CollectionManager;
+import input.InputManager;
+import person.Person;
 
 /**
  * Класс команды, которая добавляет новый элемент в коллекцию, если его значение меньше, чем у наименьшего
  * элемента этой коллекции
  */
 public class AddIfMinCommand implements Command{
-    private ObjectManager personManager;
-    private final String arguments;
-    private final String description;
+    private CollectionManager collectionManager;
+    private InputManager inputManager;
 
-    AddIfMinCommand(ObjectManager personManager){
-        this.personManager = personManager;
-        arguments = "{element}";
-        description = "добавить новый элемент в коллекцию, если его значение меньше, " +
-                "чем у наименьшего элемента этой коллекции";
+    public AddIfMinCommand(CollectionManager collectionManager, InputManager inputManager){
+        this.collectionManager = collectionManager;
+        this.inputManager = inputManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        personManager.addPersonIfMin(clientManager);
-    }
-
-    @Override
-    public String getHelp() {
-        return String.format("%s : %s", arguments, description);
+    public void execute() {
+        Person person = inputManager.readPerson();
+        if (person.compareTo(collectionManager.getPersonStream().min(Person::compareTo).get()) <= 0)
+            collectionManager.addElement(person);
     }
 }

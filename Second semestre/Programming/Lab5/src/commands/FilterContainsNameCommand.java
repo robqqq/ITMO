@@ -1,41 +1,43 @@
 package commands;
 
-import cleint.ClientManagerInterface;
-import main.ObjectManager;
+import collectionManager.CollectionManager;
+import exceptions.NoArgException;
+import messages.Messenger;
+import output.OutputManager;
 
 /**
  * Класс команды, которая выводит элементы, значение поля name которых содержит заданную подстроку
  */
-public class FilterContainsNameCommand implements Command{
-    private ObjectManager personManager;
-    private final String arguments;
-    private final String description;
+public class FilterContainsNameCommand implements Command, RequiringArg<String>{
+    private CollectionManager collectionManager;
+    private Messenger messenger;
+    private OutputManager outputManager;
+    private String arg;
 
-    /**
-     * Конструктор
-     * @param personManager
-     */
-    FilterContainsNameCommand(ObjectManager personManager){
-        this.personManager = personManager;
-        arguments = "name";
-        description = "вывести элементы, значение поля name которых содержит заданную подстроку";
+    FilterContainsNameCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
+        this.collectionManager = collectionManager;
+        this.messenger = messenger;
+        this.outputManager = outputManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        if (args.length == 1) {
-            personManager.printPersonsContainsName(args[0]);
-        } else {
-            System.out.println("Invalid arguments: you must specify one argument");
-        }
+    public void execute() {
+        collectionManager.getPersonStream()
+                .filter(person -> person.getName().contains(arg))
+                .forEachOrdered(person -> outputManager.printMsg(messenger.getPersonString(person) + "\n"));
     }
 
     @Override
-    public String getHelp() {
-        return String.format("%s : %s", arguments, description);
+    public void setArg(String arg) {
+        this.arg = arg;
+    }
+
+    @Override
+    public void acceptInvoker(CommandInvoker commandInvoker) throws NoArgException {
+        commandInvoker.setStringArg(this);
+        commandInvoker.invokeCommand(this);
     }
 }

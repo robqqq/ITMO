@@ -1,6 +1,7 @@
 package commands;
 
-import cleint.ClientManagerInterface;
+import exceptions.InvalidArgumentTypeException;
+import exceptions.NoArgException;
 
 /**
  * Общий интерфейс всех классов команд
@@ -9,9 +10,14 @@ public interface Command {
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
-    void execute(String[] args, ClientManagerInterface clientManager);
+    void execute();
 
-    String getHelp();
+    /**
+     * Метод, который указывает, как запускать эту команду
+     * @param commandInvoker объект CommandInvoker
+     */
+    default void acceptInvoker(CommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException {
+        commandInvoker.invokeCommand(this);
+    }
 }

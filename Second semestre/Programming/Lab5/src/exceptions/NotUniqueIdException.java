@@ -3,12 +3,12 @@ package exceptions;
 /**
  * Класс исключения, которое создается при конфликте id объектов в коллекции
  */
-public class NotUniqueIdException extends InvalidArgumentException{
+public class NotUniqueIdException extends InvalidFieldException {
 
     /**
      * Конструктор
      */
-    public NotUniqueIdException() {
-        super("Collection has not unique id");
+    public NotUniqueIdException(String msg) {
+        super(msg);
     }
 }

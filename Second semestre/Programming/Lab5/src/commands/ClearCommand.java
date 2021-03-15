@@ -1,35 +1,22 @@
 package commands;
 
-import cleint.ClientManagerInterface;
-import main.ObjectManager;
+import collectionManager.CollectionManager;
 
 /**
  * Класс команды, которая очищает коллекцию
  */
 public class ClearCommand implements Command{
-    private ObjectManager personManager;
-    private final String description;
+    private CollectionManager collectionManager;
 
-    /**
-     * Конструктор
-     * @param personManager
-     */
-    ClearCommand(ObjectManager personManager){
-        this.personManager = personManager;
-        description = "очистить коллекцию";
+    ClearCommand(CollectionManager collectionManager){
+        this.collectionManager = collectionManager;
     }
 
     /**
      * Метод, который запускает команду
-     * @param args
      */
     @Override
-    public void execute(String[] args, ClientManagerInterface clientManager) {
-        personManager.removeAll();
-    }
-
-    @Override
-    public String getHelp() {
-        return String.format(": %s", description);
+    public void execute() {
+        collectionManager.clear();
     }
 }
