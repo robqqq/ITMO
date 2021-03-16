@@ -14,15 +14,17 @@ public class HelpCommand implements Command{
     private Messenger messenger;
     private OutputManager outputManager;
 
+    /**
+     * @param commands set имен команд
+     * @param messenger мессенджер
+     * @param outputManager менеджер вывода
+     */
     public HelpCommand(Set<String> commands, Messenger messenger, OutputManager outputManager){
         this.commands = commands;
         this.messenger = messenger;
         this.outputManager = outputManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         for (String commandName: commands){

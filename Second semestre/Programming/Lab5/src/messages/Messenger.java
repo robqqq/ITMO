@@ -1,9 +1,11 @@
 package messages;
 
-import exceptions.NoMsgException;
 import exceptions.NoSuchCommandException;
 import person.Person;
 
+/**
+ * Интерфейс мессенджера
+ */
 public interface Messenger {
 
     String getExceptionMsg(String msgName);

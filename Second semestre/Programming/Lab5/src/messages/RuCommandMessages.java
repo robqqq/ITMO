@@ -1,7 +1,8 @@
 package messages;
 
-import java.nio.charset.StandardCharsets;
-
+/**
+ * Реализация интерфейса CommandMessages с русской локализацией
+ */
 public class RuCommandMessages implements CommandMessages{
     private final String addDescription;
     private final String addIfMaxDescription;

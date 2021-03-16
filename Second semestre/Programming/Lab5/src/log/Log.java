@@ -9,6 +9,7 @@ import java.util.logging.Logger;
  * Класс, который осуществляет логирование
  */
 public class Log {
+
     public static Logger logger;
 
     static {

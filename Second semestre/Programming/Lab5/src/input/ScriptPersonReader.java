@@ -10,18 +10,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeParseException;
-import java.util.Scanner;
 
+/**
+ * Реализация интерфейса PersonReader для чтения из скрипта
+ */
 public class ScriptPersonReader implements PersonReader {
     private BufferedReader reader;
     private Messenger messenger;
-    private OutputManager outputManager;
 
-    public ScriptPersonReader(BufferedReader reader, Messenger messenger, OutputManager outputManager) {
+    /**
+     * @param reader объект BufferedReader
+     * @param messenger messenger
+     */
+    public ScriptPersonReader(BufferedReader reader, Messenger messenger) {
         this.reader = reader;
         this.messenger = messenger;
-        this.outputManager = outputManager;
     }
 
     @Override

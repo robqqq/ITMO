@@ -6,22 +6,20 @@ import person.Person;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.time.LocalDateTime;
 
+/**
+ * Реализация интерфейса InputManager для чтения из скрипта
+ */
 public class ScriptInputManager implements InputManager{
     private BufferedReader reader;
-    private Messenger messenger;
     private CommandReader commandReader;
     private PersonReader personReader;
-    private OutputManager outputManager;
 
-    public ScriptInputManager(BufferedReader reader, Messenger messenger, OutputManager outputManager){
+    public ScriptInputManager(BufferedReader reader, Messenger messenger){
         this.reader = reader;
-        this.messenger = messenger;
-        this.outputManager = outputManager;
         commandReader = new ScriptCommandReader(reader, messenger);
-        personReader = new ScriptPersonReader(reader, messenger, outputManager);
+        personReader = new ScriptPersonReader(reader, messenger);
     }
 
     @Override

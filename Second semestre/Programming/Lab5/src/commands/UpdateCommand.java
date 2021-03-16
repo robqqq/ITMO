@@ -9,9 +9,6 @@ import messages.Messenger;
 import output.OutputManager;
 import person.Person;
 
-import java.util.logging.Level;
-import static log.Log.logger;
-
 /**
  * Класс команды, которая обновляет значение элемента коллекции, id которого равен заданному
  */
@@ -22,6 +19,12 @@ public class UpdateCommand implements Command, RequiringArg<Integer>{
     private OutputManager outputManager;
     private int arg;
 
+    /**
+     * @param collectionManager менеджер коллекции
+     * @param messenger мессенджер
+     * @param inputManager менджер ввода
+     * @param outputManager менеджер вывода
+     */
     public UpdateCommand(CollectionManager collectionManager, Messenger messenger, InputManager inputManager, OutputManager outputManager){
         this.collectionManager = collectionManager;
         this.messenger = messenger;
@@ -29,9 +32,6 @@ public class UpdateCommand implements Command, RequiringArg<Integer>{
         this.outputManager = outputManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         if (!PersonIdManager.getInstance().idIsFree(arg)){

@@ -8,13 +8,13 @@ import collectionManager.CollectionManager;
 public class ClearCommand implements Command{
     private CollectionManager collectionManager;
 
-    ClearCommand(CollectionManager collectionManager){
+    /**
+     * @param collectionManager менеджер коллекции
+     */
+    public ClearCommand(CollectionManager collectionManager){
         this.collectionManager = collectionManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         collectionManager.clear();

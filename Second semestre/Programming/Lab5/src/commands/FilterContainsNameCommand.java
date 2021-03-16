@@ -14,15 +14,17 @@ public class FilterContainsNameCommand implements Command, RequiringArg<String>{
     private OutputManager outputManager;
     private String arg;
 
-    FilterContainsNameCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
+    /**
+     * @param collectionManager менеджер коллекции
+     * @param messenger мессенджер
+     * @param outputManager менеджер вывода
+     */
+    public FilterContainsNameCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
         this.collectionManager = collectionManager;
         this.messenger = messenger;
         this.outputManager = outputManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         collectionManager.getPersonStream()

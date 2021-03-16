@@ -1,5 +1,8 @@
 package output;
 
+/**
+ * Реализация интерфеса OutputManager для вывода в консоль
+ */
 public class ConsoleOutputManager implements OutputManager{
 
     @Override

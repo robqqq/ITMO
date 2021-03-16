@@ -12,15 +12,17 @@ public class InfoCommand implements Command{
     private Messenger messenger;
     private OutputManager outputManager;
 
-    InfoCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
+    /**
+     * @param collectionManager менеджер коллекции
+     * @param messenger мессенджер
+     * @param outputManager менеджер вывода
+     */
+    public InfoCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
         this.collectionManager = collectionManager;
         this.messenger = messenger;
         this.outputManager = outputManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         outputManager.printMsg(messenger.getCollectionTypeMsg() + ": " + collectionManager.getType().getSimpleName() +

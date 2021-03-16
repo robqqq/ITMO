@@ -20,16 +20,15 @@ public class Person implements Comparable<Person>{
 
     /**
      * Конструктор
-     * @param id
-     * @param name
-     * @param coordinates
-     * @param creationDate
-     * @param height
-     * @param birthday
-     * @param eyeColor
-     * @param hairColor
-     * @param location
-     * @throws InvalidFieldException
+     * @param id идентификатор
+     * @param name имя
+     * @param coordinates координаты
+     * @param creationDate дата создания
+     * @param height рост
+     * @param birthday дата рождения
+     * @param eyeColor цвет глаз
+     * @param hairColor цвет волос
+     * @param location локация
      */
     Person(int id, String name, Coordinates coordinates, LocalDateTime creationDate, long height, LocalDateTime birthday,
                   EyeColor eyeColor, HairColor hairColor, Location location){
@@ -45,82 +44,68 @@ public class Person implements Comparable<Person>{
     }
 
     /**
-     * Метод, который возвращает id человека
-     * @return
+     * @return идентификатор
      */
     public int getId() {
         return id;
     }
 
     /**
-     * Метод, который возвращает имя человека
-     * @return
+     * @return имя
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Метод, который возвращает координаты человека
-     * @return
+     * @return координаты
      */
     public Coordinates getCoordinates() {
         return coordinates;
     }
 
     /**
-     * Метод, который возвращает дату создания человека
-     * @return
+     * @return дата создания
      */
     public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
     /**
-     * Метод, который возвращает высоту человека
-     * @return
+     * @return рост
      */
     public long getHeight() {
         return height;
     }
 
     /**
-     * Метод, который возвращает дату рождения человека
-     * @return
+     * @return дата рождения
      */
     public LocalDateTime getBirthday() {
         return birthday;
     }
 
     /**
-     * Метод, который возвращает цвет глаз человека
-     * @return
+     * @return цвет глаз
      */
     public EyeColor getEyeColor() {
         return eyeColor;
     }
 
     /**
-     * Метод, который возвращает цвет волос человека
-     * @return
+     * @return цвет волос
      */
     public HairColor getHairColor() {
         return hairColor;
     }
 
     /**
-     * Метод, который возвращает локацию человека
-     * @return
+     * @return локация
      */
     public Location getLocation() {
         return location;
     }
 
-    /**
-     * Переопредление метода класса Comparable для того, чтобы объект мог храниться и сортироваться в коллекции TreeSet
-     * @param p
-     * @return
-     */
     @Override
     public int compareTo(Person p){
         int result = Long.compare(height, p.height);

@@ -12,14 +12,15 @@ public class AddIfMaxCommand implements Command{
     private CollectionManager collectionManager;
     private InputManager inputManager;
 
-    AddIfMaxCommand(CollectionManager collectionManager, InputManager inputManager){
+    /**
+     * @param collectionManager менеджер коллекции
+     * @param inputManager менеджер ввода
+     */
+    public AddIfMaxCommand(CollectionManager collectionManager, InputManager inputManager){
         this.collectionManager = collectionManager;
         this.inputManager = inputManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         Person person = inputManager.readPerson();

@@ -1,6 +1,10 @@
 package person;
 
+/**
+ * Реализация интерфейса LocationValidator
+ */
 public class LocationValidatorImpl implements LocationValidator{
+
     @Override
     public boolean validateLocationX(float x) {
         return true;

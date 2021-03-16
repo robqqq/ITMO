@@ -19,7 +19,7 @@ import java.util.logging.Level;
 import static log.Log.logger;
 
 /**
- * Класс, который записывает коллекцию объектов в XML файл
+ * Реализация интерфейса DataWriter для работы с XML файлом
  */
 public class XMLPersonWriter implements DataWriter {
     private Document doc;
@@ -28,17 +28,12 @@ public class XMLPersonWriter implements DataWriter {
     private String fileName;
 
     /**
-     * Конструктор
-     * @param fileName
+     * @param fileName имя файла
      */
     public XMLPersonWriter(String fileName){
         this.fileName = fileName;
     }
 
-    /**
-     * Метод, который записывает коллекцию объектов в XML файл
-     * @param collection
-     */
     @Override
     public void writeElements(Collection<? extends Person> collection) {
         try {

@@ -1,6 +1,10 @@
 package person;
 
+/**
+ * Реализация интерфеса CoordinatesValidator
+ */
 public class CoordinatesValidatorImpl implements CoordinatesValidator{
+
     @Override
     public boolean validateCoordinatesX(Double x) {
         return x != null && x <= 882;

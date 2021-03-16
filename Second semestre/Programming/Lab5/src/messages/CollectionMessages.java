@@ -2,6 +2,9 @@ package messages;
 
 import person.Person;
 
+/**
+ * Интерфейс класса, с сообщениями коллекции
+ */
 public interface CollectionMessages {
 
     String getPersonString(Person person);

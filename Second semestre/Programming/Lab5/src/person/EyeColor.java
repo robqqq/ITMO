@@ -1,11 +1,7 @@
 package person;
 
-import messages.CommandMessages;
-
-import java.util.Comparator;
-
 /**
- * Перечисление цветов глаз человека
+ * Перечисление цветов глаз
  */
 public enum EyeColor{
     BLACK(0x000000),
@@ -14,13 +10,15 @@ public enum EyeColor{
 
     private final int hex;
 
+    /**
+     * @param hex значение цвета в формате HEX
+     */
     EyeColor(int hex){
         this.hex = hex;
     }
 
     /**
-     * Метод, который возвращает значение цвета в формате HEX
-     * @return
+     * @return значение цвета в формате HEX
      */
     public int getHex() {
         return hex;

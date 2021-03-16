@@ -1,7 +1,7 @@
 package person;
 
 /**
- * Перечисление цветов волос человека
+ * Перечисление цветов волос
  */
 public enum HairColor {
     GREEN,

@@ -1,5 +1,8 @@
 package messages;
 
+/**
+ * Интерфейс класса с сообщениями ошибок
+ */
 public interface ExceptionMessages {
 
     String getInvalidIdMsg();

@@ -1,7 +1,7 @@
 package exceptions;
 
 /**
- * Класс исключения, которое создается при некорректном аргументе объекта
+ * Исключение, для некорректного поля объекта
  */
 public class InvalidFieldException extends Exception{
 

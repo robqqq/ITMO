@@ -1,13 +1,18 @@
 package person;
 
 /**
- * Класс локации человека
+ * Класс локации
  */
 public class Location {
     private float x;
     private long y;
     private String name; //Длина строки не должна быть больше 480, Поле может быть null
 
+    /**
+     * @param x координата x локации
+     * @param y координата y локации
+     * @param name название локации
+     */
     public Location(float x, long y, String name){
         this.x = x;
         this.y = y;
@@ -15,24 +20,21 @@ public class Location {
     }
 
     /**
-     * Метод, который возвращает значение X локации
-     * @return
+     * @return координата x локации
      */
     public float getX() {
         return x;
     }
 
     /**
-     * Метод, который возвращает значение Y локации
-     * @return
+     * @return координата y локации
      */
     public long getY() {
         return y;
     }
 
     /**
-     * Метод, который возвращает значение название локации
-     * @return
+     * @return название локации
      */
     public String getName() {
         return name;

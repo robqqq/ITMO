@@ -6,15 +6,12 @@ import exceptions.NoArgException;
 import exceptions.NoSuchCommandException;
 import exceptions.ScriptException;
 import exceptions.ScriptRecursionException;
-import input.ConsoleInputManager;
 import input.InputManager;
 import input.ScriptInputManager;
 import messages.Messenger;
 import output.OutputManager;
 
-import javax.naming.directory.SchemaViolationException;
 import java.io.*;
-import java.util.NoSuchElementException;
 
 /**
  * Класс команды, которая считывает и исполняет скрипт из указанного файла
@@ -26,6 +23,12 @@ public class ExecuteScriptCommand implements Command, RequiringArg<String> {
     private Messenger messenger;
     private String arg;
 
+    /**
+     * @param messenger мессенджер
+     * @param outputManager менеджер вывода
+     * @param collectionManager менеджер коллекции
+     * @param app объект Application
+     */
     public ExecuteScriptCommand(Messenger messenger, OutputManager outputManager, CollectionManager collectionManager,
                                 Application app){
         this.messenger = messenger;
@@ -34,14 +37,11 @@ public class ExecuteScriptCommand implements Command, RequiringArg<String> {
         this.app = app;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         try{
             InputManager inputManager = new ScriptInputManager(
-                    new BufferedReader(new InputStreamReader(new FileInputStream(arg))), messenger, outputManager);
+                    new BufferedReader(new InputStreamReader(new FileInputStream(arg))), messenger);
             CommandManager commandManager = new CommandManagerImpl(collectionManager, app, messenger, outputManager, inputManager);
             if (commandManager.scriptIsUsed(arg)){
                 commandManager.clearUsedScripts();

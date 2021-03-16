@@ -1,7 +1,6 @@
 package commands;
 
 import collectionManager.CollectionManager;
-import input.InputManager;
 
 /**
  * Класс команды, которая сохраняет коллекцию в файл
@@ -9,13 +8,13 @@ import input.InputManager;
 public class SaveCommand implements Command{
     private CollectionManager collectionManager;
 
+    /**
+     * @param collectionManager менеджер коллекции
+     */
     public SaveCommand(CollectionManager collectionManager){
         this.collectionManager = collectionManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         collectionManager.savePersons();

@@ -1,5 +1,8 @@
 package messages;
 
+/**
+ * Интерфейс класса с описаниями команд
+ */
 public interface CommandMessages {
 
     String getAddDescription();

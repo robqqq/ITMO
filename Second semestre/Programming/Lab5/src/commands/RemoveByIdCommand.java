@@ -11,19 +11,21 @@ import output.OutputManager;
  */
 public class RemoveByIdCommand implements Command, RequiringArg<Integer>{
     private CollectionManager collectionManager;
-    Messenger messenger;
-    OutputManager outputManager;
+    private Messenger messenger;
+    private OutputManager outputManager;
     private int arg;
 
+    /**
+     * @param collectionManager менеджер коллекции
+     * @param messenger мессенджер
+     * @param outputManager менеджер вывода
+     */
     public RemoveByIdCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
         this.collectionManager = collectionManager;
         this.messenger = messenger;
         this.outputManager = outputManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         if(!collectionManager.removeElement(arg)){

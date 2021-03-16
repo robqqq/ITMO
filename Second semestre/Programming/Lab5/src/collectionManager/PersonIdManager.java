@@ -3,10 +3,16 @@ package collectionManager;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * Реализация интерфейса IdManager
+ */
 public class PersonIdManager implements IdManager{
     private Set<Integer> usedIdentifiers;
     private static PersonIdManager instance;
 
+    /**
+     * @return объект PersonIdManager
+     */
     public synchronized static PersonIdManager getInstance(){
         if (instance == null){
             instance = new PersonIdManager();

@@ -9,6 +9,9 @@ import messages.Messenger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * Реализация интерфеса PersonBuilder
+ */
 public class PersonBuilderImpl implements PersonBuilder {
     private IdManager idManager;
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
@@ -23,6 +26,9 @@ public class PersonBuilderImpl implements PersonBuilder {
     private PersonValidator validator;
     private Messenger messenger;
 
+    /**
+     * @param messenger мессенджер
+     */
     public PersonBuilderImpl(Messenger messenger){
         idManager = PersonIdManager.getInstance();
         validator = new PersonValidatorImpl();
@@ -47,11 +53,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         }
     }
 
-    /**
-     * Метод, который устанавливает имя человеку
-     * @param name
-     * @throws InvalidFieldException
-     */
     @Override
     public void setName(String name) throws InvalidFieldException {
         if (validator.validateName(name)) {
@@ -61,11 +62,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         }
     }
 
-    /**
-     * Метод, который устанавливает координату X человеку
-     * @param x
-     * @throws InvalidFieldException
-     */
     @Override
     public void setCoordinatesX(Double x) throws InvalidFieldException {
         if (coordinatesBuilder == null){
@@ -74,11 +70,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         coordinatesBuilder.setX(x);
     }
 
-    /**
-     * Метод, который устанавливает координату Y человеку
-     * @param y
-     * @throws InvalidFieldException
-     */
     @Override
     public void setCoordinatesY(long y) throws InvalidFieldException {
         if (coordinatesBuilder == null){
@@ -87,9 +78,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         coordinatesBuilder.setY(y);
     }
 
-    /**
-     * Метод, который устанвливает дату создания человеку
-     */
     @Override
     public void setCreationDate(LocalDateTime creationDate) throws InvalidFieldException {
         if (validator.validateCreationDate(creationDate)) {
@@ -99,11 +87,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         }
     }
 
-    /**
-     * Метод, который устанавливает высоту человеку
-     * @param height
-     * @throws InvalidFieldException
-     */
     @Override
     public void setHeight(long height) throws InvalidFieldException {
         if (validator.validateHeight(height)){
@@ -113,11 +96,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         }
     }
 
-    /**
-     * Метод, который устанавливает дату рождения человеку
-     * @param birthday
-     * @throws InvalidFieldException
-     */
     @Override
     public void setBirthday(LocalDateTime birthday) throws InvalidFieldException {
         if (validator.validateBirthday(birthday)){
@@ -127,11 +105,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         }
     }
 
-    /**
-     * Метод, который устанавливает цвет глаз человеку
-     * @param eyeColor
-     * @throws InvalidFieldException
-     */
     @Override
     public void setEyeColor(EyeColor eyeColor) throws InvalidFieldException {
         if (validator.validateEyeColor(eyeColor)){
@@ -141,11 +114,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         }
     }
 
-    /**
-     * Метод, который устанавливает цвет волос человеку
-     * @param hairColor
-     * @throws InvalidFieldException
-     */
     @Override
     public void setHairColor(HairColor hairColor) throws InvalidFieldException {
         if (validator.validateHairColor(hairColor)){
@@ -155,10 +123,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         }
     }
 
-    /**
-     * Метод, который устанавливает значение X локации челвоека
-     * @param x
-     */
     @Override
     public void setLocationX(float x){
         if (locationBuilder == null){
@@ -167,10 +131,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         locationBuilder.setX(x);
     }
 
-    /**
-     * Метод, который устанавливает значение y локации человека
-     * @param y
-     */
     @Override
     public void setLocationY(long y){
         if (locationBuilder == null){
@@ -179,11 +139,6 @@ public class PersonBuilderImpl implements PersonBuilder {
         locationBuilder.setY(y);
     }
 
-    /**
-     * Метод, который устанавливает название локации человека
-     * @param name
-     * @throws InvalidFieldException
-     */
     @Override
     public void setLocationName(String name) throws InvalidFieldException {
         if (locationBuilder == null){

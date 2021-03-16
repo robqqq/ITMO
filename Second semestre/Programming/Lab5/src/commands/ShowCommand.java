@@ -12,15 +12,17 @@ public class ShowCommand implements Command{
     private Messenger messenger;
     private OutputManager outputManager;
 
-    ShowCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
+    /**
+     * @param collectionManager менеджер коллекции
+     * @param messenger мессенджер
+     * @param outputManager менеджер вывода
+     */
+    public ShowCommand(CollectionManager collectionManager, Messenger messenger, OutputManager outputManager){
         this.collectionManager = collectionManager;
         this.messenger = messenger;
         this.outputManager = outputManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         collectionManager.getPersonStream()

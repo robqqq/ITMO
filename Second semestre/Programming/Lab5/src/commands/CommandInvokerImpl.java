@@ -3,12 +3,17 @@ package commands;
 import exceptions.InvalidArgumentTypeException;
 import exceptions.NoArgException;
 import messages.Messenger;
-import output.OutputManager;
 
+/**
+ * Реализация интерфейса CommandInvoker
+ */
 public class CommandInvokerImpl implements CommandInvoker{
     private String arg;
     private Messenger messenger;
 
+    /**
+     * @param messenger мессенджер
+     */
     public CommandInvokerImpl(Messenger messenger){
         this.messenger = messenger;
     }

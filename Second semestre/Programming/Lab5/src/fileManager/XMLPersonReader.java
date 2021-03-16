@@ -23,20 +23,20 @@ import java.util.logging.Level;
 import static log.Log.logger;
 
 /**
- * Класс, который создает коллекцию объектов из XML файла
+ * Реализация интерфейса DataReader для работы с XML файлами
  */
 public class XMLPersonReader implements DataReader {
-    Document doc;
-    String fileName;
+    private Document doc;
+    private String fileName;
 
+    /**
+     * @param fileName имя файла
+     */
     public XMLPersonReader(String fileName) {
         this.fileName = fileName;
     }
 
-    /**
-     * Метод, который создает коллекцию объектов из XML файла
-     * @throws InvalidFieldException
-     */
+    @Override
     public Collection<Person> readElements(Messenger messenger) throws InvalidFieldException, NoEnvVarException, NoDataException, BrokenDataException {
         if (fileName == null){
             throw new NoEnvVarException(messenger.getExceptionMsg("noEnvVar"));

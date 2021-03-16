@@ -3,17 +3,15 @@ package person;
 import exceptions.InvalidFieldException;
 
 /**
- * Класс координат человека
+ * Класс координат
  */
 public class Coordinates {
     private Double x; //Максимальное значение поля: 882, Поле не может быть null
     private long y; //Значение поля должно быть больше -266
 
     /**
-     * Конструктор
-     * @param x
-     * @param y
-     * @throws InvalidFieldException
+     * @param x координата x
+     * @param y координата y
      */
     public Coordinates(Double x, long y){
         this.x = x;
@@ -21,16 +19,14 @@ public class Coordinates {
     }
 
     /**
-     * Метод, который возвращает координату X
-     * @return
+     * @return координата x
      */
     public Double getX() {
         return x;
     }
 
     /**
-     * Метод, который возвращает координату Y
-     * @return
+     * @return координата y
      */
     public long getY() {
         return y;

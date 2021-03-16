@@ -8,13 +8,13 @@ import application.Application;
 public class ExitCommand implements Command{
     private Application app;
 
+    /**
+     * @param app объект Application
+     */
     public ExitCommand(Application app){
         this.app = app;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         app.exit();

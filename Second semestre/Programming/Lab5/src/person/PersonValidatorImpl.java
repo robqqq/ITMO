@@ -2,7 +2,11 @@ package person;
 
 import java.time.LocalDateTime;
 
+/**
+ * Реализация интерфейса PersonValidator
+ */
 public class PersonValidatorImpl implements PersonValidator{
+
     @Override
     public boolean validateName(String name) {
         return name != null && !name.equals("");

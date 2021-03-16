@@ -5,6 +5,9 @@ import exceptions.NoSuchCommandException;
 import exceptions.NoSuchFieldException;
 import person.Person;
 
+/**
+ * Реализация интерфеса мессенджера
+ */
 public class MessengerImpl implements Messenger{
     private CommandMessages commandMessages;
     private ExceptionMessages exceptionMessages;
@@ -12,6 +15,11 @@ public class MessengerImpl implements Messenger{
     private String startMsg;
     private String finishMsg;
 
+    /**
+     * @param commandMessages сообщения команд
+     * @param exceptionMessages сообщения ошибок
+     * @param collectionMessages сообщения коллекции
+     */
     public MessengerImpl(CommandMessages commandMessages, ExceptionMessages exceptionMessages, CollectionMessages collectionMessages){
         this.commandMessages = commandMessages;
         this.exceptionMessages = exceptionMessages;

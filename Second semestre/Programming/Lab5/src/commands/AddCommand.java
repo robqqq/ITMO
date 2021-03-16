@@ -10,14 +10,15 @@ public class AddCommand implements Command {
     private CollectionManager collectionManager;
     private InputManager inputManager;
 
-    AddCommand(CollectionManager collectionManager, InputManager inputManager){
+    /**
+     * @param collectionManager менеджер коллекции
+     * @param inputManager менеджер ввода
+     */
+    public AddCommand(CollectionManager collectionManager, InputManager inputManager){
         this.collectionManager = collectionManager;
         this.inputManager = inputManager;
     }
 
-    /**
-     * Метод, который запускает команду
-     */
     @Override
     public void execute() {
         collectionManager.addElement(inputManager.readPerson());

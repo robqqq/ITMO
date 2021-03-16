@@ -1,5 +1,8 @@
 package messages;
 
+/**
+ * Реализация интерфейса ExceptionMessages с английской локализацией
+ */
 public class EngExceptionMessages implements ExceptionMessages{
     private final String invalidIdMsg;
     private final String notUniqueIdMsg;

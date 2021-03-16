@@ -14,6 +14,9 @@ import output.OutputManager;
 
 import java.util.NoSuchElementException;
 
+/**
+ * Реализация интерфейса Application
+ */
 public class ApplicationImpl implements Application{
     private boolean exit;
     private OutputManager outputManager;

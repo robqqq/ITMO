@@ -9,11 +9,19 @@ import person.Person;
 
 import java.util.Collection;
 
+/**
+ * Реализация интерфейса DataManager
+ */
 public class DataManagerImpl implements DataManager {
     private DataWriter dataWriter;
     private DataReader dataReader;
     private Messenger messenger;
 
+    /**
+     * @param dataReader объект класса чтения данных
+     * @param dataWriter объект класса записи данных
+     * @param messenger мессенджер
+     */
     public DataManagerImpl(DataReader dataReader, DataWriter dataWriter, Messenger messenger){
         this.dataReader = dataReader;
         this.dataWriter = dataWriter;

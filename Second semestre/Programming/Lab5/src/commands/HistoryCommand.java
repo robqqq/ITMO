@@ -12,10 +12,10 @@ public class HistoryCommand implements Command{
     private OutputManager outputManager;
 
     /**
-     * Конструктор
-     * @param history
+     * @param history история использованных команд
+     * @param outputManager менеджер вывода
      */
-    HistoryCommand(Stack<String> history, OutputManager outputManager){
+    public HistoryCommand(Stack<String> history, OutputManager outputManager){
         this.history = history;
         this.outputManager = outputManager;
     }

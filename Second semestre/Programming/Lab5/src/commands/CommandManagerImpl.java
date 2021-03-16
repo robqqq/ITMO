@@ -12,25 +12,19 @@ import output.OutputManager;
 import java.util.*;
 
 /**
- * Класс, который производит чтение с консоли и отправляет запросы командам
+ * Реализация интерфеса CommandManager
  */
 public class CommandManagerImpl implements CommandManager {
-    private CollectionManager collectionManager;
     private Map<String, Command> commandMap;
     private Stack<String> history = new Stack<>();
     private static Set<String> usedScripts = new HashSet<>();
     private CommandInvoker commandInvoker;
-    private Application app;
     private Messenger messenger;
     private OutputManager outputManager;
-    private InputManager inputManager;
 
     public CommandManagerImpl(CollectionManager collectionManager, Application app, Messenger messenger,
                               OutputManager outputManager, InputManager inputManager){
-        this.collectionManager = collectionManager;
-        this.inputManager = inputManager;
         this.outputManager = outputManager;
-        this.app = app;
         this.messenger = messenger;
         commandMap = new HashMap<>();
         commandInvoker = new CommandInvokerImpl(messenger);
@@ -52,6 +46,7 @@ public class CommandManagerImpl implements CommandManager {
         commandMap.put("print_field_descending_eye_color", new PrintFieldDescendingEyeColorCommand(collectionManager, outputManager));
     }
 
+    @Override
     public void executeCommand(String command, String arg) throws NoSuchCommandException {
         if (command.equals(""))
             return;

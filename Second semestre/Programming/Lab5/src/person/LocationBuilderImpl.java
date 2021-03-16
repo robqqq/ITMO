@@ -3,6 +3,9 @@ package person;
 import exceptions.InvalidFieldException;
 import messages.Messenger;
 
+/**
+ * Реализация интерфеса LocationBuilder
+ */
 public class LocationBuilderImpl implements LocationBuilder{
     private float x;
     private long y;
@@ -10,16 +13,15 @@ public class LocationBuilderImpl implements LocationBuilder{
     private LocationValidator validator;
     private Messenger messenger;
 
+    /**
+     * @param messenger мессенджер
+     */
     public LocationBuilderImpl(Messenger messenger){
         validator = new LocationValidatorImpl();
         this.messenger = messenger;
     }
 
-    /**
-     * Метод, который устанавливает название локации
-     * @param name
-     * @throws InvalidFieldException
-     */
+    @Override
     public void setName(String name) throws InvalidFieldException {
         if (validator.validateLocationName(name)){
             this.name = name;
@@ -28,22 +30,17 @@ public class LocationBuilderImpl implements LocationBuilder{
         }
     }
 
-    /**
-     * Метод, который устанавливает значение X локации
-     * @param x
-     */
+    @Override
     public void setX(float x) {
         this.x = x;
     }
 
-    /**
-     * Метод, который устанавливает значение Y локации
-     * @param y
-     */
+    @Override
     public void setY(long y) {
         this.y = y;
     }
 
+    @Override
     public Location getLocation(){
         return new Location(x, y, name);
     }

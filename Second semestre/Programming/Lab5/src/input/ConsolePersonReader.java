@@ -10,11 +10,19 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
+/**
+ * Реализация интерфейса PersonReader для чтения из консоли
+ */
 public class ConsolePersonReader implements PersonReader {
     private Scanner scanner;
     private Messenger messenger;
     private OutputManager outputManager;
 
+    /**
+     * @param scanner сканер
+     * @param messenger мессенджер
+     * @param outputManager менеджер вывода
+     */
     public ConsolePersonReader(Scanner scanner, Messenger messenger, OutputManager outputManager) {
         this.scanner = scanner;
         this.messenger = messenger;

@@ -29,6 +29,10 @@ public interface CollectionManager {
      */
     LocalDate getInitDate();
 
+    /**
+     * Метод, который добавляет элемент в коллекцию
+     * @param person элемент
+     */
     void addElement(Person person);
 
     /**
@@ -52,8 +56,14 @@ public interface CollectionManager {
      */
     void loadPersons() throws NoEnvVarException, InvalidFieldException, NoDataException, BrokenDataException;
 
+    /**
+     * Метод, который сохраняет коллекцию
+     */
     void savePersons();
 
+    /**
+     * @return объект Stream коллекции элементов
+     */
     Stream<Person> getPersonStream();
 
 }

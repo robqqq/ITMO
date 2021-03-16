@@ -2,6 +2,9 @@ package messages;
 
 import person.Person;
 
+/**
+ * Реализация интерфейса CollectionMessages с английской локализацией
+ */
 public class EngPersonCollectionMessages implements CollectionMessages{
     private final String collectionTypeMsg;
     private final String collectionInitDateMsg;
