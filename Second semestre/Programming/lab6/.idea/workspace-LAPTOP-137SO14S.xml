@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="168ca3c2-e70f-461a-b0e7-2382c35c2d85" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab5/log.0.0.txt.lck" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/CommandReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/ConsoleCommandReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/ConsoleInputManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/ConsolePersonReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/InputManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/PersonReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/ScriptCommandReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/ScriptInputManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/input/ScriptPersonReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/messages/CollectionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/messages/CommandMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/messages/EngExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/messages/EngPersonCollectionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/messages/ExceptionMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/messages/Messenger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/messages/MessengerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/messages/RuCommandMessages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/output/ConsoleOutputManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/output/OutputManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/AddIfMaxCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/AddIfMinCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/ClearCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/CommandInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/CommandInvokerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/CommandManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/CommandManagerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/ExecuteScriptCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/ExitCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/FilterContainsNameCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/HelpCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/HistoryCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/InfoCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/MaxByEyeColorCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/PrintFieldDescendingEyeColorCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/RemoveByIdCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/RequiringArg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/SaveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/ShowCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/commands/UpdateCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/BrokenDataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/DataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/InvalidArgumentTypeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/InvalidFieldException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/NoArgException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/NoDataException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/NoEnvVarException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/NoMsgException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/NoSuchCommandException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/NoSuchFieldException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/NotUniqueIdException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/ScriptException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/exceptions/ScriptRecursionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/log/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/CoordinatesBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/CoordinatesBuilderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/CoordinatesValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/CoordinatesValidatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/EyeColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/HairColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/LocationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/LocationBuilderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/LocationValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/LocationValidatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/PersonValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/PersonValidatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/RawPerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/person/RawPersonBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/application/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/application/ApplicationImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/collectionManager/CollectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/collectionManager/IdManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/collectionManager/PersonCollectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/collectionManager/PersonIdManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataManager/DataManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataManager/DataManagerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataManager/DataReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataManager/DataWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataManager/XMLPersonReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataManager/XMLPersonWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../First semestre/Physics/Lab1_24V/report1_24V.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../../First semestre/Physics/Lab1_24V/report1_24V.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/Lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/Lab5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/Top-Level Package.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/application/ApplicationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/src/application/ApplicationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/collectionManager/PersonCollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/src/collectionManager/PersonCollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/fileManager/DataManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/fileManager/DataManagerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/fileManager/DataReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/fileManager/DataWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/fileManager/XMLPersonReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/fileManager/XMLPersonWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab5/src/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/src/person/Person.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/client">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/server">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab6" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab6" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab6" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab6" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab6" type="f1a62948:ProjectNode" />
+                <item name="client" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab6" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab6" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab6" type="f1a62948:ProjectNode" />
+                <item name="server" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1qFJ6NuGd1pmo7f1fQvt25RIs33" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/main/java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OneDrive - ITMO UNIVERSITY\Документы\GitHub\ITMO\Second semestre\Programming\lab6\server\src\main\java" />
+      <recent name="D:\OneDrive - ITMO UNIVERSITY\Документы\GitHub\ITMO\Second semestre\Programming\lab6\common\src\main\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.lab6:server [run]">
+    <configuration name="lab6:client [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/client" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="lab6:server [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.lab6:server [run]" />
+        <item itemvalue="Gradle.lab6:client [run]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="168ca3c2-e70f-461a-b0e7-2382c35c2d85" name="Default Changelist" comment="" />
+      <created>1616669231028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616669231028</updated>
+      <workItem from="1616669235937" duration="7289000" />
+      <workItem from="1616683299970" duration="953000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
