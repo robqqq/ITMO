@@ -12,9 +12,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ConsoleInputManager implements InputManager {
-    private BufferedReader reader;
-    private CommandReader commandReader;
-    private PersonReader personReader;
+    private final BufferedReader reader;
+    private final CommandReader commandReader;
+    private final PersonReader personReader;
 
     public ConsoleInputManager(Messenger messenger, OutputManager outputManager) {
         reader = new BufferedReader(new InputStreamReader(System.in));

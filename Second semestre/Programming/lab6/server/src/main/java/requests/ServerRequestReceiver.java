@@ -11,8 +11,8 @@ import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 
 public class ServerRequestReceiver implements RequestReceiver {
-    private DatagramChannel channel;
-    private ByteBuffer buf;
+    private final DatagramChannel channel;
+    private final ByteBuffer buf;
     private SocketAddress address;
 
 

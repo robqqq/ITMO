@@ -7,7 +7,6 @@ import connection.ServerConnectionManager;
 import connection.ServerConnectionManagerImpl;
 import dataManager.*;
 import exceptions.*;
-import log.Log;
 import messages.Messenger;
 import messages.MessengerImpl;
 import serverCommands.*;
@@ -17,13 +16,16 @@ import serverCommands.CommandAnalyzer;
 import java.io.IOException;
 import java.nio.channels.DatagramChannel;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class ServerApplication implements Application {
     private final int port;
-    private ServerCommandManager commandManager;
     private CommandAnalyzer clientCommandAnalyzer;
     private CommandAnalyzer serverCommandAnalyzer;
     private ServerConnectionManager connectionManager;
+    private static final Logger logger = LoggerFactory.getLogger(ServerApplication.class);
 
     public ServerApplication(int port){
         this.port = port;
@@ -38,24 +40,24 @@ public class ServerApplication implements Application {
         DataManager dataManager = new DataManagerImpl(dataReader, dataWriter);
         CollectionManager collectionManager = new PersonCollectionManager(dataManager);
         connectionManager = new ServerConnectionManagerImpl();
-        this.commandManager = new ServerCommandManagerImpl(collectionManager, this, messenger);
+        ServerCommandManager commandManager = new ServerCommandManagerImpl(collectionManager, this, messenger);
         serverCommandAnalyzer = new ServerCommandAnalyzer(commandManager, messenger);
         try {
             DatagramChannel channel = connectionManager.openConnection(port);
             clientCommandAnalyzer = new ClientCommandAnalyzer(commandManager, channel);
         } catch (IOException e) {
-            Log.log().error("opening connection error", e);
+            logger.error("opening connection error", e);
             return;
         }
         try {
             collectionManager.loadPersons();
         } catch (InvalidFieldException | NoDataException | BrokenDataException e) {
-            Log.log().error("File is broken", e);
+            logger.error("File is broken", e);
         } catch (NoEnvVarException e){
-            Log.log().error("environmental variable Lab6 doesn't exist, application stopped", e);
+            logger.error("environmental variable Lab6 doesn't exist, application stopped", e);
             return;
         }
-        Log.log().info("server has started");
+        logger.info("server has started");
         clientCommandAnalyzer.startReading();
         serverCommandAnalyzer.startReading();
     }
@@ -65,7 +67,7 @@ public class ServerApplication implements Application {
         try {
             connectionManager.closeConnection();
         } catch (IOException e) {
-            Log.log().error("connection closing error", e);
+            logger.error("connection closing error", e);
         }
         clientCommandAnalyzer.stopReading();
         serverCommandAnalyzer.stopReading();

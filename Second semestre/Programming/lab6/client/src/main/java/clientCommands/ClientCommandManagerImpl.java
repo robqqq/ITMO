@@ -24,14 +24,14 @@ import java.util.Map;
 import java.util.Set;
 
 public class ClientCommandManagerImpl implements ClientCommandManager {
-    private DatagramSocket socket;
-    private SocketAddress address;
-    private InputManager inputManager;
-    private OutputManager outputManager;
-    private Messenger messenger;
+    private final DatagramSocket socket;
+    private final SocketAddress address;
+    private final InputManager inputManager;
+    private final OutputManager outputManager;
+    private final Messenger messenger;
     private final Map<String, ClientCommand> clientCommandMap;
-    private ClientCommandInvoker commandInvoker;
-    private static Set<String> usedScripts = new HashSet<>();;
+    private final ClientCommandInvoker commandInvoker;
+    private static final Set<String> usedScripts = new HashSet<>();
 
     public ClientCommandManagerImpl(DatagramSocket socket, SocketAddress address, InputManager inputManager,
                                     OutputManager outputManager, Messenger messenger, ClientApplication app){

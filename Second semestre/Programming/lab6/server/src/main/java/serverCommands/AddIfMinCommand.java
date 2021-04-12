@@ -13,8 +13,8 @@ import person.RawPerson;
  * элемента этой коллекции
  */
 public class AddIfMinCommand implements ServerCommand, RequiringObject{
-    private CollectionManager collectionManager;
-    private Messenger messenger;
+    private final CollectionManager collectionManager;
+    private final Messenger messenger;
     private RawPerson person;
 
     public AddIfMinCommand(CollectionManager collectionManager, Messenger messenger){

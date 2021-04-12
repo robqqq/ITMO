@@ -4,7 +4,6 @@ import exceptions.BrokenDataException;
 import exceptions.InvalidFieldException;
 import exceptions.NoDataException;
 import exceptions.NoEnvVarException;
-import log.Log;
 import org.w3c.dom.*;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
@@ -18,14 +17,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.Collection;
 import java.util.TreeSet;
-import java.util.logging.Level;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Реализация интерфейса DataReader для работы с XML файлами
  */
 public class XMLPersonReader implements DataReader {
-    private Document doc;
-    private String fileName;
+    private final String fileName;
+    private static final Logger logger = LoggerFactory.getLogger(XMLPersonReader.class);
 
     /**
      * @param fileName имя файла
@@ -39,6 +40,7 @@ public class XMLPersonReader implements DataReader {
         if (fileName == null){
             throw new NoEnvVarException();
         }
+        Document doc;
         try (InputStreamReader streamReader = new InputStreamReader(new FileInputStream(fileName))){
             InputSource inputSource = new InputSource(streamReader);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -57,23 +59,23 @@ public class XMLPersonReader implements DataReader {
                 }
 
                 private void log(String type, SAXParseException e) throws SAXException {
-                    Log.log().error(type + ": " + e.getMessage(), e);
+                    logger.error(type + ": " + e.getMessage(), e);
                     throw new SAXException();
                 }
             });
             doc = dBuilder.parse(inputSource);
         } catch (SAXException | ParserConfigurationException e) {
-            Log.log().error("Parsing file problem", e);
+            logger.error("Parsing file problem", e);
             throw new BrokenDataException();
         } catch (IOException e){
-            Log.log().error("Data file does not exist", e);
+            logger.error("Data file does not exist", e);
             throw new NoDataException();
         }
         Collection<Person> personCollection = new TreeSet<>();
         try {
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("person");
-            Log.log().info("read " + nList.getLength() + " objects from " + fileName);
+            logger.info("read " + nList.getLength() + " objects from " + fileName);
             for (int i = 0; i < nList.getLength(); i++) {
                 Element element = (Element) nList.item(i);
                 personCollection.add(createPerson(element));
@@ -114,7 +116,7 @@ public class XMLPersonReader implements DataReader {
             personBuilder.setLocationName(locationName);
             return new Person(id, personBuilder.getRawPerson(), creationDate);
         }catch(DateTimeParseException | IllegalArgumentException e){
-            Log.log().error("File has fields with wrong types", e);
+            logger.error("File has fields with wrong types", e);
             throw new InvalidFieldException();
         }
     }

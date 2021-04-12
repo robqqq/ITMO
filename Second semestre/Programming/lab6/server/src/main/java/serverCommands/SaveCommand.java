@@ -7,8 +7,8 @@ import messages.Messenger;
  * Класс команды, которая сохраняет коллекцию в файл
  */
 public class SaveCommand implements ServerCommand{
-    private CollectionManager collectionManager;
-    private Messenger messenger;
+    private final CollectionManager collectionManager;
+    private final Messenger messenger;
 
     /**
      * @param collectionManager менеджер коллекции

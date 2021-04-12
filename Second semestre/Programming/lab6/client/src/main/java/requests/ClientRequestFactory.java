@@ -3,7 +3,6 @@ package requests;
 import networkMessages.Request;
 import networkMessages.RequestImpl;
 import networkMessages.RequestType;
-import person.Person;
 import person.RawPerson;
 
 public class ClientRequestFactory implements RequestFactory {

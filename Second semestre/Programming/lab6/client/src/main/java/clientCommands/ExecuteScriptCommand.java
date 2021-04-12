@@ -1,10 +1,8 @@
 package clientCommands;
 
-import application.Application;
 import client.ClientApplication;
 import command.RequiringArg;
 import exceptions.NoArgException;
-import exceptions.NoSuchCommandException;
 import exceptions.ScriptException;
 import exceptions.ScriptRecursionException;
 import input.ScriptInputManager;
@@ -20,11 +18,11 @@ import java.net.SocketAddress;
  * Класс команды, которая считывает и исполняет скрипт из указанного файла
  */
 public class ExecuteScriptCommand implements ClientCommand, RequiringArg<String> {
-    private DatagramSocket socket;
-    private SocketAddress address;
-    private OutputManager outputManager;
-    private Messenger messenger;
-    private ClientApplication app;
+    private final DatagramSocket socket;
+    private final SocketAddress address;
+    private final OutputManager outputManager;
+    private final Messenger messenger;
+    private final ClientApplication app;
     private String arg;
 
     public ExecuteScriptCommand(DatagramSocket socket, SocketAddress address, OutputManager outputManager,

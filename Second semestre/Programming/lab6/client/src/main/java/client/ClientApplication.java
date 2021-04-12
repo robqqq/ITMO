@@ -24,9 +24,8 @@ public class ClientApplication implements Application {
     private InputManager inputManager;
     private ClientConnectionManager connectionManager;
     private ClientCommandManager commandManager;
-    private String address;
-    private int port;
-    private DatagramSocket socket;
+    private final String address;
+    private final int port;
 
     public ClientApplication(String address, int port){
         exit = false;
@@ -40,7 +39,7 @@ public class ClientApplication implements Application {
             outputManager = new ConsoleOutputManager();
             messenger = new MessengerImpl();
             connectionManager = new ClientConnectionManagerImpl();
-            socket = connectionManager.openConnection(address, port);
+            DatagramSocket socket = connectionManager.openConnection(address, port);
             inputManager = new ConsoleInputManager(messenger, outputManager);
             commandManager = new ClientCommandManagerImpl(socket, connectionManager.getSocketAddress(),
                     inputManager, outputManager, messenger, this);

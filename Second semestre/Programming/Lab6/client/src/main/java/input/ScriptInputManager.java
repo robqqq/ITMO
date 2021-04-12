@@ -10,9 +10,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class ScriptInputManager implements InputManager {
-    private BufferedReader reader;
-    private CommandReader commandReader;
-    private PersonReader personReader;
+    private final BufferedReader reader;
+    private final CommandReader commandReader;
+    private final PersonReader personReader;
 
     public ScriptInputManager(BufferedReader reader, Messenger messenger){
         this.reader = reader;

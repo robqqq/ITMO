@@ -7,8 +7,8 @@ import messages.Messenger;
  * Класс команды, которая выводит значения поля eyeColor всех элементов в порядке убывания
  */
 public class PrintFieldDescendingEyeColorCommand implements ServerCommand{
-    private CollectionManager collectionManager;
-    private Messenger messenger;
+    private final CollectionManager collectionManager;
+    private final Messenger messenger;
 
     /**
      * @param collectionManager менеджер коллекции

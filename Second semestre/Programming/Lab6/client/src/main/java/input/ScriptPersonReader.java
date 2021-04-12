@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 public class ScriptPersonReader implements PersonReader {
-    private BufferedReader reader;
+    private final BufferedReader reader;
 
     public ScriptPersonReader(BufferedReader reader) {
         this.reader = reader;

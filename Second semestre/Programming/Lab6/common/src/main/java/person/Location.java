@@ -59,6 +59,6 @@ public class Location implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Location(%f;%d;%s)", x, y, name);
+        return String.format("Location(x=%f, y=%d, name=%s)", x, y, name);
     }
 }

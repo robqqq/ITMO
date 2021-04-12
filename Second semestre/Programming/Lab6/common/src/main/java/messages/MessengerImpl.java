@@ -96,13 +96,4 @@ public class MessengerImpl implements Messenger{
     public String getMsg(String msgName){
         return messages.get(msgName);
     }
-
-    @Override
-    public String getPersonString(Person person) {
-        return String.format("id=%d; name=%s; coordinates=(%.2f, %d); creationDate=%s; height=%d; birthday=%s; " +
-                        "eyeColor=%s; hairColor=%s; location=(%.2f, %d), name=%s", person.getId(), person.getName(),
-                person.getCoordinates().getX(), person.getCoordinates().getY(), person.getCreationDate().toLocalDate(),
-                person.getHeight(), person.getBirthday().toLocalDate(), person.getEyeColor(), person.getHairColor(),
-                person.getLocation().getX(), person.getLocation().getY(), person.getLocation().getName());
-    }
 }

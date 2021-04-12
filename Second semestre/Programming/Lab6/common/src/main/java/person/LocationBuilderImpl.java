@@ -9,7 +9,7 @@ public class LocationBuilderImpl implements LocationBuilder{
     private float x;
     private long y;
     private String name; //Длина строки не должна быть больше 480, Поле может быть null
-    private LocationValidator validator;
+    private final LocationValidator validator;
 
     public LocationBuilderImpl(){
         validator = new LocationValidatorImpl();

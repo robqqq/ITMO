@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public class ResponseImpl implements Response, Serializable {
     private static final long serialVersionUID = -1158790976101708016L;
-    private ResponseType type;
-    private String content;
+    private final ResponseType type;
+    private final String content;
 
     public ResponseImpl(ResponseType type, String content) {
         this.type = type;
@@ -38,6 +38,6 @@ public class ResponseImpl implements Response, Serializable {
 
     @Override
     public String toString() {
-        return String.format("ResponseImpl(%s;%s)", type, content);
+        return String.format("ResponseImpl(type=%s, content=%s)", type, content);
     }
 }

@@ -9,8 +9,8 @@ import person.Person;
 import java.util.Collection;
 
 public class DataManagerImpl implements DataManager {
-    private DataWriter dataWriter;
-    private DataReader dataReader;
+    private final DataWriter dataWriter;
+    private final DataReader dataReader;
     
     public DataManagerImpl(DataReader dataReader, DataWriter dataWriter){
         this.dataReader = dataReader;

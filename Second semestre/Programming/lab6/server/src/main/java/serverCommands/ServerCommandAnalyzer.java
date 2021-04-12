@@ -2,18 +2,21 @@ package serverCommands;
 
 import input.ServerConsoleCommandReader;
 import inputManager.CommandReader;
-import log.Log;
 import messages.Messenger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ServerCommandAnalyzer extends Thread implements CommandAnalyzer {
     private boolean exit;
-    private CommandReader commandReader;
-    private Messenger messenger;
-    private ServerCommandManager commandManager;
+    private final CommandReader commandReader;
+    private final Messenger messenger;
+    private final ServerCommandManager commandManager;
+    private static final Logger logger = LoggerFactory.getLogger(ServerCommandAnalyzer.class);
 
     public ServerCommandAnalyzer(ServerCommandManager commandManager, Messenger messenger){
         commandReader = new ServerConsoleCommandReader(new BufferedReader(new InputStreamReader(System.in)));
@@ -29,7 +32,7 @@ public class ServerCommandAnalyzer extends Thread implements CommandAnalyzer {
                 if (inputString.equals("")) continue;
                 commandManager.executeServerCommand(inputString);
             } catch (IOException e) {
-                Log.log().error(messenger.getMsg("endOfInput"), e);
+                logger.error(messenger.getMsg("endOfInput"), e);
                 stopReading();
             }
         }

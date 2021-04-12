@@ -8,9 +8,9 @@ import messages.Messenger;
  * Класс команды, которая завершает программу
  */
 public class ExitCommand implements ServerCommand{
-    private Application app;
-    private Messenger messenger;
-    private CollectionManager collectionManager;
+    private final Application app;
+    private final Messenger messenger;
+    private final CollectionManager collectionManager;
 
     /**
      * @param app объект Application

@@ -8,8 +8,8 @@ import java.net.DatagramSocket;
 import java.net.SocketAddress;
 
 public class ClientRequestSender implements RequestSender{
-    private SocketAddress address;
-    private DatagramSocket socket;
+    private final SocketAddress address;
+    private final DatagramSocket socket;
 
     public ClientRequestSender(SocketAddress address, DatagramSocket socket){
         this.address = address;

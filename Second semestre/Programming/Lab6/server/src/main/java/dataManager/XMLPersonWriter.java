@@ -1,6 +1,5 @@
 package dataManager;
 
-import log.Log;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import person.Coordinates;
@@ -15,16 +14,17 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.util.Collection;
-import java.util.logging.Level;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Реализация интерфейса DataWriter для работы с XML файлом
  */
 public class XMLPersonWriter implements DataWriter {
     private Document doc;
-    private FileOutputStream outputStream;
-    private OutputStreamWriter streamWriter;
-    private String fileName;
+    private final String fileName;
+    private static final Logger logger = LoggerFactory.getLogger(XMLPersonWriter.class);
 
     /**
      * @param fileName имя файла
@@ -40,7 +40,7 @@ public class XMLPersonWriter implements DataWriter {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             doc = dBuilder.newDocument();
         } catch (ParserConfigurationException e) {
-            Log.log().error("Parser error, while writing elements to file" , e);
+            logger.error("Parser error, while writing elements to file" , e);
         }
         Element rootElement = doc.createElement("personTreeSet");
         doc.appendChild(rootElement);
@@ -48,17 +48,17 @@ public class XMLPersonWriter implements DataWriter {
             rootElement.appendChild(getPerson(person));
         }
         try {
-            outputStream = new FileOutputStream(fileName);
-            streamWriter = new OutputStreamWriter(outputStream);
+            FileOutputStream outputStream = new FileOutputStream(fileName);
+            OutputStreamWriter streamWriter = new OutputStreamWriter(outputStream);
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(streamWriter);
             transformer.transform(source, result);
-            Log.log().info("Elements has written to file " + fileName);
+            logger.info("Elements has written to file " + fileName);
         } catch (TransformerException | FileNotFoundException e) {
-            Log.log().error("Writing elements to file error", e);
+            logger.error("Writing elements to file error", e);
         }
     }
 

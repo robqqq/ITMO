@@ -2,7 +2,6 @@ package collectionManager;
 
 import exceptions.*;
 import dataManager.DataManager;
-import log.Log;
 import person.*;
 
 import java.time.LocalDate;
@@ -10,13 +9,17 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Stream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Реализация интерфейса CollectionManager
  */
 public class PersonCollectionManager implements CollectionManager {
     private final LocalDate initDate;
-    private TreeSet<Person> personTreeSet;
-    private DataManager dataManager;
+    private final TreeSet<Person> personTreeSet;
+    private final DataManager dataManager;
+    private static final Logger logger = LoggerFactory.getLogger(PersonCollectionManager.class);
 
     /**
      * @param dataManager менеджер данных коллекции
@@ -84,7 +87,7 @@ public class PersonCollectionManager implements CollectionManager {
             } else {
                 personTreeSet.clear();
                 PersonIdManager.INSTANCE.clearIdentifiers();
-                Log.log().error("File is broken, objects has no unique identifiers");
+                logger.error("File is broken, objects has no unique identifiers");
                 return;
             }
         }

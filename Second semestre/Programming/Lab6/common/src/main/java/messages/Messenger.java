@@ -5,6 +5,4 @@ import person.Person;
 public interface Messenger {
 
     String getMsg(String msgName);
-
-    String getPersonString(Person person);
 }

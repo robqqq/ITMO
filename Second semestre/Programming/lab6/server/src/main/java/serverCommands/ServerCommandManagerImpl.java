@@ -5,7 +5,6 @@ import collectionManager.CollectionManager;
 import exceptions.InvalidArgumentTypeException;
 import exceptions.NeedObjectException;
 import exceptions.NoArgException;
-import log.Log;
 import messages.Messenger;
 import networkMessages.RequestType;
 import person.RawPerson;
@@ -18,15 +17,19 @@ import java.net.SocketAddress;
 import java.nio.channels.DatagramChannel;
 import java.util.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Реализация интерфеса CommandManager
  */
 public class ServerCommandManagerImpl implements ServerCommandManager {
-    private Map<String, ServerCommand> clientCommandMap;
-    private Map<String, ServerCommand> serverCommandMap;
-    private Stack<String> history;
-    private ServerCommandInvoker commandInvoker;
-    private ServerCommandInvoker commandInvokerForServerCommands;
+    private final Map<String, ServerCommand> clientCommandMap;
+    private final Map<String, ServerCommand> serverCommandMap;
+    private final Stack<String> history;
+    private final ServerCommandInvoker commandInvoker;
+    private final ServerCommandInvoker commandInvokerForServerCommands;
+    private static final Logger logger = LoggerFactory.getLogger(ServerCommandManagerImpl.class);
 
     public ServerCommandManagerImpl(CollectionManager collectionManager, Application app, Messenger messenger){
         clientCommandMap = new HashMap<>();
@@ -86,12 +89,12 @@ public class ServerCommandManagerImpl implements ServerCommandManager {
         if (serverCommandMap.containsKey(command)){
             try {
                 serverCommandMap.get(command).acceptInvoker(commandInvokerForServerCommands);
-                Log.log().info(commandInvokerForServerCommands.getCommandOutput());
+                logger.info(commandInvokerForServerCommands.getCommandOutput());
             } catch (NoArgException | InvalidArgumentTypeException | NeedObjectException ignored) {
 
             }
         } else {
-            Log.log().error("no such command: " + command);
+            logger.error("no such command: " + command);
         }
     }
 }

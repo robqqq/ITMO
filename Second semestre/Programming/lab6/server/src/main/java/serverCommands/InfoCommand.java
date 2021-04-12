@@ -7,8 +7,8 @@ import messages.Messenger;
  * Класс команды, которая выводит в стандартный поток вывода информацию о коллекции
  */
 public class InfoCommand implements ServerCommand{
-    private CollectionManager collectionManager;
-    private Messenger messenger;
+    private final CollectionManager collectionManager;
+    private final Messenger messenger;
 
     /**
      * @param collectionManager менеджер коллекции

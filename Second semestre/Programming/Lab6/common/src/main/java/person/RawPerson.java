@@ -101,8 +101,8 @@ public class RawPerson implements Comparable<RawPerson>, Serializable {
 
     @Override
     public String toString() {
-        return String.format("RawPerson(%s;%s;%d;%s;%s;%s;%s)", name, coordinates, height, birthday,
-                eyeColor, hairColor, location);
+        return String.format("RawPerson(name=%s, coordinates=%s, height=%d, birthday=%s, eyeColor=%s, hairColor=%s, " +
+                        "location=%s)", name, coordinates, height, birthday, eyeColor, hairColor, location);
     }
 
     @Override

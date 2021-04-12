@@ -16,7 +16,7 @@ public class RawPersonBuilderImpl implements RawPersonBuilder {
     private EyeColor eyeColor; //Поле не может быть null
     private HairColor hairColor; //Поле не может быть null
     private LocationBuilder locationBuilder; //Поле не может быть null
-    private PersonValidator validator;
+    private final PersonValidator validator;
 
     public RawPersonBuilderImpl(){
         validator = new PersonValidatorImpl();
