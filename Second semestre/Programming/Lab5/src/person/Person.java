@@ -1,7 +1,5 @@
 package person;
 
-import exceptions.*;
-
 import java.time.LocalDateTime;
 
 /**

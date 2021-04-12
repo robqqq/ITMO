@@ -1,8 +1,7 @@
 package collectionManager;
 
 import exceptions.*;
-import fileManager.DataManager;
-import messages.Messenger;
+import dataManager.DataManager;
 import person.*;
 
 import java.time.LocalDate;
