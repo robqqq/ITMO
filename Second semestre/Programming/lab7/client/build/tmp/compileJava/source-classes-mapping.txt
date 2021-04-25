@@ -1,0 +1,58 @@
+input/InputManager.java
+ input.InputManager
+output/ConsoleOutputManager.java
+ output.ConsoleOutputManager
+input/ConsolePersonReader.java
+ input.ConsolePersonReader
+input/ConsoleAuthReader.java
+ input.ConsoleAuthReader
+client/Main.java
+ client.Main
+clientCommands/ClientCommandManager.java
+ clientCommands.ClientCommandManager
+clientCommands/ClientCommandInvoker.java
+ clientCommands.ClientCommandInvoker
+connection/ClientConnectionManagerImpl.java
+ connection.ClientConnectionManagerImpl
+requests/RequestSender.java
+ requests.RequestSender
+input/AuthReader.java
+ input.AuthReader
+input/ScriptCommandReader.java
+ input.ScriptCommandReader
+responses/ResponseReceiver.java
+ responses.ResponseReceiver
+output/OutputManager.java
+ output.OutputManager
+requests/RequestFactory.java
+ requests.RequestFactory
+clientCommands/ClientCommand.java
+ clientCommands.ClientCommand
+clientCommands/ExitCommand.java
+ clientCommands.ExitCommand
+connection/ClientConnectionManager.java
+ connection.ClientConnectionManager
+clientCommands/ClientCommandInvokerImpl.java
+ clientCommands.ClientCommandInvokerImpl
+input/ScriptPersonReader.java
+ input.ScriptPersonReader
+requests/ClientRequestSender.java
+ requests.ClientRequestSender
+responses/ClientResponseReceiver.java
+ responses.ClientResponseReceiver
+input/ConsoleCommandReader.java
+ input.ConsoleCommandReader
+input/ConsoleInputManager.java
+ input.ConsoleInputManager
+input/ScriptInputManager.java
+ input.ScriptInputManager
+input/PersonReader.java
+ input.PersonReader
+requests/ClientRequestFactory.java
+ requests.ClientRequestFactory
+clientCommands/ClientCommandManagerImpl.java
+ clientCommands.ClientCommandManagerImpl
+client/ClientApplication.java
+ client.ClientApplication
+clientCommands/ExecuteScriptCommand.java
+ clientCommands.ExecuteScriptCommand

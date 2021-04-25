@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="lab7.client.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lab7_client_main_jar</output-path>
+    <root id="archive" name="lab7.client.main.jar">
+      <element id="module-output" name="lab7.client.main" />
+      <element id="module-output" name="lab7.common.main" />
+    </root>
+  </artifact>
+</component>
