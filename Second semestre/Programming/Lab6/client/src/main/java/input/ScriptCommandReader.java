@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class ScriptCommandReader implements CommandReader {
-    private final BufferedReader reader;
+    private BufferedReader reader;
 
     public ScriptCommandReader(BufferedReader reader){
         this.reader = reader;

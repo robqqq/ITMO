@@ -4,8 +4,8 @@ import client.ClientApplication;
 import messages.Messenger;
 
 public class ExitCommand implements ClientCommand {
-    private final ClientApplication app;
-    private final Messenger messenger;
+    private ClientApplication app;
+    private Messenger messenger;
 
     public ExitCommand(ClientApplication app, Messenger messenger){
         this.app = app;

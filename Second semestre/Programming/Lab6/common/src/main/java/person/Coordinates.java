@@ -1,5 +1,7 @@
 package person;
 
+import exceptions.InvalidFieldException;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -49,6 +51,6 @@ public class Coordinates implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Coordinates(x=%f, y=%d)", x, y);
+        return String.format("Coordinates(%f;%d)", x, y);
     }
 }

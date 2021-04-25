@@ -77,6 +77,8 @@ serverCommands/AddIfMaxCommand.java
  serverCommands.AddIfMaxCommand
 serverCommands/InfoCommand.java
  serverCommands.InfoCommand
+log/Log.java
+ log.Log
 serverCommands/AddCommand.java
  serverCommands.AddCommand
 serverCommands/AddIfMinCommand.java

@@ -6,9 +6,9 @@ import java.util.TreeSet;
 public enum PersonIdManager implements IdManager{
     INSTANCE;
 
-    private final Set<Integer> usedIdentifiers;
+    private Set<Integer> usedIdentifiers;
 
-    PersonIdManager(){
+    private PersonIdManager(){
         usedIdentifiers = new TreeSet<>();
     }
 

@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class ConsoleCommandReader implements CommandReader {
-    private final BufferedReader reader;
+    private BufferedReader reader;
 
     public ConsoleCommandReader(BufferedReader reader){
         this.reader = reader;

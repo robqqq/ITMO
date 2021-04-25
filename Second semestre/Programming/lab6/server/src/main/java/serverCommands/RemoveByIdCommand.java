@@ -10,8 +10,8 @@ import messages.Messenger;
  * Класс команды, которая удаляет элемент из коллекции по его id
  */
 public class RemoveByIdCommand implements ServerCommand, RequiringArg<Integer> {
-    private final CollectionManager collectionManager;
-    private final Messenger messenger;
+    private CollectionManager collectionManager;
+    private Messenger messenger;
     private int arg;
 
     /**

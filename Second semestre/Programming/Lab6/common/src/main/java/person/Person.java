@@ -1,5 +1,6 @@
 package person;
 
+import java.text.Collator;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -120,8 +121,7 @@ public class Person implements Comparable<Person>{
 
     @Override
     public String toString() {
-        return String.format("Person(id=%d, name=%s, coordinates=%s, creationDate=%s, height=%d, birthday=%s, " +
-                        "eyeColor=%s, hairColor=%s, location=%s)", id, name, coordinates, creationDate, height,
-                birthday, eyeColor, hairColor, location);
+        return String.format("Person(%d;%s;%s;%s;%d;%s;%s;%s;%s)", id, name, coordinates, creationDate, height, birthday,
+                eyeColor, hairColor, location);
     }
 }

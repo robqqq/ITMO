@@ -13,8 +13,8 @@ import person.RawPerson;
  * наибольшего элемента этой коллекции
  */
 public class AddIfMaxCommand implements ServerCommand, RequiringObject{
-    private final CollectionManager collectionManager;
-    private final Messenger messenger;
+    private CollectionManager collectionManager;
+    private Messenger messenger;
     private RawPerson person;
 
     public AddIfMaxCommand(CollectionManager collectionManager, Messenger messenger){

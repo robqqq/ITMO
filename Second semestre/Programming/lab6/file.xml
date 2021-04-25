@@ -18,22 +18,4 @@
             <locationName/>
         </location>
     </person>
-    <person>
-        <id>2</id>
-        <name>3</name>
-        <coordinates>
-            <coordinatesX>3.0</coordinatesX>
-            <coordinatesY>100</coordinatesY>
-        </coordinates>
-        <creationDate>2021-04-03T16:02:54.928053300</creationDate>
-        <height>10</height>
-        <birthday>1234-12-12T00:00</birthday>
-        <eyeColor>BLACK</eyeColor>
-        <hairColor>YELLOW</hairColor>
-        <location>
-            <locationX>1.0</locationX>
-            <locationY>1</locationY>
-            <locationName/>
-        </location>
-    </person>
 </personTreeSet>

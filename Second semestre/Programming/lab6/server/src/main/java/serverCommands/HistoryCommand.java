@@ -8,8 +8,8 @@ import java.util.Stack;
  * Класс команды, которая выводит последние 9 команд
  */
 public class HistoryCommand implements ServerCommand{
-    private final Stack<String> history;
-    private final Messenger messenger;
+    private Stack<String> history;
+    private Messenger messenger;
 
     /**
      * @param history история использованных команд
@@ -29,5 +29,8 @@ public class HistoryCommand implements ServerCommand{
                 .append(":\n");
         history.forEach(command -> stringBuilder.append(command).append("\n"));
         return stringBuilder.toString();
+//        for (int i = history.size() - 1; i >= 0; i--) {
+//            outputManager.printMsg(history.get(i) + "\n");
+//        }
     }
 }

@@ -55,6 +55,6 @@ public class RequestImpl implements Request, Serializable {
 
     @Override
     public String toString() {
-        return String.format("RequestImpl(type=%s, command=%s, arg=%s, person=%s)", type, command, arg, person);
+        return String.format("RequestImpl(%s;%s;%s;%s)", type, command, arg, person);
     }
 }

@@ -14,8 +14,8 @@ import person.RawPerson;
  * Класс команды, которая обновляет значение элемента коллекции, id которого равен заданному
  */
 public class UpdateCommand implements ServerCommand, RequiringArg<Integer>, RequiringObject {
-    private final CollectionManager collectionManager;
-    private final Messenger messenger;
+    private CollectionManager collectionManager;
+    private Messenger messenger;
     private int arg;
     private RawPerson person;
 

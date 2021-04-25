@@ -10,7 +10,7 @@ import exceptions.InvalidFieldException;
 public class CoordinatesBuilderImpl implements CoordinatesBuilder{
     private Double x; //Максимальное значение поля: 882, Поле не может быть null
     private long y; //Значение поля должно быть больше -266
-    private final CoordinatesValidator validator;
+    private CoordinatesValidator validator;
 
     public CoordinatesBuilderImpl(){
         validator = new CoordinatesValidatorImpl();

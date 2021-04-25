@@ -13,9 +13,9 @@ import java.time.format.DateTimeParseException;
 
 public class
 ConsolePersonReader implements PersonReader {
-    private final BufferedReader reader;
-    private final Messenger messenger;
-    private final OutputManager outputManager;
+    private BufferedReader reader;;
+    private Messenger messenger;
+    private OutputManager outputManager;
 
     public ConsolePersonReader(BufferedReader reader, Messenger messenger, OutputManager outputManager) {
         this.reader = reader;

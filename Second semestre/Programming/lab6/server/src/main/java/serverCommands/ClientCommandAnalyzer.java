@@ -1,5 +1,6 @@
 package serverCommands;
 
+import log.Log;
 import networkMessages.Request;
 import requests.RequestReceiver;
 import requests.ServerRequestReceiver;
@@ -7,14 +8,10 @@ import requests.ServerRequestReceiver;
 import java.io.IOException;
 import java.nio.channels.DatagramChannel;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class ClientCommandAnalyzer extends Thread implements CommandAnalyzer {
     private boolean exit;
-    private final ServerCommandManager commandManager;
-    private final DatagramChannel channel;
-    private static final Logger logger = LoggerFactory.getLogger(ClientCommandAnalyzer.class);
+    private ServerCommandManager commandManager;
+    private DatagramChannel channel;
 
     public ClientCommandAnalyzer(ServerCommandManager commandManager, DatagramChannel channel){
         this.commandManager = commandManager;
@@ -37,10 +34,10 @@ public class ClientCommandAnalyzer extends Thread implements CommandAnalyzer {
             } catch (IOException e) {
                 stopReading();
             } catch (ClassNotFoundException e) {
-                logger.error("serializing error", e);
+                Log.log().error("serializing error", e);
             }
         }
-        logger.info("server has stopped");
+        Log.log().info("server has stopped");
     }
 
     @Override

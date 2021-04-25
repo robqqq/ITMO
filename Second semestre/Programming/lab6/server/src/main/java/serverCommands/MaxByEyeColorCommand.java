@@ -9,8 +9,8 @@ import java.util.Comparator;
  * Класс команды, которая выводит любой объект из коллекции, значение поля eyeColor которого является максимальным
  */
 public class MaxByEyeColorCommand implements ServerCommand{
-    private final CollectionManager collectionManager;
-    private final Messenger messenger;
+    private CollectionManager collectionManager;
+    private Messenger messenger;
 
     /**
      * @param collectionManager менеджер коллекции
@@ -24,8 +24,8 @@ public class MaxByEyeColorCommand implements ServerCommand{
     @Override
     public String execute() {
         return messenger.getMsg("maxByEyeColorOutput") + ":\n" +
-                collectionManager.getPersonStream()
+                messenger.getPersonString(collectionManager.getPersonStream()
                 .max(Comparator.comparingInt(o -> o.getEyeColor().getHex()))
-                .toString() + "\n";
+                .get()) + "\n";
     }
 }

@@ -1,15 +1,13 @@
 package connection;
 
+import log.Log;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.DatagramChannel;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class ServerConnectionManagerImpl implements ServerConnectionManager {
     private DatagramChannel channel;
-    private static final Logger logger = LoggerFactory.getLogger(ServerConnectionManagerImpl.class);
 
     @Override
     public DatagramChannel openConnection(int port) throws IOException {
@@ -17,7 +15,7 @@ public class ServerConnectionManagerImpl implements ServerConnectionManager {
         channel = DatagramChannel.open();
         channel.bind(socketAddress);
         //channel.configureBlocking(false);
-        logger.info("server has opened connection on port {}", port);
+        Log.log().info("server has opened connection on port {}", port);
         return channel;
     }
 

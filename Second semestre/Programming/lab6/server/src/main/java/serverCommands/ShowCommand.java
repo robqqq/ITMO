@@ -7,8 +7,8 @@ import messages.Messenger;
  * Класс команды, которая выводит в стандартный поток вывода все элементы коллекции в строковом представлении
  */
 public class ShowCommand implements ServerCommand{
-    private final CollectionManager collectionManager;
-    private final Messenger messenger;
+    private CollectionManager collectionManager;
+    private Messenger messenger;
 
     /**
      * @param collectionManager менеджер коллекции
@@ -27,7 +27,7 @@ public class ShowCommand implements ServerCommand{
                 .append(collectionManager.getSize())
                 .append("):\n");
         collectionManager.getPersonStream()
-                .forEachOrdered(person -> stringBuilder.append(person).append("\n"));
+                .forEachOrdered(person -> stringBuilder.append(messenger.getPersonString(person)).append("\n"));
         return stringBuilder.toString();
     }
 }

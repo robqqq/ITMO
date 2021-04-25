@@ -5,14 +5,15 @@ import exceptions.InvalidArgumentTypeException;
 import exceptions.NeedObjectException;
 import exceptions.NoArgException;
 import messages.Messenger;
+import person.Person;
 import person.RawPerson;
 
 /**
  * Класс команды, которая добавляет новый элемент в коллекцию
  */
 public class AddCommand implements ServerCommand, RequiringObject {
-    private final CollectionManager collectionManager;
-    private final Messenger messenger;
+    private CollectionManager collectionManager;
+    private Messenger messenger;
     private RawPerson person;
 
     public AddCommand(CollectionManager collectionManager, Messenger messenger){

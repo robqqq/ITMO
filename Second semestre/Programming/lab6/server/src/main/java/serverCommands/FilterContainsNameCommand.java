@@ -9,8 +9,8 @@ import messages.Messenger;
  * Класс команды, которая выводит элементы, значение поля name которых содержит заданную подстроку
  */
 public class FilterContainsNameCommand implements ServerCommand, RequiringArg<String> {
-    private final CollectionManager collectionManager;
-    private final Messenger messenger;
+    private CollectionManager collectionManager;
+    private Messenger messenger;
     private String arg;
 
     /**
@@ -29,7 +29,7 @@ public class FilterContainsNameCommand implements ServerCommand, RequiringArg<St
                 .append(":\n");
         collectionManager.getPersonStream()
                 .filter(person -> person.getName().contains(arg))
-                .forEachOrdered(person -> stringBuilder.append(person).append("\n"));
+                .forEachOrdered(person -> stringBuilder.append(messenger.getPersonString(person)).append("\n"));
         return stringBuilder.toString();
     }
 
