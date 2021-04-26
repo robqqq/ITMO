@@ -11,21 +11,28 @@ import java.io.InputStreamReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ServerCommandAnalyzer implements CommandAnalyzer {
+public class ServerCommandHandler extends Thread implements CommandHandler{
     private boolean exit;
     private final CommandReader commandReader;
     private final Messenger messenger;
     private final ServerCommandManager commandManager;
-    private static final Logger logger = LoggerFactory.getLogger(ServerCommandAnalyzer.class);
+    private static final Logger logger = LoggerFactory.getLogger(ServerCommandHandler.class);
 
-    public ServerCommandAnalyzer(ServerCommandManager commandManager, Messenger messenger){
+    public ServerCommandHandler(ServerCommandManager commandManager, Messenger messenger){
         commandReader = new ServerConsoleCommandReader(new BufferedReader(new InputStreamReader(System.in)));
         this.commandManager = commandManager;
         this.messenger = messenger;
     }
 
-    @Override
     public void startReading() {
+        start();
+    }
+
+    public void stopReading() {
+        exit = true;
+    }
+
+    public void run() {
         while (!exit) {
             try {
                 String inputString = commandReader.readCommand();
@@ -36,10 +43,5 @@ public class ServerCommandAnalyzer implements CommandAnalyzer {
                 commandManager.executeServerCommand("exit");
             }
         }
-    }
-
-    @Override
-    public void stopReading() {
-        exit = true;
     }
 }

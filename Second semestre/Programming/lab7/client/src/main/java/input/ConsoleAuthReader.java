@@ -26,29 +26,27 @@ public class ConsoleAuthReader implements AuthReader{
 
     @Override
     public Auth readAuth() throws IOException {
-        outputManager.printMsg("login: "); //TODO: Добавить в мессенджер все в этом классе
+        outputManager.printMsg(messenger.getMsg("loginInput") + ": ");
         String login = reader.readLine();
         while (!usernamePattern.matcher(login).matches()){
-            outputManager.printErrorMsg("username can only contain numbers, letters, dots, underscores, and dashes,\n" +
-                    "must start with a letter, and must be between 2 and 20 characters long\n");
-            outputManager.printMsg("login: ");
+            outputManager.printErrorMsg(messenger.getMsg("wrongLoginPattern") + "\n");
+            outputManager.printMsg(messenger.getMsg("loginInput") + ": ");
             login = reader.readLine();
         }
         String password;
-        outputManager.printMsg("password: ");
+        outputManager.printMsg(messenger.getMsg("passwordInput") + ": ");
         if (System.console() != null) {
             password = String.valueOf(System.console().readPassword());
             while (!passwordPattern.matcher(password).matches()){
-                outputManager.printErrorMsg("password can contain only letters and numbers,\n" +
-                        "the length must be at least 6 characters\n");
-                outputManager.printMsg("password: ");
+                outputManager.printErrorMsg(messenger.getMsg("wrongPasswordPattern") + "\n");
+                outputManager.printMsg(messenger.getMsg("passwordInput") + ": ");
                 password = String.valueOf(System.console().readPassword());
             }
         } else {
             password = reader.readLine();
             while (!passwordPattern.matcher(password).matches()){
-                outputManager.printErrorMsg("password length must be more or equals 6\n");
-                outputManager.printMsg("password: ");
+                outputManager.printErrorMsg(messenger.getMsg("wrongPasswordPattern") + "\n");
+                outputManager.printMsg(messenger.getMsg("passwordInput") + ": ");
                 password = reader.readLine();
             }
         }

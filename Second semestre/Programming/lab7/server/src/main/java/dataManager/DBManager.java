@@ -1,4 +1,4 @@
-package dbManager;
+package dataManager;
 
 import auth.Auth;
 import person.Person;
@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Collection;
-import java.util.Map;
 import java.util.Set;
 
 public class DBManager implements DataManager {
@@ -27,30 +26,30 @@ public class DBManager implements DataManager {
     }
 
     @Override
-    public Person addElement(RawPerson rawPerson) {
-        dataWriter.addElement(rawPerson);
+    public Person addElement(RawPerson rawPerson, Auth auth) {
+        dataWriter.addElement(rawPerson, auth);
         return dataReader.getLastElement();
     }
 
     @Override
-    public Person updateElement(RawPerson rawPerson, int id) {
-        dataWriter.updateElement(rawPerson, id);
+    public Person updateElement(RawPerson rawPerson, int id, Auth auth) {
+        dataWriter.updateElement(rawPerson, id, auth);
         return dataReader.getElement(id);
     }
 
     @Override
-    public void clearElements() {
-        dataWriter.clearElements();
+    public void clearElements(Auth auth) {
+        dataWriter.clearElements(auth);
     }
 
     @Override
-    public void removeElement(int id) {
-        dataWriter.removeElement(id);
+    public void removeElement(int id, Auth auth) {
+        dataWriter.removeElement(id, auth);
     }
 
     @Override
     public void addUser(Auth auth) {
-        dataWriter.addUser(auth.getLogin(), auth.getPassword());
+        dataWriter.addUser(auth);
     }
 
     @Override

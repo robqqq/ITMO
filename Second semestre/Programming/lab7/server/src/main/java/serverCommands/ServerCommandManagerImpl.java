@@ -4,13 +4,14 @@ import application.Application;
 import auth.Auth;
 import authManager.AuthManager;
 import collectionManager.CollectionManager;
-import dbManager.DataManager;
+import dataManager.DataManager;
 import exceptions.AuthException;
 import exceptions.InvalidArgumentTypeException;
 import exceptions.NeedObjectException;
 import exceptions.NoArgException;
 import messages.Messenger;
 import networkMessages.RequestType;
+import networkMessages.Response;
 import person.RawPerson;
 import responses.ResponseFactory;
 import responses.ResponseSender;
@@ -63,39 +64,35 @@ public class ServerCommandManagerImpl implements ServerCommandManager {
     }
 
     @Override
-    public void executeClientCommand(RequestType type, String command, String arg, RawPerson person, Auth auth,
-                                     SocketAddress address, DatagramChannel channel){
+    public Response executeClientCommand(RequestType type, String command, String arg, RawPerson person, Auth auth){
         ResponseFactory responseFactory = new ServerResponseFactory();
-        ResponseSender responseSender = new ServerResponseSender(channel, address);
-        if (type == RequestType.AUTH_REG_COMMAND){
-            commandInvoker.setAuthArg(auth);
-        } else if (!authManager.checkAuth(auth)){
-            responseSender.sendResponse(responseFactory.createAuthErrorResponse("authError"));//TODO: добавить authError в мессенджер
-            return;
+        if (!authManager.checkAuth(auth) && type != RequestType.AUTH_REG_COMMAND){
+            return responseFactory.createAuthErrorResponse("authError");
         }
         if (clientCommandMap.containsKey(command)) {
             commandInvoker.setType(type);
             commandInvoker.setArg(arg);
             commandInvoker.setObject(person);
+            commandInvoker.setAuth(auth);
             try {
                 clientCommandMap.get(command).acceptInvoker(commandInvoker);
                 history.push(command);
                 if (history.size() > 9) {
                     history.remove(0);
                 }
-                responseSender.sendResponse(responseFactory.createDefaultResponse(commandInvoker.getCommandOutput()));
+                return responseFactory.createDefaultResponse(commandInvoker.getCommandOutput());
             } catch (NoArgException e) {
-                responseSender.sendResponse(responseFactory.createErrorResponse("noArg"));
+                return responseFactory.createErrorResponse("noArg");
             } catch (InvalidArgumentTypeException e) {
-                responseSender.sendResponse((responseFactory.createErrorResponse("invalidArgumentType")));
+                return responseFactory.createErrorResponse("invalidArgumentType");
             } catch (NeedObjectException e) {
-                responseSender.sendResponse(responseFactory.createNeedObjectResponse());
+                return responseFactory.createNeedObjectResponse();
             } catch (AuthException e){
-                responseSender.sendResponse(responseFactory.createAuthErrorResponse("authError"));//TODO: добавить authError в мессенджер
+                return responseFactory.createAuthErrorResponse("authError");
             }
 
         } else {
-            responseSender.sendResponse(responseFactory.createErrorResponse("noSuchCommand"));
+            return responseFactory.createErrorResponse("noSuchCommand");
         }
     }
 

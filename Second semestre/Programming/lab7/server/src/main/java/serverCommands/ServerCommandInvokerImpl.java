@@ -13,7 +13,12 @@ public class ServerCommandInvokerImpl implements ServerCommandInvoker{
     private RawPerson person;
     private RequestType type;
     private String output;
-    private Auth authArg;
+    private Auth auth;
+
+    @Override
+    public void setAuthArgToCommand(RequiringArg<Auth> command) {
+        command.setArg(Auth.parse(arg));
+    }
 
     @Override
     public void invokeCommand(ServerCommand command) {
@@ -43,12 +48,8 @@ public class ServerCommandInvokerImpl implements ServerCommandInvoker{
     }
 
     @Override
-    public void setAuthArgToCommand(RequiringArg<Auth> command) throws NoArgException{
-        if (type == RequestType.AUTH_REG_COMMAND) {
-            command.setArg(authArg);
-        } else {
-            throw new NoArgException();
-        }
+    public void setAuthToCommand(RequiringAuth command) throws NoArgException{
+        command.setAuth(auth);
     }
 
     @Override
@@ -66,8 +67,8 @@ public class ServerCommandInvokerImpl implements ServerCommandInvoker{
     }
 
     @Override
-    public void setAuthArg(Auth auth) {
-        this.authArg = auth;
+    public void setAuth(Auth auth) {
+        this.auth = auth;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package networkMessages;
 
 import auth.Auth;
-import person.Person;
 import person.RawPerson;
 
 public interface Request {

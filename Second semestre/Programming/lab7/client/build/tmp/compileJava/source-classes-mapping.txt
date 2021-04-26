@@ -1,58 +1,58 @@
-input/InputManager.java
- input.InputManager
-output/ConsoleOutputManager.java
- output.ConsoleOutputManager
-input/ConsolePersonReader.java
- input.ConsolePersonReader
-input/ConsoleAuthReader.java
- input.ConsoleAuthReader
-client/Main.java
- client.Main
-clientCommands/ClientCommandManager.java
- clientCommands.ClientCommandManager
-clientCommands/ClientCommandInvoker.java
- clientCommands.ClientCommandInvoker
-connection/ClientConnectionManagerImpl.java
- connection.ClientConnectionManagerImpl
-requests/RequestSender.java
- requests.RequestSender
-input/AuthReader.java
- input.AuthReader
-input/ScriptCommandReader.java
- input.ScriptCommandReader
-responses/ResponseReceiver.java
- responses.ResponseReceiver
 output/OutputManager.java
  output.OutputManager
-requests/RequestFactory.java
- requests.RequestFactory
-clientCommands/ClientCommand.java
- clientCommands.ClientCommand
-clientCommands/ExitCommand.java
- clientCommands.ExitCommand
-connection/ClientConnectionManager.java
- connection.ClientConnectionManager
-clientCommands/ClientCommandInvokerImpl.java
- clientCommands.ClientCommandInvokerImpl
-input/ScriptPersonReader.java
- input.ScriptPersonReader
-requests/ClientRequestSender.java
- requests.ClientRequestSender
+output/ConsoleOutputManager.java
+ output.ConsoleOutputManager
 responses/ClientResponseReceiver.java
  responses.ClientResponseReceiver
 input/ConsoleCommandReader.java
  input.ConsoleCommandReader
-input/ConsoleInputManager.java
- input.ConsoleInputManager
-input/ScriptInputManager.java
- input.ScriptInputManager
+responses/ResponseReceiver.java
+ responses.ResponseReceiver
+clientCommands/ClientCommand.java
+ clientCommands.ClientCommand
+clientCommands/ClientCommandInvoker.java
+ clientCommands.ClientCommandInvoker
+connection/ClientConnectionManagerImpl.java
+ connection.ClientConnectionManagerImpl
+connection/ClientConnectionManager.java
+ connection.ClientConnectionManager
+clientCommands/ClientCommandInvokerImpl.java
+ clientCommands.ClientCommandInvokerImpl
+input/ScriptCommandReader.java
+ input.ScriptCommandReader
+clientCommands/ClientCommandManager.java
+ clientCommands.ClientCommandManager
+client/Main.java
+ client.Main
+input/ConsolePersonReader.java
+ input.ConsolePersonReader
 input/PersonReader.java
  input.PersonReader
-requests/ClientRequestFactory.java
- requests.ClientRequestFactory
+input/ScriptPersonReader.java
+ input.ScriptPersonReader
+input/InputManager.java
+ input.InputManager
+clientCommands/ExitCommand.java
+ clientCommands.ExitCommand
 clientCommands/ClientCommandManagerImpl.java
  clientCommands.ClientCommandManagerImpl
+requests/ClientRequestSender.java
+ requests.ClientRequestSender
+input/ConsoleAuthReader.java
+ input.ConsoleAuthReader
+input/ScriptInputManager.java
+ input.ScriptInputManager
 client/ClientApplication.java
  client.ClientApplication
+requests/RequestSender.java
+ requests.RequestSender
+input/AuthReader.java
+ input.AuthReader
+requests/ClientRequestFactory.java
+ requests.ClientRequestFactory
+input/ConsoleInputManager.java
+ input.ConsoleInputManager
 clientCommands/ExecuteScriptCommand.java
  clientCommands.ExecuteScriptCommand
+requests/RequestFactory.java
+ requests.RequestFactory

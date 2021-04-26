@@ -1,4 +1,4 @@
-package dbManager;
+package dataManager;
 
 import auth.Auth;
 import person.Person;

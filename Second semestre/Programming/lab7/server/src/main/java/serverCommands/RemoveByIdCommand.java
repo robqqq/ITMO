@@ -1,8 +1,9 @@
 package serverCommands;
 
+import auth.Auth;
 import collectionManager.CollectionManager;
 import command.RequiringArg;
-import dbManager.DataManager;
+import dataManager.DataManager;
 import exceptions.InvalidArgumentTypeException;
 import exceptions.NoArgException;
 import exceptions.NoSuchIdException;
@@ -11,15 +12,16 @@ import messages.Messenger;
 /**
  * Класс команды, которая удаляет элемент из коллекции по его id
  */
-public class RemoveByIdCommand implements ServerCommand, RequiringArg<Integer> {
+public class RemoveByIdCommand implements ServerCommand, RequiringArg<Integer>, RequiringAuth {
     private final CollectionManager collectionManager;
     private final DataManager dataManager;
     private final Messenger messenger;
     private int arg;
+    private Auth auth;
 
     /**
      * @param collectionManager менеджер коллекции
-     * @param dataManager
+     * @param dataManager менеджер данных
      * @param messenger мессенджер
      */
     public RemoveByIdCommand(CollectionManager collectionManager, DataManager dataManager, Messenger messenger){
@@ -31,7 +33,7 @@ public class RemoveByIdCommand implements ServerCommand, RequiringArg<Integer> {
     @Override
     public String execute() {
         try{
-            dataManager.removeElement(arg);
+            dataManager.removeElement(arg, auth);
             collectionManager.removeElement(arg);
             return messenger.getMsg("removeOutput");
         } catch (NoSuchIdException e){
@@ -46,7 +48,13 @@ public class RemoveByIdCommand implements ServerCommand, RequiringArg<Integer> {
 
     @Override
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException {
+        commandInvoker.setAuthToCommand(this);
         commandInvoker.setIntegerArgToCommand(this);
         commandInvoker.invokeCommand(this);
+    }
+
+    @Override
+    public void setAuth(Auth auth) {
+        this.auth = auth;
     }
 }

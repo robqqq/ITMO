@@ -29,7 +29,8 @@ public class ClientRequestFactory implements RequestFactory {
     }
 
     @Override
-    public Request createAuthRegRequest(String command, Auth auth){
-        return new RequestImpl(RequestType.AUTH_REG_COMMAND, command, null, null, auth);
+    public Request createAuthRegRequest(String command, Auth newAuth, Auth auth){
+        return new RequestImpl(RequestType.AUTH_REG_COMMAND, command,
+                newAuth.getLogin() + " " + newAuth.getPassword(),null, auth);
     }
 }

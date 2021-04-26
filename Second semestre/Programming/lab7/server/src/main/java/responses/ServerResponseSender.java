@@ -12,18 +12,15 @@ import org.slf4j.LoggerFactory;
 
 public class ServerResponseSender implements ResponseSender{
     private final DatagramChannel channel;
-    private final SocketAddress address;
-    private final ByteArrayOutputStream byteArrayOutputStream;
     private static final Logger logger = LoggerFactory.getLogger(ServerResponseSender.class);
 
-    public ServerResponseSender(DatagramChannel channel, SocketAddress address){
+    public ServerResponseSender(DatagramChannel channel){
         this.channel = channel;
-        this.address = address;
-        byteArrayOutputStream = new ByteArrayOutputStream(4096);
     }
 
-    public void sendResponse(Response response){
+    public void sendResponse(Response response, SocketAddress address){
         try {
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(4096);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteArrayOutputStream);
             objectOutputStream.writeObject(response);
             channel.send(ByteBuffer.wrap(byteArrayOutputStream.toByteArray()), address);

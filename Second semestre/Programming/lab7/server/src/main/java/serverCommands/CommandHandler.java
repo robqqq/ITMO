@@ -1,6 +1,6 @@
 package serverCommands;
 
-public interface CommandAnalyzer {
+public interface CommandHandler {
 
     void startReading();
 

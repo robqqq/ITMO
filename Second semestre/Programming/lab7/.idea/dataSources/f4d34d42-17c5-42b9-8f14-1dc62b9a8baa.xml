@@ -790,7 +790,7 @@ false Zulu
       <ObjectId>13442</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>514</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2782</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">
@@ -861,7 +861,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>515</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2783</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="17" parent="2" name="adminpack">
@@ -977,101 +977,108 @@ UC/10
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="31" parent="16" name="persons">
-      <ObjectId>16472</ObjectId>
+      <ObjectId>16503</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
     </table>
     <table id="32" parent="16" name="users">
       <ObjectId>16486</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>511</StateNumber>
+      <StateNumber>2781</StateNumber>
     </table>
     <column id="33" parent="31" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="34" parent="31" name="name">
       <Position>2</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="35" parent="31" name="coordinates_x">
       <Position>3</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>701</TypeId>
     </column>
     <column id="36" parent="31" name="coordinates_y">
       <Position>4</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="37" parent="31" name="creationdate">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="38" parent="31" name="height">
       <Position>6</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="39" parent="31" name="birthday">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="40" parent="31" name="eyecolor">
       <Position>8</Position>
       <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="41" parent="31" name="haircolor">
       <Position>9</Position>
       <DataType>varchar(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="42" parent="31" name="location_x">
       <Position>10</Position>
       <DataType>real|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>700</TypeId>
     </column>
     <column id="43" parent="31" name="location_y">
       <Position>11</Position>
       <DataType>real|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>700</TypeId>
     </column>
     <column id="44" parent="31" name="location_name">
       <Position>12</Position>
       <DataType>varchar(480)|0s</DataType>
-      <StateNumber>507</StateNumber>
+      <StateNumber>2781</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="45" parent="31" name="persons_pkey">
-      <ObjectId>16484</ObjectId>
-      <StateNumber>507</StateNumber>
+    <column id="45" parent="31" name="owner">
+      <Position>13</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2781</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="46" parent="31" name="persons_pkey">
+      <ObjectId>16515</ObjectId>
+      <StateNumber>2781</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1079,66 +1086,76 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="46" parent="31" name="persons_pkey">
-      <ObjectId>16485</ObjectId>
-      <StateNumber>507</StateNumber>
+    <key id="47" parent="31" name="persons_pkey">
+      <ObjectId>16516</ObjectId>
+      <StateNumber>2781</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>persons_pkey</UnderlyingIndexName>
     </key>
-    <check id="47" parent="31" name="persons_eyecolor_check">
-      <ObjectId>16479</ObjectId>
-      <StateNumber>507</StateNumber>
+    <foreign-key id="48" parent="31" name="persons_owner_fkey">
+      <ObjectId>16517</ObjectId>
+      <StateNumber>2781</StateNumber>
+      <ColNames>owner</ColNames>
+      <RefTableId>16486</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>username</RefColNames>
+    </foreign-key>
+    <check id="49" parent="31" name="persons_eyecolor_check">
+      <ObjectId>16510</ObjectId>
+      <StateNumber>2781</StateNumber>
       <ColNames>eyecolor</ColNames>
       <Predicate>(eyecolor)::text = ANY ((ARRAY[&apos;BLACK&apos;::character varying, &apos;ORANGE&apos;::character varying, &apos;WHITE&apos;::character varying])::text[])</Predicate>
     </check>
-    <check id="48" parent="31" name="persons_haircolor_check">
-      <ObjectId>16480</ObjectId>
-      <StateNumber>507</StateNumber>
+    <check id="50" parent="31" name="persons_haircolor_check">
+      <ObjectId>16511</ObjectId>
+      <StateNumber>2781</StateNumber>
       <ColNames>haircolor</ColNames>
       <Predicate>(haircolor)::text = ANY ((ARRAY[&apos;GREEN&apos;::character varying, &apos;BLACK&apos;::character varying, &apos;BLUE&apos;::character varying, &apos;YELLOW&apos;::character varying, &apos;WHITE&apos;::character varying])::text[])</Predicate>
     </check>
-    <check id="49" parent="31" name="persons_coordinates_x_check">
-      <ObjectId>16476</ObjectId>
-      <StateNumber>507</StateNumber>
+    <check id="51" parent="31" name="persons_coordinates_x_check">
+      <ObjectId>16507</ObjectId>
+      <StateNumber>2781</StateNumber>
       <ColNames>coordinates_x</ColNames>
       <Predicate>coordinates_x &lt; (882)::double precision</Predicate>
     </check>
-    <check id="50" parent="31" name="persons_coordinates_y_check">
-      <ObjectId>16477</ObjectId>
-      <StateNumber>507</StateNumber>
+    <check id="52" parent="31" name="persons_coordinates_y_check">
+      <ObjectId>16508</ObjectId>
+      <StateNumber>2781</StateNumber>
       <ColNames>coordinates_y</ColNames>
       <Predicate>coordinates_y &gt; &apos;-266&apos;::integer</Predicate>
     </check>
-    <check id="51" parent="31" name="persons_height_check">
-      <ObjectId>16478</ObjectId>
-      <StateNumber>507</StateNumber>
+    <check id="53" parent="31" name="persons_height_check">
+      <ObjectId>16509</ObjectId>
+      <StateNumber>2781</StateNumber>
       <ColNames>height</ColNames>
       <Predicate>height &gt; 0</Predicate>
     </check>
-    <check id="52" parent="31" name="persons_id_check">
-      <ObjectId>16475</ObjectId>
-      <StateNumber>507</StateNumber>
+    <check id="54" parent="31" name="persons_id_check">
+      <ObjectId>16506</ObjectId>
+      <StateNumber>2781</StateNumber>
       <ColNames>id</ColNames>
       <Predicate>id &gt; 0</Predicate>
     </check>
-    <column id="53" parent="32" name="username">
+    <column id="55" parent="32" name="username">
       <Position>1</Position>
-      <DataType>text|0s</DataType>
+      <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>511</StateNumber>
-      <TypeId>25</TypeId>
+      <StateNumber>2778</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="54" parent="32" name="password">
+    <column id="56" parent="32" name="password">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>511</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="55" parent="32" name="users_pkey">
-      <ObjectId>16492</ObjectId>
-      <StateNumber>511</StateNumber>
+    <index id="57" parent="32" name="users_pkey">
+      <ObjectId>16494</ObjectId>
+      <StateNumber>2778</StateNumber>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1147,9 +1164,9 @@ UC/10
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <key id="56" parent="32" name="users_pkey">
-      <ObjectId>16493</ObjectId>
-      <StateNumber>511</StateNumber>
+    <key id="58" parent="32" name="users_pkey">
+      <ObjectId>16495</ObjectId>
+      <StateNumber>2778</StateNumber>
       <ColNames>username</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>

@@ -1,0 +1,26 @@
+package serverCommands;
+
+import networkMessages.Request;
+import networkMessages.Response;
+import requests.RequestReceiver;
+import requests.ServerRequestReceiver;
+
+import java.io.IOException;
+import java.net.SocketAddress;
+import java.nio.channels.DatagramChannel;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class RequestHandler{
+    private final ServerCommandManager commandManager;
+
+    public RequestHandler(ServerCommandManager commandManager){
+        this.commandManager = commandManager;
+    }
+
+    public Response handleRequest(Request request) {
+        return commandManager.executeClientCommand(request.getType(), request.getCommand(), request.getArg(),
+                request.getObject(), request.getAuth());
+    }
+}

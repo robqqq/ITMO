@@ -40,7 +40,7 @@ public class ScriptInputManager implements InputManager {
     }
 
     @Override
-    public Auth readAuth() throws IOException {
+    public Auth readAuth(){
        throw new ScriptException();
     }
 }

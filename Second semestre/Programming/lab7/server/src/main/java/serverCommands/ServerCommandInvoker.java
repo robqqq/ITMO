@@ -16,13 +16,15 @@ public interface ServerCommandInvoker {
 
     void setStringArgToCommand(RequiringArg<String> command) throws NoArgException;
 
-    void setAuthArgToCommand(RequiringArg<Auth> command) throws NoArgException;
+    void setAuthToCommand(RequiringAuth command) throws NoArgException;
+
+    void setAuthArgToCommand(RequiringArg<Auth> command);
 
     void setObjectToCommand(RequiringObject command) throws NeedObjectException;
 
     void setArg(String arg);
 
-    void setAuthArg(Auth auth);
+    void setAuth(Auth auth);
 
     void setObject(RawPerson person);
 

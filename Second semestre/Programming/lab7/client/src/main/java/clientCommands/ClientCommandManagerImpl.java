@@ -5,6 +5,7 @@ import client.ClientApplication;
 import exceptions.NoArgException;
 import input.InputManager;
 import messages.Messenger;
+import networkMessages.Request;
 import networkMessages.Response;
 import networkMessages.ResponseType;
 import output.OutputManager;
@@ -86,8 +87,11 @@ public class ClientCommandManagerImpl implements ClientCommandManager {
         RequestSender requestSender = new ClientRequestSender(address, socket);
         RequestFactory requestFactory = new ClientRequestFactory();
         if (command.equals("auth") || command.equals("reg")){
-            app.auth(inputManager.readAuth());
-            requestSender.sendRequest(requestFactory.createAuthRegRequest(command, app.getAuth()));
+            Auth newAuth = inputManager.readAuth();
+            Request request = requestFactory.
+                    createAuthRegRequest(command, newAuth, app.getAuth());
+            app.auth(newAuth);
+            requestSender.sendRequest(request);
         } else if (arg == null || arg.equals("")){
             requestSender.sendRequest(requestFactory.createSimpleRequest(command, app.getAuth()));
         } else {
@@ -113,8 +117,7 @@ public class ClientCommandManagerImpl implements ClientCommandManager {
         }
         if (response.getType() == ResponseType.AUTH_ERROR_RESPONSE){
             app.auth(null);
-            outputManager.printErrorMsg("auth error");
-            //TODO: auth error msg
+            outputManager.printErrorMsg(messenger.getMsg("authError") + "\n");
         }
     }
 

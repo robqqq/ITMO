@@ -1,0 +1,2776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="4366.182651430697" y="4674.0">client.ClientApplication</node>
+    <node x="9867.96658398365" y="1211.5">messages.Messenger</node>
+    <node x="17988.84080925033" y="2527.0">exceptions.DBException</node>
+    <node x="10601.21658398365" y="4215.0">serverCommands.PrintFieldDescendingEyeColorCommand</node>
+    <node x="1617.7475569334783" y="1223.5">output</node>
+    <node x="767.75" y="4226.0">input.ScriptCommandReader</node>
+    <node x="4240.849318097363" y="2505.0">input.InputManager</node>
+    <node x="16423.52975643167" y="2550.0">exceptions.NoSuchIdException</node>
+    <node x="14923.540423733244" y="4170.5">serverCommands.AddCommand</node>
+    <node x="9055.46658398365" y="4215.0">serverCommands.ShowCommand</node>
+    <node x="14269.093932783986" y="1211.5">serverCommands.RequiringAuth</node>
+    <node x="2015.7183760683774" y="5243.0">clientCommands.ExitCommand</node>
+    <node x="3346.06670940171" y="2460.0">input.ConsoleAuthReader</node>
+    <node x="16033.538725916995" y="4170.5">serverCommands.RegCommand</node>
+    <node x="6895.820750650318" y="4784.5">responses.ServerResponseSender</node>
+    <node x="13140.620361355413" y="1211.5">command.RequiringArg</node>
+    <node x="18026.84080925033" y="4261.0">exceptions.NoEnvVarException</node>
+    <node x="1828.377092334369" y="5601.0">clientCommands.ClientCommandManagerImpl</node>
+    <node x="11192.294143040608" y="2527.0">application.Application</node>
+    <node x="7899.649371326925" y="1145.0">networkMessages.RequestType</node>
+    <node x="13463.226938750362" y="4170.5">serverCommands.RemoveByIdCommand</node>
+    <node x="1992.2933760683773" y="4215.5">clientCommands.ClientCommandInvoker</node>
+    <node x="12427.140460107526" y="180.0">exceptions.InvalidCoordinatesXException</node>
+    <node x="7089.445750650318" y="4249.0">responses.ResponseSender</node>
+    <node x="13733.900361355416" y="2427.5">serverCommands.ServerCommandInvoker</node>
+    <node x="12319.23249307456" y="4170.5">serverCommands.AddIfMinCommand</node>
+    <node x="10281.21658398365" y="4215.0">serverCommands.InfoCommand</node>
+    <node x="17838.84080925033" y="4261.0">exceptions.NoDataException</node>
+    <node x="1781.7475569334783" y="1211.5">input.PersonReader</node>
+    <node x="15656.288725916995" y="4181.5">serverCommands.AuthCommand</node>
+    <node x="8485.46658398365" y="2470.5">networkMessages.ResponseImpl</node>
+    <node x="11060.21658398365" y="4204.0">serverCommands.ExitCommand</node>
+    <node x="13996.335004212557" y="1211.5">serverCommands.RequiringObject</node>
+    <node x="12909.390460107526" y="100.0">exceptions.InvalidHairColorException</node>
+    <node x="8754.46658398365" y="2504.0">serverCommands.HelpCommand</node>
+    <node x="4676.179446302491" y="4148.5">networkMessages.RequestImpl</node>
+    <node x="4010.8493180973637" y="4215.0">connection.ClientConnectionManagerImpl</node>
+    <node x="5654.82140494537" y="2494.0">networkMessages.Request</node>
+    <node x="17131.84080925033" y="4170.5">dataManager.DBReader</node>
+    <node x="12266.890460107526" y="100.0">exceptions.InvalidBirthdayException</node>
+    <node x="14507.540423733244" y="4159.5">serverCommands.UpdateCommand</node>
+    <node x="11667.970986369408" y="4784.0">requests.ServerRequestReceiver</node>
+    <node x="17450.84080925033" y="4171.0">dataManager.DBWriter</node>
+    <node x="3047.06670940171" y="2515.0">input.ConsoleCommandReader</node>
+    <node x="4703.596112969158" y="4774.5">requests.ClientRequestFactory</node>
+    <node x="12278.890460107526" y="0.0">exceptions.InvalidFieldException</node>
+    <node x="9457.065079817901" y="2504.0">serverCommands.HistoryCommand</node>
+    <node x="6701.570750650317" y="4238.0">serverCommands.CommandHandler</node>
+    <node x="2057.7933760683773" y="4807.5">clientCommands.ClientCommand</node>
+    <node x="12577.140460107526" y="100.0">exceptions.InvalidCoordinatesException</node>
+    <node x="13212.319223843791" y="347.5">auth</node>
+    <node x="443.75" y="4205.0">clientCommands.ClientCommandManager</node>
+    <node x="11843.392282665705" y="2550.0">collectionManager</node>
+    <node x="3460.3142581067004" y="1211.5">input.AuthReader</node>
+    <node x="16708.49850643167" y="4718.5">dataManager.DBManager</node>
+    <node x="18230.84080925033" y="4261.0">exceptions.BrokenDataException</node>
+    <node x="5081.179446302491" y="4205.0">requests.RequestFactory</node>
+    <node x="212.75" y="4818.5">responses.ResponseReceiver</node>
+    <node x="8177.466583983651" y="4216.0">responses.ServerResponseFactory</node>
+    <node x="726.7104256677021" y="5187.5">clientCommands.ExecuteScriptCommand</node>
+    <node x="6335.570750650317" y="2515.0">input.ServerConsoleCommandReader</node>
+    <node x="11990.890460107526" y="180.0">exceptions.InvalidLocationNameException</node>
+    <node x="0.0" y="6054.0">exceptions.NoSuchCommandException</node>
+    <node x="8312.761871326926" y="280.0">networkMessages.ResponseType</node>
+    <node x="13361.1169739572" y="5778.0">server.Main</node>
+    <node x="5497.179446302491" y="5243.0">requests.ClientRequestSender</node>
+    <node x="7715.169246484568" y="5177.0">server.ServerApplication</node>
+    <node x="7776.279083983651" y="4237.5">requests.RequestReceiver</node>
+    <node x="940.25" y="2550.0">exceptions.ScriptException</node>
+    <node x="1416.0711538461546" y="4740.5">input.ScriptInputManager</node>
+    <node x="1115.0711538461546" y="4215.0">input.ScriptPersonReader</node>
+    <node x="12645.140460107526" y="347.5">person</node>
+    <node x="9764.46658398365" y="4192.5">serverCommands.FilterContainsNameCommand</node>
+    <node x="15500.013055994536" y="2550.0">exceptions.InvalidArgumentTypeException</node>
+    <node x="2490.481345812702" y="5243.5">clientCommands.ClientCommandInvokerImpl</node>
+    <node x="18377.09080925033" y="4785.0">connection.ServerConnectionManagerImpl</node>
+    <node x="7268.445750650318" y="4696.5">server.Server</node>
+    <node x="13437.390460107526" y="100.0">exceptions.InvalidHeightException</node>
+    <node x="9383.46658398365" y="4215.0">serverCommands.MaxByEyeColorCommand</node>
+    <node x="7353.945750650319" y="1200.5">networkMessages.Response</node>
+    <node x="3933.8493180973637" y="2515.5">connection.ClientConnectionManager</node>
+    <node x="16251.529756431672" y="2550.0">exceptions.AuthException</node>
+    <node x="16662.85584338819" y="2482.5">authManager.AuthManager</node>
+    <node x="11915.23249307456" y="4181.5">serverCommands.ClearCommand</node>
+    <node x="18451.84080925033" y="4238.0">connection.ServerConnectionManager</node>
+    <node x="13304.620361355413" y="1200.5">serverCommands.ServerCommand</node>
+    <node x="14684.343312376735" y="2472.0">dataManager.DataManager</node>
+    <node x="13157.226938750362" y="4138.5">serverCommands.ServerCommandInvokerImpl</node>
+    <node x="11963.970986369408" y="4718.5">serverCommands.ServerCommandManagerImpl</node>
+    <node x="1720.2933760683773" y="4261.0">exceptions.ScriptRecursionException</node>
+    <node x="5704.179446302491" y="4818.5">requests.RequestSender</node>
+    <node x="6487.820750650318" y="4729.5">serverCommands.ServerCommandHandler</node>
+    <node x="17315.49850643167" y="1167.5">dataManager.DataWriter</node>
+    <node x="8068.716583983651" y="2505.0">responses.ResponseFactory</node>
+    <node x="7467.279083983651" y="4226.0">serverCommands.RequestHandler</node>
+    <node x="76.5" y="5254.0">responses.ClientResponseReceiver</node>
+    <node x="13177.390460107526" y="100.0">exceptions.InvalidEyeColorException</node>
+    <node x="3344.477406418763" y="4160.0">input.ConsoleInputManager</node>
+    <node x="12006.890460107526" y="100.0">exceptions.InvalidLocationException</node>
+    <node x="5881.929446302491" y="4226.0">messages.MessengerImpl</node>
+    <node x="14078.540423733244" y="4170.5">serverCommands.AddIfMaxCommand</node>
+    <node x="2616.06670940171" y="2372.0">input.ConsolePersonReader</node>
+    <node x="12719.140460107526" y="180.0">exceptions.InvalidCoordinatesYException</node>
+    <node x="7246.445750650318" y="2550.0">exceptions.NoArgException</node>
+    <node x="15243.230447298884" y="2550.0">exceptions.NeedObjectException</node>
+    <node x="2447.7459178743975" y="1211.5">inputManager.CommandReader</node>
+    <node x="18729.84080925033" y="4138.0">authManager.AuthManagerImpl</node>
+    <node x="17057.49850643167" y="1178.0">dataManager.DataReader</node>
+    <node x="11778.890460107526" y="100.0">exceptions.InvalidNameException</node>
+    <node x="6163.929446302491" y="5277.0">client.Main</node>
+    <node x="7515.195750650318" y="2527.0">serverCommands.ServerCommandManager</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="serverCommands.AuthCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="-129.09090909090992" y="-94.5" />
+      <point x="15669.197816826087" y="2908.0" />
+      <point x="13980.900361355416" y="2908.0" />
+      <point x="104.0" y="137.5" />
+    </edge>
+    <edge source="exceptions.InvalidCoordinatesYException" target="exceptions.InvalidCoordinatesException">
+      <point x="0.0" y="-15.0" />
+      <point x="12855.140460107526" y="155.0" />
+      <point x="12775.140460107526" y="155.0" />
+      <point x="66.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="messages.Messenger">
+      <point x="-13.571428571429351" y="-105.5" />
+      <point x="15099.968995161817" y="2928.0" />
+      <point x="15062.745098091022" y="2928.0" />
+      <point x="15062.745098091022" y="1492.0" />
+      <point x="10017.20658398365" y="1492.0" />
+      <point x="67.23999999999978" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="responses.ServerResponseFactory">
+      <point x="-227.25" y="-127.0" />
+      <point x="12039.720986369408" y="4594.0" />
+      <point x="8315.46658398365" y="4594.0" />
+      <point x="0.0" y="60.0" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="inputManager.CommandReader">
+      <point x="34.55555555555566" y="-105.0" />
+      <point x="1606.1267094017103" y="4604.0" />
+      <point x="1372.5711538461546" y="4604.0" />
+      <point x="1372.5711538461546" y="1742.0" />
+      <point x="2490.7459178743975" y="1742.0" />
+      <point x="-43.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="authManager.AuthManager">
+      <point x="112.17857142857065" y="-105.5" />
+      <point x="16320.217297345567" y="4058.0" />
+      <point x="16727.54334338819" y="4058.0" />
+      <point x="-38.8125" y="82.5" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="collectionManager">
+      <point x="-195.69230769230853" y="-105.5" />
+      <point x="13479.534631058053" y="3208.0" />
+      <point x="12002.355245628669" y="3208.0" />
+      <point x="42.9629629629635" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="auth">
+      <point x="-319.55555555555566" y="-204.0" />
+      <point x="1868.3215367788134" y="5571.0" />
+      <point x="11.0" y="5571.0" />
+      <point x="11.0" y="1662.0" />
+      <point x="1160.9923076923087" y="1662.0" />
+      <point x="1160.9923076923087" y="945.0" />
+      <point x="13213.710528191617" y="945.0" />
+      <point x="-62.60869565217399" y="15.0" />
+    </edge>
+    <edge source="requests.ServerRequestReceiver" target="requests.RequestReceiver">
+      <point x="-69.0" y="-61.5" />
+      <point x="11736.970986369408" y="4654.0" />
+      <point x="7936.404083983651" y="4654.0" />
+      <point x="68.625" y="38.5" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="person">
+      <point x="210.41666666666606" y="-127.0" />
+      <point x="12477.387653036076" y="4544.0" />
+      <point x="16023.038725916995" y="4544.0" />
+      <point x="16023.038725916995" y="1402.0" />
+      <point x="15661.88035413932" y="1402.0" />
+      <point x="15661.88035413932" y="695.0" />
+      <point x="12765.140460107526" y="695.0" />
+      <point x="48.0" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="exceptions.ScriptException">
+      <point x="-21.714285714285325" y="-116.5" />
+      <point x="1008.9961399534168" y="5097.0" />
+      <point x="735.2500000000009" y="5097.0" />
+      <point x="735.2500000000009" y="4118.0" />
+      <point x="961.25" y="4118.0" />
+      <point x="-63.0" y="15.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="responses.ResponseSender">
+      <point x="-81.39130434782601" y="-127.0" />
+      <point x="7789.777942136742" y="5107.0" />
+      <point x="7199.320750650318" y="5107.0" />
+      <point x="-36.625" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ExitCommand" target="application.Application">
+      <point x="0.0" y="-72.0" />
+      <point x="11242.71658398365" y="3498.0" />
+      <point x="11260.294143040608" y="3498.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="clientCommands.ClientCommand">
+      <point x="-26.629629629629562" y="-204.0" />
+      <point x="2161.2474627047395" y="5461.0" />
+      <point x="1946.1683760683773" y="5461.0" />
+      <point x="1946.1683760683773" y="5107.0" />
+      <point x="2163.5433760683773" y="5107.0" />
+      <point x="-35.25" y="38.0" />
+    </edge>
+    <edge source="client.ClientApplication" target="input.ConsoleInputManager">
+      <point x="-22.769230769230944" y="-171.5" />
+      <point x="4491.413420661465" y="4524.0" />
+      <point x="3506.477406418763" y="4524.0" />
+      <point x="0.0" y="116.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="responses.ResponseReceiver">
+      <point x="-133.1481481481478" y="-204.0" />
+      <point x="2054.7289441862213" y="5501.0" />
+      <point x="362.0" y="5501.0" />
+      <point x="49.75" y="27.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="clientCommands.ClientCommandInvoker">
+      <point x="152.0" y="-116.5" />
+      <point x="1182.710425667702" y="5087.0" />
+      <point x="1794.2933760683773" y="5087.0" />
+      <point x="1794.2933760683773" y="4644.0" />
+      <point x="2019.493376068377" y="4644.0" />
+      <point x="-108.80000000000018" y="60.5" />
+    </edge>
+    <edge source="person" target="exceptions.InvalidHeightException">
+      <point x="63.0" y="-15.0" />
+      <point x="12780.140460107526" y="260.0" />
+      <point x="13549.390460107526" y="260.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="dataManager.DataReader" target="person">
+      <point x="-59.5" y="-60.5" />
+      <point x="17116.99850643167" y="565.0" />
+      <point x="12779.909690876757" y="565.0" />
+      <point x="62.76923076923049" y="15.0" />
+    </edge>
+    <edge source="responses.ServerResponseSender" target="networkMessages.Response">
+      <point x="-73.25" y="-61.0" />
+      <point x="6969.070750650318" y="1802.0" />
+      <point x="7393.904083983651" y="1802.0" />
+      <point x="-28.54166666666697" y="38.0" />
+    </edge>
+    <edge source="serverCommands.FilterContainsNameCommand" target="messages.Messenger">
+      <point x="-164.14285714285688" y="-83.5" />
+      <point x="9791.823726840794" y="3428.0" />
+      <point x="10133.069792474627" y="3428.0" />
+      <point x="10133.069792474627" y="2112.0" />
+      <point x="9954.88658398365" y="2112.0" />
+      <point x="4.920000000000073" y="27.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="exceptions.NoArgException">
+      <point x="346.1851851851852" y="-204.0" />
+      <point x="2534.0622775195543" y="5581.0" />
+      <point x="6153.429446302491" y="5581.0" />
+      <point x="6153.429446302491" y="3438.0" />
+      <point x="7306.445750650318" y="3438.0" />
+      <point x="-20.0" y="15.0" />
+    </edge>
+    <edge source="dataManager.DBWriter" target="exceptions.DBException">
+      <point x="147.20000000000073" y="-105.0" />
+      <point x="17782.04080925033" y="4108.0" />
+      <point x="18065.507475917" y="4108.0" />
+      <point x="-15.33333333333212" y="38.0" />
+    </edge>
+    <edge source="serverCommands.InfoCommand" target="messages.Messenger">
+      <point x="-120.0" y="-61.0" />
+      <point x="10311.21658398365" y="3458.0" />
+      <point x="10360.21658398365" y="3458.0" />
+      <point x="10360.21658398365" y="2092.0" />
+      <point x="9961.44658398365" y="2092.0" />
+      <point x="11.479999999999563" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="exceptions.InvalidArgumentTypeException">
+      <point x="193.58333333333394" y="-127.0" />
+      <point x="12460.554319702744" y="4534.0" />
+      <point x="15950.788725916995" y="4534.0" />
+      <point x="15950.788725916995" y="3928.0" />
+      <point x="15704.013055994536" y="3928.0" />
+      <point x="68.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.FilterContainsNameCommand">
+      <point x="-126.25" y="-127.0" />
+      <point x="12140.720986369408" y="4534.0" />
+      <point x="9955.96658398365" y="4534.0" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="serverCommands.RequiringAuth">
+      <point x="101.75" y="-105.5" />
+      <point x="12624.48249307456" y="3608.0" />
+      <point x="13654.120361355413" y="3608.0" />
+      <point x="13654.120361355413" y="2332.0" />
+      <point x="14291.893932783985" y="2332.0" />
+      <point x="-53.20000000000073" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="serverCommands.RequiringAuth">
+      <point x="71.5" y="-137.5" />
+      <point x="13371.726938750362" y="3658.0" />
+      <point x="13723.400361355416" y="3658.0" />
+      <point x="13723.400361355416" y="2342.0" />
+      <point x="14307.093932783986" y="2342.0" />
+      <point x="-38.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="serverCommands.ServerCommand">
+      <point x="-12.464285714286234" y="-105.5" />
+      <point x="16195.574440202709" y="3998.0" />
+      <point x="16201.345232622147" y="3998.0" />
+      <point x="16201.345232622147" y="1362.0" />
+      <point x="13581.520361355415" y="1362.0" />
+      <point x="134.89999999999964" y="38.0" />
+    </edge>
+    <edge source="networkMessages.Request" target="person">
+      <point x="-42.66666666666697" y="-71.0" />
+      <point x="5676.154738278703" y="1762.0" />
+      <point x="5218.346112969158" y="1762.0" />
+      <point x="5218.346112969158" y="905.0" />
+      <point x="12702.371229338296" y="905.0" />
+      <point x="-14.76923076923049" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="networkMessages.ResponseType">
+      <point x="-346.1851851851852" y="-204.0" />
+      <point x="1841.6919071491839" y="5581.0" />
+      <point x="0.0" y="5581.0" />
+      <point x="0.0" y="765.0" />
+      <point x="8333.361871326924" y="765.0" />
+      <point x="-82.39999999999964" y="82.5" />
+    </edge>
+    <edge source="requests.ClientRequestFactory" target="requests.RequestFactory">
+      <point x="164.58333333333303" y="-71.0" />
+      <point x="5065.679446302491" y="4614.0" />
+      <point x="5179.929446302491" y="4614.0" />
+      <point x="-98.75" y="71.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="requests.ClientRequestSender">
+      <point x="213.0370370370374" y="-204.0" />
+      <point x="2400.9141293714065" y="5531.0" />
+      <point x="5668.179446302491" y="5531.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="responses.ResponseSender" target="networkMessages.Response">
+      <point x="0.0" y="-27.0" />
+      <point x="7235.945750650318" y="1812.0" />
+      <point x="7405.320750650319" y="1812.0" />
+      <point x="-17.125" y="38.0" />
+    </edge>
+    <edge source="responses.ResponseReceiver" target="networkMessages.Response">
+      <point x="0.0" y="-27.0" />
+      <point x="312.25" y="1792.0" />
+      <point x="7382.487417316985" y="1792.0" />
+      <point x="-39.95833333333303" y="38.0" />
+    </edge>
+    <edge source="requests.ClientRequestFactory" target="networkMessages.Request">
+      <point x="98.75" y="-71.0" />
+      <point x="4999.846112969158" y="4604.0" />
+      <point x="5070.679446302491" y="4604.0" />
+      <point x="5070.679446302491" y="3408.0" />
+      <point x="5674.02140494537" y="3408.0" />
+      <point x="-44.80000000000018" y="71.0" />
+    </edge>
+    <edge source="exceptions.InvalidHairColorException" target="exceptions.InvalidFieldException">
+      <point x="0.0" y="-15.0" />
+      <point x="13033.390460107526" y="70.0" />
+      <point x="12434.890460107526" y="70.0" />
+      <point x="48.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="command.RequiringArg">
+      <point x="-37.39285714285688" y="-105.5" />
+      <point x="16170.64586877414" y="3988.0" />
+      <point x="16138.27086877414" y="3988.0" />
+      <point x="16138.27086877414" y="1372.0" />
+      <point x="13277.420361355413" y="1372.0" />
+      <point x="64.79999999999927" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManager" target="person">
+      <point x="-59.125" y="-38.0" />
+      <point x="7692.570750650318" y="1802.0" />
+      <point x="7878.149371326925" y="1802.0" />
+      <point x="7878.149371326925" y="915.0" />
+      <point x="12706.063537030603" y="915.0" />
+      <point x="-11.076923076923777" y="15.0" />
+    </edge>
+    <edge source="responses.ServerResponseFactory" target="responses.ResponseFactory">
+      <point x="-103.5" y="-60.0" />
+      <point x="8211.96658398365" y="3458.0" />
+      <point x="8137.716583983651" y="3458.0" />
+      <point x="-69.0" y="60.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="collectionManager">
+      <point x="-8.41666666666606" y="-127.0" />
+      <point x="12258.554319702744" y="4464.0" />
+      <point x="11744.34158398365" y="4464.0" />
+      <point x="11744.34158398365" y="3638.0" />
+      <point x="11959.392282665705" y="3638.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="requests.ServerRequestReceiver">
+      <point x="40.69565217391391" y="-127.0" />
+      <point x="7911.864898658482" y="5077.0" />
+      <point x="11805.970986369408" y="5077.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="serverCommands.ExitCommand" target="messages.Messenger">
+      <point x="-156.42857142857065" y="-72.0" />
+      <point x="11086.28801255508" y="3448.0" />
+      <point x="11159.794143040608" y="3448.0" />
+      <point x="11159.794143040608" y="2052.0" />
+      <point x="9974.566583983651" y="2052.0" />
+      <point x="24.600000000000364" y="27.0" />
+    </edge>
+    <edge source="exceptions.NoEnvVarException" target="exceptions.DBException">
+      <point x="0.0" y="-15.0" />
+      <point x="18118.84080925033" y="4118.0" />
+      <point x="18126.84080925033" y="4118.0" />
+      <point x="46.0" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="serverCommands.ServerCommand">
+      <point x="-51.07142857142935" y="-137.5" />
+      <point x="13249.155510178933" y="3548.0" />
+      <point x="13342.170361355413" y="3548.0" />
+      <point x="13342.170361355413" y="2282.0" />
+      <point x="13467.920361355413" y="2282.0" />
+      <point x="21.299999999999272" y="38.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="clientCommands.ClientCommandManager">
+      <point x="-195.42857142857156" y="-116.5" />
+      <point x="835.2818542391306" y="5137.0" />
+      <point x="567.7500000000009" y="5137.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandHandler" target="serverCommands.CommandHandler">
+      <point x="110.85714285714312" y="-116.0" />
+      <point x="6792.677893507461" y="4654.0" />
+      <point x="6781.570750650317" y="4654.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="input.PersonReader" target="person">
+      <point x="0.0" y="-27.0" />
+      <point x="1870.7475569334783" y="815.0" />
+      <point x="12669.140460107526" y="815.0" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AuthCommand" target="messages.Messenger">
+      <point x="-77.45454545454595" y="-94.5" />
+      <point x="15720.83418046245" y="3948.0" />
+      <point x="15902.788725916995" y="3948.0" />
+      <point x="15902.788725916995" y="1442.0" />
+      <point x="10023.76658398365" y="1442.0" />
+      <point x="73.79999999999927" y="27.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="-122.14285714285688" y="-105.5" />
+      <point x="14991.397566590389" y="2968.0" />
+      <point x="13954.900361355416" y="2968.0" />
+      <point x="78.0" y="137.5" />
+    </edge>
+    <edge source="client.ClientApplication" target="auth">
+      <point x="-45.53846153846189" y="-171.5" />
+      <point x="4468.644189892235" y="4534.0" />
+      <point x="2424.7333760683778" y="4534.0" />
+      <point x="2424.7333760683778" y="1762.0" />
+      <point x="3257.4879421367405" y="1762.0" />
+      <point x="3257.4879421367405" y="965.0" />
+      <point x="13219.275745582921" y="965.0" />
+      <point x="-57.04347826086996" y="15.0" />
+    </edge>
+    <edge source="input.ServerConsoleCommandReader" target="inputManager.CommandReader">
+      <point x="9.094947017729282E-13" y="-50.0" />
+      <point x="6491.570750650319" y="1532.0" />
+      <point x="2576.7459178743975" y="1532.0" />
+      <point x="43.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.AuthCommand" target="exceptions.AuthException">
+      <point x="77.45454545454595" y="-94.5" />
+      <point x="15875.743271371543" y="4008.0" />
+      <point x="16276.863089765004" y="4008.0" />
+      <point x="-50.66666666666606" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="dataManager.DataManager">
+      <point x="-137.10714285714312" y="-105.5" />
+      <point x="16070.931583059853" y="2878.0" />
+      <point x="14909.872724141442" y="2878.0" />
+      <point x="83.52941176470631" y="93.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="output">
+      <point x="-238.85714285714312" y="-116.5" />
+      <point x="791.853282810559" y="5147.0" />
+      <point x="433.25" y="5147.0" />
+      <point x="433.25" y="1702.0" />
+      <point x="1663.5657387516603" y="1702.0" />
+      <point x="-26.181818181818016" y="15.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="serverCommands.RequiringObject">
+      <point x="-12.375" y="-116.5" />
+      <point x="14693.165423733244" y="2998.0" />
+      <point x="14497.593932783986" y="2998.0" />
+      <point x="14497.593932783986" y="1532.0" />
+      <point x="14122.335004212557" y="1532.0" />
+      <point x="42.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="networkMessages.RequestType">
+      <point x="-91.92857142857065" y="-137.5" />
+      <point x="13208.298367321791" y="3228.0" />
+      <point x="13092.972559157612" y="3228.0" />
+      <point x="13092.972559157612" y="1692.0" />
+      <point x="8063.816037993591" y="1692.0" />
+      <point x="65.66666666666606" y="93.5" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="messages.Messenger">
+      <point x="-108.57142857142844" y="-116.5" />
+      <point x="922.1389970962737" y="5117.0" />
+      <point x="713.2500000000009" y="5117.0" />
+      <point x="713.2500000000009" y="1892.0" />
+      <point x="9876.166583983651" y="1892.0" />
+      <point x="-73.79999999999927" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.ServerCommand">
+      <point x="-58.91666666666606" y="-127.0" />
+      <point x="12208.054319702744" y="4494.0" />
+      <point x="11049.71658398365" y="4494.0" />
+      <point x="11049.71658398365" y="2242.0" />
+      <point x="13411.120361355413" y="2242.0" />
+      <point x="-35.5" y="38.0" />
+    </edge>
+    <edge source="serverCommands.RequestHandler" target="serverCommands.ServerCommandManager">
+      <point x="36.125" y="-50.0" />
+      <point x="7647.904083983651" y="3458.0" />
+      <point x="7712.279083983652" y="3458.0" />
+      <point x="-39.41666666666606" y="38.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="client.ClientApplication">
+      <point x="238.8571428571429" y="-116.5" />
+      <point x="1269.5675685248452" y="5127.0" />
+      <point x="4384.682651430697" y="5127.0" />
+      <point x="-129.5" y="171.5" />
+    </edge>
+    <edge source="clientCommands.ExitCommand" target="client.ClientApplication">
+      <point x="57.80000000000018" y="-61.0" />
+      <point x="2218.0183760683776" y="5147.0" />
+      <point x="4458.682651430697" y="5147.0" />
+      <point x="-55.5" y="171.5" />
+    </edge>
+    <edge source="serverCommands.FilterContainsNameCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="164.14285714285688" y="-83.5" />
+      <point x="10120.109441126508" y="3668.0" />
+      <point x="13746.900361355416" y="3668.0" />
+      <point x="-130.0" y="137.5" />
+    </edge>
+    <edge source="networkMessages.ResponseImpl" target="networkMessages.Response">
+      <point x="-82.66666666666606" y="-94.5" />
+      <point x="8526.799917316985" y="1752.0" />
+      <point x="7485.237417316985" y="1752.0" />
+      <point x="62.79166666666697" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="command.RequiringArg">
+      <point x="-71.5" y="-137.5" />
+      <point x="13228.726938750362" y="3218.0" />
+      <point x="13205.420361355413" y="3218.0" />
+      <point x="-7.200000000000728" y="27.0" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="input.ScriptCommandReader">
+      <point x="-69.11111111111109" y="-105.0" />
+      <point x="1502.4600427350433" y="4634.0" />
+      <point x="901.25" y="4634.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="messages.Messenger">
+      <point x="-111.375" y="-116.5" />
+      <point x="14594.165423733244" y="3038.0" />
+      <point x="14072.335004212557" y="3038.0" />
+      <point x="14072.335004212557" y="1582.0" />
+      <point x="10007.36658398365" y="1582.0" />
+      <point x="57.399999999999636" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="responses.ResponseFactory">
+      <point x="-210.41666666666606" y="-127.0" />
+      <point x="12056.554319702744" y="4584.0" />
+      <point x="8463.96658398365" y="4584.0" />
+      <point x="8463.96658398365" y="3428.0" />
+      <point x="8275.71658398365" y="3428.0" />
+      <point x="69.0" y="60.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.MaxByEyeColorCommand">
+      <point x="-143.08333333333212" y="-127.0" />
+      <point x="12123.887653036076" y="4544.0" />
+      <point x="9563.96658398365" y="4544.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="input.ConsolePersonReader" target="input.PersonReader">
+      <point x="-77.0625" y="-193.0" />
+      <point x="2744.50420940171" y="1632.0" />
+      <point x="1937.4975569334783" y="1632.0" />
+      <point x="66.75" y="27.0" />
+    </edge>
+    <edge source="serverCommands.PrintFieldDescendingEyeColorCommand" target="serverCommands.ServerCommand">
+      <point x="0.0" y="-61.0" />
+      <point x="10820.21658398365" y="3458.0" />
+      <point x="10743.61658398365" y="3458.0" />
+      <point x="10743.61658398365" y="2232.0" />
+      <point x="13396.920361355413" y="2232.0" />
+      <point x="-49.70000000000073" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManager" target="networkMessages.RequestType">
+      <point x="177.375" y="-38.0" />
+      <point x="7929.070750650318" y="1862.0" />
+      <point x="7998.149371326925" y="1862.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="networkMessages.Response">
+      <point x="-239.66666666666697" y="-204.0" />
+      <point x="1948.210425667702" y="5541.0" />
+      <point x="44.0" y="5541.0" />
+      <point x="44.0" y="1772.0" />
+      <point x="7359.654083983651" y="1772.0" />
+      <point x="-62.79166666666697" y="38.0" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="person">
+      <point x="-138.22222222222263" y="-105.0" />
+      <point x="1433.348931623932" y="4654.0" />
+      <point x="746.2500000000009" y="4654.0" />
+      <point x="746.2500000000009" y="1652.0" />
+      <point x="712.2723486997902" y="1652.0" />
+      <point x="712.2723486997902" y="785.0" />
+      <point x="12658.063537030603" y="785.0" />
+      <point x="-59.07692307692378" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.ServerCommandManager">
+      <point x="-277.75" y="-127.0" />
+      <point x="11989.220986369408" y="4624.0" />
+      <point x="8013.779083983651" y="4624.0" />
+      <point x="8013.779083983651" y="3258.0" />
+      <point x="7948.779083983652" y="3258.0" />
+      <point x="197.08333333333394" y="38.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommand" target="clientCommands.ClientCommandInvoker">
+      <point x="-70.5" y="-38.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="command.RequiringArg">
+      <point x="-65.23076923076951" y="-105.5" />
+      <point x="13609.996169519593" y="3628.0" />
+      <point x="13679.400361355416" y="3628.0" />
+      <point x="13679.400361355416" y="1652.0" />
+      <point x="13219.820361355414" y="1652.0" />
+      <point x="7.200000000000728" y="27.0" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="messages.Messenger">
+      <point x="117.81818181818198" y="-116.0" />
+      <point x="3624.295588236945" y="4088.0" />
+      <point x="3923.3493180973637" y="4088.0" />
+      <point x="3923.3493180973637" y="1972.0" />
+      <point x="9902.406583983651" y="1972.0" />
+      <point x="-47.55999999999949" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="dataManager.DataManager">
+      <point x="143.08333333333394" y="-127.0" />
+      <point x="12410.054319702744" y="4504.0" />
+      <point x="15314.040423733244" y="4504.0" />
+      <point x="15314.040423733244" y="2918.0" />
+      <point x="14893.166841788501" y="2918.0" />
+      <point x="66.82352941176396" y="93.0" />
+    </edge>
+    <edge source="requests.ClientRequestFactory" target="person">
+      <point x="-164.58333333333303" y="-71.0" />
+      <point x="4736.512779635825" y="4614.0" />
+      <point x="4665.679446302491" y="4614.0" />
+      <point x="4665.679446302491" y="865.0" />
+      <point x="12687.601998569065" y="865.0" />
+      <point x="-29.53846153846098" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="authManager.AuthManager">
+      <point x="277.75" y="-127.0" />
+      <point x="12544.720986369408" y="4584.0" />
+      <point x="16686.99850643167" y="4584.0" />
+      <point x="16686.99850643167" y="4078.0" />
+      <point x="16779.29334338819" y="4078.0" />
+      <point x="12.9375" y="82.5" />
+    </edge>
+    <edge source="serverCommands.ClearCommand" target="dataManager.DataManager">
+      <point x="139.63636363636397" y="-94.5" />
+      <point x="12246.868856710924" y="3728.0" />
+      <point x="14692.696253553207" y="3728.0" />
+      <point x="-133.64705882352973" y="93.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="exceptions.NeedObjectException">
+      <point x="112.35714285714312" y="-137.5" />
+      <point x="13412.584081607505" y="3888.0" />
+      <point x="15293.230447298884" y="3888.0" />
+      <point x="-50.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="serverCommands.ServerCommand">
+      <point x="43.60714285714312" y="-105.5" />
+      <point x="12566.339635931703" y="3578.0" />
+      <point x="13059.972559157612" y="3578.0" />
+      <point x="13059.972559157612" y="2272.0" />
+      <point x="13453.720361355416" y="2272.0" />
+      <point x="7.100000000000364" y="38.0" />
+    </edge>
+    <edge source="networkMessages.RequestImpl" target="networkMessages.RequestType">
+      <point x="103.42857142857156" y="-127.5" />
+      <point x="4960.608017731063" y="3398.0" />
+      <point x="4864.3223034453495" y="3398.0" />
+      <point x="4864.3223034453495" y="1832.0" />
+      <point x="7932.482704660259" y="1832.0" />
+      <point x="-65.66666666666606" y="93.5" />
+    </edge>
+    <edge source="responses.ServerResponseSender" target="responses.ResponseSender">
+      <point x="73.25" y="-61.0" />
+      <point x="7115.570750650318" y="4654.0" />
+      <point x="7126.070750650318" y="4654.0" />
+      <point x="-109.875" y="27.0" />
+    </edge>
+    <edge source="dataManager.DataManager" target="person">
+      <point x="-71.0" y="-93.0" />
+      <point x="14755.343312376735" y="1522.0" />
+      <point x="14431.593932783986" y="1522.0" />
+      <point x="14431.593932783986" y="785.0" />
+      <point x="12746.678921645987" y="785.0" />
+      <point x="29.53846153846098" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="exceptions.AuthException">
+      <point x="244.08333333333394" y="-127.0" />
+      <point x="12511.054319702744" y="4564.0" />
+      <point x="16393.038725916995" y="4564.0" />
+      <point x="16393.038725916995" y="4008.0" />
+      <point x="16378.196423098336" y="4008.0" />
+      <point x="50.66666666666606" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandHandler" target="messages.Messenger">
+      <point x="-55.42857142857156" y="-116.0" />
+      <point x="6626.392179221746" y="4654.0" />
+      <point x="6669.070750650317" y="4654.0" />
+      <point x="6669.070750650317" y="2022.0" />
+      <point x="9918.80658398365" y="2022.0" />
+      <point x="-31.159999999999854" y="27.0" />
+    </edge>
+    <edge source="requests.RequestReceiver" target="networkMessages.Request">
+      <point x="0.0" y="-38.5" />
+      <point x="7867.779083983651" y="3298.0" />
+      <point x="5763.62140494537" y="3298.0" />
+      <point x="44.80000000000018" y="71.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="exceptions.ScriptRecursionException">
+      <point x="108.57142857142844" y="-116.5" />
+      <point x="1139.2818542391306" y="5077.0" />
+      <point x="1780.2933760683773" y="5077.0" />
+      <point x="-60.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="messages.Messenger">
+      <point x="-130.46153846153902" y="-105.5" />
+      <point x="13544.765400288823" y="3188.0" />
+      <point x="13194.420361355413" y="3188.0" />
+      <point x="13194.420361355413" y="1682.0" />
+      <point x="9994.246583983651" y="1682.0" />
+      <point x="44.280000000000655" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="exceptions.NoArgException">
+      <point x="-132.78571428571377" y="-137.5" />
+      <point x="13167.441224464648" y="3248.0" />
+      <point x="7386.445750650318" y="3248.0" />
+      <point x="60.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="messages.Messenger">
+      <point x="-73.03571428571377" y="-105.5" />
+      <point x="14210.00470944753" y="3118.0" />
+      <point x="14030.400361355416" y="3118.0" />
+      <point x="14030.400361355416" y="1592.0" />
+      <point x="10004.086583983652" y="1592.0" />
+      <point x="54.1200000000008" y="27.0" />
+    </edge>
+    <edge source="dataManager.DBManager" target="dataManager.DataManager">
+      <point x="-121.71428571428623" y="-127.0" />
+      <point x="16728.784220717385" y="4584.0" />
+      <point x="16812.57314620685" y="4584.0" />
+      <point x="16812.57314620685" y="2848.0" />
+      <point x="14959.990371200267" y="2848.0" />
+      <point x="133.64705882352973" y="93.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="clientCommands.ExecuteScriptCommand">
+      <point x="-106.51851851851825" y="-204.0" />
+      <point x="2081.358573815851" y="5491.0" />
+      <point x="878.7104256677021" y="5491.0" />
+      <point x="-152.0" y="116.5" />
+    </edge>
+    <edge source="input.ScriptCommandReader" target="inputManager.CommandReader">
+      <point x="-66.75" y="-50.0" />
+      <point x="834.5" y="1732.0" />
+      <point x="2462.0792512077305" y="1732.0" />
+      <point x="-71.66666666666697" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvoker" target="serverCommands.RequiringObject">
+      <point x="89.375" y="-137.5" />
+      <point x="13966.275361355416" y="2312.0" />
+      <point x="14066.335004212557" y="2312.0" />
+      <point x="-14.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="collectionManager">
+      <point x="-185.625" y="-116.5" />
+      <point x="14519.915423733244" y="3068.0" />
+      <point x="12045.31820859163" y="3068.0" />
+      <point x="85.92592592592518" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ClearCommand" target="serverCommands.ServerCommand">
+      <point x="34.90909090909008" y="-94.5" />
+      <point x="12142.14158398365" y="3508.0" />
+      <point x="12825.959081607503" y="3508.0" />
+      <point x="12825.959081607503" y="2262.0" />
+      <point x="13439.520361355415" y="2262.0" />
+      <point x="-7.100000000000364" y="38.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="auth">
+      <point x="149.28571428571377" y="-105.5" />
+      <point x="15262.826138018958" y="3918.0" />
+      <point x="15489.513055994536" y="3918.0" />
+      <point x="15489.513055994536" y="2352.0" />
+      <point x="15675.662962834973" y="2352.0" />
+      <point x="15675.662962834973" y="675.0" />
+      <point x="13297.188789061183" y="675.0" />
+      <point x="20.869565217391937" y="15.0" />
+    </edge>
+    <edge source="requests.RequestFactory" target="auth">
+      <point x="0.0" y="-71.0" />
+      <point x="5278.679446302491" y="3388.0" />
+      <point x="5229.346112969158" y="3388.0" />
+      <point x="5229.346112969158" y="1065.0" />
+      <point x="13247.101832539443" y="1065.0" />
+      <point x="-29.217391304347984" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandInvokerImpl" target="exceptions.NoArgException">
+      <point x="102.0" y="-60.5" />
+      <point x="2728.481345812702" y="5117.0" />
+      <point x="4355.682651430697" y="5117.0" />
+      <point x="4355.682651430697" y="3428.0" />
+      <point x="7266.445750650318" y="3428.0" />
+      <point x="-60.0" y="15.0" />
+    </edge>
+    <edge source="client.ClientApplication" target="output">
+      <point x="-68.30769230769238" y="-171.5" />
+      <point x="4445.874959123004" y="4544.0" />
+      <point x="2402.7333760683778" y="4544.0" />
+      <point x="2402.7333760683778" y="1692.0" />
+      <point x="1689.7475569334783" y="1692.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AuthCommand" target="authManager.AuthManager">
+      <point x="103.27272727272793" y="-94.5" />
+      <point x="15901.561453189723" y="4038.0" />
+      <point x="16675.79334338819" y="4038.0" />
+      <point x="-90.5625" y="82.5" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="serverCommands.RequiringObject">
+      <point x="-14.607142857143117" y="-105.5" />
+      <point x="14268.433280876103" y="3098.0" />
+      <point x="14094.335004212557" y="3098.0" />
+      <point x="14.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="-162.03571428571377" y="-105.5" />
+      <point x="16046.003011631281" y="2888.0" />
+      <point x="14006.900361355416" y="2888.0" />
+      <point x="130.0" y="137.5" />
+    </edge>
+    <edge source="serverCommands.FilterContainsNameCommand" target="collectionManager">
+      <point x="54.714285714286234" y="-83.5" />
+      <point x="10010.680869697937" y="3548.0" />
+      <point x="11882.058949332371" y="3548.0" />
+      <point x="-77.33333333333394" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="command.RequiringArg">
+      <point x="-65.14285714285688" y="-116.5" />
+      <point x="965.5675685248452" y="5107.0" />
+      <point x="724.2500000000009" y="5107.0" />
+      <point x="724.2500000000009" y="2132.0" />
+      <point x="13147.820361355414" y="2132.0" />
+      <point x="-64.79999999999927" y="27.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="client.ClientApplication">
+      <point x="53.259259259259125" y="-204.0" />
+      <point x="2241.136351593628" y="5471.0" />
+      <point x="4532.682651430697" y="5471.0" />
+      <point x="18.5" y="171.5" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="messages.Messenger">
+      <point x="-213.0370370370365" y="-204.0" />
+      <point x="1974.8400552973326" y="5531.0" />
+      <point x="55.0" y="5531.0" />
+      <point x="55.0" y="1872.0" />
+      <point x="9869.60658398365" y="1872.0" />
+      <point x="-80.36000000000058" y="27.0" />
+    </edge>
+    <edge source="client.ClientApplication" target="input.InputManager">
+      <point x="45.53846153846189" y="-171.5" />
+      <point x="4559.721112969159" y="4494.0" />
+      <point x="4344.682651430697" y="4494.0" />
+      <point x="14.83333333333303" y="60.0" />
+    </edge>
+    <edge source="requests.RequestFactory" target="person">
+      <point x="-131.66666666666697" y="-71.0" />
+      <point x="5147.012779635825" y="3388.0" />
+      <point x="5196.346112969158" y="3388.0" />
+      <point x="5196.346112969158" y="895.0" />
+      <point x="12698.678921645987" y="895.0" />
+      <point x="-18.46153846153902" y="15.0" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="input.ConsolePersonReader">
+      <point x="-58.90909090909099" y="-116.0" />
+      <point x="3447.568315509672" y="4008.0" />
+      <point x="2821.56670940171" y="4008.0" />
+      <point x="0.0" y="193.0" />
+    </edge>
+    <edge source="client.ClientApplication" target="messages.Messenger">
+      <point x="91.07692307692287" y="-171.5" />
+      <point x="4605.25957450762" y="4654.0" />
+      <point x="4599.374959123004" y="4654.0" />
+      <point x="4599.374959123004" y="1982.0" />
+      <point x="9905.68658398365" y="1982.0" />
+      <point x="-44.280000000000655" y="27.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandInvokerImpl" target="clientCommands.ClientCommand">
+      <point x="-102.0" y="-60.5" />
+      <point x="2524.481345812702" y="5117.0" />
+      <point x="2304.5433760683773" y="5117.0" />
+      <point x="105.75" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="person">
+      <point x="-30.642857142856883" y="-137.5" />
+      <point x="13269.584081607505" y="3558.0" />
+      <point x="13599.120361355413" y="3558.0" />
+      <point x="13599.120361355413" y="905.0" />
+      <point x="12724.525075492142" y="905.0" />
+      <point x="7.384615384615245" y="15.0" />
+    </edge>
+    <edge source="responses.ServerResponseFactory" target="networkMessages.ResponseImpl">
+      <point x="34.5" y="-60.0" />
+      <point x="8349.96658398365" y="3448.0" />
+      <point x="8609.46658398365" y="3448.0" />
+      <point x="0.0" y="94.5" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="inputManager.CommandReader">
+      <point x="-88.36363636363694" y="-116.0" />
+      <point x="3418.113770055126" y="4018.0" />
+      <point x="2605.5667094017117" y="4018.0" />
+      <point x="2605.5667094017117" y="1662.0" />
+      <point x="2519.4125845410645" y="1662.0" />
+      <point x="-14.33333333333303" y="27.0" />
+    </edge>
+    <edge source="exceptions.InvalidHeightException" target="exceptions.InvalidFieldException">
+      <point x="0.0" y="-15.0" />
+      <point x="13549.390460107526" y="50.0" />
+      <point x="12482.890460107526" y="50.0" />
+      <point x="96.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="command.RequiringArg">
+      <point x="-61.875" y="-116.5" />
+      <point x="14643.665423733244" y="3018.0" />
+      <point x="14475.593932783986" y="3018.0" />
+      <point x="14475.593932783986" y="1552.0" />
+      <point x="13248.620361355413" y="1552.0" />
+      <point x="36.0" y="27.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="dataManager.DataManager">
+      <point x="81.39130434782601" y="-127.0" />
+      <point x="7952.560550832394" y="5107.0" />
+      <point x="16697.99850643167" y="5107.0" />
+      <point x="16697.99850643167" y="2858.0" />
+      <point x="14943.284488847323" y="2858.0" />
+      <point x="116.94117647058738" y="93.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvoker" target="networkMessages.RequestType">
+      <point x="-125.125" y="-137.5" />
+      <point x="13751.775361355416" y="1632.0" />
+      <point x="8085.704926882479" y="1632.0" />
+      <point x="87.55555555555475" y="93.5" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="dataManager.DataManager">
+      <point x="159.89285714285688" y="-105.5" />
+      <point x="12682.625350217417" y="3748.0" />
+      <point x="14726.108018259089" y="3748.0" />
+      <point x="-100.23529411764684" y="93.0" />
+    </edge>
+    <edge source="input.ConsolePersonReader" target="messages.Messenger">
+      <point x="128.4375" y="-193.0" />
+      <point x="2950.00420940171" y="1932.0" />
+      <point x="9889.28658398365" y="1932.0" />
+      <point x="-60.68000000000029" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvoker" target="command.RequiringArg">
+      <point x="-89.375" y="-137.5" />
+      <point x="13787.525361355416" y="1622.0" />
+      <point x="13234.220361355416" y="1622.0" />
+      <point x="21.600000000000364" y="27.0" />
+    </edge>
+    <edge source="serverCommands.HistoryCommand" target="messages.Messenger">
+      <point x="-97.0" y="-61.0" />
+      <point x="9505.565079817901" y="2072.0" />
+      <point x="9935.20658398365" y="2072.0" />
+      <point x="-14.760000000000218" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.InfoCommand">
+      <point x="-92.58333333333212" y="-127.0" />
+      <point x="12174.387653036076" y="4514.0" />
+      <point x="10431.21658398365" y="4514.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="serverCommands.ClearCommand" target="collectionManager">
+      <point x="-174.54545454545405" y="-94.5" />
+      <point x="11932.687038529106" y="3648.0" />
+      <point x="11967.984875258298" y="3648.0" />
+      <point x="8.592592592593064" y="15.0" />
+    </edge>
+    <edge source="networkMessages.RequestImpl" target="auth">
+      <point x="0.0" y="-127.5" />
+      <point x="4857.179446302491" y="3418.0" />
+      <point x="4842.3223034453495" y="3418.0" />
+      <point x="4842.3223034453495" y="1045.0" />
+      <point x="13241.53661514814" y="1045.0" />
+      <point x="-34.782608695652016" y="15.0" />
+    </edge>
+    <edge source="client.ClientApplication" target="clientCommands.ClientCommandManagerImpl">
+      <point x="92.5" y="171.5" />
+      <point x="4606.682651430697" y="5147.0" />
+      <point x="4733.096112969158" y="5147.0" />
+      <point x="4733.096112969158" y="5491.0" />
+      <point x="2294.3956108528873" y="5491.0" />
+      <point x="106.51851851851825" y="-204.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="auth">
+      <point x="-14.535714285713766" y="-105.5" />
+      <point x="12508.196778788846" y="3558.0" />
+      <point x="13033.322559157612" y="3558.0" />
+      <point x="13033.322559157612" y="1115.0" />
+      <point x="13261.014876017705" y="1115.0" />
+      <point x="-15.304347826086087" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="collectionManager">
+      <point x="-189.89285714285688" y="-105.5" />
+      <point x="14093.147566590389" y="3158.0" />
+      <point x="12028.133023406446" y="3158.0" />
+      <point x="68.74074074074088" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RequestHandler" target="networkMessages.Request">
+      <point x="-108.375" y="-50.0" />
+      <point x="7503.404083983651" y="3318.0" />
+      <point x="5750.82140494537" y="3318.0" />
+      <point x="32.0" y="71.0" />
+    </edge>
+    <edge source="serverCommands.AuthCommand" target="command.RequiringArg">
+      <point x="-51.63636363636397" y="-94.5" />
+      <point x="15746.65236228063" y="3958.0" />
+      <point x="15913.788725916995" y="3958.0" />
+      <point x="15913.788725916995" y="1432.0" />
+      <point x="13263.020361355415" y="1432.0" />
+      <point x="50.399999999999636" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="63.899999999999636" y="38.0" />
+      <point x="13510.520361355415" y="1602.0" />
+      <point x="13859.025361355416" y="1602.0" />
+      <point x="-17.875" y="-137.5" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="exceptions.InvalidArgumentTypeException">
+      <point x="132.78571428571377" y="-137.5" />
+      <point x="13433.012653036076" y="3928.0" />
+      <point x="15568.013055994536" y="3928.0" />
+      <point x="-68.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="serverCommands.RequiringObject">
+      <point x="51.07142857142935" y="-137.5" />
+      <point x="13351.298367321791" y="3598.0" />
+      <point x="13643.120361355413" y="3598.0" />
+      <point x="13643.120361355413" y="2302.0" />
+      <point x="14038.335004212557" y="2302.0" />
+      <point x="-42.0" y="27.0" />
+    </edge>
+    <edge source="dataManager.DBManager" target="auth">
+      <point x="121.71428571428714" y="-127.0" />
+      <point x="16972.212792145958" y="4654.0" />
+      <point x="18441.34080925033" y="4654.0" />
+      <point x="18441.34080925033" y="485.0" />
+      <point x="13333.362702104661" y="485.0" />
+      <point x="57.04347826086996" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.HelpCommand">
+      <point x="-176.75" y="-127.0" />
+      <point x="12090.220986369408" y="4564.0" />
+      <point x="8888.46658398365" y="4564.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManager" target="networkMessages.Response">
+      <point x="-177.375" y="-38.0" />
+      <point x="7574.320750650318" y="1802.0" />
+      <point x="7439.570750650319" y="1802.0" />
+      <point x="17.125" y="38.0" />
+    </edge>
+    <edge source="dataManager.DBWriter" target="person">
+      <point x="0.0" y="-105.0" />
+      <point x="17634.84080925033" y="505.0" />
+      <point x="12787.294306261372" y="505.0" />
+      <point x="70.15384615384573" y="15.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="dataManager.DataManager">
+      <point x="12.375" y="-116.5" />
+      <point x="14717.915423733244" y="3808.0" />
+      <point x="14826.343312376735" y="3808.0" />
+      <point x="0.0" y="93.0" />
+    </edge>
+    <edge source="serverCommands.ShowCommand" target="collectionManager">
+      <point x="61.600000000000364" y="-61.0" />
+      <point x="9271.066583983651" y="3508.0" />
+      <point x="11847.688578962001" y="3508.0" />
+      <point x="-111.70370370370438" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="collectionManager">
+      <point x="-188.96428571428623" y="-105.5" />
+      <point x="12333.768207360274" y="3458.0" />
+      <point x="11985.170060443483" y="3458.0" />
+      <point x="25.777777777777374" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="collectionManager">
+      <point x="-176.42857142857247" y="-105.5" />
+      <point x="14937.111852304672" y="2988.0" />
+      <point x="12062.503393776817" y="2988.0" />
+      <point x="103.11111111111131" y="15.0" />
+    </edge>
+    <edge source="exceptions.InvalidBirthdayException" target="exceptions.InvalidFieldException">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="auth">
+      <point x="102.25" y="-105.5" />
+      <point x="14385.290423733244" y="3708.0" />
+      <point x="14442.593932783986" y="3708.0" />
+      <point x="14442.593932783986" y="775.0" />
+      <point x="13283.275745582921" y="775.0" />
+      <point x="6.956521739130039" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ClearCommand" target="auth">
+      <point x="-34.90909090909008" y="-94.5" />
+      <point x="12072.32340216547" y="3488.0" />
+      <point x="12491.713711237135" y="3488.0" />
+      <point x="12491.713711237135" y="1095.0" />
+      <point x="13255.4496586264" y="1095.0" />
+      <point x="-20.869565217391937" y="15.0" />
+    </edge>
+    <edge source="networkMessages.Request" target="networkMessages.RequestType">
+      <point x="42.66666666666697" y="-71.0" />
+      <point x="5761.488071612037" y="1852.0" />
+      <point x="7976.260482438036" y="1852.0" />
+      <point x="-21.888888888888687" y="93.5" />
+    </edge>
+    <edge source="requests.ClientRequestFactory" target="networkMessages.RequestImpl">
+      <point x="-98.75" y="-71.0" />
+      <point x="4802.346112969158" y="4614.0" />
+      <point x="4857.179446302491" y="4614.0" />
+      <point x="0.0" y="127.5" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="serverCommands.ServerCommand">
+      <point x="-37.125" y="-116.5" />
+      <point x="14668.415423733244" y="3008.0" />
+      <point x="14486.593932783986" y="3008.0" />
+      <point x="14486.593932783986" y="1542.0" />
+      <point x="13538.920361355413" y="1542.0" />
+      <point x="92.29999999999927" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvoker" target="auth">
+      <point x="53.625" y="-137.5" />
+      <point x="13930.525361355416" y="2282.0" />
+      <point x="13926.477861355415" y="2282.0" />
+      <point x="13926.477861355415" y="835.0" />
+      <point x="13277.710528191617" y="835.0" />
+      <point x="1.3913043478260079" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="-102.25" y="-105.5" />
+      <point x="14180.790423733244" y="3128.0" />
+      <point x="13902.900361355416" y="3128.0" />
+      <point x="26.0" y="137.5" />
+    </edge>
+    <edge source="server.Server" target="networkMessages.Response">
+      <point x="-22.75" y="-149.0" />
+      <point x="7427.695750650318" y="4654.0" />
+      <point x="7416.945750650318" y="4654.0" />
+      <point x="-5.70833333333303" y="38.0" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="messages.Messenger">
+      <point x="-62.32142857142935" y="-105.5" />
+      <point x="16145.717297345567" y="3998.0" />
+      <point x="16127.27086877414" y="3998.0" />
+      <point x="16127.27086877414" y="1382.0" />
+      <point x="10030.326583983651" y="1382.0" />
+      <point x="80.36000000000058" y="27.0" />
+    </edge>
+    <edge source="input.ScriptCommandReader" target="exceptions.ScriptException">
+      <point x="66.75" y="-50.0" />
+      <point x="968.0" y="4118.0" />
+      <point x="1003.25" y="4118.0" />
+      <point x="-21.0" y="15.0" />
+    </edge>
+    <edge source="exceptions.BrokenDataException" target="exceptions.DBException">
+      <point x="0.0" y="-15.0" />
+      <point x="18330.84080925033" y="4118.0" />
+      <point x="18157.507475917" y="4118.0" />
+      <point x="76.66666666666788" y="38.0" />
+    </edge>
+    <edge source="input.ConsoleAuthReader" target="auth">
+      <point x="62.42857142857156" y="-105.0" />
+      <point x="3626.9952808302814" y="1762.0" />
+      <point x="3811.172299463822" y="1762.0" />
+      <point x="3811.172299463822" y="995.0" />
+      <point x="13227.623571669877" y="995.0" />
+      <point x="-48.69565217391391" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="dataManager.DataManager">
+      <point x="130.46153846153902" y="-105.5" />
+      <point x="13805.688477211901" y="3768.0" />
+      <point x="14759.519782964973" y="3768.0" />
+      <point x="-66.82352941176396" y="93.0" />
+    </edge>
+    <edge source="clientCommands.ExitCommand" target="clientCommands.ClientCommand">
+      <point x="0.0" y="-61.0" />
+      <point x="2160.2183760683774" y="5117.0" />
+      <point x="2234.0433760683773" y="5117.0" />
+      <point x="35.25" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandHandler" target="serverCommands.ServerCommandManager">
+      <point x="55.42857142857065" y="-116.0" />
+      <point x="6737.249322078888" y="4654.0" />
+      <point x="6691.070750650317" y="4654.0" />
+      <point x="6691.070750650317" y="3448.0" />
+      <point x="7554.612417316984" y="3448.0" />
+      <point x="-197.08333333333394" y="38.0" />
+    </edge>
+    <edge source="server.Server" target="networkMessages.Request">
+      <point x="-68.25" y="-149.0" />
+      <point x="7382.195750650318" y="4654.0" />
+      <point x="7399.445750650318" y="4654.0" />
+      <point x="7399.445750650318" y="3328.0" />
+      <point x="5738.02140494537" y="3328.0" />
+      <point x="19.199999999999818" y="71.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.UpdateCommand">
+      <point x="109.41666666666606" y="-127.0" />
+      <point x="12376.387653036076" y="4484.0" />
+      <point x="14705.540423733244" y="4484.0" />
+      <point x="0.0" y="116.5" />
+    </edge>
+    <edge source="input.InputManager" target="auth">
+      <point x="44.5" y="-60.0" />
+      <point x="4374.349318097363" y="1015.0" />
+      <point x="13233.188789061183" y="1015.0" />
+      <point x="-43.13043478260806" y="15.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="authManager.AuthManagerImpl">
+      <point x="149.21739130434798" y="-127.0" />
+      <point x="8020.386637788916" y="5157.0" />
+      <point x="18688.96580925033" y="5157.0" />
+      <point x="18688.96580925033" y="4654.0" />
+      <point x="18834.34080925033" y="4654.0" />
+      <point x="0.0" y="138.0" />
+    </edge>
+    <edge source="serverCommands.ClearCommand" target="serverCommands.RequiringAuth">
+      <point x="69.81818181818198" y="-94.5" />
+      <point x="12177.050674892742" y="3598.0" />
+      <point x="13081.972559157612" y="3598.0" />
+      <point x="13081.972559157612" y="2322.0" />
+      <point x="14276.693932783986" y="2322.0" />
+      <point x="-68.39999999999964" y="27.0" />
+    </edge>
+    <edge source="dataManager.DataManager" target="auth">
+      <point x="71.0" y="-93.0" />
+      <point x="14897.343312376735" y="2322.0" />
+      <point x="15464.730447298884" y="2322.0" />
+      <point x="15464.730447298884" y="725.0" />
+      <point x="13288.840962974225" y="725.0" />
+      <point x="12.52173913043407" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="clientCommands.ClientCommandInvoker">
+      <point x="-53.259259259259125" y="-204.0" />
+      <point x="2134.61783307511" y="5471.0" />
+      <point x="1881.0433760683773" y="5471.0" />
+      <point x="1881.0433760683773" y="4654.0" />
+      <point x="2073.8933760683776" y="4654.0" />
+      <point x="-54.399999999999636" y="60.5" />
+    </edge>
+    <edge source="client.ClientApplication" target="exceptions.ScriptRecursionException">
+      <point x="-113.84615384615381" y="-171.5" />
+      <point x="4400.336497584543" y="4564.0" />
+      <point x="1900.2933760683773" y="4564.0" />
+      <point x="60.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.MaxByEyeColorCommand" target="collectionManager">
+      <point x="72.20000000000073" y="-61.0" />
+      <point x="9636.166583983651" y="3528.0" />
+      <point x="11864.873764147187" y="3528.0" />
+      <point x="-94.51851851851825" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ExitCommand" target="serverCommands.ServerCommand">
+      <point x="-52.14285714285688" y="-72.0" />
+      <point x="11190.573726840794" y="3458.0" />
+      <point x="11181.794143040608" y="3458.0" />
+      <point x="11181.794143040608" y="2252.0" />
+      <point x="13425.320361355414" y="2252.0" />
+      <point x="-21.299999999999272" y="38.0" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="input.ScriptPersonReader">
+      <point x="0.0" y="-105.0" />
+      <point x="1571.5711538461546" y="4614.0" />
+      <point x="1238.5711538461546" y="4614.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="input.InputManager" target="person">
+      <point x="-44.5" y="-60.0" />
+      <point x="4285.349318097363" y="1542.0" />
+      <point x="3800.172299463822" y="1542.0" />
+      <point x="3800.172299463822" y="855.0" />
+      <point x="12683.909690876757" y="855.0" />
+      <point x="-33.23076923076951" y="15.0" />
+    </edge>
+    <edge source="person" target="person">
+      <point x="-62.769230769230944" y="15.0" />
+      <point x="12654.371229338296" y="417.5" />
+      <point x="12605.140460107526" y="417.5" />
+      <point x="12605.140460107526" y="352.5" />
+      <point x="-72.0" y="-10.0" />
+    </edge>
+    <edge source="authManager.AuthManagerImpl" target="authManager.AuthManager">
+      <point x="-69.66666666666788" y="-138.0" />
+      <point x="18764.674142583663" y="2778.0" />
+      <point x="16856.91834338819" y="2778.0" />
+      <point x="90.5625" y="82.5" />
+    </edge>
+    <edge source="dataManager.DBManager" target="dataManager.DBReader">
+      <point x="40.57142857142753" y="-127.0" />
+      <point x="16891.0699350031" y="4634.0" />
+      <point x="17250.84080925033" y="4634.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="serverCommands.AuthCommand" target="auth">
+      <point x="25.818181818181984" y="-94.5" />
+      <point x="15824.106907735179" y="3988.0" />
+      <point x="16094.27086877414" y="3988.0" />
+      <point x="16094.27086877414" y="2322.0" />
+      <point x="16367.862326682982" y="2322.0" />
+      <point x="16367.862326682982" y="645.0" />
+      <point x="13302.754006452487" y="645.0" />
+      <point x="26.43478260869597" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="person">
+      <point x="14.607142857143117" y="-105.5" />
+      <point x="14297.647566590389" y="3088.0" />
+      <point x="14174.835004212557" y="3088.0" />
+      <point x="14174.835004212557" y="815.0" />
+      <point x="12739.294306261372" y="815.0" />
+      <point x="22.153846153845734" y="15.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="messages.Messenger">
+      <point x="-135.65217391304395" y="-127.0" />
+      <point x="7735.517072571524" y="5147.0" />
+      <point x="6325.070750650317" y="5147.0" />
+      <point x="6325.070750650317" y="2012.0" />
+      <point x="9915.52658398365" y="2012.0" />
+      <point x="-34.44000000000051" y="27.0" />
+    </edge>
+    <edge source="person" target="exceptions.InvalidEyeColorException">
+      <point x="45.0" y="-15.0" />
+      <point x="12762.140460107526" y="250.0" />
+      <point x="13297.390460107526" y="250.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvoker" target="person">
+      <point x="17.875" y="-137.5" />
+      <point x="13894.775361355416" y="845.0" />
+      <point x="12731.909690876757" y="845.0" />
+      <point x="14.76923076923049" y="15.0" />
+    </edge>
+    <edge source="input.ConsolePersonReader" target="output">
+      <point x="-179.8125" y="-193.0" />
+      <point x="2641.75420940171" y="1652.0" />
+      <point x="1715.9293751152964" y="1652.0" />
+      <point x="26.181818181818244" y="15.0" />
+    </edge>
+    <edge source="networkMessages.ResponseImpl" target="networkMessages.ResponseType">
+      <point x="82.66666666666606" y="-94.5" />
+      <point x="8692.133250650317" y="1862.0" />
+      <point x="8656.299917316985" y="1862.0" />
+      <point x="8656.299917316985" y="765.0" />
+      <point x="8456.961871326925" y="765.0" />
+      <point x="41.19999999999982" y="82.5" />
+    </edge>
+    <edge source="serverCommands.PrintFieldDescendingEyeColorCommand" target="collectionManager">
+      <point x="87.60000000000036" y="-61.0" />
+      <point x="10907.816583983651" y="3588.0" />
+      <point x="11916.429319702742" y="3588.0" />
+      <point x="-42.9629629629635" y="15.0" />
+    </edge>
+    <edge source="exceptions.InvalidCoordinatesXException" target="exceptions.InvalidCoordinatesException">
+      <point x="0.0" y="-15.0" />
+      <point x="12563.140460107526" y="155.0" />
+      <point x="12643.140460107526" y="155.0" />
+      <point x="-66.0" y="15.0" />
+    </edge>
+    <edge source="networkMessages.RequestImpl" target="person">
+      <point x="-155.14285714285688" y="-127.5" />
+      <point x="4702.036589159634" y="3398.0" />
+      <point x="4798.3223034453495" y="3398.0" />
+      <point x="4798.3223034453495" y="875.0" />
+      <point x="12691.294306261372" y="875.0" />
+      <point x="-25.846153846154266" y="15.0" />
+    </edge>
+    <edge source="server.Main" target="server.ServerApplication">
+      <point x="-37.5" y="-27.0" />
+      <point x="13398.6169739572" y="5581.0" />
+      <point x="7871.169246484568" y="5581.0" />
+      <point x="0.0" y="127.0" />
+    </edge>
+    <edge source="exceptions.InvalidCoordinatesException" target="exceptions.InvalidFieldException">
+      <point x="0.0" y="-15.0" />
+      <point x="12709.140460107526" y="80.0" />
+      <point x="12410.890460107526" y="80.0" />
+      <point x="24.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.AddIfMinCommand">
+      <point x="25.25" y="-127.0" />
+      <point x="12292.220986369408" y="4434.0" />
+      <point x="12522.73249307456" y="4434.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="serverCommands.InfoCommand" target="collectionManager">
+      <point x="60.0" y="-61.0" />
+      <point x="10491.21658398365" y="3568.0" />
+      <point x="11899.244134517558" y="3568.0" />
+      <point x="-60.14814814814781" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="clientCommands.ClientCommandManagerImpl">
+      <point x="152.0" y="116.5" />
+      <point x="1182.710425667702" y="5481.0" />
+      <point x="2107.9882034454804" y="5481.0" />
+      <point x="-79.88888888888869" y="-204.0" />
+    </edge>
+    <edge source="networkMessages.Request" target="auth">
+      <point x="0.0" y="-71.0" />
+      <point x="5718.82140494537" y="1075.0" />
+      <point x="13249.884441235095" y="1075.0" />
+      <point x="-26.43478260869597" y="15.0" />
+    </edge>
+    <edge source="dataManager.DBWriter" target="auth">
+      <point x="73.59999999999854" y="-105.0" />
+      <point x="17708.44080925033" y="4078.0" />
+      <point x="17898.757475916995" y="4078.0" />
+      <point x="17898.757475916995" y="495.0" />
+      <point x="13330.58009340901" y="495.0" />
+      <point x="54.260869565217945" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.HistoryCommand">
+      <point x="-109.41666666666606" y="-127.0" />
+      <point x="12157.554319702744" y="4524.0" />
+      <point x="10157.96658398365" y="4524.0" />
+      <point x="10157.96658398365" y="3358.0" />
+      <point x="9602.565079817901" y="3358.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="serverCommands.RequiringAuth">
+      <point x="67.85714285714312" y="-105.5" />
+      <point x="15181.397566590389" y="3878.0" />
+      <point x="15226.105877311802" y="3878.0" />
+      <point x="15226.105877311802" y="1452.0" />
+      <point x="14383.093932783986" y="1452.0" />
+      <point x="38.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="serverCommands.ServerCommandInvoker">
+      <point x="91.92857142857065" y="-137.5" />
+      <point x="13392.155510178933" y="3698.0" />
+      <point x="13824.900361355416" y="3698.0" />
+      <point x="-52.0" y="137.5" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="input.InputManager">
+      <point x="186.40740740740694" y="-204.0" />
+      <point x="2374.284499741776" y="5521.0" />
+      <point x="5486.679446302491" y="5521.0" />
+      <point x="5486.679446302491" y="3378.0" />
+      <point x="4374.349318097363" y="3378.0" />
+      <point x="44.5" y="60.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="networkMessages.RequestType">
+      <point x="-244.08333333333212" y="-127.0" />
+      <point x="12022.887653036076" y="4604.0" />
+      <point x="8058.216583983651" y="4604.0" />
+      <point x="8058.216583983651" y="1782.0" />
+      <point x="8020.038260215813" y="1782.0" />
+      <point x="21.888888888888687" y="93.5" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="output">
+      <point x="-147.27272727272702" y="-116.0" />
+      <point x="3359.204679146036" y="4038.0" />
+      <point x="2413.7333760683778" y="4038.0" />
+      <point x="2413.7333760683778" y="1682.0" />
+      <point x="1702.8384660243873" y="1682.0" />
+      <point x="13.090909090909008" y="15.0" />
+    </edge>
+    <edge source="serverCommands.FilterContainsNameCommand" target="command.RequiringArg">
+      <point x="-54.714285714286234" y="-83.5" />
+      <point x="9901.252298269364" y="3448.0" />
+      <point x="10155.069792474627" y="3448.0" />
+      <point x="10155.069792474627" y="2162.0" />
+      <point x="13191.020361355415" y="2162.0" />
+      <point x="-21.600000000000364" y="27.0" />
+    </edge>
+    <edge source="dataManager.DataWriter" target="auth">
+      <point x="68.0" y="-71.0" />
+      <point x="17519.49850643167" y="535.0" />
+      <point x="13322.232267322051" y="535.0" />
+      <point x="45.91304347826008" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="serverCommands.ServerCommand">
+      <point x="-32.615384615384755" y="-105.5" />
+      <point x="13642.611554134977" y="3638.0" />
+      <point x="13690.400361355416" y="3638.0" />
+      <point x="13690.400361355416" y="1642.0" />
+      <point x="13482.120361355413" y="1642.0" />
+      <point x="35.5" y="38.0" />
+    </edge>
+    <edge source="collectionManager" target="person">
+      <point x="58.0" y="-15.0" />
+      <point x="12017.392282665705" y="2122.0" />
+      <point x="11912.392282665705" y="2122.0" />
+      <point x="11912.392282665705" y="935.0" />
+      <point x="12713.448152415218" y="935.0" />
+      <point x="-3.692307692308532" y="15.0" />
+    </edge>
+    <edge source="input.ConsolePersonReader" target="exceptions.InvalidFieldException">
+      <point x="-25.6875" y="-193.0" />
+      <point x="2795.87920940171" y="1622.0" />
+      <point x="2669.9855012077314" y="1622.0" />
+      <point x="2669.9855012077314" y="60.0" />
+      <point x="12314.890460107526" y="60.0" />
+      <point x="-72.0" y="15.0" />
+    </edge>
+    <edge source="authManager.AuthManager" target="auth">
+      <point x="0.0" y="-82.5" />
+      <point x="16766.35584338819" y="2332.0" />
+      <point x="17046.99850643167" y="2332.0" />
+      <point x="17046.99850643167" y="575.0" />
+      <point x="13316.667049930747" y="575.0" />
+      <point x="40.34782608695605" y="15.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="connection.ServerConnectionManagerImpl">
+      <point x="122.08695652173992" y="-127.0" />
+      <point x="7993.256203006308" y="5137.0" />
+      <point x="18509.09080925033" y="5137.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="input.PersonReader">
+      <point x="-117.81818181818198" y="-116.0" />
+      <point x="3388.659224600581" y="4028.0" />
+      <point x="2520.8583760683778" y="4028.0" />
+      <point x="2520.8583760683778" y="1672.0" />
+      <point x="1892.9975569334783" y="1672.0" />
+      <point x="22.25" y="27.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="server.Server">
+      <point x="-67.82608695652198" y="-127.0" />
+      <point x="7803.343159528046" y="5097.0" />
+      <point x="7359.445750650318" y="5097.0" />
+      <point x="-91.0" y="149.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="130.82142857142935" y="-105.5" />
+      <point x="12653.55392164599" y="3688.0" />
+      <point x="13798.900361355416" y="3688.0" />
+      <point x="-78.0" y="137.5" />
+    </edge>
+    <edge source="client.Main" target="application.Application">
+      <point x="37.5" y="-27.0" />
+      <point x="6276.429446302491" y="3478.0" />
+      <point x="11221.437000183465" y="3478.0" />
+      <point x="-38.85714285714312" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManager" target="auth">
+      <point x="59.125" y="-38.0" />
+      <point x="7810.820750650318" y="1812.0" />
+      <point x="7889.149371326925" y="1812.0" />
+      <point x="7889.149371326925" y="1085.0" />
+      <point x="13252.667049930747" y="1085.0" />
+      <point x="-23.652173913043953" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="requests.ClientRequestFactory">
+      <point x="133.1481481481478" y="-204.0" />
+      <point x="2321.025240482517" y="5501.0" />
+      <point x="4901.096112969158" y="5501.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="person" target="exceptions.InvalidBirthdayException">
+      <point x="-27.0" y="-15.0" />
+      <point x="12690.140460107526" y="240.0" />
+      <point x="12386.890460107526" y="240.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.MaxByEyeColorCommand" target="serverCommands.ServerCommand">
+      <point x="0.0" y="-61.0" />
+      <point x="9563.96658398365" y="3418.0" />
+      <point x="9974.315079817901" y="3418.0" />
+      <point x="9974.315079817901" y="2202.0" />
+      <point x="13354.320361355414" y="2202.0" />
+      <point x="-92.29999999999927" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvoker" target="serverCommands.RequiringAuth">
+      <point x="125.125" y="-137.5" />
+      <point x="14002.025361355416" y="2352.0" />
+      <point x="14322.293932783987" y="2352.0" />
+      <point x="-22.799999999999272" y="27.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="serverCommands.ServerCommandHandler">
+      <point x="-122.08695652173992" y="-127.0" />
+      <point x="7749.082289962828" y="5137.0" />
+      <point x="6584.820750650318" y="5137.0" />
+      <point x="-97.0" y="116.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="input.ScriptInputManager">
+      <point x="65.14285714285711" y="-116.5" />
+      <point x="1095.853282810559" y="5067.0" />
+      <point x="1571.5711538461546" y="5067.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="person" target="exceptions.InvalidNameException">
+      <point x="-63.0" y="-15.0" />
+      <point x="12654.140460107526" y="260.0" />
+      <point x="11882.890460107526" y="260.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.FilterContainsNameCommand" target="serverCommands.ServerCommand">
+      <point x="0.0" y="-83.5" />
+      <point x="9955.96658398365" y="3458.0" />
+      <point x="10184.46658398365" y="3458.0" />
+      <point x="10184.46658398365" y="2212.0" />
+      <point x="13368.520361355415" y="2212.0" />
+      <point x="-78.10000000000036" y="38.0" />
+    </edge>
+    <edge source="person" target="exceptions.InvalidLocationNameException">
+      <point x="-45.0" y="-15.0" />
+      <point x="12672.140460107526" y="250.0" />
+      <point x="12126.890460107526" y="250.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="input.ConsolePersonReader" target="person">
+      <point x="77.0625" y="-193.0" />
+      <point x="2898.62920940171" y="1602.0" />
+      <point x="2691.9855012077314" y="1602.0" />
+      <point x="2691.9855012077314" y="835.0" />
+      <point x="12676.525075492142" y="835.0" />
+      <point x="-40.615384615384755" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="exceptions.NoArgException">
+      <point x="-294.58333333333394" y="-127.0" />
+      <point x="11972.387653036076" y="4634.0" />
+      <point x="8002.779083983651" y="4634.0" />
+      <point x="8002.779083983651" y="3268.0" />
+      <point x="7346.445750650318" y="3268.0" />
+      <point x="20.0" y="15.0" />
+    </edge>
+    <edge source="exceptions.InvalidEyeColorException" target="exceptions.InvalidFieldException">
+      <point x="0.0" y="-15.0" />
+      <point x="13297.390460107526" y="60.0" />
+      <point x="12458.890460107526" y="60.0" />
+      <point x="72.0" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="clientCommands.ClientCommandInvokerImpl">
+      <point x="26.629629629629562" y="-204.0" />
+      <point x="2214.5067219639986" y="5461.0" />
+      <point x="2626.481345812702" y="5461.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="auth">
+      <point x="0.0" y="-105.5" />
+      <point x="13675.226938750362" y="3648.0" />
+      <point x="13701.400361355416" y="3648.0" />
+      <point x="13701.400361355416" y="865.0" />
+      <point x="13272.145310800313" y="865.0" />
+      <point x="-4.173913043478024" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AuthCommand" target="serverCommands.RequiringAuth">
+      <point x="0.0" y="-94.5" />
+      <point x="15798.288725916995" y="3978.0" />
+      <point x="15935.788725916995" y="3978.0" />
+      <point x="15935.788725916995" y="1412.0" />
+      <point x="14398.293932783987" y="1412.0" />
+      <point x="53.20000000000073" y="27.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="serverCommands.ServerCommandManager">
+      <point x="0.0" y="-127.0" />
+      <point x="7871.169246484568" y="5047.0" />
+      <point x="7980.779083983651" y="5047.0" />
+      <point x="7980.779083983651" y="3278.0" />
+      <point x="7869.945750650318" y="3278.0" />
+      <point x="118.25" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="auth">
+      <point x="260.91666666666606" y="-127.0" />
+      <point x="12527.887653036076" y="4574.0" />
+      <point x="16618.02975643167" y="4574.0" />
+      <point x="16618.02975643167" y="2352.0" />
+      <point x="16699.538358924285" y="2352.0" />
+      <point x="16699.538358924285" y="605.0" />
+      <point x="13313.884441235095" y="605.0" />
+      <point x="37.56521739130403" y="15.0" />
+    </edge>
+    <edge source="exceptions.InvalidLocationException" target="exceptions.InvalidFieldException">
+      <point x="0.0" y="-15.0" />
+      <point x="12126.890460107526" y="80.0" />
+      <point x="12362.890460107526" y="80.0" />
+      <point x="-24.0" y="15.0" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="auth">
+      <point x="69.11111111111131" y="-105.0" />
+      <point x="1640.682264957266" y="4594.0" />
+      <point x="1383.5711538461546" y="4594.0" />
+      <point x="1383.5711538461546" y="1752.0" />
+      <point x="3013.817363696764" y="1752.0" />
+      <point x="3013.817363696764" y="955.0" />
+      <point x="13216.49313688727" y="955.0" />
+      <point x="-59.826086956521976" y="15.0" />
+    </edge>
+    <edge source="client.Main" target="client.ClientApplication">
+      <point x="-37.5" y="-27.0" />
+      <point x="6201.429446302491" y="5137.0" />
+      <point x="4643.682651430697" y="5137.0" />
+      <point x="129.5" y="171.5" />
+    </edge>
+    <edge source="responses.ClientResponseReceiver" target="responses.ResponseReceiver">
+      <point x="68.75" y="-50.0" />
+      <point x="282.75" y="5157.0" />
+      <point x="262.5" y="5157.0" />
+      <point x="-49.75" y="27.0" />
+    </edge>
+    <edge source="responses.ClientResponseReceiver" target="networkMessages.Response">
+      <point x="-68.75" y="-50.0" />
+      <point x="145.25" y="1782.0" />
+      <point x="7371.070750650319" y="1782.0" />
+      <point x="-51.375" y="38.0" />
+    </edge>
+    <edge source="serverCommands.HistoryCommand" target="serverCommands.ServerCommand">
+      <point x="97.0" y="-61.0" />
+      <point x="9699.565079817901" y="2182.0" />
+      <point x="13325.920361355413" y="2182.0" />
+      <point x="-120.70000000000073" y="38.0" />
+    </edge>
+    <edge source="exceptions.InvalidNameException" target="exceptions.InvalidFieldException">
+      <point x="0.0" y="-15.0" />
+      <point x="11882.890460107526" y="70.0" />
+      <point x="12338.890460107526" y="70.0" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandHandler" target="inputManager.CommandReader">
+      <point x="-110.85714285714312" y="-116.0" />
+      <point x="6570.963607793175" y="4644.0" />
+      <point x="6658.070750650317" y="4644.0" />
+      <point x="6658.070750650317" y="1522.0" />
+      <point x="2605.4125845410645" y="1522.0" />
+      <point x="71.66666666666697" y="27.0" />
+    </edge>
+    <edge source="serverCommands.InfoCommand" target="serverCommands.ServerCommand">
+      <point x="0.0" y="-61.0" />
+      <point x="10431.21658398365" y="3458.0" />
+      <point x="10382.21658398365" y="3458.0" />
+      <point x="10382.21658398365" y="2222.0" />
+      <point x="13382.720361355416" y="2222.0" />
+      <point x="-63.899999999999636" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="exceptions.NeedObjectException">
+      <point x="159.91666666666606" y="-127.0" />
+      <point x="12426.887653036076" y="4514.0" />
+      <point x="15499.268659027362" y="4514.0" />
+      <point x="15499.268659027362" y="3888.0" />
+      <point x="15393.230447298884" y="3888.0" />
+      <point x="50.0" y="15.0" />
+    </edge>
+    <edge source="dataManager.DBReader" target="auth">
+      <point x="68.0" y="-105.5" />
+      <point x="17318.84080925033" y="4078.0" />
+      <point x="17608.99850643167" y="4078.0" />
+      <point x="17608.99850643167" y="515.0" />
+      <point x="13327.797484713357" y="515.0" />
+      <point x="51.47826086956593" y="15.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="serverCommands.RequiringAuth">
+      <point x="61.875" y="-116.5" />
+      <point x="14767.415423733244" y="3828.0" />
+      <point x="14989.843312376735" y="3828.0" />
+      <point x="14989.843312376735" y="1502.0" />
+      <point x="14367.893932783985" y="1502.0" />
+      <point x="22.799999999999272" y="27.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="serverCommands.RequiringAuth">
+      <point x="73.03571428571377" y="-105.5" />
+      <point x="14356.076138018958" y="3718.0" />
+      <point x="14350.593932783986" y="3718.0" />
+      <point x="14350.593932783986" y="2352.0" />
+      <point x="14352.693932783986" y="2352.0" />
+      <point x="7.600000000000364" y="27.0" />
+    </edge>
+    <edge source="requests.RequestFactory" target="networkMessages.Request">
+      <point x="131.66666666666697" y="-71.0" />
+      <point x="5410.346112969159" y="3418.0" />
+      <point x="5686.82140494537" y="3418.0" />
+      <point x="-32.0" y="71.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="input.InputManager">
+      <point x="21.714285714285325" y="-116.5" />
+      <point x="1052.4247113819874" y="5057.0" />
+      <point x="1405.5711538461546" y="5057.0" />
+      <point x="1405.5711538461546" y="4098.0" />
+      <point x="4255.682651430696" y="4098.0" />
+      <point x="-74.16666666666697" y="60.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="dataManager.DBManager">
+      <point x="94.95652173913004" y="-127.0" />
+      <point x="7966.125768223698" y="5117.0" />
+      <point x="16850.49850643167" y="5117.0" />
+      <point x="0.0" y="127.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="networkMessages.Response">
+      <point x="-260.91666666666606" y="-127.0" />
+      <point x="12006.054319702744" y="4614.0" />
+      <point x="8047.216583983651" y="4614.0" />
+      <point x="8047.216583983651" y="1792.0" />
+      <point x="7450.987417316985" y="1792.0" />
+      <point x="28.54166666666697" y="38.0" />
+    </edge>
+    <edge source="clientCommands.ExecuteScriptCommand" target="clientCommands.ClientCommand">
+      <point x="195.42857142857156" y="-116.5" />
+      <point x="1226.1389970962737" y="5097.0" />
+      <point x="2093.0433760683773" y="5097.0" />
+      <point x="-105.75" y="38.0" />
+    </edge>
+    <edge source="dataManager.DBReader" target="exceptions.DBException">
+      <point x="102.0" y="-105.5" />
+      <point x="17352.84080925033" y="4098.0" />
+      <point x="18034.84080925033" y="4098.0" />
+      <point x="-46.0" y="38.0" />
+    </edge>
+    <edge source="dataManager.DBManager" target="dataManager.DataWriter">
+      <point x="0.0" y="-127.0" />
+      <point x="16850.49850643167" y="4624.0" />
+      <point x="17013.99850643167" y="4624.0" />
+      <point x="17013.99850643167" y="2352.0" />
+      <point x="17383.49850643167" y="2352.0" />
+      <point x="-68.0" y="71.0" />
+    </edge>
+    <edge source="server.Main" target="application.Application">
+      <point x="37.5" y="-27.0" />
+      <point x="13473.6169739572" y="5581.0" />
+      <point x="18719.34080925033" y="5581.0" />
+      <point x="18719.34080925033" y="2788.0" />
+      <point x="11318.579857326324" y="2788.0" />
+      <point x="58.285714285714675" y="38.0" />
+    </edge>
+    <edge source="dataManager.DBManager" target="dataManager.DataReader">
+      <point x="-40.57142857142753" y="-127.0" />
+      <point x="16809.927077860244" y="4614.0" />
+      <point x="16900.962792145958" y="4614.0" />
+      <point x="16900.962792145958" y="2342.0" />
+      <point x="17116.99850643167" y="2342.0" />
+      <point x="-59.5" y="60.5" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="exceptions.DBException">
+      <point x="162.03571428571377" y="-105.5" />
+      <point x="16370.074440202709" y="4088.0" />
+      <point x="18004.174142583663" y="4088.0" />
+      <point x="-76.66666666666788" y="38.0" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="serverCommands.RequiringAuth">
+      <point x="97.84615384615427" y="-105.5" />
+      <point x="13773.073092596516" y="3718.0" />
+      <point x="14339.593932783986" y="3718.0" />
+      <point x="14339.593932783986" y="2352.0" />
+      <point x="14337.493932783986" y="2352.0" />
+      <point x="-7.600000000000364" y="27.0" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="input.ConsoleCommandReader">
+      <point x="-29.454545454545496" y="-116.0" />
+      <point x="3477.022860964218" y="3998.0" />
+      <point x="3186.56670940171" y="3998.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandInvokerImpl" target="command.RequiringArg">
+      <point x="34.0" y="-60.5" />
+      <point x="2660.481345812702" y="5097.0" />
+      <point x="2362.5933760683774" y="5097.0" />
+      <point x="2362.5933760683774" y="4048.0" />
+      <point x="3793.56670940171" y="4048.0" />
+      <point x="3793.56670940171" y="2152.0" />
+      <point x="13176.620361355413" y="2152.0" />
+      <point x="-36.0" y="27.0" />
+    </edge>
+    <edge source="dataManager.DataWriter" target="person">
+      <point x="-68.0" y="-71.0" />
+      <point x="17383.49850643167" y="545.0" />
+      <point x="12783.601998569065" y="545.0" />
+      <point x="66.46153846153902" y="15.0" />
+    </edge>
+    <edge source="person" target="exceptions.InvalidHairColorException">
+      <point x="27.0" y="-15.0" />
+      <point x="12744.140460107526" y="240.0" />
+      <point x="13033.390460107526" y="240.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="dataManager.DBWriter" target="exceptions.NoSuchIdException">
+      <point x="-147.20000000000073" y="-105.0" />
+      <point x="17487.64080925033" y="2798.0" />
+      <point x="16584.52975643167" y="2798.0" />
+      <point x="69.0" y="15.0" />
+    </edge>
+    <edge source="dataManager.DataReader" target="auth">
+      <point x="59.5" y="-60.5" />
+      <point x="17235.99850643167" y="555.0" />
+      <point x="13319.4496586264" y="555.0" />
+      <point x="43.13043478260806" y="15.0" />
+    </edge>
+    <edge source="networkMessages.RequestImpl" target="networkMessages.Request">
+      <point x="155.14285714285688" y="-127.5" />
+      <point x="5012.322303445348" y="3398.0" />
+      <point x="5661.22140494537" y="3398.0" />
+      <point x="-57.600000000000364" y="71.0" />
+    </edge>
+    <edge source="serverCommands.RequestHandler" target="networkMessages.Response">
+      <point x="-36.125" y="-50.0" />
+      <point x="7575.654083983651" y="3308.0" />
+      <point x="7504.695750650318" y="3308.0" />
+      <point x="7504.695750650318" y="1812.0" />
+      <point x="7428.154083983651" y="1812.0" />
+      <point x="5.70833333333303" y="38.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="responses.ClientResponseReceiver">
+      <point x="-159.77777777777783" y="-204.0" />
+      <point x="2028.0993145565917" y="5511.0" />
+      <point x="214.0" y="5511.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="input.InputManager">
+      <point x="147.27272727272702" y="-116.0" />
+      <point x="3653.75013369149" y="4118.0" />
+      <point x="4315.01598476403" y="4118.0" />
+      <point x="-14.833333333333485" y="60.0" />
+    </edge>
+    <edge source="connection.ClientConnectionManagerImpl" target="connection.ClientConnectionManager">
+      <point x="0.0" y="-61.0" />
+      <point x="4154.349318097364" y="4088.0" />
+      <point x="4149.099318097364" y="4088.0" />
+      <point x="71.75" y="49.5" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="auth">
+      <point x="37.39285714285688" y="-105.5" />
+      <point x="16245.431583059853" y="3998.0" />
+      <point x="16230.029756431672" y="3998.0" />
+      <point x="16230.029756431672" y="2342.0" />
+      <point x="16414.447124325656" y="2342.0" />
+      <point x="16414.447124325656" y="625.0" />
+      <point x="13308.319223843791" y="625.0" />
+      <point x="32.0" y="15.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="responses.ServerResponseSender">
+      <point x="-94.95652173913004" y="-127.0" />
+      <point x="7776.212724745438" y="5117.0" />
+      <point x="7042.320750650318" y="5117.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="dataManager.DataManager">
+      <point x="-95.0" y="-105.5" />
+      <point x="15018.540423733244" y="2958.0" />
+      <point x="14859.75507708262" y="2958.0" />
+      <point x="33.41176470588289" y="93.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="requests.RequestReceiver">
+      <point x="-13.565217391304031" y="-127.0" />
+      <point x="7857.604029093264" y="5037.0" />
+      <point x="7890.654083983651" y="5037.0" />
+      <point x="22.875" y="38.5" />
+    </edge>
+    <edge source="client.ClientApplication" target="connection.ClientConnectionManagerImpl">
+      <point x="22.769230769230944" y="-171.5" />
+      <point x="4536.951882199928" y="4504.0" />
+      <point x="4154.349318097364" y="4504.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="authManager.AuthManagerImpl" target="auth">
+      <point x="69.66666666666788" y="-138.0" />
+      <point x="18904.007475917" y="4118.0" />
+      <point x="18845.34080925033" y="4118.0" />
+      <point x="18845.34080925033" y="465.0" />
+      <point x="13338.927919495965" y="465.0" />
+      <point x="62.60869565217399" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="clientCommands.ClientCommandManager">
+      <point x="-186.40740740740694" y="-204.0" />
+      <point x="2001.4696849269621" y="5521.0" />
+      <point x="66.0" y="5521.0" />
+      <point x="66.0" y="4654.0" />
+      <point x="485.08333333333394" y="4654.0" />
+      <point x="-82.66666666666606" y="71.0" />
+    </edge>
+    <edge source="serverCommands.ShowCommand" target="messages.Messenger">
+      <point x="-123.20000000000073" y="-61.0" />
+      <point x="9086.26658398365" y="3368.0" />
+      <point x="9758.565079817901" y="3368.0" />
+      <point x="9758.565079817901" y="2092.0" />
+      <point x="9941.76658398365" y="2092.0" />
+      <point x="-8.200000000000728" y="27.0" />
+    </edge>
+    <edge source="input.ConsoleAuthReader" target="input.AuthReader">
+      <point x="-62.42857142857156" y="-105.0" />
+      <point x="3502.1381379731383" y="1762.0" />
+      <point x="3493.8142581067004" y="1762.0" />
+      <point x="-33.5" y="27.0" />
+    </edge>
+    <edge source="input.ConsoleAuthReader" target="output">
+      <point x="-187.28571428571422" y="-105.0" />
+      <point x="3377.280995115996" y="1582.0" />
+      <point x="1742.1111932971144" y="1582.0" />
+      <point x="52.36363636363626" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="serverCommands.ServerCommand">
+      <point x="13.571428571429351" y="-105.5" />
+      <point x="15127.111852304675" y="3848.0" />
+      <point x="15193.105877311802" y="3848.0" />
+      <point x="15193.105877311802" y="1472.0" />
+      <point x="13553.120361355413" y="1472.0" />
+      <point x="106.5" y="38.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="application.Application">
+      <point x="13.565217391304031" y="-127.0" />
+      <point x="7884.734463875872" y="5057.0" />
+      <point x="7991.779083983651" y="5057.0" />
+      <point x="7991.779083983651" y="3488.0" />
+      <point x="11240.865571612037" y="3488.0" />
+      <point x="-19.42857142857156" y="38.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="output">
+      <point x="-266.29629629629653" y="-204.0" />
+      <point x="1921.5807960380725" y="5551.0" />
+      <point x="33.0" y="5551.0" />
+      <point x="33.0" y="1682.0" />
+      <point x="1637.3839205698423" y="1682.0" />
+      <point x="-52.36363636363603" y="15.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="auth">
+      <point x="136.125" y="-116.5" />
+      <point x="14841.665423733244" y="3858.0" />
+      <point x="15033.843312376735" y="3858.0" />
+      <point x="15033.843312376735" y="2332.0" />
+      <point x="15467.513055994536" y="2332.0" />
+      <point x="15467.513055994536" y="715.0" />
+      <point x="13291.623571669877" y="715.0" />
+      <point x="15.304347826086087" y="15.0" />
+    </edge>
+    <edge source="input.ScriptPersonReader" target="exceptions.InvalidFieldException">
+      <point x="-49.399999999999636" y="-61.0" />
+      <point x="1189.171153846155" y="4108.0" />
+      <point x="1124.3000000000002" y="4108.0" />
+      <point x="1124.3000000000002" y="1642.0" />
+      <point x="701.2723486997902" y="1642.0" />
+      <point x="701.2723486997902" y="50.0" />
+      <point x="12290.890460107526" y="50.0" />
+      <point x="-96.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="exceptions.AuthException">
+      <point x="87.25" y="-105.5" />
+      <point x="16295.288725916995" y="4008.0" />
+      <point x="16327.529756431672" y="4008.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RequiringObject" target="person">
+      <point x="0.0" y="-27.0" />
+      <point x="14080.335004212557" y="825.0" />
+      <point x="12735.601998569065" y="825.0" />
+      <point x="18.46153846153902" y="15.0" />
+    </edge>
+    <edge source="server.Server" target="requests.RequestReceiver">
+      <point x="113.75" y="-149.0" />
+      <point x="7564.195750650318" y="4644.0" />
+      <point x="7799.154083983651" y="4644.0" />
+      <point x="-68.625" y="38.5" />
+    </edge>
+    <edge source="person" target="exceptions.InvalidCoordinatesXException">
+      <point x="-9.0" y="-15.0" />
+      <point x="12708.140460107526" y="230.0" />
+      <point x="12563.140460107526" y="230.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.PrintFieldDescendingEyeColorCommand">
+      <point x="-75.75" y="-127.0" />
+      <point x="12191.220986369408" y="4504.0" />
+      <point x="10820.21658398365" y="4504.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvokerImpl" target="auth">
+      <point x="10.214285714286234" y="-137.5" />
+      <point x="13310.441224464648" y="3578.0" />
+      <point x="13621.120361355413" y="3578.0" />
+      <point x="13621.120361355413" y="885.0" />
+      <point x="13266.58009340901" y="885.0" />
+      <point x="-9.739130434782055" y="15.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="serverCommands.ServerCommandManagerImpl">
+      <point x="54.260869565217945" y="-127.0" />
+      <point x="7925.430116049786" y="5087.0" />
+      <point x="12266.970986369408" y="5087.0" />
+      <point x="0.0" y="127.0" />
+    </edge>
+    <edge source="server.Server" target="serverCommands.RequestHandler">
+      <point x="22.75" y="-149.0" />
+      <point x="7473.195750650318" y="4654.0" />
+      <point x="7503.404083983651" y="4654.0" />
+      <point x="-108.375" y="50.0" />
+    </edge>
+    <edge source="client.ClientApplication" target="application.Application">
+      <point x="113.84615384615336" y="-171.5" />
+      <point x="4628.02880527685" y="4624.0" />
+      <point x="5849.429446302491" y="4624.0" />
+      <point x="5849.429446302491" y="3468.0" />
+      <point x="11202.008428754893" y="3468.0" />
+      <point x="-58.285714285714675" y="38.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="connection.ServerConnectionManager">
+      <point x="135.65217391304395" y="-127.0" />
+      <point x="8006.821420397612" y="5147.0" />
+      <point x="18651.59080925033" y="5147.0" />
+      <point x="18651.59080925033" y="4654.0" />
+      <point x="18644.59080925033" y="4654.0" />
+      <point x="64.25" y="38.0" />
+    </edge>
+    <edge source="serverCommands.HelpCommand" target="serverCommands.ServerCommand">
+      <point x="89.33333333333394" y="-61.0" />
+      <point x="8977.799917316985" y="2172.0" />
+      <point x="13311.720361355416" y="2172.0" />
+      <point x="-134.89999999999964" y="38.0" />
+    </edge>
+    <edge source="responses.ServerResponseFactory" target="networkMessages.Response">
+      <point x="-34.5" y="-60.0" />
+      <point x="8280.96658398365" y="3438.0" />
+      <point x="8355.21658398365" y="3438.0" />
+      <point x="8355.21658398365" y="1762.0" />
+      <point x="7473.820750650319" y="1762.0" />
+      <point x="51.375" y="38.0" />
+    </edge>
+    <edge source="requests.RequestSender" target="networkMessages.Request">
+      <point x="0.0" y="-27.0" />
+      <point x="5801.179446302491" y="4644.0" />
+      <point x="5871.429446302491" y="4644.0" />
+      <point x="5871.429446302491" y="3348.0" />
+      <point x="5712.42140494537" y="3348.0" />
+      <point x="-6.399999999999636" y="71.0" />
+    </edge>
+    <edge source="dataManager.DBManager" target="person">
+      <point x="-81.1428571428587" y="-127.0" />
+      <point x="16769.355649288813" y="4604.0" />
+      <point x="16885.788879102478" y="4604.0" />
+      <point x="16885.788879102478" y="2302.0" />
+      <point x="16354.07971798733" y="2302.0" />
+      <point x="16354.07971798733" y="665.0" />
+      <point x="12768.832767799835" y="665.0" />
+      <point x="51.69230769230853" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.ExitCommand">
+      <point x="-42.08333333333394" y="-127.0" />
+      <point x="12224.887653036076" y="4484.0" />
+      <point x="11242.71658398365" y="4484.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="authManager.AuthManager">
+      <point x="108.52173913043407" y="-127.0" />
+      <point x="7979.690985615002" y="5127.0" />
+      <point x="17002.99850643167" y="5127.0" />
+      <point x="17002.99850643167" y="4078.0" />
+      <point x="16831.04334338819" y="4078.0" />
+      <point x="64.6875" y="82.5" />
+    </edge>
+    <edge source="input.ScriptPersonReader" target="person">
+      <point x="0.0" y="-61.0" />
+      <point x="1238.5711538461546" y="4098.0" />
+      <point x="1138.9923076923087" y="4098.0" />
+      <point x="1138.9923076923087" y="1632.0" />
+      <point x="715.9646563920987" y="1632.0" />
+      <point x="715.9646563920987" y="795.0" />
+      <point x="12661.755844722911" y="795.0" />
+      <point x="-55.384615384615245" y="15.0" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="exceptions.ScriptException">
+      <point x="-34.55555555555566" y="-105.0" />
+      <point x="1537.015598290599" y="4624.0" />
+      <point x="1045.25" y="4624.0" />
+      <point x="21.0" y="15.0" />
+    </edge>
+    <edge source="dataManager.DBManager" target="dataManager.DBWriter">
+      <point x="81.1428571428587" y="-127.0" />
+      <point x="16931.64136357453" y="4644.0" />
+      <point x="17634.84080925033" y="4644.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="person">
+      <point x="29.45454545454504" y="-116.0" />
+      <point x="3535.931951873308" y="4058.0" />
+      <point x="3804.56670940171" y="4058.0" />
+      <point x="3804.56670940171" y="1562.0" />
+      <point x="3002.817363696764" y="1562.0" />
+      <point x="3002.817363696764" y="845.0" />
+      <point x="12680.21738318445" y="845.0" />
+      <point x="-36.92307692307622" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="person">
+      <point x="122.14285714285688" y="-105.5" />
+      <point x="15235.683280876103" y="3908.0" />
+      <point x="15478.513055994536" y="3908.0" />
+      <point x="15478.513055994536" y="705.0" />
+      <point x="12761.448152415218" y="705.0" />
+      <point x="44.30769230769147" y="15.0" />
+    </edge>
+    <edge source="connection.ServerConnectionManagerImpl" target="connection.ServerConnectionManager">
+      <point x="0.0" y="-60.5" />
+      <point x="18509.09080925033" y="4654.0" />
+      <point x="18516.09080925033" y="4654.0" />
+      <point x="-64.25" y="38.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="application.Application">
+      <point x="-25.25" y="-127.0" />
+      <point x="12241.720986369408" y="4474.0" />
+      <point x="11719.273496178332" y="4474.0" />
+      <point x="11719.273496178332" y="3488.0" />
+      <point x="11299.151285897751" y="3488.0" />
+      <point x="38.85714285714312" y="38.0" />
+    </edge>
+    <edge source="dataManager.DBReader" target="dataManager.DataReader">
+      <point x="0.0" y="-105.5" />
+      <point x="17250.84080925033" y="4078.0" />
+      <point x="17235.99850643167" y="4078.0" />
+      <point x="59.5" y="60.5" />
+    </edge>
+    <edge source="requests.ClientRequestSender" target="networkMessages.Request">
+      <point x="-85.5" y="-61.0" />
+      <point x="5582.679446302491" y="4634.0" />
+      <point x="5860.429446302491" y="4634.0" />
+      <point x="5860.429446302491" y="3358.0" />
+      <point x="5699.62140494537" y="3358.0" />
+      <point x="-19.199999999999818" y="71.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.ServerCommandInvokerImpl">
+      <point x="42.08333333333394" y="-127.0" />
+      <point x="12309.054319702744" y="4444.0" />
+      <point x="13300.226938750362" y="4444.0" />
+      <point x="0.0" y="137.5" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="auth">
+      <point x="88.36363636363694" y="-116.0" />
+      <point x="3594.8410427824" y="4078.0" />
+      <point x="3912.3493180973637" y="4078.0" />
+      <point x="3912.3493180973637" y="1005.0" />
+      <point x="13230.406180365531" y="1005.0" />
+      <point x="-45.91304347826008" y="15.0" />
+    </edge>
+    <edge source="serverCommands.AuthCommand" target="serverCommands.ServerCommand">
+      <point x="-25.818181818181984" y="-94.5" />
+      <point x="15772.470544098815" y="3968.0" />
+      <point x="15924.788725916995" y="3968.0" />
+      <point x="15924.788725916995" y="1422.0" />
+      <point x="13567.320361355414" y="1422.0" />
+      <point x="120.70000000000073" y="38.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="clientCommands.ExitCommand">
+      <point x="0.0" y="-204.0" />
+      <point x="2187.877092334369" y="5451.0" />
+      <point x="2160.2183760683774" y="5451.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="requests.ClientRequestSender" target="requests.RequestSender">
+      <point x="85.5" y="-61.0" />
+      <point x="-48.5" y="27.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="serverCommands.RequestHandler">
+      <point x="-27.130434782608063" y="-127.0" />
+      <point x="7844.03881170196" y="5067.0" />
+      <point x="7769.279083983651" y="5067.0" />
+      <point x="7769.279083983651" y="4634.0" />
+      <point x="7720.154083983651" y="4634.0" />
+      <point x="108.375" y="50.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.ServerCommandInvoker">
+      <point x="75.75" y="-127.0" />
+      <point x="12342.720986369408" y="4464.0" />
+      <point x="14053.203995161817" y="4464.0" />
+      <point x="14053.203995161817" y="3168.0" />
+      <point x="13876.900361355416" y="3168.0" />
+      <point x="0.0" y="137.5" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.AddIfMaxCommand">
+      <point x="92.58333333333394" y="-127.0" />
+      <point x="12359.554319702744" y="4474.0" />
+      <point x="14283.040423733244" y="4474.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="person">
+      <point x="-72.67857142857065" y="-105.5" />
+      <point x="12450.05392164599" y="3538.0" />
+      <point x="12858.959081607503" y="3538.0" />
+      <point x="12858.959081607503" y="925.0" />
+      <point x="12717.140460107526" y="925.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="requests.RequestSender">
+      <point x="239.66666666666697" y="-204.0" />
+      <point x="2427.543759001036" y="5541.0" />
+      <point x="5849.679446302491" y="5541.0" />
+      <point x="48.5" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.RegCommand">
+      <point x="227.25" y="-127.0" />
+      <point x="12494.220986369408" y="4554.0" />
+      <point x="16208.038725916995" y="4554.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="input.ScriptPersonReader" target="exceptions.ScriptException">
+      <point x="-98.80000000000007" y="-61.0" />
+      <point x="1139.7711538461544" y="4118.0" />
+      <point x="1087.25" y="4118.0" />
+      <point x="63.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RegCommand" target="serverCommands.RequiringAuth">
+      <point x="12.464285714286234" y="-105.5" />
+      <point x="16220.503011631281" y="3998.0" />
+      <point x="16212.345232622147" y="3998.0" />
+      <point x="16212.345232622147" y="1352.0" />
+      <point x="14413.493932783986" y="1352.0" />
+      <point x="68.39999999999964" y="27.0" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="input.ConsoleAuthReader">
+      <point x="0.0" y="-116.0" />
+      <point x="3506.477406418763" y="4038.0" />
+      <point x="3564.56670940171" y="4038.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="server.ServerApplication" target="messages.MessengerImpl">
+      <point x="-149.21739130434798" y="-127.0" />
+      <point x="7721.95185518022" y="5157.0" />
+      <point x="6314.070750650317" y="5157.0" />
+      <point x="6314.070750650317" y="4654.0" />
+      <point x="6061.179446302491" y="4654.0" />
+      <point x="59.75" y="50.0" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="exceptions.NoSuchIdException">
+      <point x="195.69230769230853" y="-105.5" />
+      <point x="13870.91924644267" y="4018.0" />
+      <point x="16446.52975643167" y="4018.0" />
+      <point x="-69.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.HelpCommand" target="messages.Messenger">
+      <point x="-89.33333333333394" y="-61.0" />
+      <point x="8799.133250650317" y="2052.0" />
+      <point x="9928.646583983651" y="2052.0" />
+      <point x="-21.31999999999971" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.ShowCommand">
+      <point x="-159.91666666666606" y="-127.0" />
+      <point x="12107.054319702744" y="4554.0" />
+      <point x="9209.46658398365" y="4554.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.RemoveByIdCommand">
+      <point x="58.91666666666606" y="-127.0" />
+      <point x="12325.887653036076" y="4454.0" />
+      <point x="13675.226938750362" y="4454.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="messages.MessengerImpl" target="messages.Messenger">
+      <point x="0.0" y="-50.0" />
+      <point x="6001.429446302491" y="1992.0" />
+      <point x="9908.96658398365" y="1992.0" />
+      <point x="-41.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ClearCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="104.72727272727207" y="-94.5" />
+      <point x="12211.959765801832" y="3678.0" />
+      <point x="13772.900361355416" y="3678.0" />
+      <point x="-104.0" y="137.5" />
+    </edge>
+    <edge source="exceptions.NoDataException" target="exceptions.DBException">
+      <point x="0.0" y="-15.0" />
+      <point x="17922.84080925033" y="4118.0" />
+      <point x="18096.174142583663" y="4118.0" />
+      <point x="15.33333333333212" y="38.0" />
+    </edge>
+    <edge source="exceptions.InvalidLocationNameException" target="exceptions.InvalidLocationException">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.RemoveByIdCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="65.23076923076951" y="-105.5" />
+      <point x="13740.457707981132" y="3708.0" />
+      <point x="13850.900361355416" y="3708.0" />
+      <point x="-26.0" y="137.5" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.AddCommand">
+      <point x="126.25" y="-127.0" />
+      <point x="12393.220986369408" y="4494.0" />
+      <point x="15113.540423733244" y="4494.0" />
+      <point x="0.0" y="105.5" />
+    </edge>
+    <edge source="responses.ResponseFactory" target="networkMessages.Response">
+      <point x="0.0" y="-60.0" />
+      <point x="8206.71658398365" y="1772.0" />
+      <point x="7462.404083983651" y="1772.0" />
+      <point x="39.95833333333303" y="38.0" />
+    </edge>
+    <edge source="requests.ServerRequestReceiver" target="networkMessages.Request">
+      <point x="69.0" y="-61.5" />
+      <point x="11874.970986369408" y="4644.0" />
+      <point x="7969.779083983651" y="4644.0" />
+      <point x="7969.779083983651" y="3288.0" />
+      <point x="5776.42140494537" y="3288.0" />
+      <point x="57.600000000000364" y="71.0" />
+    </edge>
+    <edge source="serverCommands.ShowCommand" target="serverCommands.ServerCommand">
+      <point x="0.0" y="-61.0" />
+      <point x="9209.46658398365" y="3388.0" />
+      <point x="9780.565079817901" y="3388.0" />
+      <point x="9780.565079817901" y="2192.0" />
+      <point x="13340.120361355413" y="2192.0" />
+      <point x="-106.5" y="38.0" />
+    </edge>
+    <edge source="serverCommands.MaxByEyeColorCommand" target="messages.Messenger">
+      <point x="-72.20000000000073" y="-61.0" />
+      <point x="9491.76658398365" y="3408.0" />
+      <point x="9802.565079817901" y="3408.0" />
+      <point x="9802.565079817901" y="2122.0" />
+      <point x="9951.60658398365" y="2122.0" />
+      <point x="1.639999999999418" y="27.0" />
+    </edge>
+    <edge source="dataManager.DBReader" target="person">
+      <point x="-68.0" y="-105.5" />
+      <point x="17182.84080925033" y="2818.0" />
+      <point x="17024.99850643167" y="2818.0" />
+      <point x="17024.99850643167" y="595.0" />
+      <point x="12772.525075492142" y="595.0" />
+      <point x="55.384615384615245" y="15.0" />
+    </edge>
+    <edge source="dataManager.DBReader" target="exceptions.NoSuchIdException">
+      <point x="-102.0" y="-105.5" />
+      <point x="17148.84080925033" y="2828.0" />
+      <point x="16538.52975643167" y="2828.0" />
+      <point x="23.0" y="15.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandInvokerImpl" target="clientCommands.ClientCommandInvoker">
+      <point x="-34.0" y="-60.5" />
+      <point x="2592.481345812702" y="5107.0" />
+      <point x="2351.5933760683774" y="5107.0" />
+      <point x="2351.5933760683774" y="4644.0" />
+      <point x="2237.0933760683774" y="4644.0" />
+      <point x="108.80000000000018" y="60.5" />
+    </edge>
+    <edge source="person" target="exceptions.InvalidCoordinatesYException">
+      <point x="9.0" y="-15.0" />
+      <point x="12726.140460107526" y="230.0" />
+      <point x="12855.140460107526" y="230.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.ClearCommand">
+      <point x="8.41666666666606" y="-127.0" />
+      <point x="12275.387653036076" y="4454.0" />
+      <point x="12107.23249307456" y="4454.0" />
+      <point x="0.0" y="94.5" />
+    </edge>
+    <edge source="server.ServerApplication" target="collectionManager">
+      <point x="27.130434782608063" y="-127.0" />
+      <point x="7898.299681267176" y="5067.0" />
+      <point x="11435.71658398365" y="5067.0" />
+      <point x="11435.71658398365" y="3628.0" />
+      <point x="11950.799690073112" y="3628.0" />
+      <point x="-8.592592592593064" y="15.0" />
+    </edge>
+    <edge source="input.ConsoleCommandReader" target="inputManager.CommandReader">
+      <point x="0.0" y="-50.0" />
+      <point x="3186.56670940171" y="1592.0" />
+      <point x="2548.0792512077305" y="1592.0" />
+      <point x="14.333333333333258" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandHandler" target="input.ServerConsoleCommandReader">
+      <point x="-166.28571428571468" y="-116.0" />
+      <point x="6515.535036364603" y="4654.0" />
+      <point x="6491.570750650317" y="4654.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="input.AuthReader" target="auth">
+      <point x="0.0" y="-27.0" />
+      <point x="3527.3142581067004" y="975.0" />
+      <point x="13222.058354278573" y="975.0" />
+      <point x="-54.260869565217945" y="15.0" />
+    </edge>
+    <edge source="networkMessages.Response" target="networkMessages.ResponseType">
+      <point x="0.0" y="-38.0" />
+      <point x="7422.445750650319" y="775.0" />
+      <point x="8374.561871326925" y="775.0" />
+      <point x="-41.19999999999982" y="82.5" />
+    </edge>
+    <edge source="client.ClientApplication" target="connection.ClientConnectionManager">
+      <point x="0.0" y="-171.5" />
+      <point x="4514.182651430697" y="4514.0" />
+      <point x="4000.3493180973637" y="4514.0" />
+      <point x="4000.3493180973637" y="4088.0" />
+      <point x="4005.5993180973637" y="4088.0" />
+      <point x="-71.75" y="49.5" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="person">
+      <point x="111.375" y="-116.5" />
+      <point x="14816.915423733244" y="3848.0" />
+      <point x="15022.843312376735" y="3848.0" />
+      <point x="15022.843312376735" y="745.0" />
+      <point x="12754.063537030603" y="745.0" />
+      <point x="36.92307692307622" y="15.0" />
+    </edge>
+    <edge source="serverCommands.ExitCommand" target="collectionManager">
+      <point x="104.28571428571377" y="-72.0" />
+      <point x="11347.002298269364" y="3608.0" />
+      <point x="11933.614504887928" y="3608.0" />
+      <point x="-25.777777777777374" y="15.0" />
+    </edge>
+    <edge source="requests.ClientRequestFactory" target="networkMessages.RequestType">
+      <point x="32.91666666666697" y="-71.0" />
+      <point x="4934.012779635825" y="4594.0" />
+      <point x="5059.679446302491" y="4594.0" />
+      <point x="5059.679446302491" y="1842.0" />
+      <point x="7954.371593549147" y="1842.0" />
+      <point x="-43.777777777777374" y="93.5" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="messages.Messenger">
+      <point x="-101.75" y="-105.5" />
+      <point x="12420.98249307456" y="3528.0" />
+      <point x="12847.959081607503" y="3528.0" />
+      <point x="12847.959081607503" y="1702.0" />
+      <point x="9990.96658398365" y="1702.0" />
+      <point x="41.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandInvoker" target="serverCommands.ServerCommand">
+      <point x="-53.625" y="-137.5" />
+      <point x="13823.275361355416" y="1612.0" />
+      <point x="13496.320361355414" y="1612.0" />
+      <point x="49.70000000000073" y="38.0" />
+    </edge>
+    <edge source="client.ClientApplication" target="messages.MessengerImpl">
+      <point x="136.61538461538476" y="-171.5" />
+      <point x="4650.7980360460815" y="4654.0" />
+      <point x="5941.679446302491" y="4654.0" />
+      <point x="-59.75" y="50.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandInvoker" target="clientCommands.ClientCommand">
+      <point x="54.399999999999636" y="60.5" />
+      <point x="2182.693376068377" y="4654.0" />
+      <point x="2269.2933760683773" y="4654.0" />
+      <point x="70.5" y="-38.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="dataManager.DataManager">
+      <point x="160.67857142857065" y="-105.5" />
+      <point x="14443.718995161817" y="3788.0" />
+      <point x="14792.931547670854" y="3788.0" />
+      <point x="-33.41176470588289" y="93.0" />
+    </edge>
+    <edge source="requests.ClientRequestFactory" target="auth">
+      <point x="-32.91666666666697" y="-71.0" />
+      <point x="4868.179446302491" y="4584.0" />
+      <point x="5048.679446302491" y="4584.0" />
+      <point x="5048.679446302491" y="1762.0" />
+      <point x="5207.346112969158" y="1762.0" />
+      <point x="5207.346112969158" y="1055.0" />
+      <point x="13244.319223843791" y="1055.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="client.ClientApplication" target="clientCommands.ClientCommandManager">
+      <point x="-136.61538461538476" y="-171.5" />
+      <point x="4377.567266815312" y="4574.0" />
+      <point x="650.416666666667" y="4574.0" />
+      <point x="82.66666666666674" y="71.0" />
+    </edge>
+    <edge source="serverCommands.ClearCommand" target="messages.Messenger">
+      <point x="-69.81818181818198" y="-94.5" />
+      <point x="12037.414311256378" y="3478.0" />
+      <point x="12480.713711237135" y="3478.0" />
+      <point x="12480.713711237135" y="1722.0" />
+      <point x="9984.406583983651" y="1722.0" />
+      <point x="34.44000000000051" y="27.0" />
+    </edge>
+    <edge source="input.ScriptPersonReader" target="input.PersonReader">
+      <point x="98.80000000000018" y="-61.0" />
+      <point x="1337.3711538461548" y="4078.0" />
+      <point x="1281.6173076923087" y="4078.0" />
+      <point x="1281.6173076923087" y="1722.0" />
+      <point x="1848.4975569334783" y="1722.0" />
+      <point x="-22.25" y="27.0" />
+    </edge>
+    <edge source="input.ConsoleAuthReader" target="messages.Messenger">
+      <point x="124.85714285714266" y="-105.0" />
+      <point x="3689.423852258853" y="1952.0" />
+      <point x="9895.84658398365" y="1952.0" />
+      <point x="-54.1200000000008" y="27.0" />
+    </edge>
+    <edge source="responses.ServerResponseFactory" target="networkMessages.ResponseType">
+      <point x="103.5" y="-60.0" />
+      <point x="8418.96658398365" y="3458.0" />
+      <point x="8743.96658398365" y="3458.0" />
+      <point x="8743.96658398365" y="755.0" />
+      <point x="8498.161871326924" y="755.0" />
+      <point x="82.39999999999964" y="82.5" />
+    </edge>
+    <edge source="serverCommands.PrintFieldDescendingEyeColorCommand" target="messages.Messenger">
+      <point x="-175.20000000000073" y="-61.0" />
+      <point x="10645.01658398365" y="3458.0" />
+      <point x="10721.61658398365" y="3458.0" />
+      <point x="10721.61658398365" y="2072.0" />
+      <point x="9968.006583983652" y="2072.0" />
+      <point x="18.040000000000873" y="27.0" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="messages.Messenger">
+      <point x="103.66666666666697" y="-105.0" />
+      <point x="1675.2378205128216" y="4584.0" />
+      <point x="1394.5711538461546" y="4584.0" />
+      <point x="1394.5711538461546" y="4058.0" />
+      <point x="2040.6063458127019" y="4058.0" />
+      <point x="2040.6063458127019" y="1902.0" />
+      <point x="9879.44658398365" y="1902.0" />
+      <point x="-70.52000000000044" y="27.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="networkMessages.Request">
+      <point x="292.9259259259261" y="-204.0" />
+      <point x="2480.803018260295" y="5561.0" />
+      <point x="6131.429446302491" y="5561.0" />
+      <point x="6131.429446302491" y="3338.0" />
+      <point x="5725.22140494537" y="3338.0" />
+      <point x="6.399999999999636" y="71.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandInvoker" target="command.RequiringArg">
+      <point x="0.0" y="-60.5" />
+      <point x="2128.2933760683773" y="4088.0" />
+      <point x="2269.7333760683778" y="4088.0" />
+      <point x="2269.7333760683778" y="2142.0" />
+      <point x="13162.220361355416" y="2142.0" />
+      <point x="-50.399999999999636" y="27.0" />
+    </edge>
+    <edge source="serverCommands.AddCommand" target="serverCommands.RequiringObject">
+      <point x="40.714285714286234" y="-105.5" />
+      <point x="15154.25470944753" y="3858.0" />
+      <point x="15204.105877311802" y="3858.0" />
+      <point x="15204.105877311802" y="1462.0" />
+      <point x="14150.335004212557" y="1462.0" />
+      <point x="70.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMinCommand" target="serverCommands.RequiringObject">
+      <point x="72.67857142857065" y="-105.5" />
+      <point x="12595.41106450313" y="3588.0" />
+      <point x="13070.972559157612" y="3588.0" />
+      <point x="13070.972559157612" y="2292.0" />
+      <point x="14010.335004212557" y="2292.0" />
+      <point x="-70.0" y="27.0" />
+    </edge>
+    <edge source="serverCommands.RequiringAuth" target="auth">
+      <point x="0.0" y="-27.0" />
+      <point x="14345.093932783986" y="795.0" />
+      <point x="13280.49313688727" y="795.0" />
+      <point x="4.173913043478024" y="15.0" />
+    </edge>
+    <edge source="dataManager.DBWriter" target="dataManager.DataWriter">
+      <point x="-73.59999999999854" y="-105.0" />
+      <point x="17561.240809250332" y="4058.0" />
+      <point x="17519.49850643167" y="4058.0" />
+      <point x="68.0" y="71.0" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="messages.Messenger">
+      <point x="-193.58333333333212" y="-127.0" />
+      <point x="12073.387653036076" y="4574.0" />
+      <point x="8474.96658398365" y="4574.0" />
+      <point x="8474.96658398365" y="2042.0" />
+      <point x="9925.36658398365" y="2042.0" />
+      <point x="-24.600000000000364" y="27.0" />
+    </edge>
+    <edge source="clientCommands.ExitCommand" target="messages.Messenger">
+      <point x="-57.80000000000018" y="-61.0" />
+      <point x="2102.4183760683773" y="5077.0" />
+      <point x="1981.7933760683773" y="5077.0" />
+      <point x="1981.7933760683773" y="4078.0" />
+      <point x="2190.9833760683778" y="4078.0" />
+      <point x="2190.9833760683778" y="1922.0" />
+      <point x="9886.006583983652" y="1922.0" />
+      <point x="-63.95999999999913" y="27.0" />
+    </edge>
+    <edge source="clientCommands.ClientCommandManagerImpl" target="requests.RequestFactory">
+      <point x="159.77777777777737" y="-204.0" />
+      <point x="2347.6548701121465" y="5511.0" />
+      <point x="5377.429446302491" y="5511.0" />
+      <point x="98.75" y="71.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="exceptions.NoSuchIdException">
+      <point x="185.625" y="-116.5" />
+      <point x="14891.165423733244" y="4028.0" />
+      <point x="16492.52975643167" y="4028.0" />
+      <point x="-23.0" y="15.0" />
+    </edge>
+    <edge source="serverCommands.UpdateCommand" target="serverCommands.ServerCommandInvoker">
+      <point x="-136.125" y="-116.5" />
+      <point x="14569.415423733244" y="3048.0" />
+      <point x="13928.900361355416" y="3048.0" />
+      <point x="52.0" y="137.5" />
+    </edge>
+    <edge source="serverCommands.ServerCommandManagerImpl" target="serverCommands.AuthCommand">
+      <point x="176.75" y="-127.0" />
+      <point x="12443.720986369408" y="4524.0" />
+      <point x="15798.288725916995" y="4524.0" />
+      <point x="0.0" y="94.5" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="input.PersonReader">
+      <point x="-103.66666666666697" y="-105.0" />
+      <point x="1467.9044871794877" y="4644.0" />
+      <point x="757.2500000000009" y="4644.0" />
+      <point x="757.2500000000009" y="1712.0" />
+      <point x="1803.9975569334783" y="1712.0" />
+      <point x="-66.75" y="27.0" />
+    </edge>
+    <edge source="server.Server" target="responses.ResponseSender">
+      <point x="-159.25" y="-149.0" />
+      <point x="7291.195750650318" y="4654.0" />
+      <point x="7272.570750650318" y="4654.0" />
+      <point x="36.625" y="27.0" />
+    </edge>
+    <edge source="serverCommands.AddIfMaxCommand" target="serverCommands.ServerCommand">
+      <point x="-43.82142857142935" y="-105.5" />
+      <point x="14239.218995161817" y="3108.0" />
+      <point x="14083.335004212557" y="3108.0" />
+      <point x="14083.335004212557" y="1572.0" />
+      <point x="13524.720361355416" y="1572.0" />
+      <point x="78.10000000000036" y="38.0" />
+    </edge>
+    <edge source="input.ScriptInputManager" target="input.InputManager">
+      <point x="138.22222222222263" y="-105.0" />
+      <point x="1709.7933760683773" y="4654.0" />
+      <point x="1708.0563458127017" y="4654.0" />
+      <point x="1708.0563458127017" y="4108.0" />
+      <point x="4285.349318097363" y="4108.0" />
+      <point x="-44.5" y="60.0" />
+    </edge>
+    <edge source="input.ConsoleInputManager" target="input.AuthReader">
+      <point x="58.90909090909099" y="-116.0" />
+      <point x="3565.386497327854" y="4068.0" />
+      <point x="3872.458013749536" y="4068.0" />
+      <point x="3872.458013749536" y="1552.0" />
+      <point x="3560.8142581067004" y="1552.0" />
+      <point x="33.5" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.1" x="5945.0" y="836.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

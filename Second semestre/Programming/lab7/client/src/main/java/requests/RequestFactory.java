@@ -2,7 +2,6 @@ package requests;
 
 import auth.Auth;
 import networkMessages.Request;
-import person.Person;
 import person.RawPerson;
 
 public interface RequestFactory {
@@ -15,5 +14,5 @@ public interface RequestFactory {
 
     Request createSimpleRequest(String command, Auth auth);
 
-    Request createAuthRegRequest(String command, Auth auth);
+    Request createAuthRegRequest(String command, Auth newAuth, Auth auth);
 }

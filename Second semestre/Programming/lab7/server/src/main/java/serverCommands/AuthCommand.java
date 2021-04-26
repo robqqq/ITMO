@@ -7,7 +7,8 @@ import exceptions.AuthException;
 import exceptions.NoArgException;
 import messages.Messenger;
 
-public class AuthCommand implements ServerCommand, RequiringArg<Auth> {
+public class AuthCommand implements ServerCommand, RequiringAuth, RequiringArg<Auth> {
+    private Auth auth;
     private Auth arg;
     private final Messenger messenger;
     private final AuthManager authManager;
@@ -18,22 +19,14 @@ public class AuthCommand implements ServerCommand, RequiringArg<Auth> {
     }
 
     /**
-     * Метод, который устанавливает аргумент
-     *
-     * @param arg аргумент
-     */
-    @Override
-    public void setArg(Auth arg) {
-        this.arg = arg;
-    }
-
-    /**
      * Метод, который запускает команду
      */
     @Override
     public String execute() {
-        if (authManager.checkAuth(arg)){
-            return messenger.getMsg("authOutput"); //TODO: добавить аузсОутпут в мессенджер
+        authManager.removeOnlineUser(auth);
+        if (authManager.checkAuth(arg) && !authManager.isOnline(arg)){
+            authManager.addOnlineUser(arg);
+            return messenger.getMsg("authOutput");
         } else {
             throw new AuthException();
         }
@@ -46,7 +39,23 @@ public class AuthCommand implements ServerCommand, RequiringArg<Auth> {
      */
     @Override
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException {
+        commandInvoker.setAuthToCommand(this);
         commandInvoker.setAuthArgToCommand(this);
         commandInvoker.invokeCommand(this);
+    }
+
+    @Override
+    public void setAuth(Auth auth) {
+        this.auth = auth;
+    }
+
+    /**
+     * Метод, который устанавливает аргумент
+     *
+     * @param arg аргумент
+     */
+    @Override
+    public void setArg(Auth arg) {
+        this.arg = arg;
     }
 }

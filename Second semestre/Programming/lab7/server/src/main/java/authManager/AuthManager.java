@@ -2,14 +2,19 @@ package authManager;
 
 import auth.Auth;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.Collection;
 
 public interface AuthManager {
 
-    void setUsers(Set<Auth> users);
+    void setUsers(Collection<Auth> users);
 
     boolean checkAuth(Auth auth);
+
+    void addOnlineUser(Auth auth);
+
+    void removeOnlineUser(Auth auth);
+
+    boolean isOnline(Auth auth);
 
     void addUser(Auth auth);
 }

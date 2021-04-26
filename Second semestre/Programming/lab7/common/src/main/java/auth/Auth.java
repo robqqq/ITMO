@@ -4,13 +4,21 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Auth implements Serializable {
-    //TODO: serialversionUID
+    private static final long serialVersionUID = -8611546037459030544L;
     private final String login;
     private final String password;
 
     public Auth(String login, String password){
         this.login = login;
         this.password = password;
+    }
+
+    public static Auth parse(String s){
+        if (s == null) throw new IllegalArgumentException();
+        String[] loginPassword = s.split("\\s+");
+        if (loginPassword.length != 2 || loginPassword[0].length() < 2 || loginPassword[0].length() > 20)
+            throw new IllegalArgumentException();
+        return new Auth(loginPassword[0], loginPassword[1]);
     }
 
     public String getLogin() {

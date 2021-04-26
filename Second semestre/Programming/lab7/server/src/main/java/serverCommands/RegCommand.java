@@ -3,13 +3,12 @@ package serverCommands;
 import auth.Auth;
 import authManager.AuthManager;
 import command.RequiringArg;
-import dbManager.DataManager;
+import dataManager.DataManager;
 import exceptions.*;
 import messages.Messenger;
 
-import java.sql.SQLException;
-
-public class RegCommand implements ServerCommand, RequiringArg<Auth> {
+public class RegCommand implements ServerCommand, RequiringAuth, RequiringArg<Auth> {
+    private Auth auth;
     private Auth arg;
     private final Messenger messenger;
     private final AuthManager authManager;
@@ -20,14 +19,10 @@ public class RegCommand implements ServerCommand, RequiringArg<Auth> {
         this.authManager = authManager;
         this.dataManager = dataManager;
     }
-    /**
-     * Метод, который устанавливает аргумент
-     *
-     * @param arg аргумент
-     */
+
     @Override
-    public void setArg(Auth arg) {
-        this.arg = arg;
+    public void setAuth(Auth auth) {
+        this.auth = auth;
     }
 
     /**
@@ -35,13 +30,15 @@ public class RegCommand implements ServerCommand, RequiringArg<Auth> {
      */
     @Override
     public String execute() {
+        authManager.removeOnlineUser(auth);
         try{
             dataManager.addUser(arg);
             authManager.addUser(arg);
+            authManager.addOnlineUser(arg);
         } catch (DBException e){
             throw new AuthException();
         }
-        return messenger.getMsg("regOutput"); //TODO: add reg output to messenger
+        return messenger.getMsg("regOutput");
     }
 
     /**
@@ -51,7 +48,18 @@ public class RegCommand implements ServerCommand, RequiringArg<Auth> {
      */
     @Override
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException, NeedObjectException {
+        commandInvoker.setAuthToCommand(this);
         commandInvoker.setAuthArgToCommand(this);
         commandInvoker.invokeCommand(this);
+    }
+
+    /**
+     * Метод, который устанавливает аргумент
+     *
+     * @param arg аргумент
+     */
+    @Override
+    public void setArg(Auth arg) {
+        this.arg = arg;
     }
 }

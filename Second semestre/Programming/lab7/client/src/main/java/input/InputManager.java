@@ -1,11 +1,9 @@
 package input;
 
 import auth.Auth;
-import person.Person;
 import person.RawPerson;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 public interface InputManager {
 

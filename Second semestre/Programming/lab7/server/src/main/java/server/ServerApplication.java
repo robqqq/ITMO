@@ -7,12 +7,16 @@ import collectionManager.CollectionManager;
 import collectionManager.PersonCollectionManager;
 import connection.ServerConnectionManager;
 import connection.ServerConnectionManagerImpl;
-import dbManager.*;
+import dataManager.*;
 import messages.Messenger;
 import messages.MessengerImpl;
+import requests.RequestReceiver;
+import requests.ServerRequestReceiver;
+import responses.ResponseSender;
+import responses.ServerResponseSender;
 import serverCommands.*;
-import serverCommands.ClientCommandAnalyzer;
-import serverCommands.CommandAnalyzer;
+import serverCommands.RequestHandler;
+import serverCommands.CommandHandler;
 
 import java.io.IOException;
 import java.nio.channels.DatagramChannel;
@@ -24,8 +28,8 @@ import org.slf4j.LoggerFactory;
 
 public class ServerApplication implements Application {
     private final int port;
-    private CommandAnalyzer clientCommandAnalyzer;
-    private CommandAnalyzer serverCommandAnalyzer;
+    private ServerCommandHandler serverCommandHandler;
+    private Server server;
     private ServerConnectionManager connectionManager;
     private final String dbUsername;
     private final String dbPassword;
@@ -41,7 +45,7 @@ public class ServerApplication implements Application {
     public void start(){
         Messenger messenger = new MessengerImpl();
         String dbUrl = "jdbc:postgresql://localhost:5432/postgres";
-        DataManager dataManager = null;
+        DataManager dataManager;
         try {
             dataManager = new DBManager(dbUrl, dbUsername, dbPassword);
         } catch (SQLException e) {
@@ -53,18 +57,23 @@ public class ServerApplication implements Application {
         CollectionManager collectionManager = new PersonCollectionManager();
         connectionManager = new ServerConnectionManagerImpl();
         ServerCommandManager commandManager = new ServerCommandManagerImpl(collectionManager, dataManager, this, messenger, authManager);
-        serverCommandAnalyzer = new ServerCommandAnalyzer(commandManager, messenger);
+        serverCommandHandler = new ServerCommandHandler(commandManager, messenger);
+        RequestReceiver requestReceiver;
+        ResponseSender responseSender;
         try {
             DatagramChannel channel = connectionManager.openConnection(port);
-            clientCommandAnalyzer = new ClientCommandAnalyzer(commandManager, channel);
+            requestReceiver = new ServerRequestReceiver(channel);
+            responseSender = new ServerResponseSender(channel);
         } catch (IOException e) {
             logger.error("opening connection error", e);
             return;
         }
+        RequestHandler requestHandler = new RequestHandler(commandManager);
+        server = new Server(requestReceiver, requestHandler, responseSender);
         collectionManager.setCollection(dataManager.readElements());
         logger.info("server has started");
-        clientCommandAnalyzer.startReading();
-        serverCommandAnalyzer.startReading();
+        serverCommandHandler.startReading();
+        server.start();
     }
 
     @Override
@@ -74,7 +83,7 @@ public class ServerApplication implements Application {
         } catch (IOException e) {
             logger.error("connection closing error", e);
         }
-        clientCommandAnalyzer.stopReading();
-        serverCommandAnalyzer.stopReading();
+        server.shutdownExecutorServices();
+        serverCommandHandler.stopReading();
     }
 }

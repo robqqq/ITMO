@@ -26,10 +26,10 @@ public class ClientApplication implements Application {
     private ClientConnectionManager connectionManager;
     private ClientCommandManager commandManager;
     private final String address;
-    private final int port;
+    private final String port;
     private Auth auth;
 
-    public ClientApplication(String address, int port){
+    public ClientApplication(String address, String port){
         exit = false;
         this.address = address;
         this.port = port;
@@ -40,8 +40,12 @@ public class ClientApplication implements Application {
         try {
             outputManager = new ConsoleOutputManager();
             messenger = new MessengerImpl();
+            if (address == null){
+                outputManager.printErrorMsg(messenger.getMsg("noAddressAndPort"));
+                return;
+            }
             connectionManager = new ClientConnectionManagerImpl();
-            DatagramSocket socket = connectionManager.openConnection(address, port);
+            DatagramSocket socket = connectionManager.openConnection(address, Integer.parseInt(port));
             inputManager = new ConsoleInputManager(messenger, outputManager);
             commandManager = new ClientCommandManagerImpl(socket, connectionManager.getSocketAddress(),
                     inputManager, outputManager, messenger, this);
@@ -49,6 +53,8 @@ public class ClientApplication implements Application {
             run();
         } catch (IOException e){
             outputManager.printErrorMsg(messenger.getMsg("noConnection") + "\n");
+        } catch (NumberFormatException e){
+            outputManager.printErrorMsg(messenger.getMsg("noAddressAndPort"));
         }
     }
 

@@ -2,7 +2,6 @@ package person;
 
 import exceptions.InvalidCoordinatesXException;
 import exceptions.InvalidCoordinatesYException;
-import exceptions.InvalidFieldException;
 
 /**
  * Реализация интерфеса CoordinatesBuilder

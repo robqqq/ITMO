@@ -1,7 +1,5 @@
 package clientCommands;
 
-import auth.Auth;
-
 import java.io.IOException;
 
 public interface ClientCommandManager {

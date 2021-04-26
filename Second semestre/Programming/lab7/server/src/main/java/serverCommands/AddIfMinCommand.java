@@ -1,7 +1,8 @@
 package serverCommands;
 
+import auth.Auth;
 import collectionManager.CollectionManager;
-import dbManager.DataManager;
+import dataManager.DataManager;
 import exceptions.InvalidArgumentTypeException;
 import exceptions.NeedObjectException;
 import exceptions.NoArgException;
@@ -13,11 +14,12 @@ import person.RawPerson;
  * Класс команды, которая добавляет новый элемент в коллекцию, если его значение меньше, чем у наименьшего
  * элемента этой коллекции
  */
-public class AddIfMinCommand implements ServerCommand, RequiringObject{
+public class AddIfMinCommand implements ServerCommand, RequiringObject, RequiringAuth{
     private final CollectionManager collectionManager;
     private final DataManager dataManager;
     private final Messenger messenger;
     private RawPerson person;
+    private Auth auth;
 
     public AddIfMinCommand(CollectionManager collectionManager, DataManager dataManager, Messenger messenger){
         this.collectionManager = collectionManager;
@@ -28,7 +30,7 @@ public class AddIfMinCommand implements ServerCommand, RequiringObject{
     @Override
     public String execute() {
         if (person.compareTo(collectionManager.getPersonStream().min(Person::compareTo).get().getRawPerson()) < 0) {
-            collectionManager.addElement(dataManager.addElement(person));
+            collectionManager.addElement(dataManager.addElement(person, auth));
             return messenger.getMsg("addOutput");
         } else {
             return messenger.getMsg("notAddOutput");
@@ -37,6 +39,7 @@ public class AddIfMinCommand implements ServerCommand, RequiringObject{
 
     @Override
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException, NeedObjectException {
+        commandInvoker.setAuthToCommand(this);
         commandInvoker.setObjectToCommand(this);
         commandInvoker.invokeCommand(this);
     }
@@ -44,5 +47,10 @@ public class AddIfMinCommand implements ServerCommand, RequiringObject{
     @Override
     public void setObject(RawPerson person) {
         this.person = person;
+    }
+
+    @Override
+    public void setAuth(Auth auth) {
+        this.auth = auth;
     }
 }

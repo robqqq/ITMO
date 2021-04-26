@@ -1,7 +1,5 @@
 package messages;
 
-import person.Person;
-
 import java.util.HashMap;
 
 public class MessengerImpl implements Messenger{
@@ -60,6 +58,8 @@ public class MessengerImpl implements Messenger{
                 "в строковом представлении");
         messages.put("updateDescription", "update id {element} : обновить значение элемента коллекции, " +
                 "id которого равен заданному");
+        messages.put("authDescription", "auth : авторизация");
+        messages.put("regDescription", "reg : регистрация");
         messages.put("inputName", "Name");
         messages.put("inputCoordinatesX", "coordinates.x");
         messages.put("inputCoordinatesY", "coordinates.y");
@@ -90,6 +90,16 @@ public class MessengerImpl implements Messenger{
         messages.put("saveOutput", "collection is saved to a file");
         messages.put("scriptOutput", "script is executed");
         messages.put("noConnection", "failed to establish a connection to the server, please try again");
+        messages.put("authError", "authentication error, please auth or reg");
+        messages.put("authOutput", "authentication completed");
+        messages.put("regOutput", "registration completed");
+        messages.put("loginInput", "login");
+        messages.put("passwordInput", "password");
+        messages.put("wrongPasswordPattern", "password can contain only letters and numbers,\n" +
+                "the length must be at least 6 characters");
+        messages.put("wrongLoginPattern", "username can only contain numbers, letters, dots, underscores, and dashes,\n" +
+                "must start with a letter, and must be between 2 and 20 characters long");
+        messages.put("noAddressAndPort", "requires address and port in command line arguments");
     }
 
     @Override
