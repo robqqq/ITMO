@@ -69,16 +69,15 @@ public class PersonCollectionManager implements CollectionManager {
     }
 
     @Override
-    public boolean removeElement(int id) {
+    public void removeElement(int id) {
         writeLock.lock();
         try {
             for (Person person : personTreeSet) {
                 if (person.getId() == id) {
                     personTreeSet.remove(person);
-                    return true;
+                    return;
                 }
             }
-            return false;
         } finally {
             writeLock.unlock();
         }

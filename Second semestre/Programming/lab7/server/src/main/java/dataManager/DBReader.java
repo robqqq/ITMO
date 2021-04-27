@@ -14,7 +14,7 @@ import java.util.*;
 
 public class DBReader implements DataReader{
     private final Connection connection;
-    private final Logger logger = LoggerFactory.getLogger("DBReader.class");
+    private final static Logger logger = LoggerFactory.getLogger(DBReader.class);
 
     public DBReader(Connection connection) {
         this.connection = connection;

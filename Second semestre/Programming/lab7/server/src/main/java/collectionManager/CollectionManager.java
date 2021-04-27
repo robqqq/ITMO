@@ -17,7 +17,7 @@ public interface CollectionManager {
 
     void addElement(Person person);
 
-    boolean removeElement(int id);
+    void removeElement(int id);
 
     void clear();
 
