@@ -1,5 +1,5 @@
-collectionManager/PersonCollectionManager.java
- collectionManager.PersonCollectionManager
+authManager/AuthManagerImpl.java
+ authManager.AuthManagerImpl
 dataManager/DataManager.java
  dataManager.DataManager
 dataManager/DBWriter.java
@@ -18,16 +18,16 @@ serverCommands/RequestHandler.java
  serverCommands.RequestHandler
 serverCommands/RequiringObject.java
  serverCommands.RequiringObject
-serverCommands/FilterContainsNameCommand.java
- serverCommands.FilterContainsNameCommand
+serverCommands/HelpCommand.java
+ serverCommands.HelpCommand
 serverCommands/AuthCommand.java
  serverCommands.AuthCommand
-collectionManager/CollectionManager.java
- collectionManager.CollectionManager
-serverCommands/ExitCommand.java
- serverCommands.ExitCommand
-serverCommands/MaxByEyeColorCommand.java
- serverCommands.MaxByEyeColorCommand
+serverCommands/ServerCommand.java
+ serverCommands.ServerCommand
+connection/ServerConnectionManager.java
+ connection.ServerConnectionManager
+serverCommands/ServerCommandInvokerImpl.java
+ serverCommands.ServerCommandInvokerImpl
 server/Server.java
  server.Server
 serverCommands/ServerCommandHandler.java
@@ -38,16 +38,16 @@ responses/ResponseFactory.java
  responses.ResponseFactory
 responses/ServerResponseSender.java
  responses.ServerResponseSender
-serverCommands/ServerCommandManagerImpl.java
- serverCommands.ServerCommandManagerImpl
+serverCommands/ServerCommandManager.java
+ serverCommands.ServerCommandManager
 serverCommands/RegCommand.java
  serverCommands.RegCommand
 serverCommands/HistoryCommand.java
  serverCommands.HistoryCommand
 serverCommands/ServerCommandInvoker.java
  serverCommands.ServerCommandInvoker
-serverCommands/PrintFieldDescendingEyeColorCommand.java
- serverCommands.PrintFieldDescendingEyeColorCommand
+requests/ServerRequestReceiver.java
+ requests.ServerRequestReceiver
 responses/ServerResponseFactory.java
  responses.ServerResponseFactory
 input/ServerConsoleCommandReader.java
@@ -58,24 +58,24 @@ server/Main.java
  server.Main
 serverCommands/CommandHandler.java
  serverCommands.CommandHandler
-serverCommands/ServerCommandManager.java
- serverCommands.ServerCommandManager
+collectionManager/PersonCollectionManager.java
+ collectionManager.PersonCollectionManager
 serverCommands/UpdateCommand.java
  serverCommands.UpdateCommand
-connection/ServerConnectionManager.java
- connection.ServerConnectionManager
-requests/ServerRequestReceiver.java
- requests.ServerRequestReceiver
-serverCommands/ServerCommand.java
- serverCommands.ServerCommand
+serverCommands/FilterContainsNameCommand.java
+ serverCommands.FilterContainsNameCommand
 dataManager/DBManager.java
  dataManager.DBManager
 serverCommands/RemoveByIdCommand.java
  serverCommands.RemoveByIdCommand
 dataManager/DBReader.java
  dataManager.DBReader
-serverCommands/ServerCommandInvokerImpl.java
- serverCommands.ServerCommandInvokerImpl
+collectionManager/CollectionManager.java
+ collectionManager.CollectionManager
+serverCommands/ExitCommand.java
+ serverCommands.ExitCommand
+serverCommands/MaxByEyeColorCommand.java
+ serverCommands.MaxByEyeColorCommand
 serverCommands/ShowCommand.java
  serverCommands.ShowCommand
 serverCommands/AddIfMaxCommand.java
@@ -86,11 +86,11 @@ serverCommands/AddCommand.java
  serverCommands.AddCommand
 serverCommands/AddIfMinCommand.java
  serverCommands.AddIfMinCommand
-serverCommands/ClearCommand.java
- serverCommands.ClearCommand
-serverCommands/HelpCommand.java
- serverCommands.HelpCommand
 server/ServerApplication.java
  server.ServerApplication
-authManager/AuthManagerImpl.java
- authManager.AuthManagerImpl
+serverCommands/ClearCommand.java
+ serverCommands.ClearCommand
+serverCommands/PrintFieldDescendingEyeColorCommand.java
+ serverCommands.PrintFieldDescendingEyeColorCommand
+serverCommands/ServerCommandManagerImpl.java
+ serverCommands.ServerCommandManagerImpl
