@@ -80,6 +80,9 @@ public class ServerCommandManagerImpl implements ServerCommandManager {
                 if (!command.equals("show") && !command.equals("auth") && !command.equals("reg") &&
                         !command.equals("disconnect")) history.push(command);
                 if (history.size() > 9) history.remove(0);
+                if (command.equals("show")){
+                    return responseFactory.createUpdateCollectionResponse(collectionManager.getPersonStream());
+                }
                 return responseFactory.createDefaultResponse(commandInvoker.getCommandOutput(), collectionManager.getPersonStream());
             } catch (NoArgException e) {
                 return responseFactory.createErrorResponse("noArg", collectionManager.getPersonStream());

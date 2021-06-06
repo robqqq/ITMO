@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+
     <appender name="STDOUT"
               class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
@@ -17,20 +18,53 @@
             <!-- daily rollover -->
             <fileNamePattern>server.%d{yyyy-MM-dd}.log</fileNamePattern>
 
-            <!-- Храним файлы логов 10 дней -->
+            <!-- Храним файлы логов 3 дня -->
             <maxHistory>3</maxHistory>
 
             <!-- Максимальный размер файлов лога 50 мегабайт -->
             <totalSizeCap>50MB</totalSizeCap>
 
         </rollingPolicy>
-        <encoder>
-            <pattern>%d{dd.MM.yyyy HH:mm:ss.SSS} [%thread] %-5level  %logger{20} - %msg%n</pattern>
+            <encoder>
+                <pattern>%d{dd.MM.yyyy HH:mm:ss.SSS} [%thread] %-5level  %logger{20} - %msg%n</pattern>
+            </encoder>
+    </appender>
+
+    <appender name="JSON"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>server.json</file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>server.%d{yyyy-MM-dd}.json</fileNamePattern>
+
+            <!-- Храним файлы логов 3 дня -->
+            <maxHistory>3</maxHistory>
+
+            <!-- Максимальный размер файлов лога 50 мегабайт -->
+            <totalSizeCap>50MB</totalSizeCap>
+
+        </rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+
         </encoder>
     </appender>
 
-    <root level="debug">
-        <appender-ref ref="STDOUT" />
+    <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+    <connectionSource class="ch.qos.logback.core.db.DataSourceConnectionSource">
+        <dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource">
+            <driverClass>org.postgresql.Driver</driverClass>
+            <jdbcUrl>jdbc:postgresql://localhost:5432/postgres</jdbcUrl>
+            <user>postgres</user>
+            <password>postgres</password>
+        </dataSource>
+    </connectionSource>
+</appender>
+
+    <root level="all">
         <appender-ref ref="FILE" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="JSON" />
+        <appender-ref ref="DB" />
     </root>
 </configuration>

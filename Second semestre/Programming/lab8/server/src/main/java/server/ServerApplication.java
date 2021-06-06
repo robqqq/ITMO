@@ -69,7 +69,7 @@ public class ServerApplication implements Application {
         RequestHandler requestHandler = new RequestHandler(commandManager);
         server = new Server(requestReceiver, requestHandler, responseSender);
         collectionManager.setCollection(dataManager.readElements());
-        logger.info("server has started");
+        logger.trace("server has started");
         serverCommandHandler.startReading();
         server.start();
     }

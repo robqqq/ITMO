@@ -46,6 +46,7 @@ public class AuthCommand implements ServerCommand, RequiringAuth, RequiringArg<A
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException {
         commandInvoker.setAuthToCommand(this);
         commandInvoker.setAuthArgToCommand(this);
+        commandInvoker.setLocaleToCommand(this);
         commandInvoker.invokeCommand(this);
     }
 

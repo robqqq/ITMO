@@ -13,7 +13,6 @@ public class ClientConnectionManagerImpl implements ClientConnectionManager {
     public DatagramSocket openConnection(String address, int port) throws IOException {
         this.address = new InetSocketAddress(address, port);
         socket = new DatagramSocket();
-        socket.setSoTimeout(10000);
         return socket;
     }
 

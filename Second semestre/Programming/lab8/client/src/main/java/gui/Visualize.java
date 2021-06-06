@@ -8,11 +8,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class Visualize extends JComponent {
+public class Visualize extends JComponent{
     private ClientCollectionManager collectionManager;
     private int side;
     private int gap;
@@ -22,7 +24,6 @@ public class Visualize extends JComponent {
     private int minX;
     private int minY;
 
-
     public Visualize(ClientCollectionManager collectionManager){
         this.collectionManager = collectionManager;
         side = 10;
@@ -30,7 +31,7 @@ public class Visualize extends JComponent {
         update();
         addMouseListener(new MouseAdapter() {
             @Override
-            public void mousePressed(MouseEvent e){
+            public void mouseClicked(MouseEvent e){
                 if (e.getButton() != MouseEvent.BUTTON1) return;
                 int x = e.getX();
                 int y = e.getY();
@@ -41,9 +42,9 @@ public class Visualize extends JComponent {
                                     x <= (p.getCoordinates().getX() - 1) * side + p.getCoordinates().getX() * gap
                                             - (minX - 1) * (side + gap) + 10 &&
                                     y >= (p.getCoordinates().getY() - 1) * side + p.getCoordinates().getY() * gap
-                                            - (long) (minX - 1) * (side + gap) &&
+                                            - (long) (minY - 1) * (side + gap) &&
                                     y <= (p.getCoordinates().getY() - 1) * side + p.getCoordinates().getY() * gap
-                                            - (long) (minX - 1) * (side + gap) + 10){
+                                            - (long) (minY - 1) * (side + gap) + 10){
                                 String personString = String.format("""
                         %s: %d;
                         %s: %s;
@@ -107,8 +108,13 @@ public class Visualize extends JComponent {
                 } while (owners.containsValue(color));
                 owners.put(p.getOwner(), color);
             } else {
+                PersonComponent personComponent = new PersonComponent(p, owners.get(p.getOwner()), x, y);
+                add(personComponent);
                 g2.setColor(owners.get(p.getOwner()));
-                g2.fillRect(x, y, side, side);
+                g2.drawRect(x, y, side, side);
+                for (int tempSide = 1; tempSide <= side; tempSide++){
+                    g2.fillRect(x, y, tempSide, tempSide);
+                }
             }
         });
     }
@@ -121,7 +127,7 @@ public class Visualize extends JComponent {
                 .max(Double::compareTo)
                 .get()
                 .intValue();
-        maxX = collectionManager.getPersonStream()
+        maxY = collectionManager.getPersonStream()
                 .map(Person::getCoordinates)
                 .map(Coordinates::getY)
                 .max(Long::compareTo)
@@ -140,6 +146,7 @@ public class Visualize extends JComponent {
                 .get()
                 .intValue();
         repaint();
+
     }
 
     public void changeColor(String owner){

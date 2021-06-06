@@ -47,6 +47,7 @@ public class AddIfMinCommand implements ServerCommand, RequiringObject, Requirin
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException, NeedObjectException {
         commandInvoker.setAuthToCommand(this);
         commandInvoker.setObjectToCommand(this);
+        commandInvoker.setLocaleToCommand(this);
         commandInvoker.invokeCommand(this);
     }
 

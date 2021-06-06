@@ -55,6 +55,7 @@ public class RegCommand implements ServerCommand, RequiringAuth, RequiringArg<Au
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException, NeedObjectException {
         commandInvoker.setAuthToCommand(this);
         commandInvoker.setAuthArgToCommand(this);
+        commandInvoker.setLocaleToCommand(this);
         commandInvoker.invokeCommand(this);
     }
 

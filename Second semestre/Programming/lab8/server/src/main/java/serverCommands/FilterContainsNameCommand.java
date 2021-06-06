@@ -43,6 +43,7 @@ public class FilterContainsNameCommand implements ServerCommand, RequiringArg<St
     @Override
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException {
         commandInvoker.setStringArgToCommand(this);
+        commandInvoker.setLocaleToCommand(this);
         commandInvoker.invokeCommand(this);
     }
 }

@@ -49,11 +49,11 @@ public class ClientCommandManagerImpl implements ClientCommandManager {
     }
 
     @Override
-    public synchronized Response executeCommand(String command, String arg, RawPerson person) throws IOException {
+    public void executeCommand(String command, String arg, RawPerson person) throws IOException {
         if (clientCommandMap.containsKey(command)){
-            return executeClientCommand(command, arg);
+            executeClientCommand(command, arg);
         } else {
-            return executeServerCommand(command, arg, person);
+            executeServerCommand(command, arg, person);
         }
     }
 
@@ -67,7 +67,7 @@ public class ClientCommandManagerImpl implements ClientCommandManager {
         usedScripts.remove(scriptName);
     }
 
-    private Response executeServerCommand(String command, String arg, RawPerson person) throws IOException {
+    private void executeServerCommand(String command, String arg, RawPerson person) throws IOException {
         RequestSender requestSender = new ClientRequestSender(address, socket);
         RequestFactory requestFactory = new ClientRequestFactory();
         if (person == null) {
@@ -83,17 +83,14 @@ public class ClientCommandManagerImpl implements ClientCommandManager {
                 requestSender.sendRequest(requestFactory.createArgObjectRequest(command, arg, person, authManager.getAuth()));
             }
         }
-        ResponseReceiver responseReceiver = new ClientResponseReceiver(socket);
-        return responseReceiver.receiveResponse();
     }
 
-    private Response executeClientCommand(String command, String arg){
+    private void executeClientCommand(String command, String arg){
         commandInvoker.setArg(arg);
         try {
             clientCommandMap.get(command).acceptInvoker(commandInvoker);
-            return new ResponseImpl(ResponseType.CLIENT_RESPONSE, commandInvoker.getCommandOutput(), null);
-        } catch (NoArgException e) {
-            return new ResponseImpl(ResponseType.CLIENT_RESPONSE, ResourceBundle.getBundle("messages").getString("err.no_arg"), null);
+        } catch (NoArgException ignored) {
+
         }
     }
 }

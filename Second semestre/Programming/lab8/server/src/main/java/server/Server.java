@@ -2,6 +2,7 @@ package server;
 
 import networkMessages.Request;
 import networkMessages.Response;
+import networkMessages.ResponseType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import requests.RequestReceiver;
@@ -11,6 +12,7 @@ import serverCommands.RequestHandler;
 import java.io.IOException;
 import java.net.SocketAddress;
 import java.nio.channels.AsynchronousCloseException;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ForkJoinPool;
@@ -36,6 +38,9 @@ public class Server {
             try {
                 while (true) {
                     Request request = requestReceiver.receiveRequest();
+                    if (!request.getCommand().equals("show")){
+                        logger.trace("Request received: {}", request);
+                    }
                     handleRequest(request, requestReceiver.getAddress());
                 }
             } catch (AsynchronousCloseException ignored) {
@@ -56,7 +61,14 @@ public class Server {
     }
 
     private void sendResponse(Response response, SocketAddress address){
-        Runnable sendingResponseRunnable = () -> responseSender.sendResponse(response, address);
+        Runnable sendingResponseRunnable = () -> {
+            if (!response.getContent().equals("disconnected")){
+                responseSender.sendResponse(response, address);
+            }
+            if (response.getType() != ResponseType.UPDATE_COLLECTION_RESPONSE){
+                logger.trace("Response sent: {}", response);
+            }
+        };
         sendResponses.submit(sendingResponseRunnable);
     }
 

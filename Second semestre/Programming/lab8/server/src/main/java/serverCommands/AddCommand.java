@@ -41,6 +41,7 @@ public class AddCommand implements ServerCommand, RequiringObject, RequiringAuth
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException, NeedObjectException {
         commandInvoker.setAuthToCommand(this);
         commandInvoker.setObjectToCommand(this);
+        commandInvoker.setLocaleToCommand(this);
         commandInvoker.invokeCommand(this);
     }
 

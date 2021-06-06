@@ -55,6 +55,7 @@ public class RemoveByIdCommand implements ServerCommand, RequiringArg<Integer>, 
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException {
         commandInvoker.setAuthToCommand(this);
         commandInvoker.setIntegerArgToCommand(this);
+        commandInvoker.setLocaleToCommand(this);
         commandInvoker.invokeCommand(this);
     }
 

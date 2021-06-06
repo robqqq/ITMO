@@ -23,7 +23,7 @@ public class DisconnectCommand implements ServerCommand, RequiringAuth{
     @Override
     public String execute() {
         authManager.removeOnlineUser(auth);
-        return "";
+        return "disconnected";
     }
 
     @Override
@@ -44,6 +44,7 @@ public class DisconnectCommand implements ServerCommand, RequiringAuth{
     @Override
     public void acceptInvoker(ServerCommandInvoker commandInvoker) throws NoArgException, InvalidArgumentTypeException, NeedObjectException {
         commandInvoker.setAuthToCommand(this);
+        commandInvoker.setLocaleToCommand(this);
         commandInvoker.invokeCommand(this);
     }
 }

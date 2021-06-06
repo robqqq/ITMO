@@ -3,8 +3,7 @@ package gui;
 import collectionManager.ClientCollectionManager;
 
 import javax.swing.*;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.util.ResourceBundle;
 
@@ -308,10 +307,10 @@ public class MainPanel extends JPanel{
                 visualizeTab.add(exitVisualizePanel, BorderLayout.SOUTH);
 
                 //======== visualizeScrollPane ========
-                {
-                    visualizeScrollPane = new JScrollPane(visualize);
-                }
-                visualizeTab.add(visualizeScrollPane, BorderLayout.CENTER);
+//                {
+//                    visualizeScrollPane = new JScrollPane(visualize);
+//                }
+                visualizeTab.add(visualize, BorderLayout.CENTER);
 
             }
             tabbedPane.addTab(ResourceBundle.getBundle("messages").getString("tab.visualize"), visualizeTab);
@@ -463,6 +462,10 @@ public class MainPanel extends JPanel{
         return visualize;
     }
 
+    public JTabbedPane getTabbedPane() {
+        return tabbedPane;
+    }
+
     public void setTexts(){
         localeMenu.setText(ResourceBundle.getBundle("messages").getString("menu.locale"));
         commandsMenu.setText(ResourceBundle.getBundle("messages").getString("menu.commands"));
@@ -503,5 +506,6 @@ public class MainPanel extends JPanel{
         exitTableButton.setText(ResourceBundle.getBundle("messages").getString("button.exit"));
         exitVisualizeButton.setText(ResourceBundle.getBundle("messages").getString("button.exit"));
         tableModel.updateColumnHeaders();
+        tableModel.fireTableStructureChanged();
     }
 }

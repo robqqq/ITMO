@@ -30,9 +30,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.30</version>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>6.6</version>
         </dependency>
 
         <dependency>
@@ -40,5 +40,12 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.20</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.5</version>
+        </dependency>
+
     </dependencies>
 </project>

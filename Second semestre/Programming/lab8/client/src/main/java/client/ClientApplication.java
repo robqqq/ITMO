@@ -31,19 +31,24 @@ public class ClientApplication implements Application {
      public void start(){
         try {
             String address = System.getenv("LAB8ADDRESS");
-            int port = Integer.parseInt(System.getenv("LAB8PORT"));
             if (address == null) {
-                //TODO: обработки отсутсвтия енв вар
+                System.out.println("Incorrect env var LAB8ADDRESS");
+            }
+            int port;
+            try {
+                port = Integer.parseInt(System.getenv("LAB8PORT"));
+            } catch (NumberFormatException e) {
+                System.out.println("Incorrect env var LAB8PORT");
+                return;
             }
             connectionManager = new ClientConnectionManagerImpl();
             DatagramSocket socket = connectionManager.openConnection(address, port);
-            socket.setSoTimeout(10000);
             authManager = new ClientAuthManager(salt, connectionManager.getSocketAddress(), socket);
             commandManager = new ClientCommandManagerImpl(socket, connectionManager.getSocketAddress(), this,
                     authManager);
             ClientCollectionManager collectionManager = new ClientCollectionManagerImpl();
-            CollectionSynchronizer collectionSynchronizer = new CollectionSynchronizer(commandManager);
-            GUIController guiController = new GUIController(collectionManager, authManager, commandManager, collectionSynchronizer);
+            GUIController guiController = new GUIController(collectionManager, authManager, commandManager, socket,
+                    connectionManager.getSocketAddress());
             guiController.start();
         } catch (IOException e){
             //TODO: обработка проблем с подключением

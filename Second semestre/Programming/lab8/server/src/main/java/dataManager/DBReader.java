@@ -8,10 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import person.*;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -57,8 +54,9 @@ public class DBReader implements DataReader{
 
     @Override
     public Person getElement(int id) {
-        try (Statement stmt = connection.createStatement()){
-            ResultSet rs = stmt.executeQuery("select * from persons where id = " + id);
+        try (PreparedStatement stmt = connection.prepareStatement("select * from persons where id = ?")){
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 return createPerson(rs);
             } else {

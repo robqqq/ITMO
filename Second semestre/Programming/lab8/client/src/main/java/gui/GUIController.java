@@ -3,27 +3,32 @@ package gui;
 import authManager.ClientAuthManager;
 import clientCommands.ClientCommandManager;
 import collectionManager.ClientCollectionManager;
-import collectionManager.CollectionSynchronizer;
 import exceptions.*;
 import networkMessages.Response;
+import networkMessages.ResponseType;
 import org.jdesktop.swingx.renderer.IconValue;
-import org.jdesktop.swingx.sort.RowFilters;
 import person.*;
+import requests.ClientRequestFactory;
+import requests.ClientRequestSender;
+import requests.RequestFactory;
+import requests.RequestSender;
+import responses.ClientResponseReceiver;
+import responses.ResponseReceiver;
 
 import javax.swing.*;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.io.IOException;
+import java.net.DatagramSocket;
+import java.net.SocketAddress;
 import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 import java.util.*;
 import java.util.regex.PatternSyntaxException;
 
 public class GUIController {
-    private volatile boolean updatingCollection;
     private JFrame frame;
     private JDialog dialog;
     private AuthPanel authPanel;
@@ -31,19 +36,24 @@ public class GUIController {
     private TableRowSorter<TableModel> sorter;
     private CreatePersonPanel createPersonPanel;
     private PersonTableModel tableModel;
-    private CollectionSynchronizer collectionSynchronizer;
+    private DatagramSocket socket;
+    private SocketAddress address;
     private ClientAuthManager authManager;
     private ClientCollectionManager collectionManager;
     private ClientCommandManager commandManager;
     private Map<String, Locale> locales;
     private Thread updatingCollectionThread;
+    private Thread getResponseThread;
     private Toolkit toolkit = Toolkit.getDefaultToolkit();
     private final EyeColor[] eyeColorConstants;
     private final HairColor[] hairColorConstants;
+    private volatile boolean needUpdating;
 
     public GUIController(ClientCollectionManager collectionManager, ClientAuthManager authManager,
-                         ClientCommandManager commandManager, CollectionSynchronizer collectionSynchronizer) {
-        this.collectionSynchronizer = collectionSynchronizer;
+                         ClientCommandManager commandManager, DatagramSocket socket, SocketAddress address) {
+        needUpdating = false;
+        this.socket = socket;
+        this.address = address;
         this.authManager = authManager;
         this.collectionManager = collectionManager;
         this.commandManager = commandManager;
@@ -65,7 +75,7 @@ public class GUIController {
         tableModel = new PersonTableModel(collectionManager);
         frame = new JFrame("Lab8");
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-        frame.setResizable(false);
+        //frame.setResizable(false);
         mainPanel = new MainPanel(tableModel, collectionManager);
         sorter = new TableRowSorter<>(tableModel);
         mainPanel.getTable().setRowSorter(sorter);
@@ -75,7 +85,7 @@ public class GUIController {
     }
 
     private void authPanel(){
-        updatingCollection = false;
+        needUpdating = false;
         frame.remove(mainPanel);
         frame.setJMenuBar(null);
         frame.add(authPanel);
@@ -84,17 +94,16 @@ public class GUIController {
     }
 
     private void mainPanel(){
-        updatingCollection = true;
         frame.remove(authPanel);
         frame.add(mainPanel);
         frame.setJMenuBar(mainPanel.getMenuBar());
         mainPanel.getUserMenu().setText(authManager.getAuth().getLogin());
         frame.setBounds(toolkit.getScreenSize().width/2 - 640, toolkit.getScreenSize().height/2 - 360,
                 1280, 720);
+        needUpdating = true;
     }
 
     private void createPersonDialog(String title){
-        updatingCollection = false;
         dialog = new JDialog(frame, title);
         dialog.setResizable(false);
         dialog.add(createPersonPanel);
@@ -230,86 +239,46 @@ public class GUIController {
 
         mainPanel.getInfoCommand().addActionListener(e -> {
             try {
-                updatingCollection = false;
-                Response response = commandManager.executeCommand("info", null, null);
-                collectionManager.setPersons(response.getPersonCollection());
-                tableModel.fireTableDataChanged();
-                mainPanel.getVisualize().update();
-                JOptionPane.showMessageDialog(frame, response.getContent(),
-                        ResourceBundle.getBundle("messages").getString("title.info"), JOptionPane.INFORMATION_MESSAGE);
+                commandManager.executeCommand("info", null, null);
             } catch (IOException ioException) {
                 JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
                         ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
-            } finally {
-                updatingCollection = true;
             }
         });
 
         mainPanel.getHelpCommand().addActionListener(e -> {
             try {
-                updatingCollection = false;
-                Response response = commandManager.executeCommand("help", null, null);
-                collectionManager.setPersons(response.getPersonCollection());
-                tableModel.fireTableDataChanged();
-                mainPanel.getVisualize().update();
-                JOptionPane.showMessageDialog(frame, response.getContent(),
-                        ResourceBundle.getBundle("messages").getString("title.help"), JOptionPane.INFORMATION_MESSAGE);
+                commandManager.executeCommand("help", null, null);
             } catch (IOException ioException) {
                 JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
                         ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
-            } finally {
-                updatingCollection = true;
             }
         });
 
         mainPanel.getHistoryCommand().addActionListener(e -> {
             try {
-                updatingCollection = false;
-                Response response = commandManager.executeCommand("history", null, null);
-                collectionManager.setPersons(response.getPersonCollection());
-                tableModel.fireTableDataChanged();
-                mainPanel.getVisualize().update();
-                JOptionPane.showMessageDialog(frame, response.getContent(),
-                        ResourceBundle.getBundle("messages").getString("title.history"), JOptionPane.INFORMATION_MESSAGE);
+                commandManager.executeCommand("history", null, null);
             } catch (IOException ioException) {
                 JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
                         ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
-            } finally {
-                updatingCollection = true;
             }
         });
 
         mainPanel.getMaxByEyeColorCommand().addActionListener(e -> {
             try {
-                updatingCollection = false;
-                Response response = commandManager.executeCommand("max_by_eye_color", null, null);
-                collectionManager.setPersons(response.getPersonCollection());
-                tableModel.fireTableDataChanged();
-                mainPanel.getVisualize().update();
-                JOptionPane.showMessageDialog(frame, response.getContent(),
-                        ResourceBundle.getBundle("messages").getString("title.max_by_eye_color"), JOptionPane.INFORMATION_MESSAGE);
+                commandManager.executeCommand("max_by_eye_color", null, null);
             } catch (IOException ioException) {
                 JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
                         ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
-            } finally {
-                updatingCollection = true;
             }
         });
 
         mainPanel.getClearCommand().addActionListener(e -> {
             try {
-                updatingCollection = false;
-                Response response = commandManager.executeCommand("clear", null, null);
-                collectionManager.setPersons(response.getPersonCollection());
-                tableModel.fireTableDataChanged();
-                mainPanel.getVisualize().update();
-                JOptionPane.showMessageDialog(frame, response.getContent(),
-                        ResourceBundle.getBundle("messages").getString("title.command_executed"), JOptionPane.INFORMATION_MESSAGE);
+                commandManager.executeCommand("clear", null, null);
             } catch (IOException ioException) {
                 JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
                         ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
-            } finally {
-                updatingCollection = true;
             }
         });
 
@@ -325,18 +294,10 @@ public class GUIController {
                                 .toArray(),
                         null);
                 if (id == null) return;
-                updatingCollection = false;
-                Response response = commandManager.executeCommand("remove_by_id", String.valueOf(id), null);
-                collectionManager.setPersons(response.getPersonCollection());
-                tableModel.fireTableDataChanged();
-                mainPanel.getVisualize().update();
-                JOptionPane.showMessageDialog(frame, response.getContent(),
-                        ResourceBundle.getBundle("messages").getString("title.command_executed"), JOptionPane.INFORMATION_MESSAGE);
+                commandManager.executeCommand("remove_by_id", String.valueOf(id), null);
             } catch (IOException ioException) {
                 JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
                         ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
-            }finally {
-                updatingCollection = true;
             }
         });
 
@@ -349,21 +310,13 @@ public class GUIController {
             String errMsg = validatePerson();
             if (errMsg.equals("")) {
                 try {
-                    Response response = commandManager.executeCommand(
-                            createPersonPanel.getCommand(), null, createPerson());
-                    collectionManager.setPersons(response.getPersonCollection());
-                    tableModel.fireTableDataChanged();
-                    mainPanel.getVisualize().update();
+                    commandManager.executeCommand(
+                            createPersonPanel.getCommand(), createPersonPanel.getArg(), createPerson());
                     dialog.dispose();
                     createPersonPanel.clearInputs();
-                    JOptionPane.showMessageDialog(frame, response.getContent(),
-                            ResourceBundle.getBundle("messages").getString("title.command_executed"), JOptionPane.INFORMATION_MESSAGE);
                 } catch (IOException ioException) {
                     JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
                             ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
-                } finally {
-                    updatingCollection = true;
-                    createPersonPanel.clearInputs();
                 }
             }
         });
@@ -685,22 +638,71 @@ public class GUIController {
 
     public void start(){
         updatingCollectionThread = new Thread(() -> {
+            RequestFactory requestFactory = new ClientRequestFactory();
+           // System.out.println("hui");
             while(true) {
-                try {
-                    if (authManager.getAuth() != null && updatingCollection) {
-                        collectionSynchronizer.synchronizeCollection(collectionManager);
-                        tableModel.fireTableDataChanged();
-                        mainPanel.getVisualize().update();
-                    }
-                    Thread.sleep(2000);
-                } catch (InterruptedException | IOException ignored) {
+                if (needUpdating) {
+                    try {
+                        //System.out.println("hui1");
+                        RequestSender requestSender = new ClientRequestSender(address, socket);
+                        requestSender.sendRequest(requestFactory.createSimpleRequest("show", authManager.getAuth()));
+                        Thread.sleep(2000);
+                    } catch (InterruptedException | IOException ignored) {
 
+                    }
                 }
             }
         });
-        updatingCollectionThread.start();
+
+        getResponseThread = new Thread(() -> {
+            while(true) {
+               // System.out.println("xui_false");
+                if (needUpdating) {
+                    try {
+                        //System.out.println("xui");
+                        ResponseReceiver responseReceiver = new ClientResponseReceiver(socket);
+                        Response response = responseReceiver.receiveResponse();
+                        //System.out.println("hui2");
+                        switch (response.getType()) {
+                            case UPDATE_COLLECTION_RESPONSE -> {
+                                collectionManager.setPersons(response.getPersonCollection());
+                                tableModel.fireTableDataChanged();
+                                mainPanel.getVisualize().update();
+                            }
+                            case AUTH_ERROR_RESPONSE -> {
+                                JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("error.wrong_auth"),
+                                        ResourceBundle.getBundle("messages").getString("title.error"),
+                                        JOptionPane.ERROR_MESSAGE);
+                                commandManager.executeCommand("disconnect", null, null);
+                                authPanel();
+                            }
+                            case ERROR_RESPONSE -> {
+                                JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString(response.getContent()),
+                                        ResourceBundle.getBundle("messages").getString("title.error"),
+                                        JOptionPane.ERROR_MESSAGE);
+                            }
+                            case DEFAULT_RESPONSE -> {
+                                JOptionPane.showMessageDialog(frame, response.getContent(),
+                                        ResourceBundle.getBundle("messages").getString("title.command_executed"),
+                                        JOptionPane.INFORMATION_MESSAGE);
+                                collectionManager.setPersons(response.getPersonCollection());
+                                tableModel.fireTableDataChanged();
+                                mainPanel.getVisualize().update();
+                            }
+                        }
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
+                                ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+        });
         authPanel();
         frame.setVisible(true);
+       // System.out.println("xui1");
+        updatingCollectionThread.start();
+        getResponseThread.start();
+        //System.out.println(getResponseThread.toString());
     }
 
     private void setLocale(Locale locale){

@@ -61,6 +61,7 @@ public class UpdateCommand implements ServerCommand, RequiringArg<Integer>, Requ
         commandInvoker.setAuthToCommand(this);
         commandInvoker.setIntegerArgToCommand(this);
         commandInvoker.setObjectToCommand(this);
+        commandInvoker.setLocaleToCommand(this);
         commandInvoker.invokeCommand(this);
     }
 

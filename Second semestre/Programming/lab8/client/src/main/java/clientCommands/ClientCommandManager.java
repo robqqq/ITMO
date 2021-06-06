@@ -19,7 +19,7 @@ public interface ClientCommandManager {
      */
     boolean scriptIsUsed(String scriptName);
 
-    Response executeCommand(String command, String arg, RawPerson person) throws IOException;
+    void executeCommand(String command, String arg, RawPerson person) throws IOException;
 
     /**
      * Метод, который очищает список использованных скриптов

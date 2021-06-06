@@ -33,4 +33,10 @@ public class ServerResponseFactory implements ResponseFactory{
         return new ResponseImpl(ResponseType.AUTH_ERROR_RESPONSE, content,
                 personStream == null ? null : personStream.collect(Collectors.toSet()));
     }
+
+    @Override
+    public Response createUpdateCollectionResponse(Stream<Person> personStream) {
+        return new ResponseImpl(ResponseType.UPDATE_COLLECTION_RESPONSE, "update client collection",
+                personStream == null ? null : personStream.collect(Collectors.toSet()));
+    }
 }

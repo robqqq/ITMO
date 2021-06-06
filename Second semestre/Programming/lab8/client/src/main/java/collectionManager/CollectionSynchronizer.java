@@ -1,7 +1,6 @@
 package collectionManager;
 
-import auth.Auth;
-import clientCommands.ClientCommandManager;
+import authManager.ClientAuthManager;
 import networkMessages.Response;
 import networkMessages.ResponseType;
 import requests.ClientRequestFactory;
@@ -12,18 +11,21 @@ import responses.ClientResponseReceiver;
 import responses.ResponseReceiver;
 
 import java.io.IOException;
+import java.net.DatagramSocket;
+import java.net.SocketAddress;
 
 public class CollectionSynchronizer {
-    private ClientCommandManager commandManager;
+    private DatagramSocket socket;
+    private SocketAddress address;
 
-    public CollectionSynchronizer(ClientCommandManager commandManager){
-        this.commandManager = commandManager;
+    public CollectionSynchronizer(DatagramSocket socket, SocketAddress address){
+        this.socket = socket;
+        this.address = address;
     }
 
-    public void synchronizeCollection(ClientCollectionManager clientCollectionManager) throws IOException {
-        Response response = commandManager.executeCommand("show", null, null);
-        if (response.getType() == ResponseType.DEFAULT_RESPONSE){
-            clientCollectionManager.setPersons(response.getPersonCollection());
-        }
+    public void synchronizeCollection(ClientAuthManager authManager) throws IOException {
+        RequestFactory requestFactory = new ClientRequestFactory();
+        RequestSender requestSender = new ClientRequestSender(address, socket);
+        requestSender.sendRequest(requestFactory.createSimpleRequest("show", authManager.getAuth()));
     }
 }
