@@ -1,6 +1,8 @@
 package gui;
 
+import authManager.ClientAuthManager;
 import collectionManager.ClientCollectionManager;
+import exceptions.ScriptException;
 import person.Coordinates;
 import person.Person;
 
@@ -8,26 +10,25 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 
 public class Visualize extends JComponent{
     private ClientCollectionManager collectionManager;
-    private int side;
-    private int gap;
-    private static Map<String, Color> owners = new HashMap<>();
-    private int maxX;
-    private int maxY;
+    private ClientAuthManager authManager;
+    public final static int side = 10;
+    public final static int gap = 3;
+    private final int fps = 10;
+    private static volatile Map<String, Color> owners = new HashMap<>();
+    private volatile Map<Person, PersonRectangle> persons = new HashMap<>();
     private int minX;
     private int minY;
 
-    public Visualize(ClientCollectionManager collectionManager){
+    public Visualize(ClientCollectionManager collectionManager, ClientAuthManager authManager){
         this.collectionManager = collectionManager;
-        side = 10;
-        gap = 3;
+        this.authManager = authManager;
         update();
         addMouseListener(new MouseAdapter() {
             @Override
@@ -84,9 +85,30 @@ public class Visualize extends JComponent{
                                         p.getLocation().getName(),
                                         ResourceBundle.getBundle("messages").getString("column.owner"),
                                         p.getOwner());
-                                JOptionPane.showMessageDialog(Visualize.this, personString,
-                                        ResourceBundle.getBundle("messages").getString("title.person"),
-                                        JOptionPane.INFORMATION_MESSAGE);
+                                if (authManager.getAuth().getLogin().equals(p.getOwner())){
+                                    int option = JOptionPane.showConfirmDialog(Visualize.this, personString,
+                                            ResourceBundle.getBundle("messages").getString("title.update"),
+                                            JOptionPane.YES_NO_OPTION);
+                                    if (option == 0) {
+                                        GUIController.getCreatePersonPanel().setCommand("update");
+                                        GUIController.getCreatePersonPanel().setArg(String.valueOf(p.getId()));
+                                        GUIController.getCreatePersonPanel().getNameTF().setText(p.getName());
+                                        GUIController.getCreatePersonPanel().getHeightTF().setText(String.valueOf(p.getHeight()));
+                                        GUIController.getCreatePersonPanel().getBirthdayPicker().setDate(Timestamp.valueOf(p.getBirthday()));
+                                        GUIController.getCreatePersonPanel().getEyeColorComboBox().setSelectedItem(p.getEyeColor());
+                                        GUIController.getCreatePersonPanel().getHairColorComboBox().setSelectedItem(p.getHairColor());
+                                        GUIController.getCreatePersonPanel().getCoordinatesXTF().setText(String.valueOf(p.getCoordinates().getX()));
+                                        GUIController.getCreatePersonPanel().getCoordinatesYTF().setText(String.valueOf(p.getCoordinates().getY()));
+                                        GUIController.getCreatePersonPanel().getLocationXTF().setText(String.valueOf(p.getLocation().getX()));
+                                        GUIController.getCreatePersonPanel().getLocationYTF().setText(String.valueOf(p.getLocation().getY()));
+                                        GUIController.getCreatePersonPanel().getLocationNameTF().setText(p.getLocation().getName());
+                                        GUIController.createPersonDialog(ResourceBundle.getBundle("messages").getString("title.update"));
+                                    }
+                                } else {
+                                    JOptionPane.showMessageDialog(Visualize.this, personString,
+                                            ResourceBundle.getBundle("messages").getString("title.person"),
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                }
                             }
                         });
             }
@@ -97,42 +119,46 @@ public class Visualize extends JComponent{
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         collectionManager.getPersonStream().forEach(p -> {
-            int x = (int) ((p.getCoordinates().getX() - 1) * side + p.getCoordinates().getX() * gap
-                    - (minX - 1) * (side + gap));
-            int y = (int) ((p.getCoordinates().getY() - 1) * side + p.getCoordinates().getY() * gap
-                    - (minY - 1) * (side + gap));
-            if (!owners.containsKey(p.getOwner())) {
-                Color color;
-                do {
-                    color = RandomColor.getRandomColor();
-                } while (owners.containsValue(color));
-                owners.put(p.getOwner(), color);
-            } else {
-                PersonComponent personComponent = new PersonComponent(p, owners.get(p.getOwner()), x, y);
-                add(personComponent);
+            if(persons.containsKey(p)){
                 g2.setColor(owners.get(p.getOwner()));
-                g2.drawRect(x, y, side, side);
-                for (int tempSide = 1; tempSide <= side; tempSide++){
-                    g2.fillRect(x, y, tempSide, tempSide);
+                g2.fill(persons.get(p));
+            } else {
+                if (!owners.containsKey(p.getOwner())){
+                    Color color;
+                    do {
+                        color = RandomColor.getRandomColor();
+                    } while (owners.containsValue(color));
+                    owners.put(p.getOwner(), color);
                 }
+                PersonRectangle rectangle = new PersonRectangle(p, minX, minY);
+                g2.setColor(owners.get(p.getOwner()));
+                g2.fill(rectangle);
+                persons.put(p, rectangle);
             }
         });
+        tick();
+    }
+
+    private void tick() {
+        new Thread(() -> {
+            try {
+                Thread.sleep(1000/fps);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            for (PersonRectangle rectangle: persons.values()) {
+                rectangle.onTick(minX, minY);
+                repaint();
+            }
+        }).start();
+    }
+
+    public void forceUpdate(){
+        persons.clear();
     }
 
     public void update(){
         if (collectionManager.size() == 0) return;
-        maxX = collectionManager.getPersonStream()
-                .map(Person::getCoordinates)
-                .map(Coordinates::getX)
-                .max(Double::compareTo)
-                .get()
-                .intValue();
-        maxY = collectionManager.getPersonStream()
-                .map(Person::getCoordinates)
-                .map(Coordinates::getY)
-                .max(Long::compareTo)
-                .get()
-                .intValue();
         minX = collectionManager.getPersonStream()
                 .map(Person::getCoordinates)
                 .map(Coordinates::getX)
@@ -146,10 +172,5 @@ public class Visualize extends JComponent{
                 .get()
                 .intValue();
         repaint();
-
-    }
-
-    public void changeColor(String owner){
-        owners.remove(owner);
     }
 }

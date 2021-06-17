@@ -28,9 +28,7 @@ public class AuthCommand implements ServerCommand, RequiringAuth, RequiringArg<A
      */
     @Override
     public String execute() {
-        authManager.removeOnlineUser(auth);
-        if (authManager.checkAuth(arg) && !authManager.isOnline(arg)){
-            authManager.addOnlineUser(arg);
+        if (authManager.checkAuth(arg)){
             return "";
         } else {
             throw new AuthException();

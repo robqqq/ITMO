@@ -58,7 +58,6 @@ public class ServerCommandManagerImpl implements ServerCommandManager {
         clientCommandMap.put("print_field_descending_eye_color", new PrintFieldDescendingEyeColorCommand(collectionManager));
         clientCommandMap.put("auth", new AuthCommand(authManager));
         clientCommandMap.put("reg", new RegCommand(authManager, dataManager));
-        clientCommandMap.put("disconnect", new DisconnectCommand(authManager));
 
         serverCommandMap.put("exit", new ExitCommand(app));
     }
@@ -82,6 +81,9 @@ public class ServerCommandManagerImpl implements ServerCommandManager {
                 if (history.size() > 9) history.remove(0);
                 if (command.equals("show")){
                     return responseFactory.createUpdateCollectionResponse(collectionManager.getPersonStream());
+                }
+                if (command.equals("auth") || (command.equals("reg"))){
+                    return responseFactory.createAuthAcceptResponse(collectionManager.getPersonStream());
                 }
                 return responseFactory.createDefaultResponse(commandInvoker.getCommandOutput(), collectionManager.getPersonStream());
             } catch (NoArgException e) {

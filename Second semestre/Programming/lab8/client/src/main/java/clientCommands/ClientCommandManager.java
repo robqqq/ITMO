@@ -3,6 +3,7 @@ package clientCommands;
 import networkMessages.Response;
 import person.RawPerson;
 
+import java.io.File;
 import java.io.IOException;
 
 public interface ClientCommandManager {
@@ -31,4 +32,6 @@ public interface ClientCommandManager {
      * @param scriptName имя скрипта
      */
     void usedScriptRemove(String scriptName);
+
+    void executeScript(File file) throws IOException;
 }

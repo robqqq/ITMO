@@ -10,8 +10,7 @@ public class ExitCommand implements ClientCommand {
     }
 
     @Override
-    public String execute() {
+    public void execute() {
         app.exit();
-        return "";
     }
 }

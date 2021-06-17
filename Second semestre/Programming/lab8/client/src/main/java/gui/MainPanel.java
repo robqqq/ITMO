@@ -1,5 +1,6 @@
 package gui;
 
+import authManager.ClientAuthManager;
 import collectionManager.ClientCollectionManager;
 
 import javax.swing.*;
@@ -10,7 +11,6 @@ import java.util.ResourceBundle;
 public class MainPanel extends JPanel{
     private JMenuBar menuBar;
     private JMenu userMenu;
-    private JMenuItem changeColor;
     private JMenuItem changeUser;
     private JMenu localeMenu;
     private JMenuItem russianLocale;
@@ -48,13 +48,14 @@ public class MainPanel extends JPanel{
     private JButton exitTableButton;
     private JButton exitVisualizeButton;
     private JTable table;
-    private JScrollPane visualizeScrollPane;
     private Visualize visualize;
     private PersonTableModel tableModel;
     private ClientCollectionManager collectionManager;
+    private ClientAuthManager authManager;
 
-    public MainPanel(PersonTableModel tableModel, ClientCollectionManager collectionManager) {
+    public MainPanel(PersonTableModel tableModel, ClientCollectionManager collectionManager, ClientAuthManager authManager) {
         super();
+        this.authManager = authManager;
         this.tableModel = tableModel;
         this.collectionManager = collectionManager;
         initComponents();
@@ -63,7 +64,6 @@ public class MainPanel extends JPanel{
     private void initComponents() {
         menuBar = new JMenuBar();
         userMenu = new JMenu();
-        changeColor = new JMenuItem();
         changeUser = new JMenuItem();
         localeMenu = new JMenu();
         russianLocale = new JMenuItem();
@@ -100,14 +100,13 @@ public class MainPanel extends JPanel{
         tabbedPane = new JTabbedPane();
         JPanel tableTab = new JPanel();
         table = new JTable(tableModel);
-        visualize = new Visualize(collectionManager);
+        visualize = new Visualize(collectionManager, authManager);
         JPanel exitTablePanel = new JPanel();
         exitTableButton = new JButton();
         JPanel exitVisualizePanel = new JPanel();
         exitVisualizeButton = new JButton();
         JScrollPane tableScrollPane = new JScrollPane();
         JPanel visualizeTab = new JPanel();
-        visualizeScrollPane = new JScrollPane();
 
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 
@@ -117,10 +116,6 @@ public class MainPanel extends JPanel{
             //======== userMenu ========
             {
                 userMenu.setText(ResourceBundle.getBundle("messages").getString("menu.login"));
-
-                //---- changeColor ----
-                changeColor.setText(ResourceBundle.getBundle("messages").getString("menu_item.change_color"));
-                userMenu.add(changeColor);
 
                 //---- changeUser ----
                 changeUser.setText(ResourceBundle.getBundle("messages").getString("menu_item.change_user"));
@@ -326,10 +321,6 @@ public class MainPanel extends JPanel{
         return userMenu;
     }
 
-    public JMenuItem getChangeColor() {
-        return changeColor;
-    }
-
     public JMenuItem getChangeUser() {
         return changeUser;
     }
@@ -458,12 +449,12 @@ public class MainPanel extends JPanel{
         return table;
     }
 
-    public Visualize getVisualize() {
-        return visualize;
-    }
-
     public JTabbedPane getTabbedPane() {
         return tabbedPane;
+    }
+
+    public Visualize getVisualize() {
+        return visualize;
     }
 
     public void setTexts(){
@@ -471,7 +462,6 @@ public class MainPanel extends JPanel{
         commandsMenu.setText(ResourceBundle.getBundle("messages").getString("menu.commands"));
         addCommandsMenu.setText(ResourceBundle.getBundle("messages").getString("menu.add"));
         filter.setText(ResourceBundle.getBundle("messages").getString("menu.filter"));
-        changeColor.setText(ResourceBundle.getBundle("messages").getString("menu_item.change_color"));
         changeUser.setText(ResourceBundle.getBundle("messages").getString("menu_item.change_user"));
         russianLocale.setText(ResourceBundle.getBundle("messages").getString("menu_item.russian"));
         hungarianLocale.setText(ResourceBundle.getBundle("messages").getString("menu_item.hungarian"));

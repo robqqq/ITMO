@@ -3,13 +3,14 @@ package clientCommands;
 import command.RequiringArg;
 import exceptions.NoArgException;
 
+import java.io.IOException;
+
 public class ClientCommandInvokerImpl implements ClientCommandInvoker {
     private String arg;
-    private String output;
 
     @Override
-    public void invokeCommand(ClientCommand command) {
-        output = command.execute();
+    public void invokeCommand(ClientCommand command){
+        command.execute();
         arg = null;
     }
 
@@ -25,10 +26,5 @@ public class ClientCommandInvokerImpl implements ClientCommandInvoker {
     @Override
     public void setArg(String arg) {
         this.arg = arg;
-    }
-
-    @Override
-    public String getCommandOutput(){
-        return output;
     }
 }

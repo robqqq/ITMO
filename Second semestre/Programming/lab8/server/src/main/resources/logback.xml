@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
+
     <appender name="STDOUT"
               class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder
@@ -32,11 +33,11 @@
 
     <appender name="JSON"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>server.json</file>
+        <file>server-json.log</file>
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>server.%d{yyyy-MM-dd}.json</fileNamePattern>
+            <fileNamePattern>server-json.%d{yyyy-MM-dd}.log</fileNamePattern>
 
             <!-- Храним файлы логов 3 дня -->
             <maxHistory>3</maxHistory>
@@ -45,8 +46,12 @@
             <totalSizeCap>50MB</totalSizeCap>
 
         </rollingPolicy>
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.contrib.json.classic.JsonLayout">
+                <jsonFormatter class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter"/>
+                <appendLineSeparator>true</appendLineSeparator>
+                <timestampFormat>yyyy-MM-dd' 'HH:mm:ss.SSS</timestampFormat>
+            </layout>
         </encoder>
     </appender>
 
@@ -61,7 +66,7 @@
     </connectionSource>
 </appender>
 
-    <root level="all">
+    <root level="debug">
         <appender-ref ref="FILE" />
         <appender-ref ref="STDOUT" />
         <appender-ref ref="JSON" />

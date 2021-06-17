@@ -16,4 +16,6 @@ public interface ResponseFactory {
     Response createAuthErrorResponse(String content, Stream<Person> personStream);
 
     Response createUpdateCollectionResponse(Stream<Person> personStream);
+
+    Response createAuthAcceptResponse(Stream<Person> personStream);
 }

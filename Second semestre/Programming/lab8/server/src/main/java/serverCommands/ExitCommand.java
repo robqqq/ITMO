@@ -26,6 +26,6 @@ public class ExitCommand implements ServerCommand{
     @Override
     public String execute() {
         app.exit();
-        return "";
+        return "Server stopped";
     }
 }

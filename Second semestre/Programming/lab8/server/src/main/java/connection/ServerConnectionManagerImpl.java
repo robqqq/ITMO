@@ -16,7 +16,7 @@ public class ServerConnectionManagerImpl implements ServerConnectionManager {
         InetSocketAddress socketAddress = new InetSocketAddress(port);
         channel = DatagramChannel.open();
         channel.bind(socketAddress);
-        logger.trace("server has opened connection on port {}", port);
+        logger.info("server has opened connection on port {}", port);
         return channel;
     }
 

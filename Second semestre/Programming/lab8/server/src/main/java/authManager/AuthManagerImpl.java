@@ -14,17 +14,6 @@ public class AuthManagerImpl implements AuthManager{
     private final Lock readLock = readWriteLock.readLock();
     private final Lock writeLock = readWriteLock.writeLock();
     private final Set<Auth> users = new HashSet<>();
-    private final Set<Auth> onlineUsers = new HashSet<>();
-
-    @Override
-    public void removeOnlineUser(Auth auth) {
-        writeLock.lock();
-        try {
-            onlineUsers.remove(auth);
-        } finally {
-            writeLock.unlock();
-        }
-    }
 
     @Override
     public void setUsers(Collection<Auth> users) {
@@ -41,26 +30,6 @@ public class AuthManagerImpl implements AuthManager{
         readLock.lock();
         try {
             return users.contains(auth);
-        } finally {
-            readLock.unlock();
-        }
-    }
-
-    @Override
-    public void addOnlineUser(Auth auth){
-        writeLock.lock();
-        try{
-            onlineUsers.add(auth);
-        } finally {
-            writeLock.unlock();
-        }
-    }
-
-    @Override
-    public boolean isOnline(Auth auth){
-        readLock.lock();
-        try{
-            return onlineUsers.contains(auth);
         } finally {
             readLock.unlock();
         }

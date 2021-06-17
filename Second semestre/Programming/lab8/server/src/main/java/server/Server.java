@@ -39,14 +39,14 @@ public class Server {
                 while (true) {
                     Request request = requestReceiver.receiveRequest();
                     if (!request.getCommand().equals("show")){
-                        logger.trace("Request received: {}", request);
+                        logger.debug("Request received: {}", request);
                     }
                     handleRequest(request, requestReceiver.getAddress());
                 }
             } catch (AsynchronousCloseException ignored) {
 
             } catch (IOException | ClassNotFoundException e) {
-                logger.error("receive request error", e);
+                logger.debug("receive request error", e);
             }
         };
         receiveRequests.submit(receivingRequestRunnable);
@@ -66,7 +66,7 @@ public class Server {
                 responseSender.sendResponse(response, address);
             }
             if (response.getType() != ResponseType.UPDATE_COLLECTION_RESPONSE){
-                logger.trace("Response sent: {}", response);
+                logger.debug("Response sent: {}", response);
             }
         };
         sendResponses.submit(sendingResponseRunnable);

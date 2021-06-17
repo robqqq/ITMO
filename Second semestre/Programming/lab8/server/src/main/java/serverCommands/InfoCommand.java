@@ -14,7 +14,6 @@ public class InfoCommand implements ServerCommand{
 
     /**
      * @param collectionManager менеджер коллекции
-     * @param messenger мессенджер
      */
     public InfoCommand(CollectionManager collectionManager){
         this.collectionManager = collectionManager;

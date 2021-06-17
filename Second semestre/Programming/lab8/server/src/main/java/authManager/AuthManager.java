@@ -10,11 +10,5 @@ public interface AuthManager {
 
     boolean checkAuth(Auth auth);
 
-    void addOnlineUser(Auth auth);
-
-    void removeOnlineUser(Auth auth);
-
-    boolean isOnline(Auth auth);
-
     void addUser(Auth auth);
 }

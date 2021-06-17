@@ -2,6 +2,8 @@ package clientCommands;
 
 import exceptions.NoArgException;
 
+import java.io.IOException;
+
 /**
  * Общий интерфейс всех классов команд
  */
@@ -10,7 +12,7 @@ public interface ClientCommand {
     /**
      * Метод, который запускает команду
      */
-    String execute();
+    void execute();
 
     /**
      * Метод, который указывает, как запускать эту команду

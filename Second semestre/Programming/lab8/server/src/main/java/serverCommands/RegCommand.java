@@ -35,11 +35,9 @@ public class RegCommand implements ServerCommand, RequiringAuth, RequiringArg<Au
      */
     @Override
     public String execute() {
-        authManager.removeOnlineUser(auth);
         try{
             dataManager.addUser(arg);
             authManager.addUser(arg);
-            authManager.addOnlineUser(arg);
         } catch (DBException e){
             throw new AuthException();
         }

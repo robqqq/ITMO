@@ -40,14 +40,11 @@ public class ClientAuthManager {
         if (!passwordPattern.matcher(password).matches()){
             throw new PasswordPatternException();
         }
-        Auth newAuth = new Auth(login, SHA512Generator.getHash(password + salt));
+        Auth oldAuth = auth;
+        auth = new Auth(login, SHA512Generator.getHash(password + salt));
         RequestSender requestSender = new ClientRequestSender(address, socket);
         RequestFactory requestFactory = new ClientRequestFactory();
-            requestSender.sendRequest(requestFactory.createAuthRegRequest("auth", newAuth, auth));
-            ResponseReceiver responseReceiver = new ClientResponseReceiver(socket);
-            Response response = responseReceiver.receiveResponse();
-            if (response.getType() == ResponseType.AUTH_ERROR_RESPONSE) throw new AuthException();
-            auth = newAuth;
+            requestSender.sendRequest(requestFactory.createAuthRegRequest("auth", auth, oldAuth));
     }
 
     public void reg(String login, String password) throws UsernamePatternException, PasswordPatternException, IOException {
@@ -57,20 +54,14 @@ public class ClientAuthManager {
         if (!passwordPattern.matcher(password).matches()){
             throw new PasswordPatternException();
         }
-        Auth newAuth = new Auth(login, SHA512Generator.getHash(password + salt));
+        Auth oldAuth = auth;
+        auth = new Auth(login, SHA512Generator.getHash(password + salt));
         RequestSender requestSender = new ClientRequestSender(address, socket);
         RequestFactory requestFactory = new ClientRequestFactory();
-        requestSender.sendRequest(requestFactory.createAuthRegRequest("reg", newAuth, auth));
-        ResponseReceiver responseReceiver = new ClientResponseReceiver(socket);
-        Response response = responseReceiver.receiveResponse();
-        if (response.getType() == ResponseType.AUTH_ERROR_RESPONSE) throw new AuthException();
-        auth = newAuth;
+        requestSender.sendRequest(requestFactory.createAuthRegRequest("reg", auth, oldAuth));
     }
 
-    public void disconnect() throws IOException {
-        RequestSender requestSender = new ClientRequestSender(address, socket);
-        RequestFactory requestFactory = new ClientRequestFactory();
-        requestSender.sendRequest(requestFactory.createAuthRegRequest("disconnect", auth, auth));
+    public void disconnect(){
         auth = null;
     }
 

@@ -19,6 +19,9 @@ import javax.swing.*;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.SocketAddress;
@@ -29,12 +32,12 @@ import java.util.*;
 import java.util.regex.PatternSyntaxException;
 
 public class GUIController {
-    private JFrame frame;
-    private JDialog dialog;
+    private static JFrame frame = new JFrame("Lab8");
+    private static JDialog dialog;
     private AuthPanel authPanel;
     private MainPanel mainPanel;
     private TableRowSorter<TableModel> sorter;
-    private CreatePersonPanel createPersonPanel;
+    private static CreatePersonPanel createPersonPanel = new CreatePersonPanel();;
     private PersonTableModel tableModel;
     private DatagramSocket socket;
     private SocketAddress address;
@@ -73,15 +76,32 @@ public class GUIController {
         locales.put("hu", new Locale("hu"));
         locales.put("es_EC", new Locale("es", "EC"));
         tableModel = new PersonTableModel(collectionManager);
-        frame = new JFrame("Lab8");
-        frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
         //frame.setResizable(false);
-        mainPanel = new MainPanel(tableModel, collectionManager);
+        mainPanel = new MainPanel(tableModel, collectionManager, authManager);
         sorter = new TableRowSorter<>(tableModel);
         mainPanel.getTable().setRowSorter(sorter);
         authPanel = new AuthPanel();
-        createPersonPanel = new CreatePersonPanel();
         addActionListeners();
+    }
+
+    public static JFrame getFrame(){
+        return frame;
+    }
+
+    public static CreatePersonPanel getCreatePersonPanel(){
+        return createPersonPanel;
     }
 
     private void authPanel(){
@@ -103,7 +123,7 @@ public class GUIController {
         needUpdating = true;
     }
 
-    private void createPersonDialog(String title){
+    public static void createPersonDialog(String title){
         dialog = new JDialog(frame, title);
         dialog.setResizable(false);
         dialog.add(createPersonPanel);
@@ -114,27 +134,18 @@ public class GUIController {
 
     private void addActionListeners(){
         authPanel.getCancelButton().addActionListener(e -> {
-            try {
-                if (authManager.getAuth() != null) authManager.disconnect();
-            } catch (IOException ignored) {
-
-            }
+            authManager.disconnect();
             System.exit(0);
         });
 
         authPanel.getCancelRegisterButton().addActionListener(e -> {
-            try {
-                if (authManager.getAuth() != null) authManager.disconnect();
-            } catch (IOException ignored) {
-
-            }
+            authManager.disconnect();
             System.exit(0);
         });
 
         authPanel.getLoginButton().addActionListener(e -> {
             try {
                 authManager.auth(authPanel.getLoginTF().getText(), new String(authPanel.getPwdTF().getPassword()));
-                mainPanel();
                 authPanel.getLoginTF().setText("");
                 authPanel.getPwdTF().setText("");
                 authPanel.getLoginRegisterTF().setText("");
@@ -164,7 +175,6 @@ public class GUIController {
             try {
                 if (Arrays.equals(authPanel.getPwdRegisterTF().getPassword(), authPanel.getRepeatPwdTF().getPassword())) {
                     authManager.reg(authPanel.getLoginRegisterTF().getText(), new String(authPanel.getPwdRegisterTF().getPassword()));
-                    mainPanel();
                     authPanel.getLoginTF().setText("");
                     authPanel.getPwdTF().setText("");
                     authPanel.getLoginRegisterTF().setText("");
@@ -200,33 +210,18 @@ public class GUIController {
         });
 
         mainPanel.getExitTableButton().addActionListener(e -> {
-            try {
-                if (authManager.getAuth() != null) authManager.disconnect();
-            } catch (IOException ignored) {
-
-            }
+            if (authManager.getAuth() != null) authManager.disconnect();
             System.exit(0);
         });
 
         mainPanel.getExitVisualizeButton().addActionListener(e -> {
-            try {
-                if (authManager.getAuth() != null) authManager.disconnect();
-            } catch (IOException ignored) {
-
-            }
+            if (authManager.getAuth() != null) authManager.disconnect();
             System.exit(0);
         });
 
-        mainPanel.getChangeColor().addActionListener(e -> {
-            mainPanel.getVisualize().changeColor(authManager.getAuth().getLogin());
-        });
-
         mainPanel.getChangeUser().addActionListener(e -> {
-            try {
-                authPanel();
-                authManager.disconnect();
-            } catch (IOException ignored) {
-            }
+            authPanel();
+            authManager.disconnect();
         });
 
         mainPanel.getRussianLocale().addActionListener(e -> setLocale(locales.get("ru")));
@@ -381,8 +376,7 @@ public class GUIController {
 
         mainPanel.getNameFilter().addActionListener(e -> {
             String nameRegEx = JOptionPane.showInputDialog(frame,
-                    ResourceBundle.getBundle("messages").getString("input.regex_name"),
-                    ResourceBundle.getBundle("messages").getString("title.filter"));
+                    ResourceBundle.getBundle("messages").getString("input.regex_name"));
             if (nameRegEx.length() == 0) {
                 sorter.setRowFilter(null);
             } else {
@@ -399,8 +393,7 @@ public class GUIController {
         mainPanel.getCoordinatesXFilter().addActionListener(e -> {
             try {
                 Double coordinatesX = Double.parseDouble(JOptionPane.showInputDialog(frame,
-                        ResourceBundle.getBundle("messages").getString("input.coordinates_x"),
-                        ResourceBundle.getBundle("messages").getString("title.filter")));
+                        ResourceBundle.getBundle("messages").getString("input.coordinates_x")));
                 sorter.setRowFilter(RowFilter.numberFilter(RowFilter.ComparisonType.EQUAL, coordinatesX, 2));
             } catch (NumberFormatException numberFormatException){
                 JOptionPane.showMessageDialog(frame,
@@ -412,8 +405,7 @@ public class GUIController {
         mainPanel.getCoordinatesYFilter().addActionListener(e -> {
             try {
                 Long coordinatesY = Long.parseLong(JOptionPane.showInputDialog(frame,
-                        ResourceBundle.getBundle("messages").getString("input.coordinates_y"),
-                        ResourceBundle.getBundle("messages").getString("title.filter")));
+                        ResourceBundle.getBundle("messages").getString("input.coordinates_y")));
                 sorter.setRowFilter(RowFilter.numberFilter(RowFilter.ComparisonType.EQUAL, coordinatesY, 3));
             } catch (NumberFormatException numberFormatException){
                 JOptionPane.showMessageDialog(frame,
@@ -425,8 +417,7 @@ public class GUIController {
         mainPanel.getCreationDateFilter().addActionListener(e -> {
             try {
                 LocalDate creationDate = LocalDate.parse(JOptionPane.showInputDialog(frame,
-                        ResourceBundle.getBundle("messages").getString("input.creation_date"),
-                        ResourceBundle.getBundle("messages").getString("title.filter")));
+                        ResourceBundle.getBundle("messages").getString("input.creation_date")));
                 sorter.setRowFilter(RowFilter.regexFilter(creationDate.toString(), 4));
             } catch (DateTimeParseException dateTimeParseException){
                 JOptionPane.showMessageDialog(frame,
@@ -438,8 +429,7 @@ public class GUIController {
         mainPanel.getHeightFilter().addActionListener(e -> {
             try {
                 Long height = Long.parseLong(JOptionPane.showInputDialog(frame,
-                        ResourceBundle.getBundle("messages").getString("input.height"),
-                        ResourceBundle.getBundle("messages").getString("title.filter")));
+                        ResourceBundle.getBundle("messages").getString("input.height")));
                 sorter.setRowFilter(RowFilter.numberFilter(RowFilter.ComparisonType.EQUAL, height, 5));
             } catch (NumberFormatException numberFormatException){
                 JOptionPane.showMessageDialog(frame,
@@ -451,8 +441,7 @@ public class GUIController {
         mainPanel.getBirthdayFilter().addActionListener(e -> {
             try {
                 LocalDate birthday = LocalDate.parse(JOptionPane.showInputDialog(frame,
-                        ResourceBundle.getBundle("messages").getString("input.birthday"),
-                        ResourceBundle.getBundle("messages").getString("title.filter")));
+                        ResourceBundle.getBundle("messages").getString("input.birthday")));
                 sorter.setRowFilter(RowFilter.regexFilter(birthday.toString(), 6));
             } catch (DateTimeParseException dateTimeParseException){
                 JOptionPane.showMessageDialog(frame,
@@ -484,8 +473,7 @@ public class GUIController {
         mainPanel.getLocationXFilter().addActionListener(e -> {
             try {
                 Float locationX = Float.parseFloat(JOptionPane.showInputDialog(frame,
-                        ResourceBundle.getBundle("messages").getString("input.location_x"),
-                        ResourceBundle.getBundle("messages").getString("title.filter")));
+                        ResourceBundle.getBundle("messages").getString("input.location_x")));
                 sorter.setRowFilter(RowFilter.numberFilter(RowFilter.ComparisonType.EQUAL, locationX, 9));
             } catch (NumberFormatException numberFormatException){
                 JOptionPane.showMessageDialog(frame,
@@ -497,8 +485,7 @@ public class GUIController {
         mainPanel.getLocationYFilter().addActionListener(e -> {
             try {
                 Long locationY = Long.parseLong(JOptionPane.showInputDialog(frame,
-                        ResourceBundle.getBundle("messages").getString("input.location_y"),
-                        ResourceBundle.getBundle("messages").getString("title.filter")));
+                        ResourceBundle.getBundle("messages").getString("input.location_y")));
                 sorter.setRowFilter(RowFilter.numberFilter(RowFilter.ComparisonType.EQUAL, locationY, 10));
             } catch (NumberFormatException numberFormatException){
                 JOptionPane.showMessageDialog(frame,
@@ -509,8 +496,7 @@ public class GUIController {
 
         mainPanel.getLocationNameFilter().addActionListener(e -> {
             String locationName = JOptionPane.showInputDialog(frame,
-                    ResourceBundle.getBundle("messages").getString("input.location_name"),
-                    ResourceBundle.getBundle("messages").getString("title.filter"));
+                    ResourceBundle.getBundle("messages").getString("input.location_name"));
             if (locationName.length() == 0) {
                 sorter.setRowFilter(null);
             } else {
@@ -526,8 +512,7 @@ public class GUIController {
 
         mainPanel.getOwnerFilter().addActionListener(e -> {
             String owner = JOptionPane.showInputDialog(frame,
-                    ResourceBundle.getBundle("messages").getString("input.owner"),
-                    ResourceBundle.getBundle("messages").getString("title.filter"));
+                    ResourceBundle.getBundle("messages").getString("input.owner"));
             if (owner.length() == 0) {
                 sorter.setRowFilter(null);
             } else {
@@ -539,6 +524,62 @@ public class GUIController {
                             ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
                 }
             }
+        });
+
+        mainPanel.getTable().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (mainPanel.getTable().getSelectedRowCount() == 1
+                        && tableModel.getValueAt(mainPanel.getTable().getSelectedRow(), 12)
+                        .equals(authManager.getAuth().getLogin()) && e.getClickCount() >= 2){
+                    int id = (int) tableModel.getValueAt(mainPanel.getTable().getSelectedRow(), 0);
+                    createPersonPanel.setCommand("update");
+                    createPersonPanel.setArg(String.valueOf(id));
+                    Person oldPerson = collectionManager.getPersonStream().filter(p -> p.getId() == id).findAny().get();
+                    createPersonPanel.getNameTF().setText(oldPerson.getName());
+                    createPersonPanel.getHeightTF().setText(String.valueOf(oldPerson.getHeight()));
+                    createPersonPanel.getBirthdayPicker().setDate(Timestamp.valueOf(oldPerson.getBirthday()));
+                    createPersonPanel.getEyeColorComboBox().setSelectedItem(oldPerson.getEyeColor());
+                    createPersonPanel.getHairColorComboBox().setSelectedItem(oldPerson.getHairColor());
+                    createPersonPanel.getCoordinatesXTF().setText(String.valueOf(oldPerson.getCoordinates().getX()));
+                    createPersonPanel.getCoordinatesYTF().setText(String.valueOf(oldPerson.getCoordinates().getY()));
+                    createPersonPanel.getLocationXTF().setText(String.valueOf(oldPerson.getLocation().getX()));
+                    createPersonPanel.getLocationYTF().setText(String.valueOf(oldPerson.getLocation().getY()));
+                    createPersonPanel.getLocationNameTF().setText(oldPerson.getLocation().getName());
+                    createPersonDialog(ResourceBundle.getBundle("messages").getString("menu_item.update"));
+                }
+
+
+            }
+        });
+
+        mainPanel.getExecuteScriptCommand().addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            int ret = fileChooser.showDialog(frame, ResourceBundle.getBundle("messages").getString("button.ok"));
+            if (ret == JFileChooser.APPROVE_OPTION) {
+                File file = fileChooser.getSelectedFile();
+                try {
+                    commandManager.executeScript(file);
+                } catch (IOException ioException) {
+                    JOptionPane.showMessageDialog(frame,
+                            ResourceBundle.getBundle("messages").getString("err.file_not_found"),
+                            ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
+                } catch (ScriptException scriptException){
+                    JOptionPane.showMessageDialog(frame,
+                            ResourceBundle.getBundle("messages").getString("err.script_error"),
+                            ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
+                } catch (ScriptRecursionException scriptRecursionException) {
+                    JOptionPane.showMessageDialog(frame,
+                            ResourceBundle.getBundle("messages").getString("err.script_recursion"),
+                            ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
+                } finally {
+                    commandManager.clearUsedScripts();
+                }
+            }
+        });
+
+        mainPanel.getTabbedPane().addChangeListener(e -> {
+            mainPanel.getVisualize().forceUpdate();
         });
     }
 
@@ -657,43 +698,54 @@ public class GUIController {
         getResponseThread = new Thread(() -> {
             while(true) {
                // System.out.println("xui_false");
-                if (needUpdating) {
-                    try {
-                        //System.out.println("xui");
-                        ResponseReceiver responseReceiver = new ClientResponseReceiver(socket);
-                        Response response = responseReceiver.receiveResponse();
-                        //System.out.println("hui2");
-                        switch (response.getType()) {
-                            case UPDATE_COLLECTION_RESPONSE -> {
-                                collectionManager.setPersons(response.getPersonCollection());
-                                tableModel.fireTableDataChanged();
-                                mainPanel.getVisualize().update();
-                            }
-                            case AUTH_ERROR_RESPONSE -> {
-                                JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("error.wrong_auth"),
-                                        ResourceBundle.getBundle("messages").getString("title.error"),
-                                        JOptionPane.ERROR_MESSAGE);
-                                commandManager.executeCommand("disconnect", null, null);
-                                authPanel();
-                            }
-                            case ERROR_RESPONSE -> {
-                                JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString(response.getContent()),
-                                        ResourceBundle.getBundle("messages").getString("title.error"),
-                                        JOptionPane.ERROR_MESSAGE);
-                            }
-                            case DEFAULT_RESPONSE -> {
-                                JOptionPane.showMessageDialog(frame, response.getContent(),
-                                        ResourceBundle.getBundle("messages").getString("title.command_executed"),
-                                        JOptionPane.INFORMATION_MESSAGE);
-                                collectionManager.setPersons(response.getPersonCollection());
-                                tableModel.fireTableDataChanged();
-                                mainPanel.getVisualize().update();
-                            }
+                try {
+                    //System.out.println("xui");
+                    ResponseReceiver responseReceiver = new ClientResponseReceiver(socket);
+                    Response response = responseReceiver.receiveResponse();
+                    //System.out.println("hui2");
+                    switch (response.getType()) {
+                        case UPDATE_COLLECTION_RESPONSE -> {
+                            collectionManager.setPersons(response.getPersonCollection());
+                            tableModel.fireTableDataChanged();
+                            mainPanel.getVisualize().update();
                         }
-                    } catch (IOException e) {
-                        JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
-                                ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
+                        case AUTH_ERROR_RESPONSE -> {
+                            JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.wrong_auth"),
+                                    ResourceBundle.getBundle("messages").getString("title.error"),
+                                    JOptionPane.ERROR_MESSAGE);
+                            authManager.disconnect();
+                            authPanel.getLoginTF().setText("");
+                            authPanel.getPwdTF().setText("");
+                            authPanel.getLoginRegisterTF().setText("");
+                            authPanel.getPwdRegisterTF().setText("");
+                            authPanel.getRepeatPwdTF().setText("");
+                            authPanel();
+                        }
+                        case ERROR_RESPONSE -> {
+                            JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString(response.getContent()),
+                                    ResourceBundle.getBundle("messages").getString("title.error"),
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
+                        case DEFAULT_RESPONSE -> {
+                            JOptionPane.showMessageDialog(frame, response.getContent(),
+                                    ResourceBundle.getBundle("messages").getString("title.command_executed"),
+                                    JOptionPane.INFORMATION_MESSAGE);
+                            collectionManager.setPersons(response.getPersonCollection());
+                            tableModel.fireTableDataChanged();
+                            mainPanel.getVisualize().update();
+                        }
+                        case AUTH_ACCEPT_RESPONSE -> {
+                            mainPanel();
+                            authPanel.getLoginTF().setText("");
+                            authPanel.getPwdTF().setText("");
+                            authPanel.getLoginRegisterTF().setText("");
+                            authPanel.getPwdRegisterTF().setText("");
+                            authPanel.getRepeatPwdTF().setText("");
+                        }
                     }
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(frame, ResourceBundle.getBundle("messages").getString("err.no_connection"),
+                            ResourceBundle.getBundle("messages").getString("title.error"), JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

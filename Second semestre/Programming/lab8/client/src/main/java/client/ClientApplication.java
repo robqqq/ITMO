@@ -16,14 +16,12 @@ import java.net.DatagramSocket;
 
 
 public class ClientApplication implements Application {
-    private boolean exit;
     private ClientConnectionManager connectionManager;
     private ClientCommandManager commandManager;
     private ClientAuthManager authManager;
     private String salt;
 
     public ClientApplication(){
-        exit = false;
         salt = "salt";
     }
 
@@ -60,7 +58,7 @@ public class ClientApplication implements Application {
 
     @Override
     public void exit(){
-        exit = true;
         connectionManager.closeConnection();
+        System.exit(0);
     }
 }

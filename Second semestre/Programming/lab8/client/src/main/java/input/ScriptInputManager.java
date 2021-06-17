@@ -3,7 +3,6 @@ package input;
 import auth.Auth;
 import exceptions.ScriptException;
 import inputManager.CommandReader;
-import messages.Messenger;
 import person.RawPerson;
 
 import java.io.BufferedReader;
@@ -14,7 +13,7 @@ public class ScriptInputManager implements InputManager {
     private final CommandReader commandReader;
     private final PersonReader personReader;
 
-    public ScriptInputManager(BufferedReader reader, Messenger messenger){
+    public ScriptInputManager(BufferedReader reader){
         this.reader = reader;
         commandReader = new ScriptCommandReader(reader);
         personReader = new ScriptPersonReader(reader);
